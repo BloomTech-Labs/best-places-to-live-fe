@@ -4,22 +4,46 @@ import axios from 'axios';
 
 const Home = () => {
   const [welcomeMessage, setWelcomeMessage] = useState('');
+  const [personList, setPersonList] = useState([]);
 
   useEffect(() => {
-    axios
-      .get('http://mongo3.letsmovehomie.com:3001/')
-      .then((response) => {
-        setWelcomeMessage(response.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    const fetchWelcomeMessage = () => {
+      axios
+        .get('http://mongo3.letsmovehomie.com:3001/')
+        .then((response) => {
+          setWelcomeMessage(response.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+
+    const fetchNames = () => {
+      axios
+        .get('http://mongo3.letsmovehomie.com:3001/all')
+        .then((response) => {
+          setPersonList(response.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+
+    fetchWelcomeMessage();
+    fetchNames();
   }, []);
+
   return (
     <div>
       <h1>Home</h1>
       <h2>Welcome Message:</h2>
       <p>{welcomeMessage}</p>
+      <h2>List of names:</h2>
+      <div>
+        {personList.map((person) => (
+          <p key={person._id}>{person.name}</p>
+        ))}
+      </div>
     </div>
   );
 };
