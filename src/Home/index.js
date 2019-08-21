@@ -5,6 +5,9 @@ import axios from 'axios';
 const Home = () => {
   const [welcomeMessage, setWelcomeMessage] = useState('');
   const [personList, setPersonList] = useState([]);
+  const [inputs, setInputs] = useState({
+    name: '',
+  });
 
   useEffect(() => {
     const fetchWelcomeMessage = () => {
@@ -33,6 +36,16 @@ const Home = () => {
     fetchNames();
   }, []);
 
+  const handleChange = (event) => {
+    event.persist();
+    setInputs((inputs) => ({
+      ...inputs,
+      [event.target.id]: event.target.value,
+    }));
+  };
+
+  const handleSubmit = () => {};
+
   return (
     <div>
       <h1>Home</h1>
@@ -41,7 +54,12 @@ const Home = () => {
 
       <form>
         <label htmlFor='person'>Add Person</label>
-        <input type='text' />
+        <input
+          type='text'
+          id='name'
+          value={inputs.name}
+          onChange={handleChange}
+        />
         <button type='submit'>Add Person</button>
       </form>
 
