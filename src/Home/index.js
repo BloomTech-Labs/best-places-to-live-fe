@@ -53,6 +53,9 @@ const Home = () => {
       })
       .then((response) => {
         setPersonList((persons) => [response.data, ...persons]);
+        setInputs({
+          name: '',
+        });
       })
       .catch((err) => {
         console.log(err);
