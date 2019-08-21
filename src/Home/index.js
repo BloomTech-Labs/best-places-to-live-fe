@@ -34,7 +34,7 @@ const Home = () => {
 
     fetchWelcomeMessage();
     fetchNames();
-  }, []);
+  }, [personList]);
 
   const handleChange = (event) => {
     event.persist();
@@ -44,7 +44,20 @@ const Home = () => {
     }));
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    axios
+      .post('http://mongo3.letsmovehomie.com:3001/add', {
+        name: inputs.name,
+      })
+      .then((response) => {
+        setPersonList((persons) => [response.data, ...persons]);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div>
@@ -52,7 +65,7 @@ const Home = () => {
       <h2>Welcome Message:</h2>
       <p>{welcomeMessage}</p>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor='person'>Add Person</label>
         <input
           type='text'
