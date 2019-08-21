@@ -38,6 +38,13 @@ const Home = () => {
       <h1>Home</h1>
       <h2>Welcome Message:</h2>
       <p>{welcomeMessage}</p>
+
+      <form>
+        <label htmlFor='person'>Add Person</label>
+        <input type='text' />
+        <button type='submit'>Add Person</button>
+      </form>
+
       <h2>List of names:</h2>
       <div>
         {personList.map((person) => (
