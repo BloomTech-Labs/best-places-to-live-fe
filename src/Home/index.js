@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-// import Navigation from '../Navigation'
+import Navigation from '../Navigation';
 
 const Home = () => {
   const [welcomeMessage, setWelcomeMessage] = useState('');
@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     const fetchWelcomeMessage = () => {
       axios
-        .get('http://mongo3.letsmovehomie.com:3001/')
+        .get(' http://167.71.246.202:3001/')
         .then((response) => {
           setWelcomeMessage(response.data);
         })
@@ -23,7 +23,7 @@ const Home = () => {
 
     const fetchNames = () => {
       axios
-        .get('http://mongo3.letsmovehomie.com:3001/all')
+        .get(' http://167.71.246.202:3001/all')
         .then((response) => {
           setPersonList(response.data);
         })
@@ -33,8 +33,9 @@ const Home = () => {
     };
 
     fetchWelcomeMessage();
+
     fetchNames();
-  }, [personList]);
+  }, []);
 
   const handleChange = (event) => {
     event.persist();
@@ -48,7 +49,7 @@ const Home = () => {
     event.preventDefault();
 
     axios
-      .post('http://mongo3.letsmovehomie.com:3001/add', {
+      .post('http://167.71.246.202:3001/add', {
         name: inputs.name,
       })
       .then((response) => {
@@ -64,6 +65,7 @@ const Home = () => {
 
   return (
     <div>
+      <Navigation />
       <h1>Home</h1>
       <h2>Welcome Message:</h2>
       <p>{welcomeMessage}</p>
@@ -71,18 +73,22 @@ const Home = () => {
       <form onSubmit={handleSubmit}>
         <label htmlFor='person'>Add Person</label>
         <input
-          type='text'
-          id='name'
-          value={inputs.name}
-          onChange={handleChange}
+            autoFocus
+            className="nameInput"
+            type='text'
+            id='name'
+            value={inputs.name}
+            onChange={handleChange}
         />
-        <button type='submit'>Add Person</button>
+        <button data-cy="submit" type='submit'>Add Person</button>
       </form>
 
       <h2>List of names:</h2>
+
       <div>
         {personList.map((person) => (
-          <p key={person._id}>{person.name}</p>
+          <li key={person._id}>{person.name}
+          </li>
         ))}
       </div>
     </div>
