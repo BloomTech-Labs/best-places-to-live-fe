@@ -1,5 +1,6 @@
 import React,{useState, useEffect} from 'react';
 import axios from 'axios';
+import { CityCards, CardI,TopTen } from "./styled";
 import Navigation from "../Navigation";
 
 
@@ -11,7 +12,6 @@ const Topten = () => {
             axios
                 .get('https://demo0969329.mockable.io/topten')
                 .then((res) => {
-                    console.log(JSON.stringify(res.data));
                     settopTenList(res.data);
                 })
                 .catch((err) => {
@@ -24,12 +24,12 @@ const Topten = () => {
     return (
     <div>
         <Navigation />
-        <h1>TOP 10</h1>
-        <div>
+        <TopTen>TOP 10</TopTen>
+        <CityCards>
             {topTenList.map((state) => (
-            <li key={state._id}>{state.name}</li>
+            <CardI key={state._id}>{state.name}</CardI>
             ))}
-        </div>
+        </CityCards>
     </div>
     )
 }

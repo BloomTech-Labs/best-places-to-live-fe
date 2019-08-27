@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button, Section } from "./styled";
 
 
+
 const Navigation = () => {
     return (
         <Section>
@@ -10,10 +11,13 @@ const Navigation = () => {
                 <Button>Home</Button>
             </Link>
             <Link to= '/Topten'>
-                <button>Top10</button>
+                <Button>Top10</Button>
+            </Link>
+            <Link to = ''>
+                <Button> Login</Button>
             </Link>
         </Section>
     )
-}
+};
 
 export default Navigation
