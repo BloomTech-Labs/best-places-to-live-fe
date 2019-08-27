@@ -7,7 +7,9 @@ const exec = require('child_process').exec;
 
 http
   .createServer(function(req, res) {
+    console.log('RUNNING!');
     req.on('data', function(chunk) {
+      console.log('RUNNING!1');
       let sig =
         'sha1=' +
         crypto
@@ -17,6 +19,7 @@ http
 
       if (req.headers['x-hub-signature'] == sig) {
         exec('cd ' + repo + ' && git pull', (error, stdout, stderr) => {
+          console.log('RUNNING!3');
           if (error) {
             console.error(error);
             return;
