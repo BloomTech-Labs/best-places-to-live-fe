@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     const fetchWelcomeMessage = () => {
       axios
-        .get(' http://167.71.246.202:3001/')
+        .get('http://stagingbe.letsmovehomie.com:3001/')
         .then((response) => {
           setWelcomeMessage(response.data);
         })
@@ -23,7 +23,7 @@ const Home = () => {
 
     const fetchNames = () => {
       axios
-        .get(' http://167.71.246.202:3001/all')
+        .get('http://stagingbe.letsmovehomie.com:3001/all')
         .then((response) => {
           setPersonList(response.data);
         })
@@ -49,7 +49,7 @@ const Home = () => {
     event.preventDefault();
 
     axios
-      .post('http://167.71.246.202:3001/add', {
+      .post('http://stagingbe.letsmovehomie.com:3001/add', {
         name: inputs.name,
       })
       .then((response) => {
