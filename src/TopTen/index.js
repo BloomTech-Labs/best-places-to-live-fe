@@ -1,10 +1,10 @@
 import React,{useState, useEffect} from 'react';
 import axios from 'axios';
-import { CityCards, CardI,TopTen } from "./styled";
 import Navigation from "../Navigation";
+import TopTenCards from "./TopTenCards";
 
 
-const Topten = () => {
+const TopTen = () => {
     const [topTenList,settopTenList] = useState([])
 
     useEffect( () =>{
@@ -21,18 +21,16 @@ const Topten = () => {
         fetchTopTen();
     }, []);
 
+
     return (
-    <div>
-        <Navigation />
-        <TopTen>TOP 10</TopTen>
-        <CityCards>
-            {topTenList.map((state) => (
-            <CardI key={state._id}>{state.name}</CardI>
-            ))}
-        </CityCards>
-    </div>
+        <div>
+            <Navigation />
+            <div>TOP 10</div>
+            <div>
+                {topTenList.map((state) => (<TopTenCards key={state._id}  card={state}/>))}
+            </div>
+        </div>
     )
 }
 
-export default Topten
-
+export default TopTen
