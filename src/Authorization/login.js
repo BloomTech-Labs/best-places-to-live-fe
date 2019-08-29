@@ -20,11 +20,11 @@ const handleChange = (event) => {
   }));
 };
 
-const handleSubmit = (event, input) => {
+const handleSubmit = (event) => {
   event.preventDefault();
 
   axios
-    .post('http://167.71.246.202:3001/users/login', input)
+    .get('http://167.71.246.202:3001/users/login')
     .then((response) => {
       console.log(response.data)
     })
@@ -32,6 +32,21 @@ const handleSubmit = (event, input) => {
       console.log(err);
     });
 };
+
+const handleClick = (event) => {
+  event.preventDefault();
+
+  axios
+    .get('http://stagingbe.letsmovehomie.com:3001/auth/login')
+    .then((response) => {
+      console.log(response.data)
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+
   return (
     <label htmlFor='Log-in'>
       <FormContainer>
@@ -55,6 +70,7 @@ const handleSubmit = (event, input) => {
         <br/>
         <button type='submit'>Login</button>
       </form>
+      <button onClick={handleClick}>Google log-in</button>
       </FormContainer>
     </label>
 
