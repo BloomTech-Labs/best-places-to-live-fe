@@ -11,8 +11,9 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
     card: {
         maxWidth: 345,
-        margin:30
+        margin:65
     },
+
 });
 
 const TopTenCards = (props) =>{
@@ -24,7 +25,6 @@ const TopTenCards = (props) =>{
                     component="img"
                     alt="City Image"
                     height="140"
-                    image=""
                     title="City Image"
                 />
                 <CardContent>
