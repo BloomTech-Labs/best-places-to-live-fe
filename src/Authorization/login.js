@@ -24,7 +24,7 @@ const handleSubmit = (event) => {
   event.preventDefault();
 
   axios
-    .get('http://167.71.246.202:3001/users/login')
+    .post('http://167.71.246.202:3001/users/login')
     .then((response) => {
       console.log(response.data)
     })
