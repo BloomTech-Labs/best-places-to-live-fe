@@ -1,5 +1,9 @@
 import React,{useState, useEffect} from 'react';
 import axios from 'axios';
+import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+
 import Navigation from "../Navigation";
 import TopTenCards from "./TopTenCards";
 
@@ -21,14 +25,29 @@ const TopTen = () => {
         fetchTopTen();
     }, []);
 
+    const useStyles = makeStyles(theme => ({
+        root: {
+            flexGrow: 1,
+        },
+    }));
+
+    const classes = useStyles();
 
     return (
         <div>
             <Navigation />
             <div>TOP 10</div>
-            <div>
-                {topTenList.map((state) => (<TopTenCards key={state._id}  card={state}/>))}
-            </div>
+            <Grid container className={classes.root}  spacing={3}>
+                <Grid xs item>
+                    <Grid container justify="center">
+                    {topTenList.map(state => (
+                            <Grid item key={state.id}>
+                                <TopTenCards  key={state.id} card={state}/>
+                            </Grid>
+                    ))}
+                    </Grid>
+                </Grid>
+            </Grid>
         </div>
     )
 }
