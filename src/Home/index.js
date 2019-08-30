@@ -1,10 +1,13 @@
 import React from 'react';
 import Navigation from '../Navigation';
+import HomeSearchBar from '../HomeSearchBar';
 
 const Home = () => {
     return(
-        <Navigation />
-
+        <div>
+            <Navigation />
+            <HomeSearchBar />
+        </div>
     )
 };
 
