@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import useStyles from "./styled";
 import Avatar from "@material-ui/core/Avatar";
-import LockOutlinedIcon from "@material-ui/core/SvgIcon/SvgIcon";
 import Typography from "@material-ui/core/Typography";
 import Container from '@material-ui/core/Container';
 import {TextField} from "@material-ui/core";

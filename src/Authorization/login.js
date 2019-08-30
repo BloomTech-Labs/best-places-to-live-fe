@@ -26,10 +26,10 @@ const handleChange = (event) => {
   }));
 };
 
-const handleSubmit = (event, input) => {
+const handleSubmit = (event) => {
   event.preventDefault();
   axios
-    .post(' http://stagingbe.letsmovehomie.com:3001/users/login/', input)
+    .post('http://stagingbe.letsmovehomie.com:3001/users/login/', input)
     .then((response) => {
       console.log(response.data)
     })
@@ -37,6 +37,7 @@ const handleSubmit = (event, input) => {
       console.log(err);
     });
 };
+
 const classes = useStyles();
 
 return (
@@ -86,6 +87,12 @@ return (
                 variant="contained"
                 color="primary"
                 className={classes.submit}>Sign In</Button>
+          <Link href='http://stagingbe.letsmovehomie.com:3001/auth/login'>
+            <Button
+                fullWidth
+                variant='contained'
+                color='primary'>Google log-in</Button>
+          </Link>
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">Forgot password?</Link>
@@ -97,6 +104,7 @@ return (
               </Grid>
             </Grid>
           </form>
+
         </div>
       </Container>
   );
