@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
@@ -30,7 +29,7 @@ const handleChange = (event) => {
 const handleSubmit = (event, input) => {
   event.preventDefault();
   axios
-    .post('http://167.71.246.202:3001/users/login', input)
+    .post(' http://stagingbe.letsmovehomie.com:3001/users/login/', input)
     .then((response) => {
       console.log(response.data)
     })
@@ -42,7 +41,6 @@ const classes = useStyles();
 
 return (
     <Container component="main" maxWidth="xs">
-      <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />

@@ -4,11 +4,11 @@ import useStyles from "./styled";
 import Avatar from "@material-ui/core/Avatar";
 import LockOutlinedIcon from "@material-ui/core/SvgIcon/SvgIcon";
 import Typography from "@material-ui/core/Typography";
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import {TextField} from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import Link from "@material-ui/core/Link";
+import PersonAddIcon from '@material-ui/icons/PersonAdd';
 
 
 const Register = () => {
@@ -32,7 +32,7 @@ const Register = () => {
     event.preventDefault();
 
     axios
-        .post('http://demo0969329.mockable.io/register', input)
+        .post(' http://stagingbe.letsmovehomie.com:3001/users/register/', input)
         .then((response) => {
           console.log(input)
         })
@@ -45,10 +45,9 @@ const Register = () => {
 
   return (
       <Container component="main" maxWidth="xs">
-        {/*<CssBaseLine />*/}
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
-            <LockOutlinedIcon/>
+            <PersonAddIcon />
           </Avatar>
           <Typography component="h1" variant="h5">Sign Up</Typography>
           <form className={classes.form} noValidate value={{handleSubmit}}>
@@ -104,11 +103,17 @@ const Register = () => {
                 onChange={handleChange}
                 autoFocus
             />
-            <Button type='submit'> Register </Button>
-            <Link href="/register" variant="body2">
-              {"Already have an account? Login In"}
-            </Link>
+            <Button
+                type='submit'
+                variant="contained"
+                fullWidth
+                color="primary"
+            > Register </Button>
           </form>
+          <br/>
+          <Link href="/login" variant="body2">
+          {"Already have an account? Login In"}
+        </Link>
         </div>
       </Container>
 

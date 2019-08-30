@@ -1,10 +1,8 @@
-import React, {useState, useEffect} from 'react';
-import axios from 'axios';
+import React from 'react';
 import Navigation from '../Navigation';
 
 const Home = () => {
     return(
-
         <Navigation />
 
     )
