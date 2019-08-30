@@ -12,7 +12,7 @@ import useStyles from './styled';
 
 
 
-const Login = () => {
+const Login = (props) => {
 const [input , setInput] = useState({
   email: '',
   password: ''
@@ -31,7 +31,7 @@ const handleSubmit = (event) => {
   axios
     .post('http://stagingbe.letsmovehomie.com:3001/users/login/', input)
     .then((response) => {
-      console.log(response.data)
+      props.history.push('/')
     })
     .catch((err) => {
       console.log(err);
@@ -47,7 +47,7 @@ return (
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">Sign in</Typography>
-        <form className={classes.form} noValidate value={{handleSubmit}}>
+        <form className={classes.form} noValidate onSubmit={handleSubmit}>
           <TextField
                 variant="outlined"
                 margin="normal"
