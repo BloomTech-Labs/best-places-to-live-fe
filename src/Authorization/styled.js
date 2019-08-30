@@ -1,37 +1,30 @@
-import styled from 'styled-components';
+import {makeStyles} from "@material-ui/core";
 
-export const FormContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  margin: 200px 0px 0px 0px;
-  height: 10%;
-  flex-direction: column;
-  align-items: center;
+ const useStyles = makeStyles(theme => ({
+    '@global': {
+        body: {
+            backgroundColor: theme.palette.common.white,
+        },
+    },
+    paper: {
+        marginTop: theme.spacing(8),
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+    },
+    avatar: {
+        margin: theme.spacing(1),
+        backgroundColor: theme.palette.secondary.main,
+    },
+    form: {
+        width: '100%', // Fix IE 11 issue.
+        marginTop: theme.spacing(1),
+    },
+    submit: {
+        margin: theme.spacing(3, 0, 2),
+    },
+}));
 
 
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 15%;
-    @media (max-width: 800px) {
-      width: 100%;
-    }
-  }
-  button {
+ export default useStyles;
 
-  }
-  h1 {
-    font-size: 3rem;
-    @media (max-width: 800px) {
-      align-self: flex-start;
-    }
-  }
-  input {
-    width: 80%;
-    @media (max-width: 800px) {
-      width: 100%;
-    }
-  }
-`;
