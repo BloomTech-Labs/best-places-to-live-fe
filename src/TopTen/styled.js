@@ -1,6 +1,5 @@
 import React from 'react';
 import {makeStyles, withStyles} from "@material-ui/core";
-import MenuItem from "@material-ui/core/MenuItem";
 import Menu from '@material-ui/core/Menu';
 
  export const StyledMenu = withStyles({
@@ -23,16 +22,6 @@ import Menu from '@material-ui/core/Menu';
     />
 ));
 
-export const StyledMenuItem = withStyles(theme => ({
-    root: {
-        '&:focus': {
-            backgroundColor: theme.palette.primary.main,
-            '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
-                color: theme.palette.common.white,
-            },
-        },
-    },
-}))(MenuItem);
 
 export const useStyles = makeStyles(theme => ({
     root: {

@@ -5,11 +5,10 @@ import Navigation from "../Navigation";
 import TopTenCards from "./TopTenCards";
 import Button from "@material-ui/core/Button";
 import Box from '@material-ui/core/Box';
-
-import {useStyles, StyledMenu,StyledMenuItem} from "./styled";
+import {useStyles, StyledMenu} from "./styled";
 
 const TopTen = () => {
-    const [topTenList,settopTenList] = useState([])
+    const [topTenList,settopTenList] = useState([]);
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     function handleClick(event) {
@@ -23,9 +22,10 @@ const TopTen = () => {
     useEffect( () =>{
         const fetchTopTen = () =>{
             axios
-                .get('https://demo0969329.mockable.io/topten')
+                .get('http://162.243.168.251/city/topten-cost-of-living/')
                 .then((res) => {
-                    settopTenList(res.data);
+                    settopTenList(res.data.cities);
+                    console.log(res)
                 })
                 .catch((err) => {
                     console.log(err);
@@ -34,17 +34,8 @@ const TopTen = () => {
         fetchTopTen();
     }, []);
 
-    function handleClick(event) {
-        setAnchorEl(event.currentTarget);
-    }
-
-    function handleClose() {
-        setAnchorEl(null);
-    }
-
 
     const classes = useStyles();
-
     return (
         <div>
 
@@ -56,7 +47,7 @@ const TopTen = () => {
                 alignItems="center"
                 justifyContent="center"
                 flexDirection="column">
-            <h1>TOP 10</h1>
+            <h1>Top Cities</h1>
             <Button
                 aria-controls="customized-menu"
                 aria-haspopup="true"
