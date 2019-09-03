@@ -28,7 +28,6 @@ const Register = () => {
       ...input,
       [event.target.id]: event.target.value,
     }));
-    console.log('input handleChange', input);
   };
 
   const handleSubmit = (event) => {
