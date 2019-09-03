@@ -12,10 +12,13 @@ import PersonAddIcon from '@material-ui/icons/PersonAdd';
 
 const Register = () => {
   const [input, setInput] = useState({
-    firstName: '',
-    lastName: '',
+    // Commenting out these key:value pairs until the back end is refractored to receive them
+    // firstName: '',
+    // lastName: '',
+    name: '',
     email: '',
-    password: ''
+    password: '',
+    password2: '',
   });
 
 
@@ -27,16 +30,17 @@ const Register = () => {
     }));
   };
 
-  const handleSubmit = (event, input) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-
+    console.log(input)
     axios
-        .post(' http://stagingbe.letsmovehomie.com:3001/users/register/', input)
+        .post('http://162.243.168.251/users/register', input)
         .then((response) => {
-          console.log(input)
+          console.log(response)
         })
-        .catch((err) => {
-          console.log(err);
+        .catch((error) => {
+          console.log('input', input);
+          console.log(error.response);
         });
   };
 
@@ -49,8 +53,9 @@ const Register = () => {
             <PersonAddIcon />
           </Avatar>
           <Typography component="h1" variant="h5">Sign Up</Typography>
-          <form className={classes.form} noValidate value={{handleSubmit}}>
-              <TextField
+          <form className={classes.form} noValidate onSubmit={handleSubmit}>
+    {/* Commenting out these key:value pairs until the back end is refractored to receive them */}
+              {/* <TextField
                   variant="outlined"
                   margin="normal"
                   required
@@ -62,8 +67,8 @@ const Register = () => {
                   value={input.firstName}
                   onChange={handleChange}
                   autoFocus
-              />
-            <TextField
+              /> */}
+            {/* <TextField
                 variant="outlined"
                 margin="normal"
                 required
@@ -73,6 +78,19 @@ const Register = () => {
                 label="Last Name"
                 type="text"
                 value={input.lastName}
+                onChange={handleChange}
+                autoFocus
+            /> */}
+            <TextField
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                id="name"
+                name="name"
+                label="name"
+                type="text"
+                value={input.name}
                 onChange={handleChange}
                 autoFocus
             />
@@ -99,6 +117,19 @@ const Register = () => {
                 label="Password"
                 type="password"
                 value={input.password}
+                onChange={handleChange}
+                autoFocus
+            />
+            <TextField
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                id="password2"
+                name="password2"
+                label="Confirm password"
+                type="password"
+                value={input.password2}
                 onChange={handleChange}
                 autoFocus
             />

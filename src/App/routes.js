@@ -9,7 +9,7 @@ const Routes = () => {
   return (
     <>
       <Route exact path='/' component={Home} />
-      <Route path='/register' component={Register} />
+      <Route path='/Register' component={Register} />
       <Route path='/Login' component={Login} />
       <Route path='/Topten' component={TopTen} />
       {/* <Route path='/multi' component={MultiStepForm} /> */}
