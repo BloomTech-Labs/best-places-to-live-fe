@@ -29,7 +29,7 @@ const handleChange = (event) => {
 const handleSubmit = (event) => {
   event.preventDefault();
   axios
-    .post('http://stagingbe.letsmovehomie.com:3001/users/login/', input)
+    .post('http://162.243.168.251/users/login', input)
     .then((response) => {
       console.log(response.data)
     })
