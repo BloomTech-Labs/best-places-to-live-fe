@@ -36,7 +36,7 @@ export default function Navigation() {
             <Button color="inherit">Home</Button>
           </Link>
 
-          <Link to="/topten" style={{ textDecoration: "none", color: "white" }}>
+          <Link to="/Topten" style={{ textDecoration: "none", color: "white" }}>
             <Button color="inherit">Top10</Button>
           </Link>
 
