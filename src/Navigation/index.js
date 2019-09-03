@@ -45,7 +45,7 @@ export default function Navigation() {
           </Link>
 
           <Link to="/Register" style={{ textDecoration: "none", color: "white" }}>
-            <Button color="inherit">Login</Button>
+            <Button color="inherit">Register</Button>
           </Link>
         </Toolbar>
       </AppBar>
