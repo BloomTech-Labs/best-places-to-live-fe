@@ -31,7 +31,7 @@ const Register = () => {
     event.preventDefault();
 
     axios
-        .post(' http://stagingbe.letsmovehomie.com:3001/users/register/', input)
+        .post('http://162.243.168.251/users/register', input)
         .then((response) => {
           console.log(input)
         })
