@@ -80,8 +80,8 @@ class App extends Component {
     return (
       <Router>
       <div className="App">
-        <Navbar />
-        {/* <Navigation /> */}
+        {/* <Navbar /> */}
+        <Navigation />
         <div className="container">
           <Alert alert={this.state.alert} />
           <Switch>
