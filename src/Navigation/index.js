@@ -33,19 +33,19 @@ export default function Navigation() {
           </IconButton>
 
           <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-            <Button color="inherit">Home</Button>
+            <Button id="homeButton" color="inherit">Home</Button>
           </Link>
 
           <Link to="/Topten" style={{ textDecoration: "none", color: "white" }}>
-            <Button color="inherit">Top10</Button>
+            <Button id="top10Button" color="inherit">Top10</Button>
           </Link>
 
           <Link to="/Login" style={{ textDecoration: "none", color: "white" }}>
-            <Button color="inherit">Login</Button>
+            <Button id="loginButton" color="inherit">Login</Button>
           </Link>
 
           <Link to="/Register" style={{ textDecoration: "none", color: "white" }}>
-            <Button color="inherit">Sign Up</Button>
+            <Button id="registerButton" color="inherit">Sign Up</Button>
           </Link>
         </Toolbar>
       </AppBar>

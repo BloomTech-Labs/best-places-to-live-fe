@@ -6,6 +6,8 @@ import TopTenCards from "./TopTenCards";
 import Button from "@material-ui/core/Button";
 import Box from '@material-ui/core/Box';
 import {useStyles, StyledMenu} from "./styled";
+import TimeToLeaveIcon from '@material-ui/icons/TimeToLeave';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 
 const TopTen = () => {
     const [topTenList,settopTenList] = useState([]);
@@ -66,12 +68,20 @@ const TopTen = () => {
             >
             </StyledMenu>
             </Box>
+            <Box
+                display='flex'
+                alignItems='center'>
+            <TimeToLeaveIcon />
+            AVG Commute Time
+            <AttachMoneyIcon />
+            AVG Cost of Living
+            </Box>
             <Grid container className={classes.root}  spacing={3}>
                 <Grid xs item>
                     <Grid container justify="center">
                     {topTenList.map(state => (
                             <Grid item key={state.id}>
-                                <TopTenCards  key={state.id} card={state}/>
+                                <TopTenCards data-set key={state.id} card={state}/>
                             </Grid>
                     ))}
                     </Grid>
