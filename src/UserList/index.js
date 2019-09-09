@@ -7,7 +7,6 @@ import User from './components/users/User';
 import Search from './components/users/Search';
 import axios from 'axios';
 import Alert from './components/layout/Alert';
-import About from './components/pages/About';
 import './index.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
@@ -81,8 +80,8 @@ class App extends Component {
     return (
       <Router>
       <div className="App">
-        {/* <Navbar /> */}
-        <Navigation />
+        <Navbar />
+        {/* <Navigation /> */}
         <div className="container">
           <Alert alert={this.state.alert} />
           <Switch>
@@ -101,7 +100,6 @@ class App extends Component {
              </Fragment>
             )}
            />
-           <Route exact path='/about' component={About} />
            <Route exact path='/user/:login' render={props => (
              <User {...props}
               getUser={this.getUser}
