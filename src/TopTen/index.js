@@ -67,11 +67,13 @@ const TopTen = () => {
       <Grid container className={classes.root} spacing={3}>
         <Grid xs item>
           <Grid container justify="center">
-            {topTenList.map(state => (
-              <Grid item key={state.id}>
-                <TopTenCards key={state.id} card={state} />
-              </Grid>
-            ))}
+            {topTenList
+              ? topTenList.map(state => (
+                  <Grid item key={state._id}>
+                    <TopTenCards key={state.id} card={state} />
+                  </Grid>
+                ))
+              : ""}
           </Grid>
         </Grid>
       </Grid>
