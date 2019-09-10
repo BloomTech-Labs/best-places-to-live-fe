@@ -13,7 +13,7 @@ const Routes = () => {
       <Route path='/Login' component={Login} />
       <Route path='/Topten' component={TopTen} />
       {/* <Route path='/multi' component={MultiStepForm} /> */}
-      {/*<Route path='/Userlist'  component={UserList} />*/}
+      <Route path='/Userlist'  render={props => <UserList {...props}/>} />
       {/* <Route path='/'  component={} />  */}
       {/* <Route path='/'  component={} />  */}
       {/* <Route path='/'  component={} />  */}

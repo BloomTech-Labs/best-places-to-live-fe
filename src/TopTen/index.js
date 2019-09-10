@@ -16,7 +16,6 @@ const TopTen = () => {
         .get("/city/topten-cost-of-living/")
         .then(res => {
           settopTenList(res.data.cities);
-          console.log(res);
         })
         .catch(err => {
           console.log(err);
