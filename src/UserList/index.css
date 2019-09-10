@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+/* @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 /* Global Styles */
-:root {
+/* :root {
   --primary-color: #dc3545;
   --dark-color: #333333;
   --light-color: #f4f4f4;
@@ -41,15 +41,15 @@ img {
 }
 
 /* Utilities */
-.container {
+/* .container {
   max-width: 1100px;
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
-}
+} */
 
 /* Text Styles*/
-.x-large {
+/* .x-large {
   font-size: 4rem;
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -96,10 +96,10 @@ img {
 
 .text-left {
   text-align: left;
-}
+} */
 
 /* Center All */
-.all-center {
+/* .all-center {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -107,26 +107,26 @@ img {
   justify-content: center;
   align-items: center;
   text-align: center;
-}
+} */
 
 /* Cards */
-.card {
+/* .card {
   padding: 1rem;
   border: #ccc 1px dotted;
   margin: 0.7rem 0;
-}
+} */
 
 /* List */
-.list {
+/* .list {
   margin: 0.5rem 0;
 }
 
 .list li {
   padding-bottom: 0.3rem;
-}
+} */
 
 /* Padding */
-.p {
+/* .p {
   padding: 0.5rem;
 }
 .p-1 {
@@ -152,7 +152,7 @@ img {
 }
 
 /* Margin */
-.m {
+/* .m {
   margin: 0.5rem;
 }
 .m-1 {
@@ -175,10 +175,10 @@ img {
 }
 .my-3 {
   margin: 3rem 0;
-}
+} */ 
 
 /* Grid */
-.grid-2 {
+/* .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
@@ -305,10 +305,10 @@ img {
 
 .round-img {
   border-radius: 50%;
-}
+} */
 
 /* Forms */
-input {
+/* input {
   margin: 1.2rem 0;
 }
 
@@ -344,10 +344,10 @@ table td {
 
 table th {
   background: var(--light-color);
-}
+} */
 
 /* Navbar */
-.navbar {
+/* .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -374,10 +374,10 @@ table th {
 
 .navbar .welcome span {
   margin-right: 0.6rem;
-}
+} */
 
 /* Mobile Styles */
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
   .hide-sm {
     display: none;
   }
@@ -386,10 +386,10 @@ table th {
   .grid-3,
   .grid-4 {
     grid-template-columns: 1fr;
-  }
+  } */
 
   /* Text Styles */
-  .x-large {
+  /* .x-large {
     font-size: 3rem;
   }
 
@@ -402,7 +402,7 @@ table th {
   }
 
   /* Navbar */
-  .navbar {
+  /* .navbar {
     display: block;
     text-align: center;
   }
@@ -411,4 +411,4 @@ table th {
     text-align: center;
     justify-content: center;
   }
-}
+} */

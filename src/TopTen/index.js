@@ -37,7 +37,6 @@ const TopTen = () => {
   const classes = useStyles();
   return (
     <div>
-      <Navigation />
       <Box
         margin="0 auto"
         width="30%"
