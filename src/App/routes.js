@@ -4,7 +4,6 @@ import Home from '../Home';
 import Login from '../Authorization/login';
 import Register from '../Authorization/register';
 import TopTen from "../TopTen";
-import UserList from "../UserList";
 
 const Routes = () => {
   return (

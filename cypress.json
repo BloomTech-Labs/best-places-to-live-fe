@@ -1,4 +1,4 @@
 {
   "integrationFolder" : "./src/__tests__/cypress/integration",
-  "baseUrl": "http://react1.letsmovehomie.com"
+  "baseUrl": "http://localhost:3000"
 }
