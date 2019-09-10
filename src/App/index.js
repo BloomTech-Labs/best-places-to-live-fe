@@ -1,14 +1,17 @@
 import React from 'react';
-import {BrowserRouter} from 'react-router-dom';
+import {Router, withRouter} from 'react-router-dom';
 import Routes from './routes';
 import '../index.css';
 // import Data from './data'
+const createHistory = require('history').createBrowserHistory
+const history = createHistory()
+const AppWithRouter = withRouter(Routes)
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes />
-    </BrowserRouter>
+    <Router history={history}>
+      <AppWithRouter />
+    </Router>
   );
 };
 
