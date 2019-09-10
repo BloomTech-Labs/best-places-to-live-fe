@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link,Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Login = props => {
   const [input, setInput] = useState({
@@ -32,7 +32,6 @@ const Login = props => {
     window.location = "https://stagebe.letsmovehomie.com/auth/login"
   }
 
-  // const classes = useStyles();
 
   return (
     <div className='mainBox'>
