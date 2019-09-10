@@ -1,58 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 3
-  },
-  menuButton: {
-    marginRight: theme.spacing(2)
-  }
-}));
 
 export default function Navigation() {
-  const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
-          </IconButton>
 
-          <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-            <Button id="homeButton" color="inherit">Home</Button>
-          </Link>
+        <div>
+              <Link to="/" >
+                <button id="homeButton">Home</button>
+              </Link>
 
-          <Link to="/Topten" style={{ textDecoration: "none", color: "white" }}>
-            <Button id="top10Button" color="inherit">Top10</Button>
-          </Link>
+              <Link to="/Topten">
+                <button id="top10Button">Top10</button>
+              </Link>
 
-          <Link to="/Userlist" style={{ textDecoration: "none", color: "white" }}>
-            <Button color="inherit">Users</Button>
-          </Link>
+              <Link to="/Userlist">
+                <button>Users</button>
+              </Link>
 
-          <Link to="/Login" style={{ textDecoration: "none", color: "white" }}>
-            <Button id="loginButton" color="inherit">Login</Button>
-          </Link>
+              <Link to="/Login" >
+                <button id="loginButton">Login</button>
+              </Link>
 
-          <Link to="/Register" style={{ textDecoration: "none", color: "white" }}>
-            <Button id="registerButton" color="inherit">Sign Up</Button>
-          </Link>
-        </Toolbar>
-      </AppBar>
-    </div>
+              <Link to="/Register" >
+                <button id="registerButton">Sign Up</button>
+              </Link>
+        </div>
   );
 }
