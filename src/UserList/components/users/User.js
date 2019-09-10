@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 export class User extends Component {
   componentDidMount() {
+    console.log("WE ARE GETTIBNG THE USER")
     this.props.getUser(this.props.match.params.login);
   }
 

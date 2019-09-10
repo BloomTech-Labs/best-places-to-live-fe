@@ -1,6 +1,5 @@
 import React, { Fragment, Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Navbar from './components/layout/Navbar';
 import Navigation from '../Navigation';
 import Users from './components/users/Users';
 import User from './components/users/User';
@@ -48,6 +47,7 @@ class App extends Component {
         process.env.REACT_APP_GITHUB_CLIENT_ID}
         &client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
 
+    console.log(res.data)
     this.setState({ user: res.data, loading: false });
   };
 
@@ -65,10 +65,8 @@ class App extends Component {
     const { users, user, loading } = this.state;
 
     return (
-      <Router>
       <div className="App">
-        <Navbar />
-        {/* <Navigation /> */}
+        <Navigation />
         <div className="container">
           <Alert alert={this.state.alert} />
           <Switch>
@@ -87,7 +85,7 @@ class App extends Component {
              </Fragment>
             )}
            />
-           <Route exact path='/user/:login' render={props => (
+           <Route exact path='/UserList/user/:login' render={props => (
              <User {...props}
               getUser={this.getUser}
               user={user} //user state
@@ -97,7 +95,6 @@ class App extends Component {
           </Switch>
         </div>
       </div>
-      </Router>
     );
   }
 }
