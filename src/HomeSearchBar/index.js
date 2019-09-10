@@ -1,32 +1,20 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
 
-const useStyles = makeStyles(theme => ({
-    textField: {
-        display: 'flex',
-        maxWidth: 500,
-        margin: '0 auto',
-        marginTop: 100,
-    },
-
-}));
-
-export default function HomeSearchBar() {
-    const classes = useStyles();
+const HomeSearchBar = () =>{
 
     return (
-        <div className={classes.homeSearch}>
-            <TextField
+        <div >
+            <h1> City Search</h1>
+            <input
                 id="outlined-search"
                 label="Enter an Address, City, or Zip Code"
                 type="Search "
-                className={classes.textField}
-                margin="normal"
-                variant="outlined"
+                placeholder="Enter an Address, City, or Zip Code"
             />
         </div>
     );
         
     
 }
+
+export default HomeSearchBar;
