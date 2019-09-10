@@ -4,8 +4,11 @@ import Grid from "@material-ui/core/Grid";
 import Navigation from "../Navigation";
 import TopTenCards from "./TopTenCards";
 import Button from "@material-ui/core/Button";
-import Box from "@material-ui/core/Box";
-import { useStyles, StyledMenu } from "./styled";
+import Box from '@material-ui/core/Box';
+import {useStyles, StyledMenu} from "./styled";
+import TimeToLeaveIcon from '@material-ui/icons/TimeToLeave';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
+
 
 const TopTen = () => {
   const [topTenList, settopTenList] = useState([]);
