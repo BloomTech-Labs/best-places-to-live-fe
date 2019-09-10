@@ -1,15 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Avatar from "@material-ui/core/Avatar";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import UiLink from "@material-ui/core/Link";
-import Grid from "@material-ui/core/Grid";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
-import useStyles from "./styled";
 import { Link,Redirect } from "react-router-dom";
+
 const Login = props => {
   const [input, setInput] = useState({
     email: "",
@@ -40,41 +32,29 @@ const Login = props => {
     window.location = "https://stagebe.letsmovehomie.com/auth/login"
   }
 
-  const classes = useStyles();
+  // const classes = useStyles();
 
   return (
-    <Container component="main" maxWidth="xs">
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Sign in
-        </Typography>
-        <form className={classes.form} noValidate onSubmit={handleSubmit}>
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
+    <div className='mainBox'>
+          <h1>Sign In</h1>
+
+        <form className='' onSubmit={handleSubmit}>
+          <input
             id="email"
             name="email"
             label="Email Address"
             type="email"
+            placeholder="email"
             autoComplete="email"
             value={input.email}
             onChange={handleChange}
-            autoFocus
           />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
+          <input
             id="password"
             name="password"
             label="Password"
             type="password"
+            placeholder="password"
             autoComplete="current-password"
             value={input.password}
             onChange={handleChange}
@@ -86,33 +66,27 @@ const Login = props => {
           {/*    label="Remember me"*/}
           {/*/>*/}
 
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
+          <button type="submit" className=''>
             Sign In
-          </Button>
-            <Button fullWidth variant="contained" color="primary" onClick={googleAuth}>
-              Google log-in
-            </Button>
-          <Grid container>
-            <Grid item xs>
-              <UiLink href="#" variant="body2">
+          </button>
+          <button onClick={googleAuth}>
+            Google log-in
+          </button>
+          <div>
+            <div>
+              <Link href="#">
                 Forgot password?
-              </UiLink>
-            </Grid>
-            <Grid item>
-              <UiLink href="/register" variant="body2">
+              </Link>
+            </div>
+            <div>
+              <Link href="/register">
                 {"Don't have an account? Sign Up"}
-              </UiLink>
-            </Grid>
-          </Grid>
+              </Link>
+            </div>
+          </div>
         </form>
       </div>
-    </Container>
+
   );
 };
 
