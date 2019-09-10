@@ -1,6 +1,6 @@
-import React,{useState, useEffect} from 'react';
-import axios from 'axios';
-import Grid from '@material-ui/core/Grid';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Grid from "@material-ui/core/Grid";
 import Navigation from "../Navigation";
 import TopTenCards from "./TopTenCards";
 import Button from "@material-ui/core/Button";
@@ -9,86 +9,79 @@ import {useStyles, StyledMenu} from "./styled";
 import TimeToLeaveIcon from '@material-ui/icons/TimeToLeave';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 
+
 const TopTen = () => {
-    const [topTenList,settopTenList] = useState([]);
-    const [anchorEl, setAnchorEl] = React.useState(null);
+  const [topTenList, settopTenList] = useState([]);
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
-    function handleClick(event) {
-        setAnchorEl(event.currentTarget);
-    }
+  function handleClick(event) {
+    setAnchorEl(event.currentTarget);
+  }
 
-    function handleClose() {
-        setAnchorEl(null);
-    }
+  function handleClose() {
+    setAnchorEl(null);
+  }
 
-    useEffect( () =>{
-        const fetchTopTen = () =>{
-            axios
-                .get('http://162.243.168.251/city/topten-cost-of-living/')
-                .then((res) => {
-                    settopTenList(res.data.cities);
-                    console.log(res)
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-        };
-        fetchTopTen();
-    }, []);
+  useEffect(() => {
+    const fetchTopTen = () => {
+      axios
+        .get("/city/topten-cost-of-living/")
+        .then(res => {
+          settopTenList(res.data.cities);
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    };
+    fetchTopTen();
+  }, []);
 
+  const classes = useStyles();
+  return (
+    <div>
+      <Navigation />
+      <Box
+        margin="0 auto"
+        width="30%"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        flexDirection="column"
+      >
+        <h1>Top Cities</h1>
+        <Button
+          aria-controls="customized-menu"
+          aria-haspopup="true"
+          variant="contained"
+          color="primary"
+          onClick={handleClick}
+        >
+          Filter
+        </Button>
+        <StyledMenu
+          id="customized-menu"
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+        />
+      </Box>
+      <Grid container className={classes.root} spacing={3}>
+        <Grid xs item>
+          <Grid container justify="center">
+            {topTenList
+              ? topTenList.map(state => (
+                  <Grid item key={state._id}>
+                    <TopTenCards key={state.id} card={state} />
+                  </Grid>
+                ))
+              : ""}
+          </Grid>
+        </Grid>
+      </Grid>
+    </div>
+  );
+};
 
-    const classes = useStyles();
-    return (
-        <div>
-
-            <Navigation />
-            <Box
-                margin="0 auto"
-                width="30%"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                flexDirection="column">
-            <h1>Top Cities</h1>
-            <Button
-                aria-controls="customized-menu"
-                aria-haspopup="true"
-                variant="contained"
-                color="primary"
-                onClick={handleClick}
-            >
-                Filter
-            </Button>
-            <StyledMenu
-                id="customized-menu"
-                anchorEl={anchorEl}
-                keepMounted
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-            >
-            </StyledMenu>
-            </Box>
-            <Box
-                display='flex'
-                alignItems='center'>
-            <TimeToLeaveIcon />
-            AVG Commute Time
-            <AttachMoneyIcon />
-            AVG Cost of Living
-            </Box>
-            <Grid container className={classes.root}  spacing={3}>
-                <Grid xs item>
-                    <Grid container justify="center">
-                    {topTenList.map(state => (
-                            <Grid item key={state.id}>
-                                <TopTenCards data-set key={state.id} card={state}/>
-                            </Grid>
-                    ))}
-                    </Grid>
-                </Grid>
-            </Grid>
-        </div>
-    )
-}
-
-export default TopTen
+export default TopTen;

@@ -40,6 +40,10 @@ export default function Navigation() {
             <Button id="top10Button" color="inherit">Top10</Button>
           </Link>
 
+          <Link to="/Userlist" style={{ textDecoration: "none", color: "white" }}>
+            <Button color="inherit">Users</Button>
+          </Link>
+
           <Link to="/Login" style={{ textDecoration: "none", color: "white" }}>
             <Button id="loginButton" color="inherit">Login</Button>
           </Link>
