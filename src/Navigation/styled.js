@@ -1,30 +1,72 @@
-import React from 'react-router-dom'
 import styled from "styled-components";
 
-export const NavBar = styled.div`
+export const Header = styled.div`
 background-color:white
 padding:1%;
+width: 20%;
 `;
 
-export const NavLinks = styled.div`
-width:15%;
-display:flex;
-justify-content: space-between;
+export const NavBar = styled.div`
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-evenly;
+`;
+
+export const LogoBox = styled.img`
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center; 
+position: relative;
+width: 50%;
 `;
 
 export const NavBtn = styled.button`{
- width: @width;
- height: @height;
- color: #2B7BE3;
- font-weight: 500;
+ font-weight: 600;
  text-align: center;
- background-color: #F3FSF9;
- border: 1px solid #2B7BE3;
- border-radius: 5px;
+ padding: 8px 16px;
+ border: 0px solid white;
+ background: none;
+ border-radius: 8px;
  cursor: pointer;
  font-family: ‘Rubik’, sans-serif;
+ font-size: 1.5rem;
  &:hover {
-   background-color: F3FSF9;
-   color: #E67271
+   background-color: #E67271;
+   color: white;
    border: none;
  }`
+
+//  header {
+//   .flex-box(row, wrap);
+//   .custom-layout(space-between, flex-end);
+//   margin-bottom: 25px;
+//   padding-top: 50px;
+
+//   @media @desktop{
+//       .flex-box(column,wrap);
+//       .custom-layout(space-between, center);
+//   }
+
+//   h1 {
+//       padding-left: 4%;
+//   }
+
+//   nav {
+//       .flex-box(row, wrap);
+//       .custom-layout(space-between, flex-end);
+//       width: 50%;
+//       padding-left: 10%;
+//       padding-right: 5%;
+
+//       @media @desktop{
+//           width: 100%;
+//       }
+
+//       a {
+//           font-size: @small-text;
+//           text-decoration: none;
+//           color: @normal-txt-color;
+//       }
+//   }
+// }
