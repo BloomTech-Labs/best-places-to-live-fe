@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
-
+import {RegisterContainer, RegisterFormParent,RegisterForm} from "./styled";
 
 
 const Register = () => {
@@ -39,10 +39,11 @@ const Register = () => {
   };
 
   return (
-      <div>
-        <div className=''>
+      <RegisterContainer>
+        <img/>
+        <RegisterFormParent>
           <h1>Sign Up</h1>
-          <form className='' onSubmit={handleSubmit}>
+          <RegisterForm className='' onSubmit={handleSubmit}>
     {/* Commenting out these key:value pairs until the back end is refractored to receive them */}
               {/* <TextField
                   variant="outlined"
@@ -73,6 +74,7 @@ const Register = () => {
             <input
                 id="name"
                 name="name"
+
                 label="name"
                 type="text"
                 placeholder="name"
@@ -113,13 +115,13 @@ const Register = () => {
                 color="primary"
             > Register 
             </button>
-          </form>
+          </RegisterForm>
           <br/>
-          <Link href="/login" variant="body2">
+          <Link to="/login">
           {"Already have an account? Login In"}
         </Link>
-        </div>
-      </div>
+        </RegisterFormParent>
+      </RegisterContainer>
 
   )
 }
