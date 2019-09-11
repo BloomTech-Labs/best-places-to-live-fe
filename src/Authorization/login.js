@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import {LoginContainer, LoginFormParent ,LoginForm, LoginButtons, LoginImg} from "./styled";
 
 const Login = props => {
   const [input, setInput] = useState({
@@ -34,10 +35,15 @@ const Login = props => {
 
 
   return (
-    <div className='mainBox'>
-          <h1>Sign In</h1>
+      <>
+        <LoginImg />
+    <LoginContainer>
 
-        <form className='' onSubmit={handleSubmit}>
+      <LoginFormParent>
+
+          <h1>Log In</h1>
+
+        <LoginForm onSubmit={handleSubmit}>
           <input
             id="email"
             name="email"
@@ -65,27 +71,33 @@ const Login = props => {
           {/*    label="Remember me"*/}
           {/*/>*/}
 
+          <LoginButtons>
           <button type="submit" className=''>
             Sign In
           </button>
+
           <button onClick={googleAuth}>
             Google log-in
           </button>
-          <div>
+          </LoginButtons>
             <div>
               <Link href="#">
                 Forgot password?
               </Link>
             </div>
+
             <div>
               <Link to="/register">
                 {"Don't have an account? Sign Up"}
               </Link>
             </div>
-          </div>
-        </form>
-      </div>
 
+        </LoginForm>
+
+      </LoginFormParent>
+
+    </LoginContainer>
+</>
   );
 };
 
