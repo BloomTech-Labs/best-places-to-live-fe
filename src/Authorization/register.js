@@ -1,13 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import useStyles from "./styled";
-import Avatar from "@material-ui/core/Avatar";
-import Typography from "@material-ui/core/Typography";
-import Container from '@material-ui/core/Container';
-import {TextField} from "@material-ui/core";
-import Button from "@material-ui/core/Button";
-import Link from "@material-ui/core/Link";
-import PersonAddIcon from '@material-ui/icons/PersonAdd';
+import { Link } from "react-router-dom";
+
 
 
 const Register = () => {
@@ -44,16 +38,11 @@ const Register = () => {
         });
   };
 
-  const classes = useStyles();
-
   return (
-      <Container component="main" maxWidth="xs">
-        <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <PersonAddIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">Sign Up</Typography>
-          <form className={classes.form} noValidate onSubmit={handleSubmit}>
+      <div>
+        <div className=''>
+          <h1>Sign Up</h1>
+          <form className='' onSubmit={handleSubmit}>
     {/* Commenting out these key:value pairs until the back end is refractored to receive them */}
               {/* <TextField
                   variant="outlined"
@@ -81,71 +70,56 @@ const Register = () => {
                 onChange={handleChange}
                 autoFocus
             /> */}
-            <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
+            <input
                 id="name"
                 name="name"
                 label="name"
                 type="text"
+                placeholder="name"
                 value={input.name}
                 onChange={handleChange}
-                autoFocus
             />
-            <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
+            <input
                 id="email"
                 name="email"
                 label="Email"
                 type="email"
+                placeholder="email"
                 value={input.email}
                 onChange={handleChange}
-                autoFocus
             />
-            <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
+            <input
                 id="password"
                 name="password"
                 label="Password"
                 type="password"
+                placeholder="password"
                 value={input.password}
                 onChange={handleChange}
-                autoFocus
             />
-            <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
+            <input
                 id="password2"
                 name="password2"
                 label="Confirm password"
                 type="password"
+                placeholder="confirm password"
                 value={input.password2}
-                onChange={handleChange}
-                autoFocus
+                onChange={handleChange} 
             />
-            <Button
+            <button
                 type='submit'
                 variant="contained"
                 fullWidth
                 color="primary"
-            > Register </Button>
+            > Register 
+            </button>
           </form>
           <br/>
           <Link href="/login" variant="body2">
           {"Already have an account? Login In"}
         </Link>
         </div>
-      </Container>
+      </div>
 
   )
 }
