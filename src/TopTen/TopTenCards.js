@@ -1,31 +1,21 @@
 import React from "react";
+import { TopTenCard, CardDetail} from "./styled"
 
 
 const TopTenCards = props => {
   return (
-    <div>
-      <div>
-        <div
+    <TopTenCard>
+        <img
           component="img"
           alt="City Image"
-          height="140"
           title="City Image"
-          src={props.card.photo}
-        />
-        <div>
-          <div>{props.card.name}</div>
-        </div>
-      </div>
-      <div>
-        <div >
-          <div />
-          {props.card.cost_of_living}
-        </div>
-        <div>
-          {Math.round(props.card.avg_commute_time)}
-        </div>
-      </div>
-    </div>
+          src={props.card.photo}/>
+          <CardDetail>
+              <p>{props.card.name}</p>
+              <p>{props.card.cost_of_living}</p>
+              <p>{props.card.avg_commute_time}</p>
+        </CardDetail>
+    </TopTenCard>
   );
 };
 
