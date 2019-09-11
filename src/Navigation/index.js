@@ -1,31 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {NavBar, NavLinks, NavBtn} from './styled'
 
 
 export default function Navigation() {
 
   return (
-
-        <div>
-              <Link to="/" >
-                <button id="homeButton">Home</button>
+        <div className='Container'>
+            <NavBar primary>
+              <NavLinks>
+              <Link to="/">
+                <NavBtn  styleid="homeButton">Home</NavBtn>
               </Link>
 
-              <Link to="/Topten">
-                <button id="top10Button">Top10</button>
-              </Link>
 
               <Link to="/Userlist">
-                <button>Users</button>
+                <NavBtn>Users</NavBtn>
               </Link>
 
               <Link to="/Login" >
-                <button id="loginButton">Login</button>
+                <NavBtn id="loginButton">Login</NavBtn>
               </Link>
 
               <Link to="/Register" >
-                <button id="registerButton">Sign Up</button>
+                <NavBtn id="registerButton">Sign Up</NavBtn>
               </Link>
+            </NavLinks>
+            </NavBar>
         </div>
   );
 }
