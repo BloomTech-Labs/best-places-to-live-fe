@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ImageUploader from 'react-images-upload'
 
-const step2 = props => {
+const Step2 = props => {
 
     const [photo, setPhoto] = useState([])
 
@@ -11,6 +11,7 @@ const step2 = props => {
 
     return (
         <>
+            <h3>Upload Profile Photo</h3>
             <ImageUploader
                 withIcon = {true}
                 buttonText = 'Choose images'
@@ -26,4 +27,4 @@ const step2 = props => {
     )
 }
 
-export default step2
+export default Step2
