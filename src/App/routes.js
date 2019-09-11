@@ -4,6 +4,7 @@ import Home from '../Home';
 import Login from '../Authorization/login';
 import Register from '../Authorization/register';
 import TopTen from "../TopTen";
+import UserList from "../UserList"
 
 const Routes = () => {
   return (
@@ -13,7 +14,7 @@ const Routes = () => {
       <Route path='/Login' component={Login} />
       <Route path='/Topten' component={TopTen} />
       {/* <Route path='/multi' component={MultiStepForm} /> */}
-      {/*<Route path='/Userlist'  component={UserList} />*/}
+      <Route path='/Userlist'  render={props => <UserList {...props}/>} />
       {/* <Route path='/'  component={} />  */}
       {/* <Route path='/'  component={} />  */}
       {/* <Route path='/'  component={} />  */}

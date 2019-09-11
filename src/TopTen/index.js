@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { TopTenContainer } from './styled';
 
 import TopTenCards from "./TopTenCards";
+import Navigation from "../Navigation";
 
 
 
@@ -16,7 +18,6 @@ const TopTen = () => {
         .get("/city/topten-cost-of-living/")
         .then(res => {
           settopTenList(res.data.cities);
-          console.log(res);
         })
         .catch(err => {
           console.log(err);
@@ -28,14 +29,7 @@ const TopTen = () => {
 
   return (
     <div>
-      <div
-        margin="0 auto"
-        width="30%"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        flexDirection="column"
-      >
+      <div>
         <h1>Top Cities</h1>
         <button
           aria-controls="customized-menu"
@@ -45,15 +39,13 @@ const TopTen = () => {
           Filter
         </button>
       </div>
-      <div>
+      <TopTenContainer>
             {topTenList
               ? topTenList.map(state => (
                     <TopTenCards key={state.id} card={state} />
                 ))
               : ""}
-      </div>
-
-
+      </TopTenContainer>
     </div>
   );
 };
