@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { TopTenMasterContainer,TopTenTitle, TopTenCardContainer, } from './styled';
-
 import TopTenCards from "./TopTenCards";
-import Navigation from "../Navigation";
+
 
 
 
