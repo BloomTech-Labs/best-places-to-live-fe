@@ -18,11 +18,26 @@ justify-content: center;
 export const SearchContainer = styled.span`
 display:flex;
 flex-direction:column;
+align-items:center;
 width: auto;
 height: 20%;
 padding-top: 11%;
     h1 {
     color: white;
+    }
+    
+    input{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    margin: 5px 0;
+    opacity: 0.85;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 20px;
+    outline:none;
+    text-decoration: none; 
     }
 `;
 

@@ -30,11 +30,7 @@ const TopTen = () => {
     <TopTenMasterContainer>
       <TopTenTitle>
         <h1>Top Cities</h1>
-        <button
-          aria-controls="customized-menu"
-          aria-haspopup="true"
-          variant="contained"
-          color="primary">
+        <button>
           Filter
         </button>
       </TopTenTitle>

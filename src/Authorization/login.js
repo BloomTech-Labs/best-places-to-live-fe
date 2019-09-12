@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import {LoginContainer, LoginFormParent ,LoginForm, LoginButtons, LoginImg} from "./styled";
+import {LoginContainer,
+        LoginFormParent,
+        LoginForm,
+        FooterButtons,
+        LoginImg,
+        SignInButton,
+        GoogleButton} from "./styled";
+import Icon from '../images/LMHiconcopy.png'
 
 const Login = props => {
   const [input, setInput] = useState({
@@ -31,15 +38,19 @@ const Login = props => {
 
   const googleAuth = () =>{
     window.location = "https://stagebe.letsmovehomie.com/auth/login"
-  }
+  };
 
 
   return (
       <>
         <LoginImg />
+
     <LoginContainer>
 
       <LoginFormParent>
+        <Link to="/">
+          <img src={Icon}/>
+        </Link>
 
           <h1>Log In</h1>
 
@@ -71,26 +82,27 @@ const Login = props => {
           {/*    label="Remember me"*/}
           {/*/>*/}
 
-          <LoginButtons>
-          <button type="submit" className=''>
+          <SignInButton type="submit" className=''>
             Sign In
-          </button>
+          </SignInButton>
+          <GoogleButton onClick={googleAuth}><i className="fab fa-google-plus-g">
+            </i>login
+          </GoogleButton>
 
-          <button onClick={googleAuth}>
-            Google log-in
-          </button>
-          </LoginButtons>
-            <div>
+            <FooterButtons>
+
               <Link href="#">
                 Forgot password?
               </Link>
-            </div>
 
-            <div>
+
+
+
               <Link to="/register">
                 {"Don't have an account? Sign Up"}
               </Link>
-            </div>
+
+            </FooterButtons>
 
         </LoginForm>
 
