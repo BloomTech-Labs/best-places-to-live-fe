@@ -21,7 +21,11 @@ export default function Navigation() {
           </Link>
 
           <Link to="/Register">
-            <NavBtn id="registerButton">Sign Up</NavBtn>
+            <NavBtn id="registerButton">SignUp</NavBtn>
+          </Link>
+
+          <Link to="/Maps">
+              <NavBtn id="registerButton">Maps</NavBtn>
           </Link>
       </NavBar>
   </Header>

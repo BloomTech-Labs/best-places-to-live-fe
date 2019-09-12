@@ -8,9 +8,8 @@ width: 20%;
 
 export const NavBar = styled.div`
 display: flex;
-flex-direction: row;
 align-items: center;
-justify-content: space-evenly;
+justify-content: start-end;
 `;
 
 export const LogoBox = styled.img`
@@ -18,7 +17,8 @@ background-size: cover;
 background-repeat: no-repeat;
 background-position: center; 
 position: relative;
-width: 50%;
+margin-right:5px;
+width: 50px;
 `;
 
 export const NavBtn = styled.button`{
@@ -31,6 +31,8 @@ export const NavBtn = styled.button`{
  cursor: pointer;
  font-family: ‘Rubik’, sans-serif;
  font-size: 1.5rem;
+ outline:none; 
+ text-decoration:none;
  &:hover {
    background-color: #E67271;
    color: white;
