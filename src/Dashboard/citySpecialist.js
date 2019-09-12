@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import {ProfileBox, FormBox} from "./styled";
 
-const Profile = () => {
+const Specialist = () => {
   const [input, setInput] = useState({
-    name: "",
-    email: "",
-    password: ""
+    location: "",
+    specialist: false
   });
 
   const handleChange = event => {
@@ -21,7 +20,7 @@ const Profile = () => {
     event.preventDefault();
     console.log(input);
     axios
-      .post("http://162.243.168.251/users/register", input)
+      .post("", input)
       .then(response => {
         console.log(response);
       })
@@ -36,36 +35,19 @@ const Profile = () => {
       <FormBox onSubmit={handleSubmit}>
         <h4> Update info</h4>
         <input
-          id="name"
-          name="name"
-          label="name"
+          id="location"
+          name="location"
+          label="location"
           type="text"
-          placeholder="name"
-          value={input.name}
+          placeholder="City, State"
+          value={input.location}
           onChange={handleChange}
         />
-        <input
-          id="email"
-          name="email"
-          label="Email"
-          type="email"
-          placeholder="email"
-          value={input.email}a
-          onChange={handleChange}
-        />
-        <input
-          id="password"
-          name="password"
-          label="Password"
-          type="password"
-          placeholder="password"
-          value={input.password}
-          onChange={handleChange}
-        />
+
         <button type="submit">Save</button>
       </FormBox>
     </ProfileBox>
   );
 };
 
-export default Profile;
+export default Specialist;
