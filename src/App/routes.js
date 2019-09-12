@@ -6,6 +6,7 @@ import Register from '../Authorization/register';
 import TopTen from "../TopTen";
 import UserList from "../UserList"
 import GoogleMap from "../GoogleMap";
+import DashboardMenu from '../Dashboard';
 
 const Routes = () => {
   return (
@@ -17,6 +18,7 @@ const Routes = () => {
       <Route path='/Maps' component={GoogleMap}/>
       {/* <Route path='/multi' component={MultiStepForm} /> */}
       <Route path='/Userlist'  render={props => <UserList {...props}/>} />
+      <Route path='/Dashboard'  component={DashboardMenu} />
       {/* <Route path='/'  component={} />  */}
       {/* <Route path='/'  component={} />  */}
       {/* <Route path='/'  component={} />  */}
