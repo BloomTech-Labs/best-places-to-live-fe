@@ -7,7 +7,7 @@ padding:1%;
 `;
 
 export const NavLinks = styled.div`
-width:15%;
+width:20%;
 display:flex;
 justify-content: space-between;
 `;

@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { TopTenContainer } from './styled';
-
+import { TopTenMasterContainer,TopTenTitle, TopTenCardContainer, } from './styled';
 import TopTenCards from "./TopTenCards";
-import Navigation from "../Navigation";
+
 
 
 
@@ -28,8 +27,8 @@ const TopTen = () => {
 
 
   return (
-    <div>
-      <div>
+    <TopTenMasterContainer>
+      <TopTenTitle>
         <h1>Top Cities</h1>
         <button
           aria-controls="customized-menu"
@@ -38,15 +37,15 @@ const TopTen = () => {
           color="primary">
           Filter
         </button>
-      </div>
-      <TopTenContainer>
+      </TopTenTitle>
+      <TopTenCardContainer>
             {topTenList
               ? topTenList.map(state => (
                     <TopTenCards key={state.id} card={state} />
                 ))
               : ""}
-      </TopTenContainer>
-    </div>
+      </TopTenCardContainer>
+    </TopTenMasterContainer>
   );
 };
 

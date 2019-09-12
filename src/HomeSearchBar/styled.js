@@ -1,4 +1,3 @@
-import React from 'react-router-dom'
 import styled from "styled-components";
 
 
@@ -27,8 +26,6 @@ padding-top: 11%;
     }
 `;
 
-export const SearchBar = styled.input`
-`;
 
 
 
