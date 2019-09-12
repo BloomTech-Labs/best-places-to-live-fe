@@ -1,7 +1,22 @@
 import styled from 'styled-components'
 
-export const TopTenContainer =  styled.div`
+export const TopTenMasterContainer = styled.div`
+border:1px solid black;
+display:flex;
+justify-content:center;
+flex-direction:column;
+
+`;
+
+
+export const TopTenTitle = styled.div`
 border:1px solid red;
+display:flex;
+justify-content:center;
+`;
+
+
+export const TopTenCardContainer =  styled.div`
 display:flex;
 flex-direction:row;
 flex-wrap:wrap;
@@ -30,7 +45,10 @@ position: absolute;
 background-color: rgba(255, 255, 255, 0.7);
 bottom: 0.01rem;
 width: 100%;
-height: 10%;
+height: 15%;
+display:flex;
+justify-content:space-around;
+align-items:center;
     p {
     font-weight: 500;
     text-align: center;

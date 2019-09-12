@@ -5,6 +5,7 @@ import Login from '../Authorization/login';
 import Register from '../Authorization/register';
 import TopTen from "../TopTen";
 import UserList from "../UserList"
+import GoogleMap from "../GoogleMap";
 import DashboardMenu from '../Dashboard';
 
 const Routes = () => {
@@ -14,9 +15,10 @@ const Routes = () => {
       <Route path='/Register' component={Register} />
       <Route path='/Login' component={Login} />
       <Route path='/Topten' component={TopTen} />
-      <Route path='/Userlist'  render={props => <UserList {...props}/>} />
-      <Route path='/Dashboard'  component={DashboardMenu} /> 
+      <Route path='/Maps' component={GoogleMap}/>
       {/* <Route path='/multi' component={MultiStepForm} /> */}
+      <Route path='/Userlist'  render={props => <UserList {...props}/>} />
+      <Route path='/Dashboard'  component={DashboardMenu} />
       {/* <Route path='/'  component={} />  */}
       {/* <Route path='/'  component={} />  */}
       {/* <Route path='/'  component={} />  */}

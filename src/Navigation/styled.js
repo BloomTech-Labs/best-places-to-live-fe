@@ -36,37 +36,3 @@ export const NavBtn = styled.button`{
    color: white;
    border: none;
  }`
-
-//  header {
-//   .flex-box(row, wrap);
-//   .custom-layout(space-between, flex-end);
-//   margin-bottom: 25px;
-//   padding-top: 50px;
-
-//   @media @desktop{
-//       .flex-box(column,wrap);
-//       .custom-layout(space-between, center);
-//   }
-
-//   h1 {
-//       padding-left: 4%;
-//   }
-
-//   nav {
-//       .flex-box(row, wrap);
-//       .custom-layout(space-between, flex-end);
-//       width: 50%;
-//       padding-left: 10%;
-//       padding-right: 5%;
-
-//       @media @desktop{
-//           width: 100%;
-//       }
-
-//       a {
-//           font-size: @small-text;
-//           text-decoration: none;
-//           color: @normal-txt-color;
-//       }
-//   }
-// }

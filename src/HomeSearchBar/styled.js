@@ -26,8 +26,6 @@ padding-top: 11%;
     }
 `;
 
-export const SearchBar = styled.input`
-`;
 
 
 
