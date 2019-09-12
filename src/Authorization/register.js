@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
-import {RegisterContainer, RegisterFormParent,RegisterForm} from "./styled";
+import {LoginImg, LoginContainer,LoginFormParent,LoginForm,RegisterBottomLinks, SignInButton} from "./styled";
+import Icon from "../images/LMHiconcopy.png";
 
 
 const Register = () => {
@@ -39,90 +40,72 @@ const Register = () => {
   };
 
   return (
-      <RegisterContainer>
-        <img/>
-        <RegisterFormParent>
-          <h1>Sign Up</h1>
-          <RegisterForm className='' onSubmit={handleSubmit}>
-    {/* Commenting out these key:value pairs until the back end is refractored to receive them */}
-              {/* <TextField
-                  variant="outlined"
-                  margin="normal"
-                  required
-                  fullWidth
-                  id="firstName"
-                  name="FirstName"
-                  label="First Name"
-                  type="text"
-                  value={input.firstName}
-                  onChange={handleChange}
-                  autoFocus
-              /> */}
-            {/* <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                id="lastName"
-                name="lastName"
-                label="Last Name"
-                type="text"
-                value={input.lastName}
-                onChange={handleChange}
-                autoFocus
-            /> */}
-            <input
-                id="name"
-                name="name"
+      <>
+        <LoginImg />
 
-                label="name"
-                type="text"
-                placeholder="name"
-                value={input.name}
-                onChange={handleChange}
-            />
-            <input
-                id="email"
-                name="email"
-                label="Email"
-                type="email"
-                placeholder="email"
-                value={input.email}
-                onChange={handleChange}
-            />
-            <input
-                id="password"
-                name="password"
-                label="Password"
-                type="password"
-                placeholder="password"
-                value={input.password}
-                onChange={handleChange}
-            />
-            <input
-                id="password2"
-                name="password2"
-                label="Confirm password"
-                type="password"
-                placeholder="confirm password"
-                value={input.password2}
-                onChange={handleChange} 
-            />
-            <button
-                type='submit'
-                variant="contained"
-                fullWidth
-                color="primary"
-            > Register 
-            </button>
-          </RegisterForm>
-          <br/>
+        <LoginContainer>
+
+          <LoginFormParent>
+            <Link to="/">
+              <img src={Icon}/>
+            </Link>
+
+            <h1>Sign Up</h1>
+
+            <LoginForm className='' onSubmit={handleSubmit}>
+
+                   <input
+                       id="name"
+                       name="name"
+                       label="name"
+                       type="text"
+                       placeholder="name"
+                       value={input.name}
+                       onChange={handleChange}
+                   />
+
+                   <input
+                       id="email"
+                       name="email"
+                       label="Email"
+                       type="email"
+                       placeholder="email"
+                       value={input.email}
+                       onChange={handleChange}
+                   />
+
+                   <input
+                       id="password"
+                       name="password"
+                       label="Password"
+                       type="password"
+                       placeholder="password"
+                       value={input.password}
+                       onChange={handleChange}
+                   />
+
+                   <input
+                       id="password2"
+                       name="password2"
+                       label="Confirm password"
+                       type="password"
+                       placeholder="confirm password"
+                       value={input.password2}
+                       onChange={handleChange}
+                   />
+
+                   <SignInButton>
+                     Register
+                   </SignInButton>
+            </LoginForm>
+          </LoginFormParent>
+          <RegisterBottomLinks>
           <Link to="/login">
-          {"Already have an account? Login In"}
-        </Link>
-        </RegisterFormParent>
-      </RegisterContainer>
-
+            {"Already have an account? Login In"}
+          </Link>
+          </RegisterBottomLinks>
+        </LoginContainer>
+      </>
   )
 }
 

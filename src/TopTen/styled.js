@@ -1,19 +1,41 @@
 import styled from 'styled-components'
 
 export const TopTenMasterContainer = styled.div`
-border:1px solid black;
+border-top:10px solid #E67271;
 display:flex;
 justify-content:center;
 flex-direction:column;
-
 `;
 
 
 export const TopTenTitle = styled.div`
-border:1px solid red;
+margin:3% 0%;
 display:flex;
-justify-content:center;
+align-content:center;
+align-items:center;
+flex-direction:column
+
+        button{
+        margin-top:1%;
+        width:10%;
+        font-weight: 600;
+        text-align: center;
+        padding: 8px 16px;
+        border: 1px solid black;
+        background: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-family: ‘Rubik’, sans-serif;
+        font-size: 1.5rem;
+        outline:none; 
+        text-decoration:none;
+        &:hover {
+            background-color: #E67271;
+            color: white;
+            border:1px solid white;
+        }
 `;
+
 
 
 export const TopTenCardContainer =  styled.div`
