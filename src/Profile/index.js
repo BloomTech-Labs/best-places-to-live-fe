@@ -2,8 +2,7 @@ import React, { Fragment } from 'react';
 import Navigation from '../Navigation';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { MyBody, ProfileColors, UserView, UserViewMenu, SideNav, UserViewContent, UserViewFormContainer,
-    HeadingSecondaryMaBtMd, FormGroup, FormGroupMaBtMd, FormGroupFormPhotoUpload, FormUserPhoto, FormGroupRight, Button, SideNavLi, SideNavLiA, Icon  } from './styled';
-
+    HeadingSecondary, FormUserData, FormGroup, FormGroupMaBtMd, FormGroupFormPhotoUpload, Image, FormInputUpload, FormUploadLabel, FormGroupRight, Button, SideNavLi, SideNavLiA, Icon, Label, Input, Line  } from './styled';
 
 const Profile = () => {
     return(
@@ -35,33 +34,52 @@ const Profile = () => {
                  </UserViewMenu>
                  <UserViewContent>
                      <UserViewFormContainer>
-                        <HeadingSecondaryMaBtMd>
-                            Your Profile Settings
-                        </HeadingSecondaryMaBtMd>
-                     </UserViewFormContainer>
-                     <FormGroup>
-                         <form action="">
-                        <label class="form-label" for="name">Name</label>
-                        <input class="form-input" id="name" type="text" value="Richard Branson" required name="name"/>
-                        </form>
-                     </FormGroup>
-                     <FormGroupMaBtMd>
-                        <form action="">
-                            <label class="form-label" for="email">Email address</label>
-                            <input class="form-input" id="email" type="email" value="richard@virgin.com" required name="email"/>
-                        </form>
-                     </FormGroupMaBtMd>
-                     <FormGroupFormPhotoUpload>
-                        <FormUserPhoto>
-                          <img src="/img/users/user-14.jpg" alt="User photo" />
-                          <input class="form_upload" id="photo" type="file" accept="image/*" name="photo"/>
-                          <label for="photo">Choose new photo</label>
-                        </FormUserPhoto>
-                     </FormGroupFormPhotoUpload>
-                    <FormGroupRight>
-                            <Button>Save Profile</Button>
-                    </FormGroupRight>
-                 </UserViewContent>
+                        <HeadingSecondary>
+                            Profile Settings
+                        </HeadingSecondary>
+                        <FormUserData>
+                            <FormGroup>
+                                <Label for="name">Name</Label>
+                                <Input id="name" type="text" value="" required name="name" placeholder="Richard Branson"/>
+                            </FormGroup>
+                            <FormGroupMaBtMd>
+                                    <Label for="email">Email address</Label>
+                                    <Input id="email" type="email" value="" required name="email" placeholder="richard@virgin.com"/>
+                            </FormGroupMaBtMd>
+                            <FormGroupFormPhotoUpload>
+                                <Image src="https://www.biography.com/.image/t_share/MTE4MDAzNDEwNDYyNDEwMjU0/sir-richard-branson-9224520-1-402.jpg" />
+                                <FormInputUpload id="photo" type="file" accept="image/*" name="photo"/>
+                                <FormUploadLabel for="photo">Choose new photo</FormUploadLabel>
+                            </FormGroupFormPhotoUpload>
+                            <FormGroupRight>
+                                    <Button>Save Profile</Button>
+                            </FormGroupRight>
+                        </FormUserData>
+                  </UserViewFormContainer>
+                  <Line>&nbsp;</Line>
+                  <UserViewFormContainer>
+                         <HeadingSecondary>
+                            Password Change
+                        </HeadingSecondary>
+                        <FormUserData>
+                            <FormGroup>
+                                <Label for="password-current">Current password</Label>
+                                <Input id="password-current" type="password" placeholder="••••••••" required minlength="8" />
+                            </FormGroup>
+                            <FormGroup>
+                                <Label for="password">New password</Label>
+                                <Input id="password" type="password" placeholder="••••••••" required minlength="8" />
+                            </FormGroup>
+                            <FormGroupMaBtMd>
+                                    <Label for="password-confirm">Confirm password</Label>
+                                    <Input id="password-confirm" type="password" placeholder="••••••••" required minlength="8" />
+                            </FormGroupMaBtMd>
+                            <FormGroupRight>
+                                    <Button>Save Password</Button>
+                            </FormGroupRight>
+                        </FormUserData>
+                  </UserViewFormContainer>
+              </UserViewContent>
             </UserView>
         </ProfileColors>
        </MyBody>

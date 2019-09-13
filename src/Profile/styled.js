@@ -84,17 +84,46 @@ export const UserViewFormContainer = styled.div`
     padding: 0 8rem;
 `;
 
-export const HeadingSecondaryMaBtMd = styled.h2`
-    max-width: 68rem;
-    margin: 0 auto;
-    padding: 0 8rem;
-    max-width: 68rem;
-    margin: 0 auto;
-    padding: 0 8rem;
+export const HeadingSecondary = styled.h2`
+    font-size: 2.25rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #55c57a;
+    letter-spacing: 0.1rem;
+    line-height: 1.3;
+    display: inline-block;
+    margin-bottom: 3rem;
+`;
+
+export const FormUserData = styled.form`
+
 `;
 
 export const FormGroup = styled.div`
     margin-bottom: 2.5rem;
+`;
+
+export const Label = styled.label`
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+`;
+
+export const Input = styled.input`
+    display: block;
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: inherit;
+    padding: 1.25rem 1.75rem;
+    border: none;
+    width: 100%;
+    background-color: #f2f2f2;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+    border-radius: 4px;
+    box-sizing: border-box;
 `;
 
 export const FormGroupMaBtMd = styled.div`
@@ -103,28 +132,46 @@ export const FormGroupMaBtMd = styled.div`
 
 export const FormGroupFormPhotoUpload = styled.div`
    margin-bottom: 2.5rem;
-   display: -webkit-box;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
     font-size: 1.6rem;
 `;
 
-export const FormUserPhoto = styled.div`
+export const Image = styled.img`
     height: 7.5rem;
     width: 7.5rem;
     border-radius: 50%;
     margin-right: 2rem;
 `;
 
-export const FormGroupRight = styled.div`
-   /* text-align: right !important; */
-   padding: 15% 10%;
+export const FormInputUpload = styled.input`
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
 `;
 
-export const Button = styled.div`
+export const FormUploadLabel = styled.label`
+    color: #55c57a;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid #55c57a;
+    padding: 3px;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    cursor: pointer;
+`;
+
+export const FormGroupRight = styled.div`
+   text-align: right !important;
+`;
+
+export const Button = styled.button`
     padding: 1.25rem 3rem !important;
-    font-size: 1.1rem !important;
+    font-size: 1.4rem !important;
     background-color: #55c57a;
     color: #fff;
     border-radius: 10rem;
@@ -132,9 +179,15 @@ export const Button = styled.div`
     display: inline-block;
     text-decoration: none;
     position: relative;
-    transition: all 0.4s;
     font-weight: 400;
     backface-visibility: hidden;
     border: none;
     cursor: pointer;
+`;
+
+export const Line = styled.div`
+    margin: 6rem 0;
+    width: 100%;
+    height: 1px;
+    background-color: #e0e0e0;
 `;
