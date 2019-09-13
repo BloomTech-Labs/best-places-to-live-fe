@@ -6,7 +6,8 @@ import Register from '../Authorization/register';
 import TopTen from "../TopTen";
 import UserList from "../UserList"
 import GoogleMap from "../GoogleMap";
-import Profiles from "../Profiles";
+import Profile from "../Profile";
+import DashboardMenu from '../Dashboard';
 
 const Routes = () => {
   return (
@@ -18,7 +19,9 @@ const Routes = () => {
       <Route path='/Maps' component={GoogleMap}/>
       {/* <Route path='/multi' component={MultiStepForm} /> */}
       <Route path='/Userlist'  render={props => <UserList {...props}/>} />
-      <Route path='/profile'  component={Profiles} />
+      <Route path='/Profile'  component={Profile} />
+      <Route path='/Dashboard'  component={DashboardMenu} />
+      {/* <Route path='/'  component={} />  */}
       {/* <Route path='/'  component={} />  */}
       {/* <Route path='/'  component={} />  */}
     </>

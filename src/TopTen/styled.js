@@ -1,20 +1,41 @@
-import React from 'react-router-dom'
 import styled from 'styled-components'
 
 export const TopTenMasterContainer = styled.div`
-border:1px solid black;
+border-top:10px solid #E67271;
 display:flex;
 justify-content:center;
 flex-direction:column;
-
 `;
 
 
 export const TopTenTitle = styled.div`
-border:1px solid red;
+margin:3% 0%;
 display:flex;
-justify-content:center;
+align-content:center;
+align-items:center;
+flex-direction:column
+
+        button{
+        margin-top:1%;
+        width:10%;
+        font-weight: 600;
+        text-align: center;
+        padding: 8px 16px;
+        border: 1px solid black;
+        background: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-family: ‘Rubik’, sans-serif;
+        font-size: 1.5rem;
+        outline:none; 
+        text-decoration:none;
+        &:hover {
+            background-color: #E67271;
+            color: white;
+            border:1px solid white;
+        }
 `;
+
 
 
 export const TopTenCardContainer =  styled.div`
@@ -55,79 +76,3 @@ align-items:center;
     text-align: center;
 }
 `;
-
-
-// .searchByActivity{
-//     margin: 8% 4%;
-//
-//     div{
-//
-//         @media @phone{
-//             text-align: center;
-//         }
-//     }
-//
-// .categoryContainer{
-//         margin: 4% 0%;
-//
-//     .categoryTitle{
-//             padding: 2% 0 2% 2%;
-//
-//             @media @phone{
-//                 text-align: center;
-//             }
-//         }
-//
-//     .triPanelBox {
-//         .flex-box(row, wrap);
-//         .custom-layout(space-evenly, center);
-//
-//         .panel {
-//                 height: 348px;
-//                 width: 292px;
-//                 position: relative;
-//
-//                 @media @phone {
-//                     padding: 2% 0%;
-//                 }
-//
-//                     div {
-//                     position: absolute;
-//                     background-color: rgba(255, 255, 255, 0.7);
-//                     bottom: 0.01rem;
-//                     width: 100%;
-//                     height: 10%;
-//                 }
-//
-//                     p {
-//                     font-weight: 500;
-//                     font-size: @card-title-text;
-//                     text-align: center;
-//                 }
-//
-//                     img {
-//                     width: 100%;
-//                     height: 100%;
-//                     object-fit: cover;
-//                     border-radius: 5px;
-//                 }
-//             }
-//
-//         .lastPanel {
-//                 @media @desktop {
-//                     display: none;
-//                 }
-//             }
-//         }
-//     }
-// }
-
-
-
-
-///////////////////////////////////////////
-
-{/*<div className="panel lastPanel container">*/}
-{/*    <img src="design-files/shea-rouda-471295-unsplash.jpg">*/}
-{/*        <div><p>Downtown Denver</p></div>*/}
-{/*</div>*/}

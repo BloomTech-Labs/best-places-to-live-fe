@@ -1,36 +1,34 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {NavBar, NavLinks, NavBtn} from './styled'
-
+import { NavBar, NavBtn, LogoBox, Header } from "./styled";
+import moving from "../images/LMHiconcopy.png";
 
 export default function Navigation() {
-
   return (
-        <div className='Container'>
-            <NavBar primary>
-              <NavLinks>
-                  <Link to="/">
-                      <NavBtn  styleid="homeButton">Home</NavBtn>
-                  </Link>
+    <div>
+    <Header>
+      <NavBar>
+          <Link to="/">
+            <LogoBox src={moving}/>
+          </Link>
 
-                  <Link to="/Userlist">
-                      <NavBtn>Users</NavBtn>
-                  </Link>
+          <Link to="/Userlist">
+            <NavBtn>Users</NavBtn>
+          </Link>
 
-                  <Link to="/Login" >
-                      <NavBtn id="loginButton">Login</NavBtn>
-                  </Link>
+          <Link to="/Login">
+            <NavBtn id="loginButton">Login</NavBtn>
+          </Link>
 
-                  <Link to="/Register" >
-                      <NavBtn id="registerButton">Sign Up</NavBtn>
-                  </Link>
+          <Link to="/Register">
+            <NavBtn id="registerButton">SignUp</NavBtn>
+          </Link>
 
-                  <Link to ='/Maps'>
-                      <NavBtn id="mapsButton">Maps</NavBtn>
-                  </Link>
-
-            </NavLinks>
-            </NavBar>
-        </div>
+          <Link to="/Maps">
+              <NavBtn id="registerButton">Maps</NavBtn>
+          </Link>
+      </NavBar>
+  </Header>
+  </div>
   );
 }

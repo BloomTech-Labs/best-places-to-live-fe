@@ -4,7 +4,7 @@ import { MyBody, ProfileColors, UserView, UserViewMenu, SideNav, UserViewContent
     HeadingSecondaryMaBtMd, FormGroup, FormGroupMaBtMd, FormGroupFormPhotoUpload, FormUserPhoto, FormGroupRight, Button, SideNavLi, SideNavLiA  } from './styled';
 
 
-const Profiles = () => {
+const Profile = () => {
     return(
         <div>
             <Navigation />
@@ -75,4 +75,4 @@ const Profiles = () => {
     )
 };
 
-export default Profiles;
+export default Profile;

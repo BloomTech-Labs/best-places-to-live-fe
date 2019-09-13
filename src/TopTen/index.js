@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { TopTenMasterContainer,TopTenTitle, TopTenCardContainer, } from './styled';
 import TopTenCards from "./TopTenCards";
+import { proxy } from '../App/constants';
 
 
 
@@ -14,7 +15,7 @@ const TopTen = () => {
   useEffect(() => {
     const fetchTopTen = () => {
       axios
-        .get("/city/topten-cost-of-living/")
+        .get(`${proxy}/city/topten-cost-of-living/`)
         .then(res => {
           settopTenList(res.data.cities);
         })
@@ -30,11 +31,7 @@ const TopTen = () => {
     <TopTenMasterContainer>
       <TopTenTitle>
         <h1>Top Cities</h1>
-        <button
-          aria-controls="customized-menu"
-          aria-haspopup="true"
-          variant="contained"
-          color="primary">
+        <button>
           Filter
         </button>
       </TopTenTitle>
