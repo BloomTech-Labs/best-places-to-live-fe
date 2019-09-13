@@ -45,13 +45,13 @@ export const SideNav = styled.div`
 `;
 
 
-export const SideNavLi = styled.div`
+export const SideNavLi = styled.li`
     margin: 1rem 0;
     border-left: 0 solid #fff;
     transition: all 0.3s;
 `;
 
-export const SideNavLiA = styled.div`
+export const SideNavLiA = styled.a`
     padding: 1rem 4rem;
     display: -webkit-box;
     display: flex;
@@ -60,9 +60,16 @@ export const SideNavLiA = styled.div`
     color: #fff;
     font-size: 1.5rem;
     text-transform: uppercase;
-    font-weight: 400;
+    /* font-weight: 400; */
     text-decoration: none;
     transition: all 0.3s;
+`;
+
+export const Icon = styled.div`
+    height: 1.9rem;
+    width: 1.9rem;
+    fill: #f7f7f7;
+    margin-right: 2rem;
 `;
 
 export const UserViewContent = styled.div`

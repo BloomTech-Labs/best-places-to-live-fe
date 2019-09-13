@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
 import Navigation from '../Navigation';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import { MyBody, ProfileColors, UserView, UserViewMenu, SideNav, UserViewContent, UserViewFormContainer,
-    HeadingSecondaryMaBtMd, FormGroup, FormGroupMaBtMd, FormGroupFormPhotoUpload, FormUserPhoto, FormGroupRight, Button, SideNavLi, SideNavLiA  } from './styled';
+    HeadingSecondaryMaBtMd, FormGroup, FormGroupMaBtMd, FormGroupFormPhotoUpload, FormUserPhoto, FormGroupRight, Button, SideNavLi, SideNavLiA, Icon  } from './styled';
 
 
 const Profile = () => {
@@ -14,28 +15,21 @@ const Profile = () => {
                  <UserViewMenu>
                      <SideNav>
                       <SideNavLi>
-                        <li>
-                             <SideNavLiA as="a" href="#">Profile
+                             <SideNavLiA as="a" href="#"> <Icon><i class="far fa-user"></i></Icon>
+                                Profile
                              </SideNavLiA>
-                        </li>
                        </SideNavLi>
                        <SideNavLi>
-                        <li>
-                            <SideNavLiA as="a" href="#">Saved Cities
+                            <SideNavLiA as="a" href="#"><Icon><i class="far fa-star"></i></Icon>Saved Cities
                            </SideNavLiA>
-                        </li>
                        </SideNavLi>
                        <SideNavLi>
-                        <li>
-                            <SideNavLiA as="a" href="#">Messages
+                            <SideNavLiA as="a" href="#"><Icon><i class="far fa-comment-alt"></i></Icon>Messages
                            </SideNavLiA>
-                        </li>
                        </SideNavLi>
                        <SideNavLi>
-                        <li>
-                            <SideNavLiA as="a" href="#">City Specialist
+                            <SideNavLiA as="a" href="#"><Icon><i class="fas fa-city"></i></Icon>Become a City Specialist
                             </SideNavLiA>
-                        </li>
                        </SideNavLi>
                      </SideNav>
                  </UserViewMenu>
