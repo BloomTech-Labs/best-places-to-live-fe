@@ -19,7 +19,7 @@ const Routes = () => {
       <Route path='/Maps' component={GoogleMap}/>
       {/* <Route path='/multi' component={MultiStepForm} /> */}
       <Route path='/Userlist'  render={props => <UserList {...props}/>} />
-      <Route path='/Profile'  component={Profile} />
+      {/* <Route path='/Profile'  component={Profile} /> */}
       <Route path='/Dashboard'  component={DashboardMenu} />
       {/* <Route path='/'  component={} />  */}
       {/* <Route path='/'  component={} />  */}
