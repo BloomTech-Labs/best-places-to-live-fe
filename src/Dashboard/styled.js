@@ -35,7 +35,7 @@ color: #1F252E;
 
 // for the component being rendered by the switch case
 export const ComponentBox = styled.div`
-width: 20%;
+width: 50%;
 margin-left: 20%;
 `;
 
@@ -184,7 +184,7 @@ export const SideNavLi = styled.li`
     transition: all 0.3s;
 `;
 
-export const SideNavLiA = styled.a`
+export const SideNavLiA = styled.div`
     padding: 1rem 4rem;
     display: -webkit-box;
     display: flex;
@@ -196,6 +196,12 @@ export const SideNavLiA = styled.a`
     /* font-weight: 400; */
     text-decoration: none;
     transition: all 0.3s;
+
+    a {
+    text-Decoration: none;
+    margin-left: 10%;
+    color: #fff;
+  }
 `;
 
 export const Icon = styled.div`
