@@ -25,13 +25,11 @@ import {
   Input,
   Line
 } from './styled';
-import PasswordSettings from './passwordSettings';
 
-const Profile = () => {
+const PasswordSettings = () => {
   const [input, setInput] = useState({
-    name: '',
-    email: '',
-    password: ''
+    currentPassword: '',
+    newPassword: ''
   });
 
   const handleChange = event => {
@@ -57,51 +55,46 @@ const Profile = () => {
   };
 
   return (
-    <UserViewFormContainer>
-      <HeadingSecondary>Profile Settings</HeadingSecondary>
+    <div>
+      <Line />
+      <HeadingSecondary>Password Change</HeadingSecondary>
       <FormUserData>
         <FormGroup>
-          <Label for='name'>Name</Label>
+          <Label for='password-current'>Current password</Label>
           <Input
-            id='name'
-            type='text'
-            value={input.name}
-            onChange={handleChange}
+            id='password-current'
+            type='password'
+            placeholder='••••••••'
             required
-            name='name'
-            placeholder='Richard Branson'
+            minlength='8'
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label for='password'>New password</Label>
+          <Input
+            id='password'
+            type='password'
+            placeholder='••••••••'
+            required
+            minlength='8'
           />
         </FormGroup>
         <FormGroupMaBtMd>
-          <Label for='email'>Email address</Label>
+          <Label for='password-confirm'>Confirm password</Label>
           <Input
-            id='email'
-            type='email'
-            value={input.email}
-            a
-            onChange={handleChange}
+            id='password-confirm'
+            type='password'
+            placeholder='••••••••'
             required
-            name='email'
-            placeholder='richard@virgin.com'
+            minlength='8'
           />
         </FormGroupMaBtMd>
-        <FormGroupFormPhotoUpload>
-          <Image src='https://www.biography.com/.image/t_share/MTE4MDAzNDEwNDYyNDEwMjU0/sir-richard-branson-9224520-1-402.jpg' />
-          <FormInputUpload
-            id='photo'
-            type='file'
-            accept='image/*'
-            name='photo'
-          />
-          <FormUploadLabel for='photo'>Choose new photo</FormUploadLabel>
-        </FormGroupFormPhotoUpload>
         <FormGroupRight>
-          <Button>Save Profile</Button>
+          <Button>Save Password</Button>
         </FormGroupRight>
       </FormUserData>
-      <PasswordSettings />
-    </UserViewFormContainer>
+    </div>
   );
 };
 
-export default Profile;
+export default PasswordSettings;
