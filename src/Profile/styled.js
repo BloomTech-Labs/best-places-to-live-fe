@@ -14,6 +14,7 @@ export const MyBody = styled.body`
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-direction: column;
+    padding-top: 4.1%;
 `;
 
 export const ProfileColors = styled.main`
@@ -21,6 +22,7 @@ export const ProfileColors = styled.main`
     -webkit-box-flex: 1;
     flex: 1;
     position: relative;
+    border: 1px solid red;
 `;
 
 export const UserView = styled.div`
@@ -32,16 +34,20 @@ export const UserView = styled.div`
     overflow: hidden;
     box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.07);
     display: flex;
+    border: 1px solid red;
 `;
 
 export const UserViewMenu = styled.nav`
     flex: 32rem 0 0;
     background-image: linear-gradient(to right bottom, #7dd56f, #28b487);
     padding: 4rem 0;
+    border: 3px solid purple;
 `;
 
 export const SideNav = styled.div`
     list-style: none;
+    border: 1px solid brown;
+
 `;
 
 
@@ -49,6 +55,7 @@ export const SideNavLi = styled.li`
     margin: 1rem 0;
     border-left: 0 solid #fff;
     transition: all 0.3s;
+    border: 3px solid yellow;
 `;
 
 export const SideNavLiA = styled.a`
@@ -76,12 +83,16 @@ export const UserViewContent = styled.div`
    -webkit-box-flex: 1;
     flex: 1;
     padding: 7rem 0;
+    border: 3px solid yellow;
+
 `;
 
 export const UserViewFormContainer = styled.div`
     max-width: 68rem;
     margin: 0 auto;
     padding: 0 8rem;
+    border: 3px solid orange;
+
 `;
 
 export const HeadingSecondary = styled.h2`

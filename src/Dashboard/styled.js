@@ -10,7 +10,7 @@ flex-direction: row;
 height: 100%;
 display: flex;
 flex-direction: row;
-
+border: 3px solid yellow;
 `;
 
 export const MenuBox = styled.div`
@@ -24,6 +24,8 @@ font-size: 1.5rem;
 justify-content: space-around;
 align-items: flex-start;
 color: #1F252E;
+border: 3px solid purple;
+
 
   a {
     text-Decoration: none;
