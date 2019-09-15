@@ -12,7 +12,6 @@ const index = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
 
     useEffect(() => {
-        
         try {
             logged = axios.get('https://stagebe.letsmovehomie.com/auth/validation')
             console.log(logged)
@@ -20,8 +19,7 @@ const index = () => {
         } catch (err) {
             console.log(`unable to validate login: ${err}`)
         }
-        
-    })
+    }, [])
 
     if(isLoggedIn){
         return <Home />
