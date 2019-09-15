@@ -128,9 +128,10 @@ export const CardDetail = styled.div`
   }
 `;
 
+// profileSettings and passwordSettings
 export const MyBody = styled.body`
   font-size: 62.5%;
-  line-height: 2.6;
+  line-height: 2;
   font-weight: 300;
   font-family: 'Lato', sans-serif;
   color: #777;
@@ -321,4 +322,14 @@ export const Line = styled.div`
   width: 100%;
   height: 1px;
   background-color: #e0e0e0;
+`;
+
+//  City Specialist Page
+export const sectionDescription = styled.div`
+  padding: 0 8vw;
+  padding-top: 14vw;
+  padding-bottom: calc(1vw + var(--section-rotate));
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
 `;
