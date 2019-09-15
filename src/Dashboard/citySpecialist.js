@@ -71,7 +71,7 @@ const Specialist = () => {
           onChange={handleChange}
         />
 
-        <button type='submit'>Save</button>
+        <button type='submit'>Submit</button>
       </FormBox>
     </ProfileBox>
   );
