@@ -5,11 +5,7 @@ import { TopTenCard, CardDetail} from "./styled"
 const TopTenCards = props => {
   return (
     <TopTenCard>
-        <img
-          component="img"
-          alt="City Image"
-          title="City Image"
-          src={props.card.photo}/>
+        <img alt="Card-Image"src={props.card.photo}/>
           <CardDetail>
 
               <p>{props.card.name}</p>

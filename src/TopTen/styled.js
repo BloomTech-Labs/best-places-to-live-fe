@@ -44,9 +44,7 @@ flex-direction:row;
 flex-wrap:wrap;
 justify-content:space-evenly;
 align-content:center;
-
 `;
-
 
 
 export const TopTenCard = styled.div`
@@ -54,13 +52,22 @@ height: 348px;
 width: 292px;
 position: relative;
 margin-top:2%;
+transform-style: preserve-3d;
+transition: all .7s linear;
+backface-visibility: hidden;
         img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 5px;
         }
+
+        &:hover{
+        transform:rotateY(180deg);
+       }
 `;
+
+export const TopTenBack
 
 export const CardDetail = styled.div`
 position: absolute;
