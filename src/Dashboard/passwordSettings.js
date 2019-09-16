@@ -1,26 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import {
-  MyBody,
-  Main,
-  UserView,
-  UserViewMenu,
-  SideNav,
-  UserViewContent,
-  UserViewFormContainer,
   HeadingSecondary,
   FormUserData,
   FormGroup,
   FormGroupMaBtMd,
-  FormGroupFormPhotoUpload,
-  Image,
-  FormInputUpload,
-  FormUploadLabel,
   FormGroupRight,
   Button,
-  SideNavLi,
-  SideNavLiA,
-  Icon,
   Label,
   Input,
   Line
