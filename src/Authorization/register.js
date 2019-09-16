@@ -6,6 +6,10 @@ import Navigation from '../Navigation'
 import Step1 from './step1'
 import Step2 from './step2'
 import Step3 from './step3'
+import axios from 'axios';
+import { Link } from "react-router-dom";
+import {LoginImg, LoginContainer,LoginFormParent,LoginForm,RegisterBottomLinks, SignInButton} from "./styled";
+import Icon from "../images/LMHiconcopy.png";
 
 
 const Register = () => {
@@ -74,5 +78,74 @@ const Register = () => {
             return setStep(0)
     }
 }
+//   return (
+//       <>
+//         <LoginImg />
 
-export default Register
+//         <LoginContainer>
+
+//           <LoginFormParent>
+//             <Link to="/">
+//               <img src={Icon}/>
+//             </Link>
+
+//             <h1>Sign Up</h1>
+
+//             <LoginForm className='' onSubmit={handleSubmit}>
+
+//                    <input
+//                        id="name"
+//                        name="name"
+//                        label="name"
+//                        type="text"
+//                        placeholder="name"
+//                        value={input.name}
+//                        onChange={handleChange}
+//                    />
+
+//                    <input
+//                        id="email"
+//                        name="email"
+//                        label="Email"
+//                        type="email"
+//                        placeholder="email"
+//                        value={input.email}
+//                        onChange={handleChange}
+//                    />
+
+//                    <input
+//                        id="password"
+//                        name="password"
+//                        label="Password"
+//                        type="password"
+//                        placeholder="password"
+//                        value={input.password}
+//                        onChange={handleChange}
+//                    />
+
+//                    <input
+//                        id="password2"
+//                        name="password2"
+//                        label="Confirm password"
+//                        type="password"
+//                        placeholder="confirm password"
+//                        value={input.password2}
+//                        onChange={handleChange}
+//                    />
+
+//                    <SignInButton>
+//                      Register
+//                    </SignInButton>
+//             </LoginForm>
+//           </LoginFormParent>
+//           <RegisterBottomLinks>
+//           <Link to="/login">
+//             {"Already have an account? Login In"}
+//           </Link>
+//           </RegisterBottomLinks>
+//         </LoginContainer>
+//       </>
+//   )
+// }
+
+// export default Register

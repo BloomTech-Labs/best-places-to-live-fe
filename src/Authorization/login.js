@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import {LoginContainer,
+        LoginFormParent,
+        LoginForm,
+        FooterButtons,
+        LoginImg,
+        SignInButton,
+        GoogleButton} from "./styled";
+import Icon from '../images/LMHiconcopy.png'
 
 const Login = props => {
   const [input, setInput] = useState({
@@ -30,14 +38,23 @@ const Login = props => {
 
   const googleAuth = () =>{
     window.location = "https://stagebe.letsmovehomie.com/auth/login"
-  }
+  };
 
 
   return (
-    <div className='mainBox'>
-          <h1>Sign In</h1>
+      <>
+        <LoginImg />
 
-        <form className='' onSubmit={handleSubmit}>
+    <LoginContainer>
+
+      <LoginFormParent>
+        <Link to="/">
+          <img src={Icon}/>
+        </Link>
+
+          <h1>Log In</h1>
+
+        <LoginForm onSubmit={handleSubmit}>
           <input
             id="email"
             name="email"
@@ -65,27 +82,34 @@ const Login = props => {
           {/*    label="Remember me"*/}
           {/*/>*/}
 
-          <button type="submit" className=''>
+          <SignInButton type="submit" className=''>
             Sign In
-          </button>
-          <button onClick={googleAuth}>
-            Google log-in
-          </button>
-          <div>
-            <div>
+          </SignInButton>
+          <GoogleButton onClick={googleAuth}><i className="fab fa-google-plus-g">
+            </i>login
+          </GoogleButton>
+
+            <FooterButtons>
+
               <Link href="#">
                 Forgot password?
               </Link>
-            </div>
-            <div>
-              <Link href="/register">
+
+
+
+
+              <Link to="/register">
                 {"Don't have an account? Sign Up"}
               </Link>
-            </div>
-          </div>
-        </form>
-      </div>
 
+            </FooterButtons>
+
+        </LoginForm>
+
+      </LoginFormParent>
+
+    </LoginContainer>
+</>
   );
 };
 

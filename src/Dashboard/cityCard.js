@@ -1,10 +1,10 @@
 import React from "react";
-import { TopTenCard, CardDetail} from "./styled"
+import { CityCard, CardDetail} from "./styled"
 
 
-const TopTenCards = props => {
+const CityCards = props => {
   return (
-    <TopTenCard>
+    <CityCard>
         <img
           component="img"
           alt="City Image"
@@ -21,8 +21,8 @@ const TopTenCards = props => {
               <p>{props.card.avg_commute_time}</p>
 
         </CardDetail>
-    </TopTenCard>
+    </CityCard>
   );
 };
 
-export default TopTenCards;
+export default CityCards;
