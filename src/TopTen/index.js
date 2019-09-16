@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { TopTenMasterContainer,TopTenTitle, TopTenCardContainer} from './styled';
 import TopTenCards from "./TopTenCards";
-import BackSide from "./Back-side";
+import TopTenBack from "./Back-side";
 import { proxy } from '../App/constants';
 
 
@@ -10,8 +10,6 @@ import { proxy } from '../App/constants';
 
 const TopTen = () => {
   const [topTenList, settopTenList] = useState([]);
-
-
 
   useEffect(() => {
     const fetchTopTen = () => {
@@ -39,10 +37,12 @@ const TopTen = () => {
       <TopTenCardContainer>
             {topTenList
               ? topTenList.map(state => (
-                    <TopTenCards key={state.id} card={state} />
+                  <TopTenBack data={state}/>,
+                  <TopTenCards key={state.id} card={state} />
                 ))
               : ""}
       </TopTenCardContainer>
+
     </TopTenMasterContainer>
   );
 };
