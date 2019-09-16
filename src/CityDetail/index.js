@@ -9,9 +9,9 @@ import 'dotenv'
 
 
 
-const CityDetail = props => {
+const CityDetail = props  => {
 
-    const [city, setCity] = useState({})
+    const [city, setCity] = useState(null)
     // useEffect((idParam) => {
     //         console.log(idParam)
     //         axios.post('https://stagebe.letsmovehomie.com/city/', {'ids':[idParam]})
@@ -26,12 +26,12 @@ const CityDetail = props => {
     //         })
     // }, [])
 
-    const fun = (idParam = '5d7c3420d62bb00e6c516a04') => {
-        axios.post('https://stagebe.letsmovehomie.com/city/', {'ids':[idParam]})
+    const fun = async (idParam = '5d7c3420d62bb00e6c516a04') => {
+        axios.post('http://localhost:443/city/', {'ids': [idParam]})
         .then(
             (res) =>  {
-                setCity(res.data[0])
-                console.log(res)
+                setCity(res.data.data[0])
+                console.log(res);
             }
         )
         .catch(err  => {
@@ -39,20 +39,21 @@ const CityDetail = props => {
         })
     }
     
-    fun()
+    if(!city)fun().then(() => console.log("hello"))
 
     return (
         <>
             <Navigation />
             <HomeSearchBar />
             <div>
-                {city ? Object.keys(city).map((k) => {
+            {city ? Object.keys(city).map((k) => {
                     console.log(k)
                     if (k === 'location') {
                         return `${k}`
                     }
-                    return   `${k} : ${city[k]}` 
-                }) : <h3>Naaah!!</h3> }
+                    return   <div>{`${k} : ${city[k]}`}</div>
+                }) : <h3>Naaah!!</h3> 
+            }
             </div>
             
            
