@@ -5,15 +5,15 @@ import { Link } from 'react-router-dom';
 
 export class User extends Component {
   componentDidMount() {
-    console.log("WE ARE GETTIBNG THE USER")
+    console.log('WE ARE GETTIBNG THE USER');
     this.props.getUser(this.props.match.params.login);
   }
 
   static propTypes = {
     loading: PropTypes.bool,
     user: PropTypes.object.isRequired,
-    getUser: PropTypes.func.isRequired,
-  }
+    getUser: PropTypes.func.isRequired
+  };
 
   render() {
     const {
@@ -30,9 +30,9 @@ export class User extends Component {
       hireable
     } = this.props.user;
 
-    const { loading, repos } = this.props;
+    const { loading } = this.props;
 
-    if(loading) return <Spinner />
+    if (loading) return <Spinner />;
 
     return (
       <Fragment>
@@ -42,16 +42,19 @@ export class User extends Component {
         Specialist: {''}
         {!hireable ? (
           <i className='fas fa-check text-success' />
-         ) : ( <i className='fas
-        fa-times-circle text-danger' />
+        ) : (
+          <i
+            className='fas
+        fa-times-circle text-danger'
+          />
         )}
-        <div className="card grid-2">
-          <div className="all-center">
+        <div className='card grid-2'>
+          <div className='all-center'>
             <img
               src={avatar_url}
               className='round-img'
-              alt=""
-              style={{width: '150px'}}
+              alt=''
+              style={{ width: '150px' }}
             />
             <h1>{name}</h1>
             <p>Location: {location}</p>
@@ -68,34 +71,38 @@ export class User extends Component {
             </a>
             <ul>
               <li>
-                {login && <Fragment>
-                  <strong>Username: </strong> {login}
-                  </Fragment> }
+                {login && (
+                  <Fragment>
+                    <strong>Username: </strong> {login}
+                  </Fragment>
+                )}
               </li>
 
               <li>
-                {company && <Fragment>
-                  <strong>Company:</strong> {company}
-                  </Fragment> }
+                {company && (
+                  <Fragment>
+                    <strong>Company:</strong> {company}
+                  </Fragment>
+                )}
               </li>
 
               <li>
-                {blog && <Fragment>
-                  <strong>Website: </strong> {blog}
-                  </Fragment> }
+                {blog && (
+                  <Fragment>
+                    <strong>Website: </strong> {blog}
+                  </Fragment>
+                )}
               </li>
             </ul>
           </div>
         </div>
-
-        <div className="card text-center">
-          <div className="badge badge-primary">Followers: {followers} </div>
-          <div className="badge badge-success">Following: {following} </div>
+        <div className='card text-center'>
+          <div className='badge badge-primary'>Followers: {followers} </div>
+          <div className='badge badge-success'>Following: {following} </div>
         </div>
-
       </Fragment>
     );
   }
 }
 
-export default User
+export default User;

@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import {
-  MyBody,
-  Main,
-  UserView,
-  UserViewMenu,
-  SideNav,
-  UserViewContent,
   UserViewFormContainer,
   HeadingSecondary,
   FormUserData,
@@ -18,12 +12,8 @@ import {
   FormUploadLabel,
   FormGroupRight,
   Button,
-  SideNavLi,
-  SideNavLiA,
-  Icon,
   Label,
-  Input,
-  Line
+  Input
 } from './styled';
 import PasswordSettings from './passwordSettings';
 
