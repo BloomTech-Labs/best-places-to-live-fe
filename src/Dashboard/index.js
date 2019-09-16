@@ -1,30 +1,83 @@
-import React from "react";
-import { Link, Route } from "react-router-dom";
-import Navigation from "../Navigation";
-import { MenuBox, UserInfoBox, ContentBox, ComponentBox} from "./styled";
-import SavedCities from "./savedCities";
-import Profile from "./profileSettings";
-import Specialist from "./citySpecialist";
+import React, { useState } from 'react';
+import { Link, Route } from 'react-router-dom';
+import Navigation from '../Navigation';
+import {
+  ComponentBox,
+  MyBody,
+  Main,
+  UserView,
+  UserViewMenu,
+  SideNav,
+  UserViewContent,
+  UserViewFormContainer,
+  SideNavLi,
+  SideNavLiA,
+  Icon
+} from './styled';
+import SavedCities from './savedCities';
+import Profile from './profileSettings';
+import Specialist from './citySpecialist';
 
 const DashboardMenu = ({ match }) => {
+  const [user, setUser] = useState('Richard');
+
   return (
     <div>
       <Navigation />
-      <UserInfoBox></UserInfoBox>
-      <ContentBox>
-        <MenuBox>
-          <Link to={`${match.url}/Profile`}>Profile</Link>
-          <Link to={`${match.url}/SavedCities`}>Saved Cities</Link>
-          <Link to={`${match.url}/Specialist`}>Become a Specialist</Link>
-          <Link to={`${match.url}/Messages`}>Messages</Link>
-        </MenuBox>
-        <Route path={`${match.path}/:optionId`} component={Option} />
-        <Route
-          exact
-          path={match.path}
-          render={() => <h3>Please select an option.</h3>}
-        />
-      </ContentBox>
+      <MyBody>
+        <Main>
+          <UserView>
+            <UserViewMenu>
+              <SideNav>
+                <SideNavLi>
+                  <SideNavLiA as='a' href='#'>
+                    {' '}
+                    <Icon>
+                      <i class='far fa-user'></i>
+                    </Icon>{' '}
+                    <Link to={`${match.url}/Profile`}>Profile</Link>
+                  </SideNavLiA>
+                  <SideNavLiA as='a' href='#'>
+                    {' '}
+                    <Icon>
+                      <i class='far fa-star'></i>
+                    </Icon>{' '}
+                    <Link to={`${match.url}/SavedCities`}>Saved Cities</Link>
+                  </SideNavLiA>
+                  <SideNavLiA as='a' href='#'>
+                    {' '}
+                    <Icon>
+                      <i class='far fa-comment-alt'></i>
+                    </Icon>{' '}
+                    <Link to={`${match.url}/Specialist`}>
+                      Become a Specialist
+                    </Link>
+                  </SideNavLiA>
+                  <SideNavLiA as='a' href='#'>
+                    {' '}
+                    <Icon>
+                      <i class='fas fa-city'></i>
+                    </Icon>
+                    <Link to={`${match.url}/Messages`}>Messages</Link>
+                  </SideNavLiA>
+                </SideNavLi>
+              </SideNav>
+            </UserViewMenu>
+            <UserViewContent>
+              <Route path={`${match.path}/:optionId`} component={Option} />
+              <Route
+                exact
+                path={match.path}
+                render={() => (
+                  <UserViewFormContainer>
+                    <h3>Welcome {user}</h3>
+                  </UserViewFormContainer>
+                )}
+              />
+            </UserViewContent>
+          </UserView>
+        </Main>
+      </MyBody>
     </div>
   );
 };
@@ -33,13 +86,13 @@ function Option({ match }) {
   let comp;
 
   switch (match.params.optionId) {
-    case "Profile":
+    case 'Profile':
       comp = <Profile />;
       break;
-    case "SavedCities":
+    case 'SavedCities':
       comp = <SavedCities />;
       break;
-    case "Specialist":
+    case 'Specialist':
       comp = <Specialist />;
       break;
     default:
