@@ -4,7 +4,6 @@ import Register from './register'
 import Login from './login'
 import Home from '../Home'
 
-import axios from 'axios'
 
 
 const index = () => {

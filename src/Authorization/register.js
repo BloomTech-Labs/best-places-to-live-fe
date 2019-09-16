@@ -1,15 +1,12 @@
 import React, {useState} from 'react';
 import Navigation from '../Navigation'
-// import axios from 'axios';
-// import { Link } from "react-router-dom";
-
 import Step1 from './step1'
 import Step2 from './step2'
 import Step3 from './step3'
-import axios from 'axios';
-import { Link } from "react-router-dom";
-import {LoginImg, LoginContainer,LoginFormParent,LoginForm,RegisterBottomLinks, SignInButton} from "./styled";
-import Icon from "../images/LMHiconcopy.png";
+// import axios from 'axios';
+// import { Link } from "react-router-dom";
+// import {LoginImg, LoginContainer,LoginFormParent,LoginForm,RegisterBottomLinks, SignInButton} from "./styled";
+// import Icon from "../images/LMHiconcopy.png";
 
 
 const Register = () => {
@@ -148,4 +145,4 @@ const Register = () => {
 //   )
 // }
 
-// export default Register
+export default Register
