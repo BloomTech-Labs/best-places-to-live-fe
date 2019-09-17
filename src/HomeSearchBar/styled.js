@@ -13,6 +13,7 @@ width: 100%;
 display:flex;
 flex-flow: row wrap
 justify-content: center;
+border-radius: 50px:
 `;
 
 export const SearchContainer = styled.span`
@@ -40,42 +41,3 @@ padding-top: 11%;
     text-decoration: none; 
     }
 `;
-
-
-
-
-
-
-//   @media @tablet {
-//       height: 40vh;
-//   }
-
-//   span {
-//       padding-top: 11%;
-//       .flex-box(column, wrap);
-//       .custom-layout(center, center);
-
-//       button {
-//           .join-button(120px, 46px);
-//       }
-//   }
-
-//   #banner-txt{
-//       font-size: @giant-text;
-//       font-weight: 400;
-//       color: white;
-
-//       @media @tablet {
-//           font-size: @medium-text;
-//           font-weight: 400;
-//       }
-//   }
-
-//   #banner-sub-text{
-//       color: whitesmoke;
-
-//       @media @tablet {
-//           font-size: @medium-text;
-//       }
-//   }
-// }
