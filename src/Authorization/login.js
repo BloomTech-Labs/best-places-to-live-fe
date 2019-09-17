@@ -49,7 +49,7 @@ const Login = props => {
 
       <LoginFormParent>
         <Link to="/">
-          <img src={Icon}/>
+          <img alt="Icon" src={Icon}/>
         </Link>
 
           <h1>Log In</h1>

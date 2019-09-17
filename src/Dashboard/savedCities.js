@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { SavedCitiesContainer, SavedCityCardContainer } from './styled';
-import CityCards from './cityCard';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { SavedCitiesContainer, CitiesTitle, SavedCityCardContainer, } from './styled';
+import CityCards from "./cityCard";
 import { proxy } from '../App/constants';
+
 
 const SavedCities = () => {
   const [savedCitiesList, setSavedCitiesList] = useState([]);
+
+
 
   useEffect(() => {
     const fetchSavedCities = () => {
@@ -21,14 +24,15 @@ const SavedCities = () => {
     fetchSavedCities();
   }, []);
 
+
   return (
     <SavedCitiesContainer>
       <SavedCityCardContainer>
-        {savedCitiesList
-          ? savedCitiesList.map(state => (
-              <CityCards key={state.id} card={state} />
-            ))
-          : ''}
+            {savedCitiesList
+              ? savedCitiesList.map(state => (
+                    <CityCards key={state.id} card={state} />
+                ))
+              : ""}
       </SavedCityCardContainer>
     </SavedCitiesContainer>
   );

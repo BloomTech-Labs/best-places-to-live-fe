@@ -29,7 +29,7 @@ const Register = () => {
     event.preventDefault();
     console.log(input)
     axios
-        .post('http://162.243.168.251/users/register', input)
+        .post('https://162.243.168.251/users/register', input)
         .then((response) => {
           console.log(response)
         })
@@ -47,7 +47,7 @@ const Register = () => {
 
           <LoginFormParent>
             <Link to="/">
-              <img src={Icon}/>
+              <img alt="Icon"src={Icon}/>
             </Link>
 
             <h1>Sign Up</h1>

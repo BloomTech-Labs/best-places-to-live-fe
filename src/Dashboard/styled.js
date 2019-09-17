@@ -1,9 +1,6 @@
-import styled from 'styled-components';
-
+import styled from "styled-components";
 // export const MasterDashBox = styled.div``; saving for Main div around DashboardMenu component
-
 export const UserInfoBox = styled.div``;
-
 export const ContentBox = styled.div`
   display: flex;
   flex-direction: row;
@@ -11,7 +8,6 @@ export const ContentBox = styled.div`
   display: flex;
   flex-direction: row;
 `;
-
 export const MenuBox = styled.div`
   height: 300px;
   width: 280px;
@@ -23,29 +19,24 @@ export const MenuBox = styled.div`
   justify-content: space-around;
   align-items: flex-start;
   color: #1f252e;
-
   a {
     text-decoration: none;
     margin-left: 10%;
     color: #1f252e;
   }
 `;
-
 // for the component being rendered by the switch case
 export const ComponentBox = styled.div`
   width: 50%;
   margin-left: 20%;
 `;
-
 // Profile option styling
 export const ProfileBox = styled.div``;
-
 export const FormBox = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-
   input {
     width: 100%;
     padding: 12px;
@@ -59,7 +50,6 @@ export const FormBox = styled.form`
     outline: none;
     text-decoration: none;
   }
-
   button {
     font-weight: 600;
     text-align: center;
@@ -77,7 +67,6 @@ export const FormBox = styled.form`
     }
   }
 `;
-
 // Styling for SavedCities
 export const SavedCitiesContainer = styled.div`
   display: flex;
@@ -86,12 +75,10 @@ export const SavedCitiesContainer = styled.div`
   flex-wrap: wrap;
   width: 500px;
 `;
-
 export const CitiesTitle = styled.div`
   display: flex;
   justify-content: center;
 `;
-
 export const SavedCityCardContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -99,7 +86,6 @@ export const SavedCityCardContainer = styled.div`
   justify-content: space-evenly;
   align-content: center;
 `;
-
 export const CityCard = styled.div`
   height: 20%;
   width: 35%;
@@ -112,7 +98,6 @@ export const CityCard = styled.div`
     border-radius: 5px;
   }
 `;
-
 export const CardDetail = styled.div`
   position: absolute;
   background-color: rgba(255, 255, 255, 0.7);
@@ -127,13 +112,12 @@ export const CardDetail = styled.div`
     text-align: center;
   }
 `;
-
 // profileSettings and passwordSettings
 export const MyBody = styled.body`
   font-size: 62.5%;
   line-height: 2;
   font-weight: 300;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   color: #777;
   padding: 3rem;
   min-height: 100vh;
@@ -191,7 +175,6 @@ export const SideNavLiA = styled.div`
   /* font-weight: 400; */
   text-decoration: none;
   transition: all 0.3s;
-
   a {
     text-decoration: none;
     margin-left: 10%;
@@ -230,7 +213,6 @@ export const HeadingSecondary = styled.h2`
 `;
 
 export const FormUserData = styled.form``;
-
 export const FormGroup = styled.div`
   margin-bottom: 2.5rem;
 `;
