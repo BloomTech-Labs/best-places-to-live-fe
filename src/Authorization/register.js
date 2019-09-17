@@ -47,7 +47,7 @@ const Register = () => {
 
           <LoginFormParent>
             <Link to="/">
-              <img src={Icon}/>
+              <img alt="Icon"src={Icon}/>
             </Link>
 
             <h1>Sign Up</h1>

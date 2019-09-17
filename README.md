@@ -4,80 +4,80 @@
 
 🚫 Each student has a required minimum number of meaningful PRs each week per the rubric. Contributing to docs does NOT count as a PR to meet your weekly requirements.
 
-# 1️⃣ Let's Move Homie
+# 1️⃣ Title of project goes here
 
-1️⃣ You can find the deployed project at https://stagefe.letsmovehomie.com/
+1️⃣ You can find the deployed project at [🚫URL NAME GOES HERE](🚫copy and paste URL here).
 
 ## 4️⃣ Contributors
 
 🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
 
-|                                       [Student 1](https://github.com/)                                        |                                       [Student 2](https://github.com/)                                        |                                       [Student 3](https://github.com/)                                        |                                       [Student 4](https://github.com/)                                        |                                       [Student 5](https://github.com/)                                        |                                       [Student 6](https://github.com/)                                        |                                       [Student 7](https://github.com/)                                        |                                       [Student 8](https://github.com/)                                        |                                       [Student 9](https://github.com/)                                        |                                       [Student 10](https://github.com/)                                        |                                       [Student 11](https://github.com/)                                        |                                       [Student 12](https://github.com/)                                        |
-| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |:-----------------------------------------------------------------------------------------------------------: |:-----------------------------------------------------------------------------------------------------------: |:-----------------------------------------------------------------------------------------------------------: |:-----------------------------------------------------------------------------------------------------------: |:-----------------------------------------------------------------------------------------------------------: |:-----------------------------------------------------------------------------------------------------------: |:-----------------------------------------------------------------------------------------------------------: |
-|                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |
-|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)             |                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
+|                                       [Student 1](https://github.com/)                                        |                                       [Student 2](https://github.com/)                                        |                                       [Student 3](https://github.com/)                                        |                                       [Student 4](https://github.com/)                                        |                                       [Student 5](https://github.com/)                                        |
+| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
+|                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |
+|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)             |
+| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
 
 <br>
 <br>
 
-4️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
+🚫 4️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
 
-Font Awesome
-Axios
-Google-Maps-React
-React
-React-dom
-React-router-dom
-React-scripts
-Styled-components
+![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
+![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
+![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-
-//🚫 more info on using badges [here](https://github.com/badges/shields)
+🚫 more info on using badges [here](https://github.com/badges/shields)
 
 ## Project Overview
 
-1️⃣ https://trello.com/b/l0bCCsVD/labs15-best-places
+1️⃣ [Trello Board](🚫add link to trello board here)
 
-1️⃣ https://www.notion.so/aaa6e045d4294a5ea5d39ed242bfb499?v=b13640a8b200421da503d6fabfd8be8b
+1️⃣ [Product Canvas](🚫add link to product canvas here)
 
-Description:
+1️⃣ [UX Design files](🚫add link to design files here) - 🚫 delete if not applicable
 
-Moving is an inevitable part of life that most people will experience. Often, there's buyer's remorse after the fact for one reason or another. With Let's Move Homie, we strive to get you as much information about a potential place to live in a quick, user friendly manner. Whether you want to look up a specific location you have in mind, or just want to scroll across a map and see how certain cities rank compared to others, Let's Move Homie is here to help.
+🚫 Replace lorem ipsum with a description of your project
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
 ### 4️⃣ Key Features
 
--    Visitors and Users can search a city by address and view it on a map
--    Visitors and Users can browse top 10 popular U.S Cities
--    Visitors can create a user account with a username and password
--    Visitors can search by city and see 4 different statistics (more to come)
--    Visitors can create a profile that saves their favorite cities 
+-    feature one
+-    feature two
+-    feature three
+-    feature four
+-    feature five
 
 ## 1️⃣ Tech Stack
 
 ### Front end built using:
 
-#### React w/Hooks
+#### _Front end framework goes here_
 
 🚫 Why did you choose this framework?
 
--    React is one of the more popular front end frameworks after researching the market
--    React is the framework most of our team was the most comfortable and familiar with
--    Hooks are becoming more popular after our market research and we agreed we wanted to learn this as it was added to the Lambda curriculum after we finished our front end sprints
-
+-    point one
+-    point two
+-    point three
+-    point four
 
 🚫List the rest of the front end features and libraries in the same format as the framework above.
 
-#### Front end deployed to Digital Ocean
+#### Front end deployed to `🚫insert service here`
 
-#### https://github.com/labs15-best-places/backend built using:
+#### [Back end](🚫link to back end repo here) built using:
 
-#### Node.js
+#### 🚫 back end framework goes here
 
--    Node.js was the framework the team was most familiar with
--    After market research, Node.js is the most popular back end framework for newer companies
-
+-    point one
+-    point two
+-    point three
 
 🚫 List the rest of the back end end features and libraries in the same format as the framework above
 
@@ -89,6 +89,11 @@ Moving is an inevitable part of life that most people will experience. Often, th
 
 Water's like me. It's laaazy ... Boy, it always looks for the easiest way to do things A little happy sunlight shining through there. Let all these little things happen. Don't fight them. Learn to use them. Even the worst thing we can do here is good.
 
+## 2️⃣ Payment API here
+
+🚫Replace text below with a description of the API
+
+This is the way you take out your flustrations. Get away from those little Christmas tree things we used to make in school. Isn't it fantastic that you can change your mind and create all these happy things? Everything's not great in life, but we can still find beauty in it.
 
 ## 3️⃣ Misc API here
 
@@ -112,19 +117,18 @@ Volunteering your time; it pays you and your whole community fantastic dividends
 
 In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
 
-MONGO_USERNAME= MongoDB username
-MONGO_PASSWORD= MongoDB username's password
-MONGO_HOSTNAME= URI of where MongoDB is hosted
-MONGO_PORT= MongoDB port
-MONGO_DB= MongoDB name
+🚫These are just examples, replace them with the specifics for your app
 
-GOOGLE_CLIENTID= Google Authentication API Client ID
-GOOGLE_CLIENTSECRET= Google Authentication API Client Secret
-
-FACEBOOK_CLIENTID= Facebook Authentication API Client ID
-FACEBOOK_CLIENTSECRET= Facebook Authentication API Client Secret
-
-COOKIE_KEY= Cookie Key for Passportjs
+    *  REACT_APP_apiKey - this is your Google API key, which can be generated in the Google Cloud Console
+    *  REACT_APP_authDomain - when you set up your Firebase project, this information will be in the dashboard
+    *  REACT_APP_databaseURL - in the Firebase dashboard
+    *  REACT_APP_projectID - in the Firebase dashboard
+    *  REACT_APP_storageBucket - in the Firebase dashboard
+    *  REACT_APP_messagingSenderId - in the Firebase dashboard
+    *  REACT_APP_stripe_API - this is your public Stripe API key, generated in the Stripe dashboard
+    *  REACT_APP_backendURL - optional for your local development server
+    *  REACT_APP_clientid - this is the Stripe_connect clientID, generated in Stripe_connect settings
+    *  REACT_APP_stripe_plan - this is the ID for a second Stripe subscription plan, generated under Stripe products
 
 # 5️⃣ Content Licenses
 
@@ -137,23 +141,11 @@ COOKIE_KEY= Cookie Key for Passportjs
 
 # 4️⃣ Testing
 
-We used cypress for testing because it was something we didn't know much about but our team wanted to learn and we had an expert on the team
+🚫Document what you used for testing and why
 
 # 4️⃣ Installation Instructions
 
-Please run npm i then the following dependencies:
-
-    "@fortawesome/fontawesome-free": "^5.10.2",
-    "@fortawesome/fontawesome-svg-core": "^1.2.22",
-    "@material-ui/core": "^4.3.3",
-    "@material-ui/icons": "^4.2.1",
-    "axios": "^0.19.0",
-    "google-maps-react": "^2.0.2",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-router-dom": "^5.0.1",
-    "react-scripts": "3.1.1",
-    "styled-components": "^4.3.2"
+🚫explain how to install the required dependencies to get this project up and running with yarn and NPM
 
 ## Other Scripts
 
@@ -202,4 +194,4 @@ These contribution guidelines have been adapted from [this good-Contributing.md-
 
 ## Documentation
 
-See https://github.com/labs15-best-places/backend/blob/master/README.md for details on the backend of our project.
+See [Backend Documentation](🚫_link to your backend readme here_) for details on the backend of our project.
