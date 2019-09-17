@@ -41,29 +41,14 @@ flex-direction:column;
         }
 `;
 
-export const TopTenCardContainer = styled.div`
+export const TopTenWrapper = styled.div`
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-content: center;
-`;
-
-export const TopTenCard = styled.div`
-  height: 348px;
-  width: 292px;
-  position: relative;
-  margin-top: 2%;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-  }
+  width: 100%;
+  justify-content: space-around;
 `;
 
 export const CardDetail = styled.div`
-  position: absolute;
   background-color: rgba(255, 255, 255, 0.7);
   bottom: 0.01rem;
   width: 100%;

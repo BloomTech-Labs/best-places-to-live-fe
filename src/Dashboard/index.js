@@ -53,13 +53,17 @@ const DashboardMenu = ({ match }) => {
                       Become a Specialist
                     </Link>
                   </SideNavLiA>
+                  {/* 
+
+                  MESSAGES RC3
+
                   <SideNavLiA as='a' href='#'>
                     {' '}
                     <Icon>
                       <i class='fas fa-city'></i>
                     </Icon>
                     <Link to={`${match.url}/Messages`}>Messages</Link>
-                  </SideNavLiA>
+                  </SideNavLiA> */}
                 </SideNavLi>
               </SideNav>
             </UserViewMenu>

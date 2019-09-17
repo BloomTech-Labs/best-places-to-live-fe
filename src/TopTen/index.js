@@ -3,7 +3,7 @@ import axios from "axios";
 import {
   TopTenMasterContainer,
   TopTenTitle,
-  TopTenCardContainer,
+  TopTenWrapper,
   IconBox,
   CategoryContentBox
 } from "./styled";
@@ -13,6 +13,9 @@ import costofliving from "../images/budget.png";
 import commute from "../images/travel.png";
 import safety from "../images/police-car.png";
 import tolerance from "../images/tolerance.png";
+import TopTenBack from './Back-side';
+
+
 
 const TopTen = () => {
   const model = {
@@ -110,11 +113,26 @@ const TopTen = () => {
         <IconBox src={safety} onClick={fetchSafety}></IconBox>
         <IconBox src={tolerance} onClick={fetchTolerance}></IconBox>
       </CategoryContentBox>
-      <TopTenCardContainer>
-        {topTenList
-          ? topTenList.map(state => <TopTenCards key={state.id} card={state} />)
-          : ""}
-      </TopTenCardContainer>
+      <TopTenWrapper>
+            {topTenList
+              ? topTenList.map(state => (
+                  <>
+                      <div className="flip-card">
+                          <div className="flip-card-inner">
+                              <div className="flip-card-front">
+                                  <TopTenCards key={state.id} card={state} />
+                              </div>
+
+                              <div className="flip-card-back">
+                                  <TopTenBack data={state}/>
+                              </div>
+                        </div>
+                      </div>
+                     </>
+                ))
+              : ""}
+      </TopTenWrapper>
+
     </TopTenMasterContainer>
   );
 };
