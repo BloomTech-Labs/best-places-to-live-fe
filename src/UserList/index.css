@@ -404,36 +404,8 @@ table th {
   .grid-4 {
     grid-template-columns: 1fr;
   }
-
+}
   /* Text Styles */
-<<<<<<< HEAD
-  .x-large {
-    font-size: 3rem;
-  }
-
-  .large {
-    font-size: 2rem;
-  }
-
-  .lead {
-    font-size: 1rem;
-  }
-
-  /*  !* Navbar *!*/
-  /*   .navbar {*/
-  /*    display: block;*/
-  /*    text-align: center;*/
-  /*  }*/
-
-  /*  .navbar ul {*/
-  /*    text-align: center;*/
-  /*    justify-content: center;*/
-  /*  }*/
-}
-.user-details {
-  line-height: 2;
-}
-=======
 /*   .x-large {*/
 /*    font-size: 3rem;*/
 /*  }*/
@@ -457,4 +429,3 @@ table th {
 /*    justify-content: center;*/
 /*  }*/
 /*}*/
->>>>>>> master
