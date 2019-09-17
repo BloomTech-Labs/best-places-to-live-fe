@@ -69,7 +69,7 @@ export class User extends Component {
             <a href={html_url} className='btn btn-dark my-1'>
               Visit Profile
             </a>
-            <ul>
+            <ul className='user-details'>
               <li>
                 {login && (
                   <Fragment>
