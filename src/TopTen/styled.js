@@ -38,37 +38,16 @@ flex-direction:column
 
 
 
-export const TopTenCardContainer =  styled.div`
-border:1px solid red;
+export const TopTenWrapper =  styled.div`
 display:flex;
 flex-wrap:wrap;
 width:100%;
-z-index: 1;
-perspective: 1000px;
+justify-content:space-around;
 `;
 
 
-export const TopTenCard = styled.div`
-border:1px solid yellow;
-`;
-
-export const TopTenCardSide = styled.div`
-`;
-
-export const TopTenBody = styled.div`
-  transform-style: preserve-3d;
-  transition: all .7s linear;
-`;
-
-export const TopTenCardFront = styled.div`
-
-`;
-
-export const TopTenCardBack = styled.div`
-`;
 
 export const CardDetail = styled.div`
-position: absolute;
 background-color: rgba(255, 255, 255, 0.7);
 bottom: 0.01rem;
 width: 100%;

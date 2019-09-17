@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { TopTenMasterContainer,TopTenTitle, TopTenCardContainer} from './styled';
+import {TopTenMasterContainer, TopTenTitle, TopTenWrapper, TopTenBody, TopTenCard} from './styled';
 import TopTenCards from "./TopTenCards";
 import TopTenBack from "./Back-side";
 import { proxy } from '../App/constants';
@@ -34,14 +34,25 @@ const TopTen = () => {
           Filter
         </button>
       </TopTenTitle>
-      <TopTenCardContainer>
+      <TopTenWrapper>
             {topTenList
               ? topTenList.map(state => (
-                  <TopTenBack data={state}/>,
-                  <TopTenCards key={state.id} card={state} />
+                  <>
+                      <div className="flip-card">
+                          <div className="flip-card-inner">
+                              <div className="flip-card-front">
+                                  <TopTenCards key={state.id} card={state} />
+                              </div>
+
+                              <div className="flip-card-back">
+                                  <TopTenBack data={state}/>
+                              </div>
+                        </div>
+                      </div>
+                     </>
                 ))
               : ""}
-      </TopTenCardContainer>
+      </TopTenWrapper>
 
     </TopTenMasterContainer>
   );
