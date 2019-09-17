@@ -6,12 +6,13 @@ import {
   FormUserData,
   FormGroup,
   FormGroupMaBtMd,
-  FormGroupFormPhotoUpload,
-  Image,
-  FormInputUpload,
-  FormUploadLabel,
-  FormGroupRight,
-  Button,
+  // PHOTO UPLOAD RC3
+  // FormGroupFormPhotoUpload,
+  // Image,
+  // FormInputUpload,
+  // FormUploadLabel,
+  // FormGroupRight,
+  // Button,
   Label,
   Input
 } from './styled';
@@ -75,6 +76,10 @@ const Profile = () => {
             placeholder='richard@virgin.com'
           />
         </FormGroupMaBtMd>
+        {/* 
+
+        PROFILE PHOTO RC3
+
         <FormGroupFormPhotoUpload>
           <Image src='https://www.biography.com/.image/t_share/MTE4MDAzNDEwNDYyNDEwMjU0/sir-richard-branson-9224520-1-402.jpg' />
           <FormInputUpload
@@ -87,7 +92,7 @@ const Profile = () => {
         </FormGroupFormPhotoUpload>
         <FormGroupRight>
           <Button>Save Profile</Button>
-        </FormGroupRight>
+        </FormGroupRight> */}
       </FormUserData>
       <PasswordSettings />
     </UserViewFormContainer>
