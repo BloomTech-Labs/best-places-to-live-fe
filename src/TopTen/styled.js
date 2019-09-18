@@ -57,6 +57,10 @@ height: 15%;
 display: flex;
 justify-content: space-around;
 align-items: center;
+border-radius:0px 0px 20px 20px;
+
+
+
     p {
       font-weight: 500;
       text-align: center;
@@ -74,6 +78,10 @@ export const CategoryContentBox = styled.div`
 export const IconBox = styled.img`
   width: 46px;
   height: 46px;
+  
+  &:hover{
+    opacity:.50;
+   }
 `;
 
 export const CardIcon = styled.img`
