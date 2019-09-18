@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import { Link, Route } from 'react-router-dom';
 import Navigation from '../Navigation';
 import {
-  MenuBox,
-  UserInfoBox,
-  ContentBox,
   ComponentBox,
   MyBody,
   Main,
@@ -13,22 +10,9 @@ import {
   SideNav,
   UserViewContent,
   UserViewFormContainer,
-  HeadingSecondary,
-  FormUserData,
-  FormGroup,
-  FormGroupMaBtMd,
-  FormGroupFormPhotoUpload,
-  Image,
-  FormInputUpload,
-  FormUploadLabel,
-  FormGroupRight,
-  Button,
   SideNavLi,
   SideNavLiA,
-  Icon,
-  Label,
-  Input,
-  Line
+  Icon
 } from './styled';
 import SavedCities from './savedCities';
 import Profile from './profileSettings';
@@ -69,13 +53,17 @@ const DashboardMenu = ({ match }) => {
                       Become a Specialist
                     </Link>
                   </SideNavLiA>
+                  {/* 
+
+                  MESSAGES RC3
+
                   <SideNavLiA as='a' href='#'>
                     {' '}
                     <Icon>
                       <i class='fas fa-city'></i>
                     </Icon>
                     <Link to={`${match.url}/Messages`}>Messages</Link>
-                  </SideNavLiA>
+                  </SideNavLiA> */}
                 </SideNavLi>
               </SideNav>
             </UserViewMenu>

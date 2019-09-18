@@ -27,7 +27,7 @@ const Login = props => {
   const handleSubmit = event => {
     event.preventDefault();
     axios
-      .post("/users/login", input)
+      .post("https://stagebe.letsmovehomie.com/users/login", input)
       .then(response => {
         props.history.push("/");
       })

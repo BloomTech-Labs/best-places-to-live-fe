@@ -1,9 +1,11 @@
+
 import React, { Component } from "react";
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from "google-maps-react";
 import { mapStyles } from "./styled";
 import Navigation from "../Navigation";
 import axios from "axios";
 import TopTenCards from "../TopTen/TopTenCards";
+
 
 export class MapContainer extends Component {
   state = {
@@ -149,3 +151,4 @@ export class MapContainer extends Component {
 export default GoogleApiWrapper({
   apiKey: "" /* 'AIzaSyBmTPYIKyBTfdxhV8Qa7fIkCaq2oqX-bmY' */
 })(MapContainer);
+
