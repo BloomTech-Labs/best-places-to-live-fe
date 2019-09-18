@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { Link, Route } from 'react-router-dom';
-import Navigation from '../Navigation';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Link, Route } from "react-router-dom";
+import Navigation from "../Navigation";
 import {
   ComponentBox,
   MyBody,
@@ -13,13 +14,30 @@ import {
   SideNavLi,
   SideNavLiA,
   Icon
-} from './styled';
-import SavedCities from './savedCities';
-import Profile from './profileSettings';
-import Specialist from './citySpecialist';
+} from "./styled";
+import SavedCities from "./savedCities";
+import Profile from "./profileSettings";
+import Specialist from "./citySpecialist";
 
 const DashboardMenu = ({ match }) => {
-  const [user, setUser] = useState('Richard');
+  const token = localStorage.getItem("letsmovehomie");
+  const [user, setUser] = useState("");
+
+  useEffect(() => {
+    const fetchAuthorizedUser = () => {
+      axios
+        .get("https://stagebe.letsmovehomie.com/users/profile/", {
+          headers: {
+            Authorization: token
+          }
+        })
+        .then(response => {
+          setUser(response.data.name);
+        });
+    };
+
+    fetchAuthorizedUser();
+  }, []);
 
   return (
     <div>
@@ -30,25 +48,25 @@ const DashboardMenu = ({ match }) => {
             <UserViewMenu>
               <SideNav>
                 <SideNavLi>
-                  <SideNavLiA as='a' href='#'>
-                    {' '}
+                  <SideNavLiA as="a" href="#">
+                    {" "}
                     <Icon>
-                      <i class='far fa-user'></i>
-                    </Icon>{' '}
+                      <i class="far fa-user"></i>
+                    </Icon>{" "}
                     <Link to={`${match.url}/Profile`}>Profile</Link>
                   </SideNavLiA>
-                  <SideNavLiA as='a' href='#'>
-                    {' '}
+                  <SideNavLiA as="a" href="#">
+                    {" "}
                     <Icon>
-                      <i class='far fa-star'></i>
-                    </Icon>{' '}
+                      <i class="far fa-star"></i>
+                    </Icon>{" "}
                     <Link to={`${match.url}/SavedCities`}>Saved Cities</Link>
                   </SideNavLiA>
-                  <SideNavLiA as='a' href='#'>
-                    {' '}
+                  <SideNavLiA as="a" href="#">
+                    {" "}
                     <Icon>
-                      <i class='far fa-comment-alt'></i>
-                    </Icon>{' '}
+                      <i class="far fa-comment-alt"></i>
+                    </Icon>{" "}
                     <Link to={`${match.url}/Specialist`}>
                       Become a Specialist
                     </Link>
@@ -90,13 +108,13 @@ function Option({ match }) {
   let comp;
 
   switch (match.params.optionId) {
-    case 'Profile':
+    case "Profile":
       comp = <Profile />;
       break;
-    case 'SavedCities':
+    case "SavedCities":
       comp = <SavedCities />;
       break;
-    case 'Specialist':
+    case "Specialist":
       comp = <Specialist />;
       break;
     default:
