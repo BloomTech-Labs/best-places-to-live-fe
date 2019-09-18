@@ -28,12 +28,12 @@ const Profile = () => {
 
   const token = localStorage.getItem("letsmovehomie");
 
-  useEffect(() => {
-    const fetchAuthorizedUser = () => {
-      axios
-        .get
-    }
-  }, []);
+  // useEffect(() => {
+  //   const fetchAuthorizedUser = () => {
+  //     axios
+  //       .get
+  //   }
+  // }, []);
 
 
   const handleChange = event => {
