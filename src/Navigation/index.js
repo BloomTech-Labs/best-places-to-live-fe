@@ -4,12 +4,16 @@ import { NavBar, NavBtn, LogoBox, Header } from "./styled";
 import moving from "../images/LMHiconcopy.png";
 
 export default function Navigation() {
+  const logout = () => {
+    localStorage.removeItem("letsmovehomie");
+  };
+
   return (
     <div>
-    <Header>
-      <NavBar>
+      <Header>
+        <NavBar>
           <Link to="/">
-            <LogoBox src={moving}/>
+            <LogoBox src={moving} />
           </Link>
 
           <Link to="/Userlist">
@@ -25,10 +29,14 @@ export default function Navigation() {
           </Link>
 
           <Link to="/Maps">
-              <NavBtn id="registerButton">Maps</NavBtn>
+            <NavBtn id="registerButton">Maps</NavBtn>
           </Link>
-      </NavBar>
-  </Header>
-  </div>
+
+          <Link to="/" onClick={logout}>
+            <NavBtn id="logoutButton">Logout</NavBtn>
+          </Link>
+        </NavBar>
+      </Header>
+    </div>
   );
 }
