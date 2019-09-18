@@ -9,7 +9,7 @@ const HomeSearchBar = () => {
         <input
           id='outlined-search'
           label='Enter an Address, City, or Zip Code'
-          type='Search '
+          type='search'
           placeholder='Enter an Address, City, or Zip Code'
         />
       </SearchContainer>

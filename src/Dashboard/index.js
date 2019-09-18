@@ -33,21 +33,21 @@ const DashboardMenu = ({ match }) => {
                   <SideNavLiA as='a' href='#'>
                     {' '}
                     <Icon>
-                      <i class='far fa-user'></i>
+                      <i className='far fa-user'></i>
                     </Icon>{' '}
                     <Link to={`${match.url}/Profile`}>Profile</Link>
                   </SideNavLiA>
                   <SideNavLiA as='a' href='#'>
                     {' '}
                     <Icon>
-                      <i class='far fa-star'></i>
+                      <i className='far fa-star'></i>
                     </Icon>{' '}
                     <Link to={`${match.url}/SavedCities`}>Saved Cities</Link>
                   </SideNavLiA>
                   <SideNavLiA as='a' href='#'>
                     {' '}
                     <Icon>
-                      <i class='far fa-comment-alt'></i>
+                      <i className='far fa-comment-alt'></i>
                     </Icon>{' '}
                     <Link to={`${match.url}/Specialist`}>
                       Become a Specialist
@@ -60,7 +60,7 @@ const DashboardMenu = ({ match }) => {
                   <SideNavLiA as='a' href='#'>
                     {' '}
                     <Icon>
-                      <i class='fas fa-city'></i>
+                      <i className='fas fa-city'></i>
                     </Icon>
                     <Link to={`${match.url}/Messages`}>Messages</Link>
                   </SideNavLiA> */}

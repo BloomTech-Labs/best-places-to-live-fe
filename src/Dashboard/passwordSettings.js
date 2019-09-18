@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { proxy } from "../App/constants";
 import {
   HeadingSecondary,
   FormUserData,
@@ -10,13 +11,16 @@ import {
   Label,
   Input,
   Line
-} from './styled';
+} from "./styled";
+
 
 const PasswordSettings = () => {
   const [input, setInput] = useState({
-    currentPassword: '',
-    newPassword: ''
+    currentPassword: "",
+    newPassword: ""
   });
+
+  useEffect(() => {});
 
   const handleChange = event => {
     event.persist();
@@ -30,12 +34,12 @@ const PasswordSettings = () => {
     event.preventDefault();
     console.log(input);
     axios
-      .post('http://162.243.168.251/users/register', input)
+      .post("http://162.243.168.251/users/register", input)
       .then(response => {
         console.log(response);
       })
       .catch(error => {
-        console.log('input', input);
+        console.log("input", input);
         console.log(error.response);
       });
   };
@@ -46,33 +50,33 @@ const PasswordSettings = () => {
       <HeadingSecondary>Password Change</HeadingSecondary>
       <FormUserData>
         <FormGroup>
-          <Label for='password-current'>Current password</Label>
+          <Label for="password-current">Current password</Label>
           <Input
-            id='password-current'
-            type='password'
-            placeholder='••••••••'
+            id="password-current"
+            type="password"
+            placeholder="••••••••"
             required
-            minlength='8'
+            minlength="8"
           />
         </FormGroup>
         <FormGroup>
-          <Label for='password'>New password</Label>
+          <Label for="password">New password</Label>
           <Input
-            id='password'
-            type='password'
-            placeholder='••••••••'
+            id="password"
+            type="password"
+            placeholder="••••••••"
             required
-            minlength='8'
+            minlength="8"
           />
         </FormGroup>
         <FormGroupMaBtMd>
-          <Label for='password-confirm'>Confirm password</Label>
+          <Label for="password-confirm">Confirm password</Label>
           <Input
-            id='password-confirm'
-            type='password'
-            placeholder='••••••••'
+            id="password-confirm"
+            type="password"
+            placeholder="••••••••"
             required
-            minlength='8'
+            minlength="8"
           />
         </FormGroupMaBtMd>
         <FormGroupRight>

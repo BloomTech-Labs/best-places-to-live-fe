@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {
   UserViewFormContainer,
@@ -17,13 +17,27 @@ import {
   Input
 } from './styled';
 import PasswordSettings from './passwordSettings';
+import { proxy } from "../App/constants";
+
 
 const Profile = () => {
   const [input, setInput] = useState({
     name: '',
     email: '',
-    password: ''
   });
+
+  useEffect(() => {
+    axios
+    .get(`${proxy}/profile`, input)
+    .then(response => {
+      console.log(response);
+    })
+    .catch(error => {
+      console.log('input', input);
+      console.log(error.response);
+    });
+  });
+
 
   const handleChange = event => {
     event.persist();
@@ -60,7 +74,7 @@ const Profile = () => {
             onChange={handleChange}
             required
             name='name'
-            placeholder='Richard Branson'
+            placeholder=''
           />
         </FormGroup>
         <FormGroupMaBtMd>
@@ -73,7 +87,7 @@ const Profile = () => {
             onChange={handleChange}
             required
             name='email'
-            placeholder='richard@virgin.com'
+            placeholder=''
           />
         </FormGroupMaBtMd>
         {/* 
