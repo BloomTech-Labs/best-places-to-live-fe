@@ -149,7 +149,7 @@ export const UserView = styled.div`
 
 export const UserViewMenu = styled.nav`
   flex: 32rem 0 0;
-  background-image: linear-gradient(to right bottom, #7dd56f, #28b487);
+  background-image: linear-gradient(to right bottom, #E67271, #E64D4D);
   padding: 4rem 0;
 `;
 
