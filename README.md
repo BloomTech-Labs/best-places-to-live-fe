@@ -4,13 +4,12 @@
 
 🚫 Each student has a required minimum number of meaningful PRs each week per the rubric. Contributing to docs does NOT count as a PR to meet your weekly requirements.
 
-# 1️⃣ Let's Move Homie
+# Let's Move Homie
 
-1️⃣ You can find the deployed project at https://stagefe.letsmovehomie.com/
+You can find the deployed project at https://stagefe.letsmovehomie.com/
 
-## 4️⃣ Contributors
+## Contributors
 
-🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
 
 |                                       [Christian Ipanaque](https://github.com/chrisipanaque)                                        |                                       [Ramses Bermudez](https://github.com/RamsesGB)                                        |                                       [Carlos Santana](https://github.com/Carlossantana987)                                        |                                       [Chris Carter](https://github.com/ChrisJCarter91)                                        |                                       [Harjoth Khara](https://github.com/harjothkhara)                                        |                                       [Cai Martin](https://github.com/CaiProgramming)                                        |                                       [Thomas Cacciatore](https://github.com/Tcacciatore597)                                        |                                       [Diante Lewis-Jolley](https://github.com/dllewisjolley)                                        |                                       [Lloyd Edwards](https://github.com/tactnician)                                        |                                       [Juru Steve Mugenzi](https://github.com/JuruSteve)                                        |                                       [Chase Wenner](https://github.com/chasester)                                        |                                       [Boris Krant](https://github.com/bkrant)                                        |
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |:-----------------------------------------------------------------------------------------------------------: |:-----------------------------------------------------------------------------------------------------------: |:-----------------------------------------------------------------------------------------------------------: |:-----------------------------------------------------------------------------------------------------------: |:-----------------------------------------------------------------------------------------------------------: |:-----------------------------------------------------------------------------------------------------------: |:-----------------------------------------------------------------------------------------------------------: |
@@ -24,16 +23,16 @@
 
 ## Project Overview
 
-1️⃣ https://trello.com/b/l0bCCsVD/labs15-best-places
+https://trello.com/b/l0bCCsVD/labs15-best-places
 
-1️⃣ https://www.notion.so/aaa6e045d4294a5ea5d39ed242bfb499?v=b13640a8b200421da503d6fabfd8be8b
+https://www.notion.so/aaa6e045d4294a5ea5d39ed242bfb499?v=b13640a8b200421da503d6fabfd8be8b
 
 Description:
 
 Moving is an inevitable part of life that most people will experience. Often, there's buyer's remorse after the fact for one reason or another. With Let's Move Homie, we strive to get you as much information about a potential place to live in a quick, user friendly manner. Whether you want to look up a specific location you have in mind, or just want to scroll across a map and see how certain cities rank compared to others, Let's Move Homie is here to help.
 
 
-### 4️⃣ Key Features
+### Key Features
 
 -    Visitors and Users can search a city by address and view it on a map
 -    Visitors and Users can browse top 10 popular U.S Cities
@@ -41,7 +40,7 @@ Moving is an inevitable part of life that most people will experience. Often, th
 -    Visitors can search by city and see 4 different statistics (more to come)
 -    Visitors can create a profile that saves their favorite cities 
 
-## 1️⃣ Tech Stack
+## Tech Stack
 
 ### Front end built using:
 
@@ -71,24 +70,22 @@ Styled-components
 -    After market research, Node.js is the most popular back end framework for newer companies
 
 
-🚫 List the rest of the back end end features and libraries in the same format as the framework above
-
 # APIs
 
-## 2️⃣ OAuth - Google & Facebook
+## OAuth - Google & Facebook
 
 Users can register using their Google or Facebook accounts
 
 
-## 3️⃣ https://datausa.io/about/api/
+## https://datausa.io/about/api/
 
 The Data USA API allows users to explore the entire database using carefully constructed query strings, returning data as JSON results.
 
-## 3️⃣ https://developers.teleport.org/api/
+## https://developers.teleport.org/api/
 
 The Teleport API gives us additional information about US cities which makes it so we don't have to manually input city information. 
 
-# 3️⃣ Environment Variables
+# Environment Variables
 
 In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
 
@@ -106,11 +103,11 @@ FACEBOOK_CLIENTSECRET= Facebook Authentication API Client Secret
 
 COOKIE_KEY= Cookie Key for Passportjs
 
-# 4️⃣ Testing
+# Testing
 
 We used cypress for testing because it was something we didn't know much about but our team wanted to learn and we had an expert on the team
 
-# 4️⃣ Installation Instructions
+# Installation Instructions
 
 Please run yarn install then the following dependencies:
 
