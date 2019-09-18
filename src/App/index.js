@@ -1,10 +1,12 @@
-import React from 'react';
-import ga from 'react-ga';
-import { Router, withRouter } from 'react-router-dom';
-import Routes from './routes';
-import '../index.css';
+import React, { useEffect } from "react";
+import ReactGA from "react-ga";
+import { Router, withRouter } from "react-router-dom";
+import Routes from "./routes";
+import { initializeAnalytics } from "../utils/GoogleAnalytics";
+import "../index.css";
+
 // import Data from './data'
-const createHistory = require('history').createBrowserHistory;
+const createHistory = require("history").createBrowserHistory;
 const history = createHistory();
 const AppWithRouter = withRouter(Routes);
 
@@ -14,10 +16,15 @@ const AppWithRouter = withRouter(Routes);
         ga.initialize('UA-143824465-1');
       }
     */
-ga.initialize('UA-148058893-1', { debug: true });
-ga.pageview('/');
 
 const App = () => {
+  // Run Google Analytics
+  useEffect(() => {
+    initializeAnalytics();
+    history.listen(location => {
+      ReactGA.pageview(location.pathname);
+    });
+  }, []);
   return (
     <Router history={history}>
       <AppWithRouter />
