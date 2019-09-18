@@ -20,7 +20,9 @@ const PasswordSettings = () => {
     newPassword: ""
   });
 
-  useEffect(() => {});
+  useEffect(() => {
+    
+  });
 
   const handleChange = event => {
     event.persist();

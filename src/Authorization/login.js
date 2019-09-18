@@ -42,74 +42,74 @@ const Login = props => {
 
 
   return (
-      <>
-        <LoginImg />
+    <>
+      <LoginImg />
 
-    <LoginContainer>
+      <LoginContainer>
 
-      <LoginFormParent>
-        <Link to="/">
-          <img alt="Icon" src={Icon}/>
-        </Link>
+        <LoginFormParent>
+          <Link to="/">
+            <img src={Icon}/>
+          </Link>
 
-          <h1>Log In</h1>
+            <h1>Log In</h1>
 
-        <LoginForm onSubmit={handleSubmit}>
-          <input
-            id="email"
-            name="email"
-            label="Email Address"
-            type="email"
-            placeholder="email"
-            autoComplete="email"
-            value={input.email}
-            onChange={handleChange}
-          />
-          <input
-            id="password"
-            name="password"
-            label="Password"
-            type="password"
-            placeholder="password"
-            autoComplete="current-password"
-            value={input.password}
-            onChange={handleChange}
-          />
+          <LoginForm onSubmit={handleSubmit}>
+            <input
+              id="email"
+              name="email"
+              label="Email Address"
+              type="email"
+              placeholder="email"
+              autoComplete="email"
+              value={input.email}
+              onChange={handleChange}
+            />
+            <input
+              id="password"
+              name="password"
+              label="Password"
+              type="password"
+              placeholder="password"
+              autoComplete="current-password"
+              value={input.password}
+              onChange={handleChange}
+            />
 
-          {/*remember me button when the time is needed to integrate it*/}
-          {/*<FormControlLabel*/}
-          {/*    control={<Checkbox value="remember" color="primary" />}*/}
-          {/*    label="Remember me"*/}
-          {/*/>*/}
+            {/*remember me button when the time is needed to integrate it*/}
+            {/*<FormControlLabel*/}
+            {/*    control={<Checkbox value="remember" color="primary" />}*/}
+            {/*    label="Remember me"*/}
+            {/*/>*/}
 
-          <SignInButton type="submit" className=''>
-            Sign In
-          </SignInButton>
-          <GoogleButton onClick={googleAuth}><i className="fab fa-google-plus-g">
-            </i>login
-          </GoogleButton>
+            <SignInButton type="submit" className=''>
+              Sign In
+            </SignInButton>
+            <GoogleButton onClick={googleAuth}><i className="fab fa-google-plus-g">
+              </i>login
+            </GoogleButton>
 
-            <FooterButtons>
+              <FooterButtons>
 
-              <Link href="#">
-                Forgot password?
-              </Link>
-
-
+                <Link href="#">
+                  Forgot password?
+                </Link>
 
 
-              <Link to="/register">
-                {"Don't have an account? Sign Up"}
-              </Link>
 
-            </FooterButtons>
 
-        </LoginForm>
+                <Link to="/register">
+                  {"Don't have an account? Sign Up"}
+                </Link>
 
-      </LoginFormParent>
+              </FooterButtons>
 
-    </LoginContainer>
-</>
+          </LoginForm>
+
+        </LoginFormParent>
+
+      </LoginContainer>
+    </>
   );
 };
 

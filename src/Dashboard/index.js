@@ -30,21 +30,21 @@ const DashboardMenu = ({ match }) => {
             <UserViewMenu>
               <SideNav>
                 <SideNavLi>
-                  <SideNavLiA as='a' href='#'>
+                  <SideNavLiA href='#'>
                     {' '}
                     <Icon>
                       <i className='far fa-user'></i>
                     </Icon>{' '}
                     <Link to={`${match.url}/Profile`}>Profile</Link>
                   </SideNavLiA>
-                  <SideNavLiA as='a' href='#'>
+                  <SideNavLiA href='#'>
                     {' '}
                     <Icon>
                       <i className='far fa-star'></i>
                     </Icon>{' '}
                     <Link to={`${match.url}/SavedCities`}>Saved Cities</Link>
                   </SideNavLiA>
-                  <SideNavLiA as='a' href='#'>
+                  <SideNavLiA href='#'>
                     {' '}
                     <Icon>
                       <i className='far fa-comment-alt'></i>

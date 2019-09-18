@@ -26,17 +26,14 @@ const Profile = () => {
     email: '',
   });
 
+  const token = localStorage.getItem("letsmovehomie");
+
   useEffect(() => {
-    axios
-    .get(`${proxy}/profile`, input)
-    .then(response => {
-      console.log(response);
-    })
-    .catch(error => {
-      console.log('input', input);
-      console.log(error.response);
-    });
-  });
+    const fetchAuthorizedUser = () => {
+      axios
+        .get
+    }
+  }, []);
 
 
   const handleChange = event => {
