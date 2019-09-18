@@ -49,17 +49,18 @@ export const TopTenWrapper = styled.div`
 `;
 
 export const CardDetail = styled.div`
-  background-color: rgba(255, 255, 255, 0.7);
-  bottom: 0.01rem;
-  width: 100%;
-  height: 15%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  p {
-    font-weight: 500;
-    text-align: center;
-  }
+position:absolute;
+background-color: rgba(255, 255, 255, 0.7);
+bottom: 0.01rem;
+width: 100%;
+height: 15%;
+display: flex;
+justify-content: space-around;
+align-items: center;
+    p {
+      font-weight: 500;
+      text-align: center;
+      }
 `;
 
 // Category Icon filter
@@ -73,4 +74,42 @@ export const CategoryContentBox = styled.div`
 export const IconBox = styled.img`
   width: 46px;
   height: 46px;
+`;
+
+export const CardIcon = styled.img`
+width:50%;
+height:50%;
+`;
+
+export const TopTenImg = styled.img`
+border-radius:20px;
+`;
+
+export const TopTenCardBack = styled.div`
+display:flex;
+padding:4%;
+height:100%;
+align-content:center;
+flex-wrap:wrap;
+color:black;
+`;
+
+export const ScoreColumn = styled.div`
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:space-between;
+font-size:20px;
+margin:1px;
+height:40%;
+`;
+
+export const TotalScore = styled.div`
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+margin:5%;
+width:100%;
+height:20%;
 `;

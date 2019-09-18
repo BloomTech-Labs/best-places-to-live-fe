@@ -124,7 +124,7 @@ const TopTen = () => {
                               </div>
 
                               <div className="flip-card-back">
-                                  <TopTenBack data={state}/>
+                                  <TopTenBack key={state.id} card={state}/>
                               </div>
                         </div>
                       </div>
