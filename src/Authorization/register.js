@@ -3,8 +3,6 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 import {LoginImg, LoginContainer,LoginFormParent,LoginForm,RegisterBottomLinks, SignInButton} from "./styled";
 import Icon from "../images/LMHiconcopy.png";
-
-
 const Register = () => {
   const [input, setInput] = useState({
     // Commenting out these key:value pairs until the back end is refractored to receive them
@@ -15,8 +13,6 @@ const Register = () => {
     password: '',
     password2: '',
   });
-
-
   const handleChange = (event) => {
     event.persist();
     setInput((input) => ({
@@ -24,7 +20,6 @@ const Register = () => {
       [event.target.id]: event.target.value,
     }));
   };
-
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(input)
@@ -38,22 +33,16 @@ const Register = () => {
           console.log(error.response);
         });
   };
-
   return (
       <>
         <LoginImg />
-
         <LoginContainer>
-
           <LoginFormParent>
             <Link to="/">
               <img alt="Icon"src={Icon}/>
             </Link>
-
             <h1>Sign Up</h1>
-
             <LoginForm className='' onSubmit={handleSubmit}>
-
                    <input
                        id="name"
                        name="name"
@@ -63,7 +52,6 @@ const Register = () => {
                        value={input.name}
                        onChange={handleChange}
                    />
-
                    <input
                        id="email"
                        name="email"
@@ -73,7 +61,6 @@ const Register = () => {
                        value={input.email}
                        onChange={handleChange}
                    />
-
                    <input
                        id="password"
                        name="password"
@@ -83,7 +70,6 @@ const Register = () => {
                        value={input.password}
                        onChange={handleChange}
                    />
-
                    <input
                        id="password2"
                        name="password2"
@@ -93,7 +79,6 @@ const Register = () => {
                        value={input.password2}
                        onChange={handleChange}
                    />
-
                    <SignInButton>
                      Register
                    </SignInButton>
@@ -108,5 +93,4 @@ const Register = () => {
       </>
   )
 }
-
 export default Register;

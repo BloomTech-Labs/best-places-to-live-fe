@@ -108,10 +108,10 @@ const TopTen = () => {
         </p>
       </TopTenTitle>
       <CategoryContentBox>
-        <IconBox src={costofliving} onClick={fetchCostOfLiving}></IconBox>
-        <IconBox src={commute} onClick={fetchCommute}></IconBox>
-        <IconBox src={safety} onClick={fetchSafety}></IconBox>
-        <IconBox src={tolerance} onClick={fetchTolerance}></IconBox>
+        <IconBox src={costofliving} onClick={fetchCostOfLiving}/>
+        <IconBox src={commute} onClick={fetchCommute}/>
+        <IconBox src={safety} onClick={fetchSafety}/>
+        <IconBox src={tolerance} onClick={fetchTolerance}/>
       </CategoryContentBox>
       <TopTenWrapper>
             {topTenList
@@ -124,7 +124,7 @@ const TopTen = () => {
                               </div>
 
                               <div className="flip-card-back">
-                                  <TopTenBack data={state}/>
+                                  <TopTenBack key={state.id} card={state}/>
                               </div>
                         </div>
                       </div>
