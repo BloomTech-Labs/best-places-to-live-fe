@@ -21,6 +21,7 @@ const App = () => {
   // Run Google Analytics
   useEffect(() => {
     initializeAnalytics();
+    ReactGA.pageview("/");
     history.listen(location => {
       ReactGA.pageview(location.pathname);
     });
