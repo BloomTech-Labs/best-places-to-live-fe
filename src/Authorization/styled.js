@@ -120,3 +120,7 @@ a{
 }
 `;
 
+export const ErrorMessage = styled.div`
+color:red;
+`;
+

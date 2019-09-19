@@ -19,6 +19,7 @@ import TopTenBack from './Back-side';
 
 const TopTen = () => {
   const model = {
+    _id:null,
     name: null,
     photo: null,
     score_total: null,
@@ -115,12 +116,12 @@ const TopTen = () => {
       </CategoryContentBox>
       <TopTenWrapper>
             {topTenList
-              ? topTenList.map(state => (
-                  <>
-                      <div className="flip-card">
+              ? topTenList.map((state,i) => (
+
+                      <div className="flip-card" key={i}>
                           <div className="flip-card-inner">
-                              <div className="flip-card-front">
-                                  <TopTenCards key={state.id} card={state} />
+                              <div className="flip-card-front" >
+                                  <TopTenCards  card={state} />
                               </div>
 
                               <div className="flip-card-back">
@@ -128,7 +129,7 @@ const TopTen = () => {
                               </div>
                         </div>
                       </div>
-                     </>
+
                 ))
               : ""}
       </TopTenWrapper>

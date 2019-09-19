@@ -7,11 +7,13 @@ import {
   LoginFormParent,
   LoginForm,
   RegisterBottomLinks,
-  SignInButton
+  SignInButton,
+    ErrorMessage
 } from "./styled";
 import Icon from "../images/LMHiconcopy.png";
 
-const Register = () => {
+const Register = (props) => {
+  const [error, setError] = useState('')
   const [input, setInput] = useState({
     // Commenting out these key:value pairs until the back end is refractored to receive them
     // firstName: '',
@@ -32,16 +34,14 @@ const Register = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(input);
     axios
     .post("https://stagebe.letsmovehomie.com/users/register", input)
     .then(response => {
-      console.log(response);
       localStorage.setItem("letsmovehomie", response.data.token);
+      props.history.push('/dashboard');
     })
     .catch(error => {
-      console.log("input", input);
-      console.log(error.response);
+      setError(error.response.data.message);
     });
   };
   
@@ -92,6 +92,9 @@ const Register = () => {
               onChange={handleChange}
             />
             <SignInButton>Register</SignInButton>
+            <ErrorMessage>
+            {error ? (<div> {error}</div>) : (<></>)}
+            </ErrorMessage>
           </LoginForm>
         </LoginFormParent>
         <RegisterBottomLinks>
