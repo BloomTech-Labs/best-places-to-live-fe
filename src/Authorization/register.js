@@ -13,7 +13,7 @@ import {
 import Icon from "../images/LMHiconcopy.png";
 
 const Register = (props) => {
-  const [error, setError] = useState('')
+  const [error, setError] = useState('');
   const [input, setInput] = useState({
     // Commenting out these key:value pairs until the back end is refractored to receive them
     // firstName: '',
@@ -93,7 +93,7 @@ const Register = (props) => {
             />
             <SignInButton>Register</SignInButton>
             <ErrorMessage>
-            {error ? (<div> {error}</div>) : (<></>)}
+            {error ? (<div>{error}</div>) : (<></>)}
             </ErrorMessage>
           </LoginForm>
         </LoginFormParent>
