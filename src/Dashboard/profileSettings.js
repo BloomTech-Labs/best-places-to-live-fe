@@ -17,23 +17,32 @@ import {
   Input
 } from './styled';
 import PasswordSettings from './passwordSettings';
-import { proxy } from "../App/constants";
+
 
 
 const Profile = () => {
+  const token = localStorage.getItem("letsmovehomie");
   const [input, setInput] = useState({
     name: '',
     email: '',
   });
 
-  const token = localStorage.getItem("letsmovehomie");
+  useEffect(() => {
+    const fetchAuthorizedUser = () => {
+      axios
+        .get("https://stagebe.letsmovehomie.com/users/profile/", {
+          headers: {
+            Authorization: token
+          }
+        })
+        .then(response => {
+          setInput(response.data);
+          console.log(response.data);
+        })
+    }
 
-  // useEffect(() => {
-  //   const fetchAuthorizedUser = () => {
-  //     axios
-  //       .get
-  //   }
-  // }, []);
+    fetchAuthorizedUser();
+  }, []);
 
 
   const handleChange = event => {

@@ -1,6 +1,5 @@
 import React, {useState,useEffect} from 'react';
 import { Container, SearchContainer } from './styled';
-import {proxy} from "../App/constants";
 import axios from "axios";
 
 
@@ -29,7 +28,7 @@ const HomeSearchBar = () => {
                  {searchTerm: input.searchTerm
                         })
             .then(res =>{
-
+                console.log(res.data);
                 setsearchResult(res.data.cities);
 
 
