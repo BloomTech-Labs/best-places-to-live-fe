@@ -30,7 +30,7 @@ export class User extends Component {
       hireable
     } = this.props.user;
 
-    const { loading, repos } = this.props;
+    const { loading } = this.props;
 
     if(loading) return <Spinner />
 
