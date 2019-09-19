@@ -46,3 +46,12 @@ export const NavBtn = styled.button`{
    color: white;
    border: none;
  }`;
+
+export const Krunker = styled.a`
+border;1px solid red;
+position:absolute
+left:97%;
+color:white;
+&:hover{
+color:white;
+}`;

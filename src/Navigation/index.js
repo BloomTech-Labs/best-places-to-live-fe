@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { NavBar, NavBtn, LogoBox } from "./styled";
+import { NavBar, NavBtn, LogoBox,Krunker } from "./styled";
 import moving from "../images/LMHiconcopy.png";
 
 class Navigation extends React.Component {
@@ -53,6 +53,8 @@ class Navigation extends React.Component {
                 <Link to="/Maps">
                     <NavBtn id="registerButton">Maps</NavBtn>
                 </Link>
+
+                <Krunker href="https://krunker.io">krunker</Krunker>
             </NavBar>
         );
     }
