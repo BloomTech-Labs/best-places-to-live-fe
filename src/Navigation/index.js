@@ -5,6 +5,8 @@ import moving from "../images/LMHiconcopy.png";
 import { Event } from "../utils/GoogleAnalytics";
 
 export default function Navigation() {
+  Event("User", "Clicked the login button", "Clickthroughs");
+
   const logout = () => {
     localStorage.removeItem("letsmovehomie");
   };
