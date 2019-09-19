@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import {
   HeadingSecondary,
@@ -17,10 +17,6 @@ const PasswordSettings = () => {
   const [input, setInput] = useState({
     currentPassword: "",
     newPassword: ""
-  });
-
-  useEffect(() => {
-    
   });
 
   const handleChange = event => {
