@@ -1,7 +1,6 @@
 
 import React, { Component } from "react";
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from "google-maps-react";
-import { mapStyles } from "./styled";
 import Navigation from "../Navigation";
 import axios from "axios";
 import TopTenCards from "../TopTen/TopTenCards";
@@ -65,7 +64,7 @@ export class MapContainer extends Component {
     axios
       .post(url, getres)
       .then(res => {
-        if (res.data.message) throw "no data";
+        if (res.data.message) throw Error("no data");
         if (res.data.cities) res.data.data = res.data.cities;
         this.setState({ ...this.state, cities: res.data.data });
         console.log(res.data);
@@ -80,7 +79,7 @@ export class MapContainer extends Component {
     if (!this.state.cities) {
       this.getCities();
     }
-    const google = window.google; //this line is needed dont remove
+    const google = window.google; //this line is needed, please do not remove
 
     return (
       <>
