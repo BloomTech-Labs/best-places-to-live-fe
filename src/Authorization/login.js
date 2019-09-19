@@ -50,7 +50,7 @@ const Login = props => {
       <LoginContainer>
         <LoginFormParent>
           <Link to="/">
-            <img src={Icon} />
+            <img src={Icon} alt="Login Icon" />
           </Link>
 
           <h1>Log In</h1>
