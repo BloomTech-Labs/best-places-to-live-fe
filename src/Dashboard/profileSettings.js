@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {
   UserViewFormContainer,
@@ -18,12 +18,32 @@ import {
 } from './styled';
 import PasswordSettings from './passwordSettings';
 
+
+
 const Profile = () => {
+  const token = localStorage.getItem("letsmovehomie");
   const [input, setInput] = useState({
     name: '',
     email: '',
-    password: ''
   });
+
+  useEffect(() => {
+    const fetchAuthorizedUser = () => {
+      axios
+        .get("https://stagebe.letsmovehomie.com/users/profile/", {
+          headers: {
+            Authorization: token
+          }
+        })
+        .then(response => {
+          setInput(response.data);
+          console.log(response.data);
+        })
+    }
+
+    fetchAuthorizedUser();
+  }, []);
+
 
   const handleChange = event => {
     event.persist();
@@ -60,7 +80,7 @@ const Profile = () => {
             onChange={handleChange}
             required
             name='name'
-            placeholder='Richard Branson'
+            placeholder=''
           />
         </FormGroup>
         <FormGroupMaBtMd>
@@ -73,7 +93,7 @@ const Profile = () => {
             onChange={handleChange}
             required
             name='email'
-            placeholder='richard@virgin.com'
+            placeholder=''
           />
         </FormGroupMaBtMd>
         {/* 
