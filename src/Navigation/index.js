@@ -61,8 +61,6 @@ class Navigation extends React.Component {
                 <Link to="/" onClick={this.logout}>
                     <NavBtn id="logoutButton">Logout</NavBtn>
                 </Link>
-
-                <Krunker href="https://krunker.io">krunker</Krunker>
             </NavBar>
         );
     }
