@@ -1,14 +1,12 @@
-import React, {useState,useEffect} from 'react';
-import { Container, SearchContainer } from './styled';
+import React, { useState } from "react";
+import {Link} from "react-router-dom"
+import { Container, SearchContainer, ButtonWrapper, Button } from "./styled";
 import axios from "axios";
 
-
-
-
-
 const HomeSearchBar = () => {
-    const [input , setInput] = useState({
-        searchTerm:""
+    const state = {loading:true};
+    const [input, setInput] = useState({
+        searchTerm: ""
     });
     const [searchResult, setsearchResult] = useState([]);
 
@@ -20,43 +18,49 @@ const HomeSearchBar = () => {
         }));
     };
 
-    const fetchSearch = (e) =>{
-        e.preventDefault()
+    const fetchSearch = e => {
+        e.preventDefault();
         axios
-            .post(
-                `https://stagebe.letsmovehomie.com/city/search`,
-                 {searchTerm: input.searchTerm
-                        })
-            .then(res =>{
-                console.log(res.data);
+            .post(`https://stagebe.letsmovehomie.com/city/search`, {
+                searchTerm: input.searchTerm,
+            })
+            .then(res => {
                 setsearchResult(res.data.cities);
-
-
-        })
-            .catch(err =>{
+            })
+            .catch(err => {
                 console.log(err);
             });
     };
 
+    return (
+        <Container>
+            <SearchContainer>
+                <h1> Discover a place you'll love to live</h1>
+                <form onSubmit={fetchSearch}>
+                    <input
+                        id="searchTerm"
+                        label="Enter City or State"
+                        type="search"
+                        value={input.searchTerm}
+                        onChange={handleChange}
+                        placeholder="Enter City or State"
+                    />
+                </form>
+                {searchResult.length > 1 ? (
+                    <ButtonWrapper>{searchResult.slice(0,10).map(city => (
 
-  return (
-    <Container>
-      <SearchContainer>
-        <h1> Discover a place you'll love to live</h1>
-          <form onSubmit={fetchSearch}>
-              <input
-                  id='searchTerm'
-                  label='Enter an Address, City, or Zip Code'
-                  type='search'
-                  value={input.searchTerm}
-                  onChange={handleChange}
-                  placeholder='Enter an Address, City, or Zip Code'
+                            <Link to={`city/${city.name}`}>
+                                <Button key={city._id}>{city.name}</Button>
+                            </Link>
 
-              />
-          </form>
-      </SearchContainer>
-    </Container>
-  );
+                        ))}
+                    </ButtonWrapper>) : (
+                        <div></div>)}
+
+            </SearchContainer>
+        </Container>
+    );
 };
 
 export default HomeSearchBar;
+
