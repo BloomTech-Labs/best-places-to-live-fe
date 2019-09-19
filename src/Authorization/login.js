@@ -40,7 +40,7 @@ const Login = props => {
   };
 
   const googleAuth = () => {
-    window.location = "https://stagebe.letsmovehomie.com/auth/login";
+    window.location = "https://stagebe.letsmovehomie.com/auth/login/google";
   };
 
   return (
