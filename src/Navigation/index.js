@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { NavBar, NavBtn, LogoBox, Header } from "./styled";
 import moving from "../images/LMHiconcopy.png";
+import { Event } from "../utils/GoogleAnalytics";
 
 export default function Navigation() {
   const logout = () => {
