@@ -6,7 +6,7 @@ const CityCards = props => {
   return (
     <CityCard>
         <img
-          alt="City-Image"
+          alt="City"
           src={props.card.photo}/>
           <CardDetail>
 
