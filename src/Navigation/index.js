@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { NavBar, NavBtn, LogoBox,Krunker } from "./styled";
+import { NavBar, NavBtn, LogoBox } from "./styled";
 import moving from "../images/LMHiconcopy.png";
 
 class Navigation extends React.Component {
     constructor(props) {
         super(props);
-
+        
+        this.token = localStorage.getItem("letsmovehomie");
+        
         this.state = {};
 
         this.handleScroll = this.handleScroll.bind(this);
@@ -46,6 +48,16 @@ class Navigation extends React.Component {
                     <NavBtn>Users</NavBtn>
                 </Link>
 
+                <Link to="/Maps">
+                    <NavBtn id="registerButton">Maps</NavBtn>
+                </Link>
+
+                {this.token ? 
+                <Link to="/" onClick={this.logout}>
+                    <NavBtn id="logoutButton">Logout</NavBtn>
+                </Link>
+                : 
+                <>
                 <Link to="/Login">
                     <NavBtn id="loginButton">Login</NavBtn>
                 </Link>
@@ -53,14 +65,8 @@ class Navigation extends React.Component {
                 <Link to="/Register">
                     <NavBtn id="registerButton">SignUp</NavBtn>
                 </Link>
-
-                <Link to="/Maps">
-                    <NavBtn id="registerButton">Maps</NavBtn>
-                </Link>
-
-                <Link to="/" onClick={this.logout}>
-                    <NavBtn id="logoutButton">Logout</NavBtn>
-                </Link>
+                </>
+                }
             </NavBar>
         );
     }
