@@ -16,7 +16,7 @@ class GraphView extends React.Component
         const length = this.props.data.length;
         return (
             <div style={{display: "flex", flexDirection: "column", alignItems: "flex-start", fontSize: "20px"}}>
-                {
+                { 
                     this.props.data.map( (c,i) => {
                     const colorHsl = [((i/length)*360)+31, clamp((c.value*2)+50,0,100), 65];
                     c.color = HSLToHex(colorHsl[0],colorHsl[1], colorHsl[2])

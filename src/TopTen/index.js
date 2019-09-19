@@ -14,11 +14,13 @@ import commute from "../images/travel.png";
 import safety from "../images/police-car.png";
 import tolerance from "../images/tolerance.png";
 import TopTenBack from './Back-side';
+import {withRouter} from 'react-router-dom';
 
 
 
-const TopTen = () => {
+const TopTen = (props) => {
   const model = {
+    id: null,
     name: null,
     photo: null,
     score_total: null,
@@ -97,8 +99,6 @@ const TopTen = () => {
       });
   };
 
-  console.log(topTenList);
-
   return (
     <TopTenMasterContainer>
       <TopTenTitle>
@@ -118,7 +118,7 @@ const TopTen = () => {
               ? topTenList.map(state => (
                   <>
                       <div className="flip-card">
-                          <div className="flip-card-inner">
+                          <div className="flip-card-inner" onClick={()=> props.history.push(`city/?id=${state.id}`)}>
                               <div className="flip-card-front">
                                   <TopTenCards key={state.id} card={state} />
                               </div>
@@ -137,4 +137,4 @@ const TopTen = () => {
   );
 };
 
-export default TopTen;
+export default withRouter(TopTen);
