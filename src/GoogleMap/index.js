@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import {mapStyles} from './styled';
+import Navigation from "../Navigation";
 
 
 
@@ -32,6 +33,7 @@ export class MapContainer extends Component {
     render() {
         return (
             <>
+                <Navigation/>
                 <Map
                     google={this.props.google}
                     zoom={8}
