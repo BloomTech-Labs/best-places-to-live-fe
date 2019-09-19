@@ -28,6 +28,10 @@ class Navigation extends React.Component {
             : (document.body.style.paddingBottom = 0);
     }
 
+    logout() {
+        localStorage.removeItem('letsmovehomie');
+    }
+
     render() {
         return (
             <NavBar
@@ -52,6 +56,10 @@ class Navigation extends React.Component {
 
                 <Link to="/Maps">
                     <NavBtn id="registerButton">Maps</NavBtn>
+                </Link>
+
+                <Link to="/" onClick={this.logout}>
+                    <NavBtn id="logoutButton">Logout</NavBtn>
                 </Link>
 
                 <Krunker href="https://krunker.io">krunker</Krunker>
