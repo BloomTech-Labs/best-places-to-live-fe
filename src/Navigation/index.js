@@ -6,6 +6,11 @@ import { Event } from "../utils/GoogleAnalytics";
 
 export default function Navigation() {
   Event("User", "Clicked the login button", "Clickthroughs");
+
+  const logout = () => {
+    localStorage.removeItem("letsmovehomie");
+  };
+
   return (
     <div>
       <Header>
@@ -28,6 +33,10 @@ export default function Navigation() {
 
           <Link to="/Maps">
             <NavBtn id="registerButton">Maps</NavBtn>
+          </Link>
+
+          <Link to="/" onClick={logout}>
+            <NavBtn id="logoutButton">Logout</NavBtn>
           </Link>
         </NavBar>
       </Header>
