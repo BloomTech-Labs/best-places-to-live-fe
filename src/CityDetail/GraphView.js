@@ -6,26 +6,35 @@ class GraphView extends React.Component
     {
         mounted: false
     }
-    componentDidMount()
+/*     componentDidMount()
     {
+        console.log("hello")
+        setTimeout( () => this.setState({...this.state, mounted: true}), 100);
+    } */
+    componentWillMount()
+    {
+        console.log("hello");
         setTimeout( () => this.setState({...this.state, mounted: true}), 100);
     }
     render()
     {
-        const maxWidth = this.state.mounted ? 400 : 10; //in vws
+        const maxWidth = this.state.mounted || this.props.noTransition ? this.props.maxWidth ? this.props.maxWidth : "600px" : "10px"; //in px
         const length = this.props.data.length;
         return (
-            <div style={{display: "flex", flexDirection: "column", alignItems: "flex-start", fontSize: "20px"}}>
+            <div style={{display: "flex", flexDirection: "column", alignItems: "flex-start", fontSize: "20px", width: "100%"}}>
                 { 
                     this.props.data.map( (c,i) => {
-                    const colorHsl = [((i/length)*360)+31, clamp((c.value*2)+50,0,100), 65];
+                    if(c.type === "float")c.value = c.value ? parseFloat(c.value) : 0;
+                    const colorHsl = [((i/length)*360)+31, clamp((c.value*8)+0,0,100), 65];
                     c.color = HSLToHex(colorHsl[0],colorHsl[1], colorHsl[2])
+                    c.grade = c.grade === "N/A" ? "" : c.grade;
+                    console.log(c.value);
                     return(
                         <div key={i} style={{margin: "10px 0", display: "flex"}}>
                             <div style={{marginRight: "5px", minWidth: "130px", textAlign: "left"}}>{c.label}</div>
                             <div style={{
                                         backgroundColor: `hsl(${colorHsl[0]},${colorHsl[1]}%, ${colorHsl[2]}%)`, 
-                                        maxWidth: maxWidth, height: "20px", width: `${(c.value/10)*maxWidth}px`,  fontSize: "15px", 
+                                        maxWidth: maxWidth, minWidth: "15px", height: "20px", width: `${(c.value/10)*parseInt(maxWidth)}px`,  fontSize: "15px", 
                                         textAlign: "center", verticalAlign: "middle", transition: "1.5s max-width linear"
                                     }}
                             >
@@ -54,6 +63,7 @@ function invertColor(hex, bw=true) {
         hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
     }
     if (hex.length !== 6) {
+        console.log(hex);
         throw new Error('Invalid HEX color.');
     }
     var r = parseInt(hex.slice(0, 2), 16),
