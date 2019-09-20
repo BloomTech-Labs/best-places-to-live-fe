@@ -20,7 +20,7 @@ const HomeSearchBar = () => {
     const fetchSearch = e => {
         e.preventDefault();
         axios
-            .post(`https://stagebe.letsmovehomie.com/city/search`, {
+            .post(`https://stagebe.letsmovehomie.com/city/search/`, {
                 searchTerm: input.searchTerm,
             })
             .then(res => {
@@ -46,15 +46,9 @@ const HomeSearchBar = () => {
                     />
                 </form>
                 {searchResult.length > 1 ? (
-                    <ButtonWrapper>{searchResult.slice(0,10).map(city => (
-
-                            <Link to={`city/${city.name}`}>
-                                <Button key={city._id}>{city.name}</Button>
-                            </Link>
-
-                        ))}
+                    <ButtonWrapper>{searchResult.slice(0,10).map(city => (<Link to={`city/?${city._id}`}><Button key={city._id}>{city.name}</Button></Link>))}
                     </ButtonWrapper>) : (
-                        <div></div>)}
+                        <></>)}
 
             </SearchContainer>
         </Container>

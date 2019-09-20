@@ -8,11 +8,13 @@ import {
   FooterButtons,
   LoginImg,
   SignInButton,
-  GoogleButton
+  GoogleButton,
+  ErrorMessage
 } from "./styled";
 import Icon from "../images/LMHiconcopy.png";
 
 const Login = props => {
+  const[error,setError] = useState('');
   const [input, setInput] = useState({
     email: "",
     password: ""
@@ -35,18 +37,18 @@ const Login = props => {
         props.history.push("/");
       })
       .catch(err => {
-        console.log(err);
+        console.log(err.response.data.message);
+        setError(err.response.data.message)
       });
   };
 
   const googleAuth = () => {
-    window.location = "https://stagebe.letsmovehomie.com/auth/login";
+    window.location = "https://stagebe.letsmovehomie.com/auth/login/google";
   };
 
   return (
     <>
       <LoginImg />
-
       <LoginContainer>
         <LoginFormParent>
           <Link to="/">
@@ -77,6 +79,10 @@ const Login = props => {
               onChange={handleChange}
             />
 
+            <ErrorMessage>
+              {error ? (<div>{error}</div>) : (<></>)}
+            </ErrorMessage>
+
             {/*remember me button when the time is needed to integrate it*/}
             {/*<FormControlLabel*/}
             {/*    control={<Checkbox value="remember" color="primary" />}*/}
@@ -86,6 +92,7 @@ const Login = props => {
             <SignInButton type="submit" className="">
               Sign In
             </SignInButton>
+
             <GoogleButton onClick={googleAuth}>
               <i className="fab fa-google-plus-g"></i>login
             </GoogleButton>
