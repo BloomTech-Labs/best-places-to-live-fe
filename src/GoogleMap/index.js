@@ -19,7 +19,6 @@ export class MapContainer extends Component {
     citites: null
   };
   createMapOptions = (maps: Maps) => {
-    console.log(maps);
     return {
       streetViewControl: false,
       scaleControl: true,
@@ -73,9 +72,7 @@ export class MapContainer extends Component {
       }, 200);
     }, 200);
     marker.activeid = parseInt(marker.title);
-    console.log(parseInt(marker.title));
     this.location = { lat: marker.position.lat(), lng: marker.position.lng() };
-    console.log(this.location);
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
@@ -166,25 +163,23 @@ export class MapContainer extends Component {
       .then(res => {
         if (res.data.message) throw "no data";
         if (res.data.cities) res.data.data = res.data.cities;
-        console.log(this.state.cities);
         if (this.state.cities && this.state.cities.length > 1)
           res.data.data = this.state.cities.concat(
             res.data.data.filter(
               x => this.state.cities.filter(y => x.id === y.id).length < 1
             )
           );
-        console.log(res.data.data);
         setTimeout(
           () => this.setState({ ...this.state, cities: res.data.data }),
           500
         );
       })
       .catch(err => {
-        console.log(err);
+        //console.log(err);
         this.setState({ ...this.state, cities: [] });
       });
   };
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.location =
       this.props.lat && this.props.lng
         ? { lat: this.props.lat, lng: this.props.lng }

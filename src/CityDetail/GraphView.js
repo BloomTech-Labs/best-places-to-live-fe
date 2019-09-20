@@ -4,13 +4,7 @@ class GraphView extends React.Component {
   state = {
     mounted: false
   };
-  /*     componentDidMount()
-    {
-        console.log("hello")
-        setTimeout( () => this.setState({...this.state, mounted: true}), 100);
-    } */
-  componentWillMount() {
-    console.log("hello");
+    componentDidMount() {
     setTimeout(() => this.setState({ ...this.state, mounted: true }), 100);
   }
   render() {
@@ -40,7 +34,6 @@ class GraphView extends React.Component {
           ];
           c.color = HSLToHex(colorHsl[0], colorHsl[1], colorHsl[2]);
           c.grade = c.grade === "N/A" ? "" : c.grade;
-          console.log(c.value);
           return (
             <div key={i} style={{ margin: "10px 0", display: "flex" }}>
               <div
@@ -100,7 +93,6 @@ function invertColor(hex, bw = true) {
     hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
   }
   if (hex.length !== 6) {
-    console.log(hex);
     throw new Error("Invalid HEX color.");
   }
   var r = parseInt(hex.slice(0, 2), 16),
@@ -170,9 +162,9 @@ function HSLToHex(h, s, l) {
   b = Math.round((b + m) * 255).toString(16);
 
   // Prepend 0s, if necessary
-  if (r.length == 1) r = "0" + r;
-  if (g.length == 1) g = "0" + g;
-  if (b.length == 1) b = "0" + b;
+  if (r.length === 1) r = "0" + r;
+  if (g.length === 1) g = "0" + g;
+  if (b.length === 1) b = "0" + b;
 
   return "#" + r + g + b;
 }

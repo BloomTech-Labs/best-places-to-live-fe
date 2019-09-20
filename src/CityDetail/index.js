@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import HomeSearchBar from "../HomeSearchBar";
+import React, { useState } from "react";
 import Navigation from "../Navigation";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
@@ -32,13 +31,13 @@ const CityDetail = props => {
         setCity(res.data.data[0]);
       })
       .catch(err => {
-        console.log(err);
+        //console.log(err);
         props.history.push("/");
       });
   };
   var search = parseSearch(props.location.search);
   if (!city) {
-    fun(search.id).then(() => console.log("hello"));
+    fun(search.id);
     return <div />;
   }
   let data = [
@@ -262,7 +261,7 @@ export default withRouter(CityDetail);
 function parseSearch(search) {
   if (search[0] !== "?") return ""; //make sure this uses the search algorithem
   var str = search;
-  var str = str.slice(1, str.length);
+  str = str.slice(1, str.length);
   var ret = {};
   str = str
     .split("=")

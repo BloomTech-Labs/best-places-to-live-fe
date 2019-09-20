@@ -7,7 +7,6 @@ import TopTen from "../TopTen";
 import UserList from "../UserList"
 import MapContainer from "../GoogleMap";
 import DashboardMenu from '../Dashboard';
-import Cities from '../Cities';
 import City from "../CityDetail"
 
 const Routes = () => {
