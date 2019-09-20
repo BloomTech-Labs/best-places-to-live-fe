@@ -5,17 +5,17 @@ padding:1%;
 width: 20%;
 `;
 export const NavBar = styled.div`
-display: flex;
-align-items: center;
-justify-content: start-end;
+  display: flex;
+  align-items: center;
+  justify-content: start-end;
 `;
 export const LogoBox = styled.img`
-background-size: cover;
-background-repeat: no-repeat;
-background-position: center; 
-position: relative;
-margin-right:5px;
-width: 50px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  margin-right: 5px;
+  width: 50px;
 `;
 export const NavBtn = styled.button`{
  font-weight: 600;
@@ -33,12 +33,12 @@ export const NavBtn = styled.button`{
    background-color: #E67271;
    color: white;
    border: none;
- }`
+ }`;
 
- export const Container = styled.div`
-        user-select: none;
-        -moz-user-select: none;
-        -khtml-user-select: none;
-        -webkit-user-select: none;
-        -o-user-select: none;
- `
+export const Container = styled.div`
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+`;

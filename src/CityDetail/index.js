@@ -5,7 +5,7 @@ import axios from "axios";
 import { withRouter } from "react-router-dom";
 import MapView from "../GoogleMap";
 import CircleImage from "./CircleImage";
-import styled from "styled-components"
+import styled from "styled-components";
 import "dotenv";
 import GraphView from "./GraphView";
 
@@ -190,31 +190,52 @@ const CityDetail = props => {
   return (
     <>
       <Navigation />
-{/*       <HomeSearchBar /> */}
-      <div style={{display: "flex", flexDirection: "column", alignItems:"center", maxWidth: "800px", margin: "0 auto"}}>
-      <div style={{ minWidth: "100vw", minHeight: "400px", zIndex: "0", marginBottom: "-100px"}}>
-        <MapView
-          zoom={12}
-          lat={city.location[1]}
-          lng={city.location[0]}
-          mainStyle={{ width: "100vw", height: "400px", /* maxWidth: "800px", */ margin:"0 auto"}}
-          renderOne
-          /* noNav */
-        />
-      </div>
-      <div style={{zIndex: "1"}}>
-      <CircleImage
-        image={city.photo !== "" ? city.photo : city.grade_total}
-        value={city.score_total}
-        label={city.short_name}
-        grade={city.grade_total}
-        />
+      {/*       <HomeSearchBar /> */}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          maxWidth: "800px",
+          margin: "0 auto"
+        }}
+      >
+        <div
+          style={{
+            minWidth: "100vw",
+            minHeight: "400px",
+            zIndex: "0",
+            marginBottom: "-100px"
+          }}
+        >
+          <MapView
+            zoom={12}
+            lat={city.location[1]}
+            lng={city.location[0]}
+            mainStyle={{
+              width: "100vw",
+              height: "400px",
+              /* maxWidth: "800px", */ margin: "0 auto"
+            }}
+            renderOne
+            /* noNav */
+          />
         </div>
-      <div className="label" style={{fontSize: "4em", margin:"20px 0"}}>{city.short_name}</div> 
-      <HorizontalBar/>
+        <div style={{ zIndex: "1" }}>
+          <CircleImage
+            image={city.photo !== "" ? city.photo : city.grade_total}
+            value={city.score_total}
+            label={city.short_name}
+            grade={city.grade_total}
+          />
+        </div>
+        <div className="label" style={{ fontSize: "4em", margin: "20px 0" }}>
+          {city.short_name}
+        </div>
+        <HorizontalBar />
         <GraphView data={data} />
-      <HorizontalBar/>
-      {/* <div>
+        <HorizontalBar />
+        {/* <div>
         {city ? (
           Object.keys(city).map(k => {
             if (k === "location") {
@@ -227,10 +248,10 @@ const CityDetail = props => {
         )}
       </div> */}
 
-      {/* <Section> */}
-      {/* <Nav></Nav> */}
-      {/* <Scores /> */}
-      {/* </Section> */}
+        {/* <Section> */}
+        {/* <Nav></Nav> */}
+        {/* <Scores /> */}
+        {/* </Section> */}
       </div>
     </>
   );
@@ -255,10 +276,9 @@ function parseSearch(search) {
   return ret;
 }
 
-const HorizontalBar = styled.div `
-    border-top: 5px solid #aaa;
-    width: 100vw;
-    max-width: 100%;
-    margin: 20px;
-
-`
+const HorizontalBar = styled.div`
+  border-top: 5px solid #aaa;
+  width: 100vw;
+  max-width: 100%;
+  margin: 20px;
+`;

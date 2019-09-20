@@ -12,94 +12,102 @@ class CircleImage extends React.Component {
   render() {
     let isLetter = false;
     if (!this.props.image) return <div />;
-    if (this.props.image.length <  5) isLetter = true;
-    let value = this.props.value ? Math.ceil(this.props.value*10)+0.5 : 0;
-    let color = `hsl(31,${ clamp((value*8)+0,0,100)}%,65%)`;
-    let grade = this.props.grade ? this.props.grade : "N/A"
+    if (this.props.image.length < 5) isLetter = true;
+    let value = this.props.value ? Math.ceil(this.props.value * 10) + 0.5 : 0;
+    let color = `hsl(31,${clamp(value * 8 + 0, 0, 100)}%,65%)`;
+    let grade = this.props.grade ? this.props.grade : "N/A";
     const Circle = styled.div`
+      position: relative;
+      user-select: none;
+      -moz-user-select: none;
+      -khtml-user-select: none;
+      -webkit-user-select: none;
+      -o-user-select: none;
+      #circle-background,
+      #circle-progress {
+        fill: ${isLetter ? "white" : "none"};
+      }
+      #circle-background {
+        stroke: #ddd;
+      }
+
+      #circle-progress {
+        stroke: ${color};
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      #circle-text {
+        font-size: 3em;
+        font-weight: bold;
+        fill: red;
+      }
+      .label {
+        font-size: 4em;
+        font-weight: 700;
+      }
+      .image-cropper {
+        width: 100px;
+        height: 100px;
         position: relative;
-        user-select: none;
-        -moz-user-select: none;
-        -khtml-user-select: none;
-        -webkit-user-select: none;
-        -o-user-select: none;
-        #circle-background,
-        #circle-progress {
-            fill: ${isLetter ? "white" : "none"};
+        overflow: hidden;
+        border-radius: 50%;
+      }
+      .profile-pic {
+        display: inline;
+        margin: 0 auto;
+        margin-left: -25%; //centers the image
+        height: 100%;
+        width: auto;
+      }
+      .hover-grade {
+        opacity: 0;
+        background-color: #000000aa;
+        font-size: 5em;
+        font-color: #444;
+        font-weight: bold;
+        width: 100%;
+        height: 99%;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        right: 0;
+        transition: opacity 0.7s linear;
+        div {
+          text-align: center;
+          padding-top: 40%;
         }
-        #circle-background {
-            stroke: #ddd;
+        &:hover {
+          opacity: 1;
+          transition: opacity 0.7s linear;
         }
-
-        #circle-progress {
-            stroke: ${color};
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        #circle-text {
-            font-size: 3em;
-            font-weight: bold;
-            fill: red;
-        }
-        .label {
-            font-size: 4em;
-            font-weight: 700;
-        }
-        .image-cropper {
-            width: 100px;
-            height: 100px;
-            position: relative;
-            overflow: hidden;
-            border-radius: 50%;
-        }
-        .profile-pic {
-          display: inline;
-          margin: 0 auto;
-          margin-left: -25%; //centers the image
-          height: 100%;
-          width: auto;
-        }
-        .hover-grade
-        {
-            opacity: 0;
-            background-color: #000000AA;
-            font-size: 5em;
-            font-color: #444;
-            font-weight: bold;
-            width: 100%;
-            height: 99%;
-            border-radius: 50%;
-            position: absolute;
-            z-index: 0;
-            top: 0;
-            right: 0;
-            transition: opacity 0.7s linear;
-            div {
-                
-                text-align: center;
-                padding-top: 40%;
-            }
-            &:hover
-            {
-                opacity: 1;
-                transition: opacity 0.7s linear;
-            }
-        }
+      }
     `;
     return (
       <Circle>
         <CircularProgressBar
-        style={{position: "absolute"}}
+          style={{ position: "absolute" }}
           percentage={value}
           sqSize={600}
           strokeWidth={20}
           text={isLetter ? this.props.image : ""}
         />
-        <img src={this.props.image} style={{position: "absolute", height: "99%", top: "0", right:"0%", borderRadius: "50%", zIndex: "-1"}}/>
-        <div className="hover-grade"><div>{grade}</div></div>
+        <img
+          src={this.props.image}
+          style={{
+            position: "absolute",
+            height: "99%",
+            top: "0",
+            right: "0%",
+            borderRadius: "50%",
+            zIndex: "-1"
+          }}
+        />
+        <div className="hover-grade">
+          <div>{grade}</div>
+        </div>
       </Circle>
-      
     );
   }
 }
@@ -131,7 +139,15 @@ class CircularProgressBar extends React.Component {
         width={this.props.sqSize}
         height={this.props.sqSize}
         viewBox={viewBox}
-        style={{maxWidth: "200px", maxHeight: "200px", width: "25vw", height: "25vw", position: "relative", zIndex: "1", pointerEvents: "none"}}
+        style={{
+          maxWidth: "200px",
+          maxHeight: "200px",
+          width: "25vw",
+          height: "25vw",
+          position: "relative",
+          zIndex: "1",
+          pointerEvents: "none"
+        }}
       >
         <circle
           id="circle-background"
@@ -141,7 +157,7 @@ class CircularProgressBar extends React.Component {
           strokeWidth={`${this.props.strokeWidth}px`}
         />
         <circle
-          style={{stroke: "blue"}}
+          style={{ stroke: "blue" }}
           id="circle-progress"
           cx={this.props.sqSize / 2}
           cy={this.props.sqSize / 2}
@@ -155,21 +171,20 @@ class CircularProgressBar extends React.Component {
             strokeDashoffset: dashOffset
           }}
         />
-        {
-            this.props.img ?
-            <div>
-                {/* <img src="https://letsmovehomie-city-photoes.nyc3.digitaloceanspaces.com/Woodside,%20CA.jpg" /> */}
-            </div>
-            :
-        <text id="circle-text" x="50%" y="50%" dy=".3em" textAnchor="middle">
-          {`${this.props.text}`}
-        </text>
-        }
+        {this.props.img ? (
+          <div>
+            {/* <img src="https://letsmovehomie-city-photoes.nyc3.digitaloceanspaces.com/Woodside,%20CA.jpg" /> */}
+          </div>
+        ) : (
+          <text id="circle-text" x="50%" y="50%" dy=".3em" textAnchor="middle">
+            {`${this.props.text}`}
+          </text>
+        )}
       </svg>
     );
   }
 }
 
 function clamp(num, min, max) {
-    return num <= min ? min : num >= max ? max : num;
-  }
+  return num <= min ? min : num >= max ? max : num;
+}
