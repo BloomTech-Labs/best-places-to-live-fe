@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { NavBar, NavBtn, LogoBox, Header } from "./styled";
+import { Container, NavBar, NavBtn, LogoBox, Header } from "./styled";
 import moving from "../images/LMHiconcopy.png";
 
 export default function Navigation() {
   return (
-    <div>
+    <Container>
     <Header>
       <NavBar>
           <Link to="/">
@@ -29,6 +29,6 @@ export default function Navigation() {
           </Link>
       </NavBar>
   </Header>
-  </div>
+  </Container>
   );
 }
