@@ -4,7 +4,6 @@ import { Container, SearchContainer, ButtonWrapper, Button } from "./styled";
 import axios from "axios";
 
 const HomeSearchBar = () => {
-    const state = {loading:true};
     const [input, setInput] = useState({
         searchTerm: ""
     });
