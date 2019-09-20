@@ -3,17 +3,20 @@ import styled from "styled-components";
 
 class CircleImage extends React.Component {
   state = {
-    mounted: false
+    mounted: false,
+    value: 0 
   };
   componentDidMount() {
-    setTimeout(() => this.setState({ ...this.state, mounted: true }), 200); //for animation
+    setTimeout(() => this.setState({ ...this.state, mounted: true }), 2000); //for animation
   }
 
   render() {
+    let value = this.props.value ? Math.ceil(this.props.value * 10) + 0.5 : 0;
+      if(Math.abs(value - this.state.value) > 0.5)
+      setTimeout(() => this.setState({...this.state, value: this.state.value + (Math.abs(value - this.state.value) > 0.8 ? 0.8 : 0.1 )}), 10);
     let isLetter = false;
     if (!this.props.image) return <div />;
     if (this.props.image.length < 5) isLetter = true;
-    let value = this.props.value ? Math.ceil(this.props.value * 10) + 0.5 : 0;
     let color = `hsl(31,${clamp(value * 8 + 0, 0, 100)}%,65%)`;
     let grade = this.props.grade ? this.props.grade : "N/A";
     const Circle = styled.div`
@@ -46,20 +49,6 @@ class CircleImage extends React.Component {
         font-size: 4em;
         font-weight: 700;
       }
-      .image-cropper {
-        width: 100px;
-        height: 100px;
-        position: relative;
-        overflow: hidden;
-        border-radius: 50%;
-      }
-      .profile-pic {
-        display: inline;
-        margin: 0 auto;
-        margin-left: -25%; //centers the image
-        height: 100%;
-        width: auto;
-      }
       .hover-grade {
         opacity: 0;
         background-color: #000000aa;
@@ -78,32 +67,46 @@ class CircleImage extends React.Component {
           text-align: center;
           padding-top: 40%;
         }
-        &:hover {
-          opacity: 1;
-          transition: opacity 0.7s linear;
-        }
+          &:hover {
+            opacity: 1;
+            transition: opacity 0.7s linear;
+          }
       }
+      .image-cropper
+        {
+          width: 100%;
+        height: 99%;
+        position: absolute;
+        overflow: hidden;
+        border-radius: 50%;
+        top: 0;
+        right: 0;
+        border-radius: 50%;
+        }
+        .profile-pic {
+          display: inline;
+          margin: 0 auto;
+          height: 99%;
+          width: 100%;
+          object-fit: fill;
+        }
     `;
     return (
       <Circle>
         <CircularProgressBar
-          style={{ position: "absolute" }}
-          percentage={value}
+          percentage={this.state.value}
           sqSize={600}
           strokeWidth={20}
           text={isLetter ? this.props.image : ""}
         />
-        <img
-          src={this.props.image}
-          style={{
-            position: "absolute",
-            height: "99%",
-            top: "0",
-            right: "0%",
-            borderRadius: "50%",
-            zIndex: "-1"
-          }}
-        />
+        <div
+          className="image-cropper"
+          >
+          <img
+            className="profile-pic"
+            src={this.props.image}
+          />
+        </div>
         <div className="hover-grade">
           <div>{grade}</div>
         </div>
