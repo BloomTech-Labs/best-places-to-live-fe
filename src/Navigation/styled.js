@@ -34,3 +34,11 @@ export const NavBtn = styled.button`{
    color: white;
    border: none;
  }`
+
+ export const Container = styled.div`
+        user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+ `
