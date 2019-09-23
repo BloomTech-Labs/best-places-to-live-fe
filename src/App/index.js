@@ -17,14 +17,17 @@ const AppWithRouter = withRouter(Routes);
       }
     */
 
+// Run Google Analytics
+initializeAnalytics();
+// Runs history when the route changes.
+history.listen(location => {
+  ReactGA.pageview(location.pathname);
+});
+
 const App = () => {
-  // Run Google Analytics
   useEffect(() => {
-    initializeAnalytics();
-    ReactGA.pageview("/");
-    history.listen(location => {
-      ReactGA.pageview(location.pathname);
-    });
+    // Runs pageview for Initial page load
+    ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
   return (
     <Router history={history}>
