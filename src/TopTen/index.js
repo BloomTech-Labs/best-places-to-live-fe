@@ -115,12 +115,12 @@ const TopTen = (props) => {
       </CategoryContentBox>
       <TopTenWrapper>
             {topTenList
-              ? topTenList.map(state => (
-                  <>
-                      <div className="flip-card">
-                          <div className="flip-card-inner" onClick={()=> props.history.push(`city/?id=${state.id}`)}>
-                              <div className="flip-card-front">
-                                  <TopTenCards key={state.id} card={state} />
+              ? topTenList.map((state,i) => (
+
+                      <div className="flip-card" key={i} onClick={()=> props.history.push(`city/?id=${state.id}`)}>
+                          <div className="flip-card-inner">
+                              <div className="flip-card-front" >
+                                  <TopTenCards  card={state} />
                               </div>
 
                               <div className="flip-card-back">
@@ -128,7 +128,7 @@ const TopTen = (props) => {
                               </div>
                         </div>
                       </div>
-                     </>
+
                 ))
               : ""}
       </TopTenWrapper>

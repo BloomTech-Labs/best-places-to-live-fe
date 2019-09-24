@@ -3,12 +3,6 @@ import styled from "styled-components";
 
 
 export const Container = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 5%;
-
 background-image:url('https://images.unsplash.com/photo-1449034446853-66c86144b0ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
 background-size: cover;
 background-repeat: no-repeat;
@@ -16,21 +10,32 @@ background-position: center;
 position: relative;
 height: 60vh;
 width: 100%;
-
+display:flex;
+flex-flow: row wrap
+justify-content: center;
+border-radius: 50px:
 `;
 
 export const SearchContainer = styled.span`
 display:flex;
 flex-direction:column;
 align-items:center;
-width: auto;
+width:100%;
 height: 20%;
-h1 {
-    color: white;
-}
+padding-top: 11%;
 
-input{
-    width: 100%;
+    h1 {
+    color: white;
+    }
+    form{
+    display:flex;
+    justify-content:center;
+    width:100%;
+    }
+    
+    input{
+    border:1px solid yellow;
+    width: 20%;
     padding: 12px;
     border: none;
     border-radius: 4px;
@@ -41,44 +46,34 @@ input{
     line-height: 20px;
     outline:none;
     text-decoration: none; 
-}
+    text-align:center;
+    }
+`;
+export const ButtonWrapper = styled.div`
+display:flex;
+flex-direction:row;
+justify-content:center;
+width:60%;
 `;
 
+export const Button = styled.div`
+font-weight: 600;
+text-align: center;
+padding: 8px 16px;
+border: 0px solid white;
+background: #E67271;
+border-radius: 8px;
+font-family: ‘Rubik’, sans-serif;
+font-size: 1.5rem;
+outline:none; 
+text-decoration:none;
+margin:1% 1%;
+color:white;
+transition: transform .2s;
 
-// flex-flow: row wrap
-
-
-
-//   @media @tablet {
-//       height: 40vh;
-//   }
-
-//   span {
-//       padding-top: 11%;
-//       .flex-box(column, wrap);
-//       .custom-layout(center, center);
-
-//       button {
-//           .join-button(120px, 46px);
-//       }
-//   }
-
-//   #banner-txt{
-//       font-size: @giant-text;
-//       font-weight: 400;
-//       color: white;
-
-//       @media @tablet {
-//           font-size: @medium-text;
-//           font-weight: 400;
-//       }
-//   }
-
-//   #banner-sub-text{
-//       color: whitesmoke;
-
-//       @media @tablet {
-//           font-size: @medium-text;
-//       }
-//   }
-// }
+ &:hover {
+   background-color: white;
+   color: black;
+   border: none;
+   transform: scale(.90);
+`;

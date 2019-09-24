@@ -1,34 +1,78 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Container, NavBar, NavBtn, LogoBox, Header } from "./styled";
+import { NavBar, NavBtn, LogoBox } from "./styled";
 import moving from "../images/LMHiconcopy.png";
 
-export default function Navigation() {
-  return (
-    <Container>
-    <Header>
-      <NavBar>
-          <Link to="/">
-            <LogoBox src={moving}/>
-          </Link>
+class Navigation extends React.Component {
+  constructor(props) {
+    super(props);
 
-          <Link to="/Userlist">
-            <NavBtn>Users</NavBtn>
-          </Link>
+    this.token = localStorage.getItem("letsmovehomie");
 
-          <Link to="/Login">
-            <NavBtn id="loginButton">Login</NavBtn>
-          </Link>
+    this.state = {};
 
-          <Link to="/Register">
-            <NavBtn id="registerButton">SignUp</NavBtn>
-          </Link>
+    this.handleScroll = this.handleScroll.bind(this);
+  }
 
-          <Link to="/Maps">
-              <NavBtn id="registerButton">Maps</NavBtn>
+  handleScroll() {
+    this.setState({ scroll: window.scrollY });
+  }
+
+  componentDidMount() {
+    const el = document.querySelector("nav");
+    this.setState({
+      top: el !== null ? el.offsetTop : 0,
+      height: el !== null ? el.offsetHeight : 0
+    });
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  componentDidUpdate() {
+    this.state.scroll > this.state.top
+      ? (document.body.style.paddingBottom = `${this.state.height}px`)
+      : (document.body.style.paddingBottom = 0);
+  }
+
+  logout() {
+    localStorage.removeItem("letsmovehomie");
+  }
+
+  render() {
+    return (
+      <NavBar
+        style={{ zIndex: "100" }}
+        className={this.state.scroll > this.state.top ? "fixed-nav" : ""}
+      >
+        <Link to="/">
+          <LogoBox src={moving} />
+        </Link>
+
+        <Link to="/Userlist">
+          <NavBtn>Users</NavBtn>
+        </Link>
+
+        <Link to="/Maps">
+          <NavBtn id="registerButton">Maps</NavBtn>
+        </Link>
+
+        {this.token ? (
+          <Link to="/" onClick={this.logout}>
+            <NavBtn id="logoutButton">Logout</NavBtn>
           </Link>
+        ) : (
+          <>
+            <Link to="/Login">
+              <NavBtn id="loginButton">Login</NavBtn>
+            </Link>
+
+            <Link to="/Register">
+              <NavBtn id="registerButton">SignUp</NavBtn>
+            </Link>
+          </>
+        )}
       </NavBar>
-  </Header>
-  </Container>
-  );
+    );
+  }
 }
+
+export default Navigation;

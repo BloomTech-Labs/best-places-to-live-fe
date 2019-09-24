@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import {LoginContainer,
-        LoginFormParent,
-        LoginForm,
-        FooterButtons,
-        LoginImg,
-        SignInButton,
-        GoogleButton} from "./styled";
-import Icon from '../images/LMHiconcopy.png'
+import {
+  LoginContainer,
+  LoginFormParent,
+  LoginForm,
+  FooterButtons,
+  LoginImg,
+  SignInButton,
+  GoogleButton,
+  ErrorMessage
+} from "./styled";
+import Icon from "../images/LMHiconcopy.png";
 
 const Login = props => {
+  const[error,setError] = useState('');
   const [input, setInput] = useState({
     email: "",
     password: ""
@@ -29,30 +33,29 @@ const Login = props => {
     axios
       .post("https://stagebe.letsmovehomie.com/users/login", input)
       .then(response => {
+        localStorage.setItem("letsmovehomie", response.data.token);
         props.history.push("/");
       })
       .catch(err => {
-        console.log(err);
+        console.log(err.response.data.message);
+        setError(err.response.data.message)
       });
   };
 
-  const googleAuth = () =>{
-    window.location = "https://stagebe.letsmovehomie.com/auth/login"
+  const googleAuth = () => {
+    window.location = "https://stagebe.letsmovehomie.com/auth/login/google";
   };
-
 
   return (
     <>
       <LoginImg />
-
       <LoginContainer>
-
         <LoginFormParent>
           <Link to="/">
-            <img src={Icon}/>
+            <img src={Icon} alt="Login Icon" />
           </Link>
 
-            <h1>Log In</h1>
+          <h1>Log In</h1>
 
           <LoginForm onSubmit={handleSubmit}>
             <input
@@ -76,38 +79,31 @@ const Login = props => {
               onChange={handleChange}
             />
 
+            <ErrorMessage>
+              {error ? (<div>{error}</div>) : (<></>)}
+            </ErrorMessage>
+
             {/*remember me button when the time is needed to integrate it*/}
             {/*<FormControlLabel*/}
             {/*    control={<Checkbox value="remember" color="primary" />}*/}
             {/*    label="Remember me"*/}
             {/*/>*/}
 
-            <SignInButton type="submit" className=''>
+            <SignInButton type="submit" className="">
               Sign In
             </SignInButton>
-            <GoogleButton onClick={googleAuth}><i className="fab fa-google-plus-g">
-              </i>login
+
+            <GoogleButton onClick={googleAuth}>
+              <i className="fab fa-google-plus-g"></i>login
             </GoogleButton>
 
-              <FooterButtons>
+            <FooterButtons>
+              <Link href="#">Forgot password?</Link>
 
-                <Link href="#">
-                  Forgot password?
-                </Link>
-
-
-
-
-                <Link to="/register">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-
-              </FooterButtons>
-
+              <Link to="/register">{"Don't have an account? Sign Up"}</Link>
+            </FooterButtons>
           </LoginForm>
-
         </LoginFormParent>
-
       </LoginContainer>
     </>
   );

@@ -1,14 +1,25 @@
 import styled from "styled-components";
-export const Header = styled.div`
+
+// export const Header = styled.div`
+// background-color:white
+// width: 20%;
+// display: flex;
+// align-items: center;
+// justify-content: start-end;
+// `;
+
+export const NavBar = styled.nav.attrs({
+    className: "fixed-nav"
+})`
+position:fixed;
 background-color:white
-padding:1%;
-width: 20%;
+width: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: start-end;
+ padding: 0.5% 0% 0.5% 2%;
 `;
-export const NavBar = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: start-end;
-`;
+
 export const LogoBox = styled.img`
   background-size: cover;
   background-repeat: no-repeat;
@@ -17,6 +28,7 @@ export const LogoBox = styled.img`
   margin-right: 5px;
   width: 50px;
 `;
+
 export const NavBtn = styled.button`{
  font-weight: 600;
  text-align: center;
@@ -35,10 +47,11 @@ export const NavBtn = styled.button`{
    border: none;
  }`;
 
-export const Container = styled.div`
-  user-select: none;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -o-user-select: none;
-`;
+export const Krunker = styled.a`
+border;1px solid red;
+position:absolute
+left:97%;
+color:white;
+&:hover{
+color:white;
+}`;

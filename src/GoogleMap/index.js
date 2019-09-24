@@ -161,7 +161,7 @@ export class MapContainer extends Component {
     axios
       .post(url, getres)
       .then(res => {
-        if (res.data.message) throw "no data";
+        if (res.data.message) throw Error("no data");
         if (res.data.cities) res.data.data = res.data.cities;
         if (this.state.cities && this.state.cities.length > 1)
           res.data.data = this.state.cities.concat(
