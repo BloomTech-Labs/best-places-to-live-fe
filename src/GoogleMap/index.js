@@ -255,7 +255,7 @@ export class MapContainer extends Component {
                   </a>
                   <GraphView
                     data={this.data(currentPlace)}
-                    maxWidth={"130%"}
+                    maxWidth={"300px"}
                     noTransition
                   />
                 </div>

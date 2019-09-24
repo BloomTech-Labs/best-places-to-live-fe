@@ -1,4 +1,5 @@
 import React from "react";
+import { hidden } from "ansi-colors";
 
 class GraphView extends React.Component {
   state = {
@@ -14,6 +15,8 @@ class GraphView extends React.Component {
           ? this.props.maxWidth
           : "600px"
         : "10px"; //in px
+    let maxHeight = parseInt(maxWidth)/20;
+    maxHeight = maxHeight > 20 ? 20 : maxHeight;
     const length = this.props.data.length;
     return (
       <div
@@ -21,8 +24,10 @@ class GraphView extends React.Component {
           display: "flex",
           flexDirection: "column",
           alignItems: "flex-start",
-          fontSize: "20px",
-          width: "100%"
+          fontSize: `${maxHeight}px`,
+          width: "95vw",
+          maxWidth: maxWidth,
+          overflow: "hidden"
         }}
       >
         {this.props.data.map((c, i) => {
@@ -35,12 +40,12 @@ class GraphView extends React.Component {
           c.color = HSLToHex(colorHsl[0], colorHsl[1], colorHsl[2]);
           c.grade = c.grade === "N/A" ? "" : c.grade;
           return (
-            <div key={i} style={{ margin: "10px 0", display: "flex" }}>
+            <div key={i} style={{ margin: "10px 0", display: "flex", fontSize: "100%", maxWidth: "100%", minWidth: "100%"}}>
               <div
                 style={{
                   marginRight: "5px",
-                  minWidth: "130px",
-                  textAlign: "left"
+                  textAlign: "left",
+                  width: "25%"
                 }}
               >
                 {c.label}
@@ -50,11 +55,9 @@ class GraphView extends React.Component {
                   backgroundColor: `hsl(${colorHsl[0]},${colorHsl[1]}%, ${
                     colorHsl[2]
                   }%)`,
-                  maxWidth: maxWidth,
-                  minWidth: "15px",
-                  height: "20px",
-                  width: `${(c.value / 10) * parseInt(maxWidth)}px`,
-                  fontSize: "15px",
+                  height: `${maxHeight}px`,
+                  width: `${(c.value * 7)}%`,
+                  fontSize: `80%`,
                   textAlign: "center",
                   verticalAlign: "middle",
                   transition: "1.5s max-width linear"
