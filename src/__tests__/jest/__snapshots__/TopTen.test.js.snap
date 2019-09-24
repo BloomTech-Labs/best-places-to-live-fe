@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TopTen /> Matches Snapshot 1`] = `
+<div
+  className="sc-bdVaJa iHvHEW"
+>
+  <div
+    className="sc-bwzfXH fJCSGU"
+  >
+    <h1>
+      Let's move homie! Explore the places to call home.
+    </h1>
+    <p>
+      Customize your search. Click on a category. Find a place you'll love.
+    </p>
+  </div>
+  <div
+    className="sc-ifAKCX jricq"
+  >
+    <img
+      className="sc-EHOje cchfUa"
+      onClick={[Function]}
+      src="budget.png"
+    />
+    <img
+      className="sc-EHOje cchfUa"
+      onClick={[Function]}
+      src="travel.png"
+    />
+    <img
+      className="sc-EHOje cchfUa"
+      onClick={[Function]}
+      src="police-car.png"
+    />
+    <img
+      className="sc-EHOje cchfUa"
+      onClick={[Function]}
+      src="tolerance.png"
+    />
+  </div>
+  <div
+    className="sc-htpNat ioYqPc"
+  />
+</div>
+`;

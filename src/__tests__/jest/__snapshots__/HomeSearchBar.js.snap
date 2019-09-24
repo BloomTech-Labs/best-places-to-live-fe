@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HomeSearchBar /> Matches Snapshot 1`] = `
+<div
+  className="sc-bdVaJa etUyXk"
+>
+  <span
+    className="sc-bwzfXH eTcapO"
+  >
+    <h1>
+       Discover a place you'll love to live
+    </h1>
+    <form
+      onSubmit={[Function]}
+    >
+      <input
+        id="searchTerm"
+        label="Enter City or State"
+        onChange={[Function]}
+        placeholder="Enter City or State"
+        type="search"
+        value=""
+      />
+    </form>
+  </span>
+</div>
+`;
