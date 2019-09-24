@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {device} from "../Device Breakpoints";
 // export const MasterDashBox = styled.div``; saving for Main div around DashboardMenu component
 export const UserInfoBox = styled.div``;
 export const ContentBox = styled.div`
@@ -29,6 +30,10 @@ export const MenuBox = styled.div`
 export const ComponentBox = styled.div`
   width: 50%;
   margin-left: 20%;
+  @media ${device.mobileM}{
+  margin:0;
+  width:100%;
+  }
 `;
 // Profile option styling
 export const ProfileBox = styled.div``;
@@ -113,7 +118,7 @@ export const CardDetail = styled.div`
   }
 `;
 // profileSettings and passwordSettings
-export const MyBody = styled.body`
+export const MyBody = styled.div`
   font-size: 62.5%;
   line-height: 2;
   font-weight: 300;
@@ -126,6 +131,13 @@ export const MyBody = styled.body`
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   flex-direction: column;
+  
+  @media ${device.mobileM}{
+  width:100%;
+  padding:0;
+  }
+  
+  
 `;
 
 export const Main = styled.main`
@@ -134,6 +146,10 @@ export const Main = styled.main`
   -webkit-box-flex: 1;
   flex: 1;
   position: relative;
+    @media ${device.mobileM}{
+    padding:0;
+    }
+
 `;
 
 export const UserView = styled.div`
@@ -145,22 +161,39 @@ export const UserView = styled.div`
   overflow: hidden;
   box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.07);
   display: flex;
+    @media ${device.mobileM}{
+      flex-direction:column;
+    }
+
 `;
 
 export const UserViewMenu = styled.nav`
   flex: 32rem 0 0;
   background-image: linear-gradient(to right bottom, #E67271, #E64D4D);
   padding: 4rem 0;
+
 `;
 
 export const SideNav = styled.div`
   list-style: none;
+ 
+@media ${device.mobileM}{
+display:flex;
+  align-items:center;
+  flex-direction:column;
+    margin-top:10%;
+
+    }
 `;
 
 export const SideNavLi = styled.li`
   margin: 1rem 0;
   border-left: 0 solid #fff;
   transition: all 0.3s;
+  @media ${device.mobileM}{
+      width:100%;
+}
+
 `;
 
 export const SideNavLiA = styled.div`
@@ -175,11 +208,16 @@ export const SideNavLiA = styled.div`
   /* font-weight: 400; */
   text-decoration: none;
   transition: all 0.3s;
+  
   a {
     text-decoration: none;
     margin-left: 10%;
     color: #fff;
   }
+@media ${device.mobileM}{
+width:100%;
+  text-align:center;
+    }
 `;
 
 export const Icon = styled.div`
@@ -187,18 +225,29 @@ export const Icon = styled.div`
   width: 1.9rem;
   fill: #f7f7f7;
   margin-right: 2rem;
+
 `;
 
 export const UserViewContent = styled.div`
   -webkit-box-flex: 1;
   flex: 1;
   padding: 7rem 0;
+    
+    @media ${device.mobileM}{
+    }
+
 `;
 
 export const UserViewFormContainer = styled.div`
   max-width: 68rem;
   margin: 0 auto;
   padding: 0 8rem;
+@media ${device.mobileM}{
+text-align:center;
+border:1px solid red
+padding:0;
+width:100%;
+    }
 `;
 
 export const HeadingSecondary = styled.h2`
@@ -281,6 +330,11 @@ export const FormUploadLabel = styled.label`
 
 export const FormGroupRight = styled.div`
   text-align: right !important;
+  
+  @media ${device.mobileM}{
+  display:flex;
+  justify-content:center;
+  }
 `;
 
 export const Button = styled.button`
@@ -297,6 +351,7 @@ export const Button = styled.button`
   backface-visibility: hidden;
   border: none;
   cursor: pointer;
+  display:flex;
 `;
 
 export const Line = styled.div`

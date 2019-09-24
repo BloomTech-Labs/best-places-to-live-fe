@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import banner from '../images/banner.jpg'
+import {device} from "../Device Breakpoints";
 
 export const Wrapper = styled.div`
 display: flex;
@@ -27,6 +28,12 @@ flex-direction:column;
 position:absolute;
 top: 25%;
 right:36%;
+
+
+@media ${device.mobileM}{
+width:50%;
+right:25%;
+}
 `;
 
 export const LoginFormParent = styled.div`
@@ -80,6 +87,10 @@ text-decoration: none;
 &:hover{
     opacity: 0.85;
 }
+
+@media ${device.mobileM}{
+margin-top:10%;
+}
 `;
 
 export const GoogleButton = styled.button`
@@ -110,6 +121,7 @@ justify-content:space-between;
     outline:none;
     color:white;
     }
+     
 `;
 
 export const RegisterBottomLinks = styled.div`
@@ -118,6 +130,10 @@ a{
     outline:none;
     color:white;
 }
+@media ${device.mobileM}{
+     margin-top:10%;
+     }
+
 `;
 
 export const ErrorMessage = styled.div`

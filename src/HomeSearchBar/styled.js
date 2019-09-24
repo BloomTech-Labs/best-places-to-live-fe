@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import {device} from "../Device Breakpoints";
 
 
 export const Container = styled.div`
@@ -14,6 +14,7 @@ display:flex;
 flex-flow: row wrap
 justify-content: center;
 border-radius: 50px:
+
 `;
 
 export const SearchContainer = styled.span`
@@ -34,7 +35,6 @@ padding-top: 11%;
     }
     
     input{
-    border:1px solid yellow;
     width: 20%;
     padding: 12px;
     border: none;
@@ -47,6 +47,31 @@ padding-top: 11%;
     outline:none;
     text-decoration: none; 
     text-align:center;
+    }
+    
+    @media ${device.mobileM} {
+    
+    h1{
+    text-align:center;
+    margin:20px 0px;
+    padding:10px;
+    font-size:35px;
+    }    
+    
+    input{
+    width: 60%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    margin: 5px 0;
+    opacity: 0.85;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 20px;
+    outline:none;
+    text-decoration: none; 
+    text-align:center;
+    }
     }
 `;
 export const ButtonWrapper = styled.div`
