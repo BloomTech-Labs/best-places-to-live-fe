@@ -5,7 +5,7 @@ class GraphView extends React.Component {
   state = {
     mounted: false
   };
-    componentDidMount() {
+  componentDidMount() {
     setTimeout(() => this.setState({ ...this.state, mounted: true }), 100);
   }
   render() {
@@ -15,7 +15,7 @@ class GraphView extends React.Component {
           ? this.props.maxWidth
           : "600px"
         : "10px"; //in px
-    let maxHeight = parseInt(maxWidth)/20;
+    let maxHeight = parseInt(maxWidth) / 20;
     maxHeight = maxHeight > 20 ? 20 : maxHeight;
     const length = this.props.data.length;
     return (
@@ -40,7 +40,18 @@ class GraphView extends React.Component {
           c.color = HSLToHex(colorHsl[0], colorHsl[1], colorHsl[2]);
           c.grade = c.grade === "N/A" ? "" : c.grade;
           return (
-            <div key={i} style={{ margin: "10px 0", display: "flex", fontSize: "100%", maxWidth: "100%", minWidth: "100%"}}>
+            <div
+              key={i}
+              style={{
+                margin: "10px 0",
+                display: "flex",
+                fontSize: "100%",
+                maxWidth: "100%",
+                minWidth: "100%",
+                opacity: this.state.mounted ? 1 : 0,
+                transition: "0.5s opacity linear"
+              }}
+            >
               <div
                 style={{
                   marginRight: "5px",
@@ -56,7 +67,8 @@ class GraphView extends React.Component {
                     colorHsl[2]
                   }%)`,
                   height: `${maxHeight}px`,
-                  width: `${(c.value * 7)}%`,
+                  width: `${c.value * 7}%`,
+                  maxWidth: this.state.mounted ? maxWidth : "10%",
                   fontSize: `80%`,
                   textAlign: "center",
                   verticalAlign: "middle",
