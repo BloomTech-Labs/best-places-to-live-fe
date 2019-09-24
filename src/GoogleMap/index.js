@@ -203,7 +203,7 @@ export class MapContainer extends Component {
 
     return (
       <div>
-        {/* <Navigation /> */}
+         <Navigation />
         <Map
           google={this.props.google}
           style={mainStyle}
