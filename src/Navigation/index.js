@@ -4,72 +4,75 @@ import { NavBar, NavBtn, LogoBox } from "./styled";
 import moving from "../images/LMHiconcopy.png";
 
 class Navigation extends React.Component {
-    constructor(props) {
-        super(props);
-        
-        this.token = localStorage.getItem("letsmovehomie");
-        
-        this.state = {};
+  constructor(props) {
+    super(props);
 
-        this.handleScroll = this.handleScroll.bind(this);
-    }
+    this.token = localStorage.getItem("letsmovehomie");
 
-    handleScroll() {
-        this.setState({ scroll: window.scrollY });
-    }
+    this.state = {};
 
-    componentDidMount() {
-        const el = document.querySelector("nav");
-        this.setState({ top: el.offsetTop, height: el.offsetHeight });
-        window.addEventListener("scroll", this.handleScroll);
-    }
+    this.handleScroll = this.handleScroll.bind(this);
+  }
 
-    componentDidUpdate() {
-        this.state.scroll > this.state.top
-            ? (document.body.style.paddingBottom = `${this.state.height}px`)
-            : (document.body.style.paddingBottom = 0);
-    }
+  handleScroll() {
+    this.setState({ scroll: window.scrollY });
+  }
 
-    logout() {
-        localStorage.removeItem('letsmovehomie');
-    }
+  componentDidMount() {
+    const el = document.querySelector("nav");
+    this.setState({
+      top: el !== null ? el.offsetTop : 0,
+      height: el !== null ? el.offsetHeight : 0
+    });
+    window.addEventListener("scroll", this.handleScroll);
+  }
 
-    render() {
-        return (
-            <NavBar
-                style={{ zIndex: "100" }}
-                className={this.state.scroll > this.state.top ? "fixed-nav" : ""}
-            >
-                <Link to="/">
-                    <LogoBox src={moving} />
-                </Link>
+  componentDidUpdate() {
+    this.state.scroll > this.state.top
+      ? (document.body.style.paddingBottom = `${this.state.height}px`)
+      : (document.body.style.paddingBottom = 0);
+  }
 
-                <Link to="/Userlist">
-                    <NavBtn>Users</NavBtn>
-                </Link>
+  logout() {
+    localStorage.removeItem("letsmovehomie");
+  }
 
-                <Link to="/Maps">
-                    <NavBtn id="registerButton">Maps</NavBtn>
-                </Link>
+  render() {
+    return (
+      <NavBar
+        style={{ zIndex: "100" }}
+        className={this.state.scroll > this.state.top ? "fixed-nav" : ""}
+      >
+        <Link to="/">
+          <LogoBox src={moving} />
+        </Link>
 
-                {this.token ? 
-                <Link to="/" onClick={this.logout}>
-                    <NavBtn id="logoutButton">Logout</NavBtn>
-                </Link>
-                : 
-                <>
-                <Link to="/Login">
-                    <NavBtn id="loginButton">Login</NavBtn>
-                </Link>
+        <Link to="/Userlist">
+          <NavBtn>Users</NavBtn>
+        </Link>
 
-                <Link to="/Register">
-                    <NavBtn id="registerButton">SignUp</NavBtn>
-                </Link>
-                </>
-                }
-            </NavBar>
-        );
-    }
+        <Link to="/Maps">
+          <NavBtn id="registerButton">Maps</NavBtn>
+        </Link>
+
+        {this.token ? (
+          <Link to="/" onClick={this.logout}>
+            <NavBtn id="logoutButton">Logout</NavBtn>
+          </Link>
+        ) : (
+          <>
+            <Link to="/Login">
+              <NavBtn id="loginButton">Login</NavBtn>
+            </Link>
+
+            <Link to="/Register">
+              <NavBtn id="registerButton">SignUp</NavBtn>
+            </Link>
+          </>
+        )}
+      </NavBar>
+    );
+  }
 }
 
 export default Navigation;
