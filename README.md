@@ -1,3 +1,51 @@
+# GitHub Flow
+
+## Branches
+
+### master
+Used for production.
+Approved pull request from boss.
+
+### dev
+Approved pull requests from 1 peer
+
+### feature-<nameOfFeature>
+Branched from dev.
+Pull Request with 1 Peer approval
+Merge Branch to Dev
+PLEASE DELETE YOUR BRANCH
+Aligned to trello cards
+    
+#### Pulling
+Before making a new feature branch, pull from dev.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Let's Move Homie
 
 You can find the deployed project at https://stagefe.letsmovehomie.com/
