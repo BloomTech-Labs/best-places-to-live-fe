@@ -1,8 +1,8 @@
 import React from "react";
 import useForm from "react-hook-form";
-import { connect } from "net";
+import { connect } from "react-redux";
 
-export default function SignUp(props) {
+function SignUp(props) {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = data => props.register(data);
   console.log(errors);
@@ -45,4 +45,7 @@ export default function SignUp(props) {
   );
 }
 
-// export default connect(null, {register})(SignUp);
+export default connect(
+  null,
+  { register }
+)(SignUp);
