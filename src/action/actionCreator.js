@@ -5,7 +5,10 @@ import {
   LOGIN_FAIL,
   SIGNUP_INITIALIZE,
   SIGNUP_SUCCESS,
-  SIGNUP_FAIL
+  SIGNUP_FAIL,
+  FETCH_LOCATIONS_INITIALIZE,
+  FETCH_LOCATIONS_SUCCESS,
+  FETCH_LOCATIONS_FAIL
 } from "./index";
 
 export const login = credentials => dispatch => {
@@ -43,4 +46,18 @@ export const signup = userData => dispatch => {
       dispatch({ type: SIGNUP_SUCCESS, payload: res.data.id });
     })
     .catch(err => ({ type: SIGNUP_FAIL, payload: "Error: Please try again" }));
+};
+
+export const fetchLocations = location => dispatch => {
+  dispatch({ type: FETCH_LOCATIONS_INITIALIZE });
+
+  axiosWithAuth()
+    .post(`/city/search`, location)
+    .then(res => {
+      console.log(res);
+      dispatch({ type: FETCH_LOCATIONS_SUCCESS });
+    })
+    .catch(err => {
+      dispatch({ type: FETCH_LOCATIONS_FAIL, payload: err });
+    });
 };
