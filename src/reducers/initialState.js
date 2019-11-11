@@ -1,6 +1,8 @@
 //something like this
 const initialState = {
-  user: {},
+  user: {
+    factors: []
+  },
   displayedCities: [],
   isFetching: false,
   error: ""

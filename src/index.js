@@ -5,10 +5,19 @@ import thunk from "redux-thunk";
 import reducer from "./reducers";
 import { Provider } from "react-redux";
 
+import { loadState, saveState } from "./localStorage";
+
 import "./index.css";
 import App from "./App";
 
-const store = createStore(reducer, applyMiddleware(thunk));
+const persistedState = loadState();
+const store = createStore(reducer, persistedState, applyMiddleware(thunk));
+
+store.subscribe(() => {
+  saveState({
+    user: store.getState().user
+  });
+});
 
 ReactDOM.render(
   <Provider store={store}>

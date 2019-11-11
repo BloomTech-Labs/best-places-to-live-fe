@@ -2,15 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import { fetchLocations } from "../actions/actionCreatorr";
+import Error from "./Error";
 
 const ExplorePage = ({ fetchLocations }) => {
   const [factors, setFactors] = useState([]);
 
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = data => {
+
+  const onSubmit = async data => {
     console.log(data);
-    //Per BE, will be searchTerm
-    fetchLocations({ searchTerm: data.location });
+
+    const fetchResult = await fetchLocations({ factors });
+    //If no error, push user to new page else
+    !error ? history.push("/search-results-page") : null;
   };
   console.log(errors);
 
@@ -31,8 +35,15 @@ const ExplorePage = ({ fetchLocations }) => {
   );
 };
 
+const mapStateToProps = state => {
+  return {
+    isFetching: state.isFetching,
+    error: state.error
+  };
+};
+
 export default connect(
-  null,
+  mapStateToProps,
   { fetchLocations }
 )(ExplorePage);
 
