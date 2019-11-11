@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import { fetchLocations } from "../actions/locations";
+import { fetchFactors } from "../actions/factors";
+
 import Error from "./Error";
-// seth
-const ExplorePage = ({ fetchLocations }) => {
+
+const ExplorePage = ({ fetchLocations, fetchFactors, error, isFetching }) => {
   const [factors, setFactors] = useState([
     "Job Market",
     "Food",
