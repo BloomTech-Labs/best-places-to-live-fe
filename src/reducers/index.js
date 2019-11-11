@@ -21,7 +21,7 @@ const reducer = (state = initialState, action) => {
     case LOGIN_SUCCESS:
       return {
         ...state,
-        dogs: action.payload,
+        user: action.payload,
         isFetching: false,
         error: ""
       };
@@ -40,7 +40,7 @@ const reducer = (state = initialState, action) => {
     case SIGNUP_SUCCESS:
       return {
         ...state,
-        dogs: action.payload,
+        user: action.payload,
         isFetching: false,
         error: ""
       };

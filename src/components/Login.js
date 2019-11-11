@@ -9,7 +9,7 @@ function Login(props) {
     console.log(data);
     props.login(data);
   };
-  console.log(errors);
+  console.log("Login Errors", errors);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
