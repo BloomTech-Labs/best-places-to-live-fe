@@ -1,12 +1,14 @@
 import React from "react";
 import useForm from "react-hook-form";
+import { fetchLocations } from "../action/actionCreator";
+import { connect } from "react-redux";
 
-export default function SearchByCity({fetchLocations}) {
+function SearchByCity({ fetchLocations }) {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = data => {
     console.log(data);
     //Per BE, will be searchTerm
-    fetchLocations({searchTerm: data.location});
+    fetchLocations({ searchTerm: data.location });
   };
   console.log(errors);
 
@@ -19,12 +21,12 @@ export default function SearchByCity({fetchLocations}) {
         ref={register({ required: true, minLength: 1 })}
       />
 
-      <input type="submit">Search</input>
+      <button type="submit">Search</button>
     </form>
   );
 }
 
 export default connect(
-    null,
-    { fetchLocations }
-  )(SearchByCity);
+  null,
+  { fetchLocations }
+)(SearchByCity);

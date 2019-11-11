@@ -6,9 +6,9 @@ import {
   SIGNUP_INITIALIZE,
   SIGNUP_SUCCESS,
   SIGNUP_FAIL,
-  FETCH_LOCATION_INITIALIZE,
-  FETCH_LOCATION_SUCCESS,
-  FETCH_LOCATION_FAIL
+  FETCH_LOCATIONS_INITIALIZE,
+  FETCH_LOCATIONS_SUCCESS,
+  FETCH_LOCATIONS_FAIL
 } from "./index";
 
 export const login = credentials => dispatch => {
@@ -49,12 +49,15 @@ export const signup = userData => dispatch => {
 };
 
 export const fetchLocations = location => dispatch => {
-  dispatch({ type: FETCH_LOCATION_INITIALIZE });
+  dispatch({ type: FETCH_LOCATIONS_INITIALIZE });
 
-  axiosWithAuth
-    .posts(`/cities/search`, location)
+  axiosWithAuth()
+    .post(`/city/search`, location)
     .then(res => {
       console.log(res);
+      dispatch({ type: FETCH_LOCATIONS_SUCCESS });
     })
-    .catch();
+    .catch(err => {
+      dispatch({ type: FETCH_LOCATIONS_FAIL, payload: err });
+    });
 };

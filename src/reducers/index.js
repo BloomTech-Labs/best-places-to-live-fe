@@ -4,7 +4,10 @@ import {
   LOGIN_FAIL,
   SIGNUP_INITIALIZE,
   SIGNUP_SUCCESS,
-  SIGNUP_FAIL
+  SIGNUP_FAIL,
+  FETCH_LOCATIONS_INITIALIZE,
+  FETCH_LOCATIONS_SUCCESS,
+  FETCH_LOCATIONS_FAIL
 } from "../action/index.js";
 
 import initialState from "./initialState";
@@ -45,6 +48,25 @@ const reducer = (state = initialState, action) => {
         error: ""
       };
     case SIGNUP_FAIL:
+      return {
+        ...state,
+        error: action.payload
+      };
+
+    case FETCH_LOCATIONS_INITIALIZE:
+      return {
+        ...state,
+        isFetching: true,
+        error: ""
+      };
+    case FETCH_LOCATIONS_SUCCESS:
+      return {
+        ...state,
+        user: action.payload,
+        isFetching: false,
+        error: ""
+      };
+    case FETCH_LOCATIONS_FAIL:
       return {
         ...state,
         error: action.payload
