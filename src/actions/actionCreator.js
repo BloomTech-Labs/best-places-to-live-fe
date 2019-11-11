@@ -8,7 +8,10 @@ import {
   SIGNUP_FAIL,
   FETCH_LOCATIONS_INITIALIZE,
   FETCH_LOCATIONS_SUCCESS,
-  FETCH_LOCATIONS_FAIL
+  FETCH_LOCATIONS_FAIL,
+  FETCH_FACTORS_INITIALIZE,
+  FETCH_FACTORS_SUCCESS,
+  FETCH_FACTORS_FAIL
 } from "./index";
 
 export const login = credentials => dispatch => {
@@ -68,5 +71,19 @@ export const fetchLocations = (location, factors = []) => dispatch => {
     })
     .catch(err => {
       dispatch({ type: FETCH_LOCATIONS_FAIL, payload: err });
+    });
+};
+
+export const fetchFactors = () => dispatch => {
+  dispatch({ type: FETCH_FACTORS_INITIALIZE });
+
+  axiosWithAuth()
+    .get("backendpointneeded")
+    .then(res => {
+      console.log(res);
+      dispatch({ type: FETCH_FACTORS_SUCCESS });
+    })
+    .catch(err => {
+      dispatch({ type: FETCH_FACTORS_FAIL, payload: err });
     });
 };

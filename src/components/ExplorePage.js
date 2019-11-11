@@ -5,7 +5,13 @@ import { fetchLocations } from "../actions/actionCreatorr";
 import Error from "./Error";
 
 const ExplorePage = ({ fetchLocations }) => {
-  const [factors, setFactors] = useState([]);
+  const [factors, setFactors] = useState([
+    "Job Market",
+    "Food",
+    "Chicken",
+    "Number of Diapers",
+    "Proximity to Rack City"
+  ]);
 
   const { register, handleSubmit, errors } = useForm();
 
@@ -19,19 +25,22 @@ const ExplorePage = ({ fetchLocations }) => {
   console.log(errors);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input
-        type="text"
-        placeholder="location"
-        name="location"
-        ref={register({ required: true, minLength: 1 })}
-      />
+    <>
+      <Error error={error} />
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input
+          type="text"
+          placeholder="location"
+          name="location"
+          ref={register({ required: true, minLength: 1 })}
+        />
 
-      <button type="submit">Search</button>
-      <Link to="/search-results-page">
-        <button>Explore!</button>
-      </Link>
-    </form>
+        <button type="submit">Search</button>
+        <Link to="/search-results-page">
+          <button>Explore!</button>
+        </Link>
+      </form>
+    </>
   );
 };
 
@@ -44,7 +53,7 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { fetchLocations }
+  { fetchLocations, fetchFactors }
 )(ExplorePage);
 
 // Link connected to redux
