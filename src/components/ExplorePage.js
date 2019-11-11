@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import { fetchLocations } from "../actions/locations";
 import Error from "./Error";
-
+// seth
 const ExplorePage = ({ fetchLocations }) => {
   const [factors, setFactors] = useState([
     "Job Market",
