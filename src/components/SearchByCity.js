@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import useForm from "react-hook-form";
-import { fetchLocations } from "../actions/actionCreator";
+import { fetchLocations } from "../actions/locations";
 import { connect } from "react-redux";
 import Error from "./Error";
 

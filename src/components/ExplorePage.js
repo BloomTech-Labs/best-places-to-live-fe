@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
-import { fetchLocations } from "../actions/actionCreatorr";
+import { fetchLocations } from "../actions/locations";
 import Error from "./Error";
 
 const ExplorePage = ({ fetchLocations }) => {

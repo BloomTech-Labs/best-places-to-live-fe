@@ -1,7 +1,7 @@
 import React from "react";
 import useForm from "react-hook-form";
 import { connect } from "react-redux";
-import { signup } from "../actions/actionCreator.js";
+import { signup } from "../actions/signup.js";
 
 function SignUp(props) {
   const { register, handleSubmit, errors } = useForm();

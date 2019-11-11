@@ -1,7 +1,7 @@
 import React from "react";
 import useForm from "react-hook-form";
 import { connect } from "react-redux";
-import { login } from "../actions/actionCreator.js";
+import { login } from "../actions/login.js";
 
 function Login(props) {
   const { register, handleSubmit, errors } = useForm();
