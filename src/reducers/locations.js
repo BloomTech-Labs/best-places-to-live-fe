@@ -2,12 +2,11 @@ import {
   FETCH_LOCATIONS_INITIALIZE,
   FETCH_LOCATIONS_SUCCESS,
   FETCH_LOCATIONS_FAIL
-} from "../actions/index.js.js";
+} from "../actions/index.js";
 
 import initialState from "./initialState";
 
 const locationsReducer = (state = initialState, action) => {
-  console.log("reducer", action);
   switch (action.type) {
     case FETCH_LOCATIONS_INITIALIZE:
       return {
@@ -23,6 +22,8 @@ const locationsReducer = (state = initialState, action) => {
         error: ""
       };
     case FETCH_LOCATIONS_FAIL:
+      console.log("reducer", action);
+
       return {
         ...state,
         error: action.payload

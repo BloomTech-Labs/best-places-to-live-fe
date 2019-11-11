@@ -7,14 +7,15 @@ import {
 
 export const fetchFactors = () => dispatch => {
   dispatch({ type: FETCH_FACTORS_INITIALIZE });
-
   axiosWithAuth()
-    .get("backendpointneeded")
+    .get("/backendpointneeded")
     .then(res => {
-      console.log(res);
       dispatch({ type: FETCH_FACTORS_SUCCESS });
     })
     .catch(err => {
-      dispatch({ type: FETCH_FACTORS_FAIL, payload: err });
+      dispatch({
+        type: FETCH_FACTORS_FAIL,
+        payload: { err, message: "Error in factors" }
+      });
     });
 };

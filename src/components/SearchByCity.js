@@ -12,7 +12,7 @@ function SearchByCity({ history, fetchLocations, isFetching, error }) {
 
     const fetchResult = await fetchLocations({ searchTerm: data.location });
     //If no error, push user to new page else
-    !error ? history.push("/search-results-page") : null;
+    return !error ? history.push("/search-results-page") : null;
   };
 
   console.log(errors);

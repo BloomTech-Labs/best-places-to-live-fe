@@ -7,7 +7,6 @@ import {
 import initialState from "./initialState";
 
 const factorsReducer = (state = initialState, action) => {
-  console.log("reducer", action);
   switch (action.type) {
     case FETCH_FACTORS_INITIALIZE:
       return {
@@ -23,8 +22,10 @@ const factorsReducer = (state = initialState, action) => {
         error: ""
       };
     case FETCH_FACTORS_FAIL:
+      console.log("reducer", action);
       return {
         ...state,
+        isFetching: false,
         error: action.payload
       };
     default:

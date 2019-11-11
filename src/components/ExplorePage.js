@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import Footer from "./Footer";
 import { fetchLocations } from "../actions/locations";
 import { fetchFactors } from "../actions/factors";
-
 import Error from "./Error";
+import { connect } from "react-redux";
+import useForm from "react-hook-form";
 
-const ExplorePage = ({ fetchLocations, fetchFactors, error, isFetching }) => {
+const ExplorePage = ({
+  fetchLocations,
+  fetchFactors,
+  error,
+  history,
+  isFetching
+}) => {
   const [factors, setFactors] = useState([
     "Job Market",
     "Food",
@@ -16,16 +23,28 @@ const ExplorePage = ({ fetchLocations, fetchFactors, error, isFetching }) => {
   ]);
 
   const { register, handleSubmit, errors } = useForm();
-
   const onSubmit = async data => {
     console.log(data);
 
     const fetchResult = await fetchLocations({ factors });
     //If no error, push user to new page else
-    !error ? history.push("/search-results-page") : null;
+    if (!error) {
+      history.push("/search-results-page");
+    }
   };
-  console.log(errors);
 
+  useEffect(() => {
+    async function fetchData() {
+      const fetchResults = await fetchFactors();
+      console.log(fetchResults);
+      if (!error) {
+        setFactors(fetchResults);
+      }
+    }
+    fetchData();
+  }, []);
+
+  console.log("Explore Page", error);
   return (
     <>
       <Error error={error} />
@@ -47,16 +66,20 @@ const ExplorePage = ({ fetchLocations, fetchFactors, error, isFetching }) => {
 };
 
 const mapStateToProps = state => {
+  console.log(" Explore page state", state.factorsReducer);
+
   return {
-    isFetching: state.isFetching,
-    error: state.error
+    isFetching: state.factorsReducer.isFetching,
+    error: state.factorsReducer.error
   };
 };
 
-export default connect(
-  mapStateToProps,
-  { fetchLocations, fetchFactors }
-)(ExplorePage);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { fetchLocations, fetchFactors }
+  )(ExplorePage)
+);
 
 // Link connected to redux
 //  - fetchLocations

@@ -22,6 +22,7 @@ const registerReducer = (state = initialState, action) => {
         error: ""
       };
     case SIGNUP_FAIL:
+      console.log("reducer", action);
       return {
         ...state,
         error: action.payload
