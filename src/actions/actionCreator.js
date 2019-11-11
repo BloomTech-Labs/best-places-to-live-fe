@@ -48,11 +48,20 @@ export const signup = userData => dispatch => {
     .catch(err => ({ type: SIGNUP_FAIL, payload: "Error: Please try again" }));
 };
 
-export const fetchLocations = location => dispatch => {
+export const fetchLocations = (location, factors = []) => dispatch => {
   dispatch({ type: FETCH_LOCATIONS_INITIALIZE });
+  let url;
+  let data;
+  if (factors.length === 0) {
+    url = "/city/search";
+    data = location;
+  } else {
+    url = "";
+    data = factors;
+  }
 
   axiosWithAuth()
-    .post(`/city/search`, location)
+    .post(url, data)
     .then(res => {
       console.log(res);
       dispatch({ type: FETCH_LOCATIONS_SUCCESS });

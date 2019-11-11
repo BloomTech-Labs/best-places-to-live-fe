@@ -1,32 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import useForm from "react-hook-form";
-import { fetchLocations } from "../action/actionCreator";
+import { fetchLocations } from "../actions/actionCreator";
 import { connect } from "react-redux";
+import Error from "./Error";
 
-function SearchByCity({ fetchLocations }) {
+function SearchByCity({ history, fetchLocations, isFetching, error }) {
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = data => {
+
+  const onSubmit = async data => {
     console.log(data);
-    //Per BE, will be searchTerm
-    fetchLocations({ searchTerm: data.location });
+
+    const fetchResult = await fetchLocations({ searchTerm: data.location });
+    //If no error, push user to new page else
+    !error ? history.push("/search-results-page") : null;
   };
+
   console.log(errors);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input
-        type="text"
-        placeholder="location"
-        name="location"
-        ref={register({ required: true, minLength: 1 })}
-      />
+    <>
+      <Error error={error} />
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input
+          type="text"
+          placeholder="location"
+          name="location"
+          ref={register({ required: true, minLength: 1 })}
+        />
 
-      <button type="submit">Search</button>
-    </form>
+        <button type="submit">Search</button>
+      </form>
+    </>
   );
 }
 
+const mapStateToProps = state => {
+  return {
+    isFetching: state.isFetching,
+    error: state.error
+  };
+};
+
 export default connect(
-  null,
+  mapStateToProps,
   { fetchLocations }
 )(SearchByCity);

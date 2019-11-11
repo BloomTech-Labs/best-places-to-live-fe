@@ -8,7 +8,7 @@ import {
   FETCH_LOCATIONS_INITIALIZE,
   FETCH_LOCATIONS_SUCCESS,
   FETCH_LOCATIONS_FAIL
-} from "../action/index.js";
+} from "../actions/index.js.js";
 
 import initialState from "./initialState";
 

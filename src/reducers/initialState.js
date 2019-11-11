@@ -1,7 +1,9 @@
 //something like this
 const initialState = {
   user: {},
-  displayedCities: []
+  displayedCities: [],
+  isFetching: false,
+  error: ""
 };
 
 export default initialState;
