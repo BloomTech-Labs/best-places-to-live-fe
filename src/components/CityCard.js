@@ -4,13 +4,13 @@ import React from 'react';
 function CityCard(props){
 
     // passed props
-    //props = img, cityName, cityState, population, costOfLiving
+    //props =  city {img, cityName, cityState, population, costOfLiving}
     return (
         <div className= 'city-card'>
-            <img src={props.img}/>
-            <p className='city-location'>{props.cityName}, {props.cityState}</p>
-            <p className='population'>{props.population}</p>
-            <p className='costOfLiving'> {props.costOfLiving} </p>
+            <img src={props.city.img}/>
+            <p className='city-location'>{props.city.name}, {props.city.cityState}</p>
+            <p className='population'>{props.city.population}</p>
+            <p className='costOfLiving'> {props.city.costOfLiving} </p>
         </div>
     )
 }
