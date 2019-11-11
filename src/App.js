@@ -1,13 +1,16 @@
 import React from "react";
-import logo from "./logo.svg";
+import { BrowserRouter as Router } from "react-router-dom";
+
 import "./App.css";
-import SearchByCity from "./components/SearchByCity";
+import LandingPage from "./components/LandingPage";
 
 function App() {
   return (
-    <div className="App">
-      <SearchByCity />
-    </div>
+    <Router>
+      <div className="App">
+        <LandingPage />
+      </div>
+    </Router>
   );
 }
 
