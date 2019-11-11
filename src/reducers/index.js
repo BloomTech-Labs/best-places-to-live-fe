@@ -1,33 +1,55 @@
 import {
-  FETCH_DOGS_START,
-  FETCH_DOGS_SUCCESS,
-  FETCH_DOGS_FAIL
-} from "../actions";
+  LOGIN_INITIALIZE,
+  LOGIN_SUCCESS,
+  LOGIN_FAIL,
+  SIGNUP_INITIALIZE,
+  SIGNUP_SUCCESS,
+  SIGNUP_FAIL
+} from "../action/index.js";
 
 import initialState from "./initialState";
 
 const reducer = (state = initialState, action) => {
   console.log("reducer", action);
   switch (action.type) {
-    case FETCH_DOGS_START:
-      console.log("mew");
+    case LOGIN_INITIALIZE:
       return {
         ...state,
         isFetching: true,
         error: ""
       };
-    case FETCH_DOGS_SUCCESS:
+    case LOGIN_SUCCESS:
       return {
         ...state,
-        dogs: action.payload,
+        user: action.payload,
         isFetching: false,
         error: ""
       };
-    case FETCH_DOGS_FAIL:
+    case LOGIN_FAIL:
       return {
         ...state,
         error: action.payload
       };
+
+    case SIGNUP_INITIALIZE:
+      return {
+        ...state,
+        isFetching: true,
+        error: ""
+      };
+    case SIGNUP_SUCCESS:
+      return {
+        ...state,
+        user: action.payload,
+        isFetching: false,
+        error: ""
+      };
+    case SIGNUP_FAIL:
+      return {
+        ...state,
+        error: action.payload
+      };
+
     default:
       return state;
   }
