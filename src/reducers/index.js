@@ -1,8 +1,11 @@
 import {
-  FETCH_DOGS_START,
-  FETCH_DOGS_SUCCESS,
-  FETCH_DOGS_FAIL
-} from "../actions";
+  LOGIN_INITIALIZE,
+  LOGIN_SUCCESS,
+  LOGIN_FAIL,
+  SIGNUP_INITIALIZE,
+  SIGNUP_SUCCESS,
+  SIGNUP_FAIL
+} from "./index";
 
 import initialState from "./initialState";
 

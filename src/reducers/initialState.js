@@ -1,8 +1,7 @@
 //something like this
 const initialState = {
-  dogs: [],
-  error: "",
-  isFetching: false
+  user: {},
+  displayedCities: []
 };
 
 export default initialState;
