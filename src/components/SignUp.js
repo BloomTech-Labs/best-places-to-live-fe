@@ -1,45 +1,39 @@
 import React from "react";
 import useForm from "react-hook-form";
 import { connect } from "react-redux";
-import { register } from "../action/actionCreator.js";
+import { signup } from "../action/actionCreator.js";
 
 function SignUp(props) {
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = data => props.register(data);
+  const onSubmit = data => props.signup(data);
   console.log(errors);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <input
         type="text"
-        placeholder="First name"
-        name="First name"
-        ref={register({ required: true, maxLength: 80 })}
-      />
-      <input
-        type="text"
-        placeholder="Last name"
-        name="Last name"
-        ref={register({ required: true, maxLength: 100 })}
+        placeholder="Name"
+        name="name"
+        ref={register({ required: true, minLength: 6 })}
       />
       <input
         type="text"
         placeholder="Email"
-        name="Email"
+        name="email"
         ref={register({ required: true, pattern: /^\S+@\S+$/i })}
       />
       <input
         type="password"
         placeholder="password"
-        name="Password"
-        ref={register({ required: true })}
+        name="password"
+        ref={register({ required: true, minLength: 6 })}
       />
-      <input
+      {/* <input
         type="text"
         placeholder="Location"
         name="Location"
         ref={register({ required: true, minLength: 2 })}
-      />
+      /> */}
 
       <input type="submit" />
     </form>
@@ -48,5 +42,5 @@ function SignUp(props) {
 
 export default connect(
   null,
-  { register }
+  { signup }
 )(SignUp);

@@ -16,13 +16,13 @@ function Login(props) {
       <input
         type="text"
         placeholder="Email"
-        name="Email"
+        name="email"
         ref={register({ required: true, pattern: /^\S+@\S+$/i })}
       />
       <input
         type="password"
         placeholder="password"
-        name="Password"
+        name="password"
         ref={register({ required: true })}
       />
 

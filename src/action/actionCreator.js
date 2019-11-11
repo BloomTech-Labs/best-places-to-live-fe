@@ -14,6 +14,7 @@ export const login = credentials => dispatch => {
   axiosWithAuth()
     .post(`/users/login`)
     .then(res => {
+      console.log(res);
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("id", res.data.id);
       dispatch({ type: LOGIN_SUCCESS, payload: res.data.id });
@@ -23,12 +24,13 @@ export const login = credentials => dispatch => {
     });
 };
 
-export const register = userData => dispatch => {
+export const signup = userData => dispatch => {
   dispatch({ type: SIGNUP_INITIALIZE });
 
   axiosWithAuth
     .post(`/users/register`)
     .then(res => {
+      console.log(res);
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("id", res.data.id);
       dispatch({ type: SIGNUP_SUCCESS, payload: res.data.id });
