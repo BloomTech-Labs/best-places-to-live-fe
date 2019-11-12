@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { login } from "../actions/login.js";
 import Error from "./Error";
+
 function Login({ login, history, error }) {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = async data => {
