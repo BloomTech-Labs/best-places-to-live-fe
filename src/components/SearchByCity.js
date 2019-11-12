@@ -35,9 +35,10 @@ function SearchByCity({ history, fetchLocations, isFetching, error }) {
 }
 
 const mapStateToProps = state => {
+  const { isFetching, error } = state.locationsReducer;
   return {
-    isFetching: state.isFetching,
-    error: state.error
+    isFetching,
+    error
   };
 };
 

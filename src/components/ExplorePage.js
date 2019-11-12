@@ -12,7 +12,9 @@ const ExplorePage = ({
   fetchFactors,
   error,
   history,
-  isFetching
+  isFetching,
+  locationError,
+  locationIsFetching
 }) => {
   const [factors, setFactors] = useState([
     "Job Market",
@@ -24,53 +26,60 @@ const ExplorePage = ({
 
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = async data => {
-    console.log(data);
-
-    const fetchResult = await fetchLocations({ factors });
+    const selectedFactors = Object.keys(data).filter(factor => data[factor]);
+    console.log("checkbox data", selectedFactors);
+    const fetchResult = await fetchLocations(selectedFactors);
     //If no error, push user to new page else
-    if (!error) {
+    if (!locationError) {
       history.push("/search-results-page");
     }
   };
 
-  useEffect(() => {
-    async function fetchData() {
-      const fetchResults = await fetchFactors();
-      console.log(fetchResults);
-      if (!error) {
-        setFactors(fetchResults);
-      }
-    }
-    fetchData();
-  }, []);
+  //   useEffect(() => {
+  //     async function fetchData() {
+  //       const fetchResults = await fetchFactors();
+  //       console.log(fetchResults);
+  //       if (!error) {
+  //         setFactors(fetchResults);
+  //       }
+  //     }
+  //     fetchData();
+  //   }, []);
 
   console.log("Explore Page", error);
   return (
     <>
       <Error error={error} />
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input
-          type="text"
-          placeholder="location"
-          name="location"
-          ref={register({ required: true, minLength: 1 })}
-        />
+      <Error error={locationError} />
 
-        <button type="submit">Search</button>
-        <Link to="/search-results-page">
-          <button>Explore!</button>
-        </Link>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        {factors.map(factor => {
+          return (
+            <>
+              <label htmlFor={factor}>{factor}</label>
+              <input
+                type="checkbox"
+                placeholder={factor}
+                name={factor}
+                ref={register}
+              />
+            </>
+          );
+        })}
+
+        <button type="submit">Explore</button>
       </form>
     </>
   );
 };
 
 const mapStateToProps = state => {
-  console.log(" Explore page state", state.factorsReducer);
-
+  const { isFetching, error } = state.factorsReducer;
   return {
-    isFetching: state.factorsReducer.isFetching,
-    error: state.factorsReducer.error
+    isFetching,
+    error,
+    locationError: state.locationReducer.error,
+    locationIsFetching: state.locationReducer.isFetching
   };
 };
 
