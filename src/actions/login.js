@@ -21,7 +21,7 @@ export const login = credentials => dispatch => {
     .catch(err => {
       dispatch({
         type: LOGIN_FAIL,
-        payload: { err, message: "Error in login" }
+        payload: { err, message: "Incorrect credentials" }
       });
     });
 };
