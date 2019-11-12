@@ -4,7 +4,8 @@ import {
   FETCH_FACTORS_FAIL
 } from "../actions/index.js";
 
-import initialState from "./initialState";
+//something like this
+import initialState from "../reducers/initialState";
 
 const factorsReducer = (state = initialState, action) => {
   switch (action.type) {
