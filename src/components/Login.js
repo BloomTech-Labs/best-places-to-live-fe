@@ -3,11 +3,15 @@ import useForm from "react-hook-form";
 import { connect } from "react-redux";
 import { login } from "../actions/login.js";
 
-function Login(props) {
+function Login({ login, history, error }) {
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = data => {
-    console.log(data);
-    props.login(data);
+  const onSubmit = async data => {
+    console.log("data:", data);
+    console.log("data:", data);
+    await login(data);
+    if (!error) {
+      history.push("/profile");
+    }
   };
   console.log("Login Errors", errors);
 
@@ -31,7 +35,14 @@ function Login(props) {
   );
 }
 
+const mapStateToProps = state => {
+  const { error } = state.loginReducer;
+  return {
+    error
+  };
+};
+
 export default connect(
-  null,
+  mapStateToProps,
   { login }
 )(Login);

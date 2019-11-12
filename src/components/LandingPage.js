@@ -8,7 +8,7 @@ const LandingPage = () => {
     <main>
       <h1>X Marks the Spot</h1>
       <SearchByCity />
-      <Link to="/explore-page">Explore!</Link>
+      <Link to="/explore">Explore!</Link>
       <Footer />
     </main>
   );
