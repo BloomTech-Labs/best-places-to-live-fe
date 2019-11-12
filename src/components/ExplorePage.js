@@ -19,12 +19,15 @@ const ExplorePage = ({
 }) => {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = async data => {
+    // event.preventDefault();
     const selectedFactors = Object.keys(data).filter(factor => data[factor]);
-    console.log("checkbox data", selectedFactors);
-    const fetchResult = await fetchLocations(selectedFactors);
-    //If no error, push user to new page else
-    if (!locationsError) {
+    // console.log("checkbox data", selectedFactors);
+    const response = await fetchLocations(selectedFactors);
+
+    if (response === "Successful") {
       history.push("/search");
+    } else {
+      console.log(response);
     }
   };
 

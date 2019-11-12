@@ -4,9 +4,10 @@ import { LOGIN_INITIALIZE, LOGIN_SUCCESS, LOGIN_FAIL } from "./index";
 export const login = credentials => dispatch => {
   dispatch({ type: LOGIN_INITIALIZE });
 
-  axiosWithAuth()
+  return axiosWithAuth()
     .post(`/users/login`, credentials)
     .then(res => {
+      console.log("login response", res);
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("id", res.data._id);
       dispatch({
@@ -14,14 +15,18 @@ export const login = credentials => dispatch => {
         payload: {
           id: res.data._id,
           email: res.data.email,
-          name: res.data.name
+          name: res.data.name,
+          isLoggedIn: true
         }
       });
+      return "Successful";
     })
     .catch(err => {
+      console.log(err);
       dispatch({
         type: LOGIN_FAIL,
-        payload: { err, message: "Error in login" }
+        payload: { err, message: "Incorrect credentials" }
       });
+      return "Failure";
     });
 };
