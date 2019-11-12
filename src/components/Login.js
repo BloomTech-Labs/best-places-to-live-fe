@@ -9,6 +9,7 @@ function Login({ login, history, error }) {
     console.log("data:", data);
     console.log("data:", data);
     await login(data);
+    console.log(error);
     if (!error) {
       history.push("/profile");
     }
