@@ -1,7 +1,13 @@
 //something like this
 const initialState = {
   user: {
-    factors: []
+    factors: [
+      "Job Market",
+      "Food",
+      "Chicken",
+      "Number of Diapers",
+      "Proximity to Rack City"
+    ]
   },
   displayedCities: [],
   isFetching: false,

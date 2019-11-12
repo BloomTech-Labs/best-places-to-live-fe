@@ -14,16 +14,9 @@ const ExplorePage = ({
   history,
   isFetching,
   locationsError,
-  locationsFetching
+  locationsIsFetching,
+  factors
 }) => {
-  const [factors, setFactors] = useState([
-    "Job Market",
-    "Food",
-    "Chicken",
-    "Number of Diapers",
-    "Proximity to Rack City"
-  ]);
-
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = async data => {
     const selectedFactors = Object.keys(data).filter(factor => data[factor]);
@@ -37,20 +30,20 @@ const ExplorePage = ({
 
   useEffect(() => {
     async function fetchData() {
-      //   const fetchResults = await fetchFactors();
-      //   console.log(fetchResults);
-      if (!fetchingError) {
-        setFactors(fetchResults);
-      }
+      await fetchFactors();
     }
     fetchData();
   }, []);
-  console.log(factors);
+
+  console.log(fetchingError);
+  console.log(fetchingError.message);
+  console.log(fetchingError.err);
+
   return (
     <>
-      <Error error={fetchingError ? "Failure to reach factors" : ""} />
-      <Error error={locationsError ? "Failure to find locations" : ""} />
-
+      {/* <Error error={locationsError ? "Failure to find locations" : ""} /> */}
+      {fetchingError && <Error error={fetchingError} />}
+      {locationsError && <Error error={locationsError} />}
       <form onSubmit={handleSubmit(onSubmit)}>
         {factors.map(factor => {
           return (
@@ -73,10 +66,11 @@ const ExplorePage = ({
 };
 
 const mapStateToProps = state => {
-  const { isFetching, error } = state.factorsReducer;
   console.log(state);
+  const { isFetching, error } = state.factorsReducer;
   return {
     isFetching,
+    factors: state.factorsReducer.user.factors,
     fetchingError: error,
     locationsError: state.locationsReducer.error,
     locationsIsFetching: state.locationsReducer.isFetching

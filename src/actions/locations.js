@@ -24,6 +24,9 @@ export const fetchLocations = (location, factors = []) => dispatch => {
       dispatch({ type: FETCH_LOCATIONS_SUCCESS });
     })
     .catch(err => {
-      dispatch({ type: FETCH_LOCATIONS_FAIL, payload: err });
+      dispatch({
+        type: FETCH_LOCATIONS_FAIL,
+        payload: { err, message: "Error in locations" }
+      });
     });
 };

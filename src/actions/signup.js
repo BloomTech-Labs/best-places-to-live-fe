@@ -12,5 +12,8 @@ export const signup = userData => dispatch => {
       localStorage.setItem("id", res.data.id);
       dispatch({ type: SIGNUP_SUCCESS, payload: res.data.id });
     })
-    .catch(err => ({ type: SIGNUP_FAIL, payload: "Error: Please try again" }));
+    .catch(err => ({
+      type: SIGNUP_FAIL,
+      payload: { err, message: "Error: Please try again" }
+    }));
 };
