@@ -10,7 +10,7 @@ function SearchByCity({ history, fetchLocations, isFetching, error }) {
   const onSubmit = async data => {
     const fetchResult = await fetchLocations({ searchTerm: data.location });
     //If no error, push user to new page else
-    return !error ? history.push("/search-results-page") : null;
+    return !error ? history.push("/search") : null;
   };
 
   console.log(errors);

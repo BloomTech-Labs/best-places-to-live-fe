@@ -13,17 +13,21 @@ export const fetchLocations = (location, factors = []) => dispatch => {
     url = "/city/search";
     data = location;
   } else {
-    url = "";
+    url = "/city/search";
     data = factors;
   }
 
-  axiosWithAuth()
+  return axiosWithAuth()
     .post(url, data)
     .then(res => {
       console.log(res);
-      dispatch({ type: FETCH_LOCATIONS_SUCCESS });
+      dispatch({
+        type: FETCH_LOCATIONS_SUCCESS,
+        payload: { search: "search" }
+      });
     })
     .catch(err => {
+      console.log(err);
       dispatch({
         type: FETCH_LOCATIONS_FAIL,
         payload: { err, message: "Error in locations" }

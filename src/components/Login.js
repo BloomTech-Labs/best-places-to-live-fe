@@ -6,14 +6,15 @@ import { login } from "../actions/login.js";
 import Error from "./Error";
 function Login({ login, history, error }) {
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = data => {
-    login(data)
-      .then(res => {
-        history.push("/profile");
-      })
-      .catch(err => {
-        console.log(err);
-      });
+  const onSubmit = async data => {
+    console.log(login(data));
+    const response = await login(data);
+    console.log(response);
+    if (response == "Successful") {
+      history.push("/profile");
+    } else {
+      console.log(response);
+    }
   };
   console.log("Login Errors", errors);
 

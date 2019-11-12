@@ -7,6 +7,7 @@ export const login = credentials => dispatch => {
   return axiosWithAuth()
     .post(`/users/login`, credentials)
     .then(res => {
+      console.log("login response", res);
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("id", res.data._id);
       dispatch({
@@ -17,11 +18,14 @@ export const login = credentials => dispatch => {
           name: res.data.name
         }
       });
+      return "Successful";
     })
     .catch(err => {
+      console.log(err);
       dispatch({
         type: LOGIN_FAIL,
         payload: { err, message: "Incorrect credentials" }
       });
+      return "Failure";
     });
 };
