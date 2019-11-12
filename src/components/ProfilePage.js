@@ -1,20 +1,21 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import { connect } from "react-redux";
 
-function ProfilePage(props){
-
-    //props = username
-    return(
-        <div className ='profile-page'>
-            <p>{props.user.email}</p>
-        </div>
-    )
-};
+function ProfilePage({ user }) {
+  console.log(user);
+  //props = username
+  return (
+    <div className="profile-page">
+      <p>{user.email}</p>
+    </div>
+  );
+}
 
 const mapStatetoProps = state => {
-    return {
-        user: state.user
-    }
+  const { user } = state.loginReducer;
+  return {
+    user
+  };
 };
 
 export default connect(mapStatetoProps)(ProfilePage);

@@ -8,10 +8,12 @@ import Login from "./components/Login";
 import SearchResultsPage from "./components/SearchResultsPage";
 import ProfilePage from "./components/ProfilePage";
 import PrivateRoute from "./components/PrivateRoute";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <Router>
+      <NavBar />
       <Route exact path="/" component={LandingPage} />
       <Route path="/explore" component={ExplorePage} />
       <Route path="/signup" component={SignUp} />
