@@ -1,18 +1,19 @@
 import React from "react";
 import useForm from "react-hook-form";
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { login } from "../actions/login.js";
 
 function Login({ login, history, error }) {
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = async data => {
-    console.log("data:", data);
-    console.log("data:", data);
-    await login(data);
-    console.log(error);
-    if (!error) {
-      history.push("/profile");
-    }
+  const onSubmit = data => {
+    login(data)
+      .then(res => {
+        history.push("/profile");
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
   console.log("Login Errors", errors);
 
@@ -43,7 +44,9 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  { login }
-)(Login);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { login }
+  )(Login)
+);

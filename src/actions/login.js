@@ -4,7 +4,7 @@ import { LOGIN_INITIALIZE, LOGIN_SUCCESS, LOGIN_FAIL } from "./index";
 export const login = credentials => dispatch => {
   dispatch({ type: LOGIN_INITIALIZE });
 
-  axiosWithAuth()
+  return axiosWithAuth()
     .post(`/users/login`, credentials)
     .then(res => {
       localStorage.setItem("token", res.data.token);
