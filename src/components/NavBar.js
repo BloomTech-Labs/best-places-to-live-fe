@@ -8,6 +8,8 @@ const NavBar = ({ isLoggedIn, history }) => {
     history.push("/");
   };
 
+  console.log(isLoggedIn);
+
   return (
     <div>
       <div>
@@ -41,7 +43,7 @@ const NavBar = ({ isLoggedIn, history }) => {
 
 const mapStatetoProps = state => {
   return {
-    isLoggedIn: state.loginReducer.user.isLoggedIn
+    isLoggedIn: state.loginReducer.isLoggedIn
   };
 };
 

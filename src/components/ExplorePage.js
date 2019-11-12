@@ -22,20 +22,13 @@ const ExplorePage = ({
     // event.preventDefault();
     const selectedFactors = Object.keys(data).filter(factor => data[factor]);
     // console.log("checkbox data", selectedFactors);
-    const d = await fetchLocations(selectedFactors);
-    console.log(d);
+    const response = await fetchLocations(selectedFactors);
 
-    if (d) {
+    if (response === "Successful") {
       history.push("/search");
     } else {
-      console.log(locationsError);
+      console.log(response);
     }
-
-    // try {
-    //   history.push("/search");
-    // } catch (e) {
-    //   alert(e.message);
-    // }
   };
 
   useEffect(() => {
