@@ -10,11 +10,11 @@ import useForm from "react-hook-form";
 const ExplorePage = ({
   fetchLocations,
   fetchFactors,
-  error,
+  fetchingError,
   history,
   isFetching,
-  locationError,
-  locationIsFetching
+  locationsError,
+  locationsFetching
 }) => {
   const [factors, setFactors] = useState([
     "Job Market",
@@ -30,27 +30,26 @@ const ExplorePage = ({
     console.log("checkbox data", selectedFactors);
     const fetchResult = await fetchLocations(selectedFactors);
     //If no error, push user to new page else
-    if (!locationError) {
+    if (!locationsError) {
       history.push("/search-results-page");
     }
   };
 
-  //   useEffect(() => {
-  //     async function fetchData() {
-  //       const fetchResults = await fetchFactors();
-  //       console.log(fetchResults);
-  //       if (!error) {
-  //         setFactors(fetchResults);
-  //       }
-  //     }
-  //     fetchData();
-  //   }, []);
-
-  console.log("Explore Page", error);
+  useEffect(() => {
+    async function fetchData() {
+      //   const fetchResults = await fetchFactors();
+      //   console.log(fetchResults);
+      if (!fetchingError) {
+        setFactors(fetchResults);
+      }
+    }
+    fetchData();
+  }, []);
+  console.log(factors);
   return (
     <>
-      <Error error={error} />
-      <Error error={locationError} />
+      <Error error={fetchingError ? "Failure to reach factors" : ""} />
+      <Error error={locationsError ? "Failure to find locations" : ""} />
 
       <form onSubmit={handleSubmit(onSubmit)}>
         {factors.map(factor => {
@@ -75,11 +74,12 @@ const ExplorePage = ({
 
 const mapStateToProps = state => {
   const { isFetching, error } = state.factorsReducer;
+  console.log(state);
   return {
     isFetching,
-    error,
-    locationError: state.locationReducer.error,
-    locationIsFetching: state.locationReducer.isFetching
+    fetchingError: error,
+    locationsError: state.locationsReducer.error,
+    locationsIsFetching: state.locationsReducer.isFetching
   };
 };
 
@@ -89,8 +89,3 @@ export default withRouter(
     { fetchLocations, fetchFactors }
   )(ExplorePage)
 );
-
-// Link connected to redux
-//  - fetchLocations
-//  - pass in array of factors selected
-// import top 10 factors from another file (which maybe would be an endpoint in the future)
