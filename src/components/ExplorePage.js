@@ -24,7 +24,7 @@ const ExplorePage = ({
     const fetchResult = await fetchLocations(selectedFactors);
     //If no error, push user to new page else
     if (!locationsError) {
-      history.push("/search-results-page");
+      history.push("/search");
     }
   };
 
@@ -33,7 +33,7 @@ const ExplorePage = ({
       await fetchFactors();
     }
     fetchData();
-  }, []);
+  }, [fetchFactors]);
 
   return (
     <>

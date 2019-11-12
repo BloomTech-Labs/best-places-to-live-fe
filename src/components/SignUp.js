@@ -3,9 +3,12 @@ import useForm from "react-hook-form";
 import { connect } from "react-redux";
 import { signup } from "../actions/signup.js";
 
-function SignUp(props) {
+function SignUp({ signup, history }) {
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = data => props.signup(data);
+  const onSubmit = async data => {
+    await signup(data);
+    history.push("/login");
+  };
   console.log(errors);
 
   return (

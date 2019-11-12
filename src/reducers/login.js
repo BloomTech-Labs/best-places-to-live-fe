@@ -19,7 +19,8 @@ const loginReducer = (state = initialState, action) => {
         ...state,
         user: action.payload,
         isFetching: false,
-        error: ""
+        error: "",
+        isLoggedIn: true
       };
     case LOGIN_FAIL:
       console.log("reducer", action);

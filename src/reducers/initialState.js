@@ -7,7 +7,8 @@ const initialState = {
       "Chicken",
       "Number of Diapers",
       "Proximity to Rack City"
-    ]
+    ],
+    isLoggedIn: false
   },
   displayedCities: [],
   isFetching: false,

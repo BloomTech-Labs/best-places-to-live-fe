@@ -3,11 +3,12 @@ import useForm from "react-hook-form";
 import { connect } from "react-redux";
 import { login } from "../actions/login.js";
 
-function Login(props) {
+function Login({ login, history }) {
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = data => {
+  const onSubmit = async data => {
     console.log(data);
-    props.login(data);
+    await login(data);
+    history.push("/profile");
   };
   console.log("Login Errors", errors);
 
