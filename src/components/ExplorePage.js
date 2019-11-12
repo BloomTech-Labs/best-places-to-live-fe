@@ -35,10 +35,6 @@ const ExplorePage = ({
     fetchData();
   }, []);
 
-  console.log(fetchingError);
-  console.log(fetchingError.message);
-  console.log(fetchingError.err);
-
   return (
     <>
       {/* <Error error={locationsError ? "Failure to find locations" : ""} /> */}
@@ -66,7 +62,6 @@ const ExplorePage = ({
 };
 
 const mapStateToProps = state => {
-  console.log(state);
   const { isFetching, error } = state.factorsReducer;
   return {
     isFetching,

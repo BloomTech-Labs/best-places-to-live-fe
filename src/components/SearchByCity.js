@@ -8,8 +8,6 @@ function SearchByCity({ history, fetchLocations, isFetching, error }) {
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = async data => {
-    console.log(data);
-
     const fetchResult = await fetchLocations({ searchTerm: data.location });
     //If no error, push user to new page else
     return !error ? history.push("/search-results-page") : null;
@@ -19,7 +17,7 @@ function SearchByCity({ history, fetchLocations, isFetching, error }) {
 
   return (
     <>
-      <Error error={error} />
+      {error && <Error error={error} />}
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
           type="text"
