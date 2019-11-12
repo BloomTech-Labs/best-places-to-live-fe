@@ -6,7 +6,8 @@ import { login } from "../actions/login.js";
 function Login({ login, history, error }) {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = async data => {
-    console.log(data);
+    console.log("data:", data);
+    console.log("data:", data);
     await login(data);
     if (!error) {
       history.push("/profile");

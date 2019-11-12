@@ -7,6 +7,7 @@ import {
 import initialState from "./initialState";
 
 const loginReducer = (state = initialState, action) => {
+  console.log("reducer", action);
   switch (action.type) {
     case LOGIN_INITIALIZE:
       return {
@@ -23,8 +24,6 @@ const loginReducer = (state = initialState, action) => {
         isLoggedIn: true
       };
     case LOGIN_FAIL:
-      console.log("reducer", action);
-
       return {
         ...state,
         error: action.payload
