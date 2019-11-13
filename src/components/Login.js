@@ -43,7 +43,7 @@ function Login({ login, history, error }) {
 }
 
 const mapStateToProps = state => {
-  const { error } = state.loginReducer;
+  const { error } = state;
   return {
     error
   };

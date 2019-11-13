@@ -8,10 +8,13 @@ const logoutReducer = (state = initialState, action) => {
     case LOGOUT:
       return {
         ...state,
-        user: {
-          isLoggedIn: false
-        },
-        error: ""
+          user: {
+            factors: state.user.factors,
+            name:"",
+            email: "",
+            location: "",
+            isLoggedIn: false
+          },
       };
     default:
       return state;

@@ -12,7 +12,7 @@ function ProfilePage({ user }) {
 }
 
 const mapStatetoProps = state => {
-  const { user } = state.loginReducer;
+  const { user } = state;
   return {
     user
   };

@@ -18,7 +18,10 @@ const factorsReducer = (state = initialState, action) => {
     case FETCH_FACTORS_SUCCESS:
       return {
         ...state,
-        user: action.payload,
+        user: {
+          ...state.user,
+          factors: [...action.payload]
+        },
         isFetching: false,
         error: ""
       };

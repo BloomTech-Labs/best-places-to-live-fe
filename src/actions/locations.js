@@ -23,7 +23,7 @@ export const fetchLocations = (location, factors = []) => dispatch => {
       console.log(res);
       dispatch({
         type: FETCH_LOCATIONS_SUCCESS,
-        payload: { search: "search" }
+        payload: res.data 
       });
       return "Successful";
     })

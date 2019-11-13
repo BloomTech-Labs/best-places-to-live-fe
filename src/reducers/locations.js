@@ -18,13 +18,11 @@ const locationsReducer = (state = initialState, action) => {
     case FETCH_LOCATIONS_SUCCESS:
       return {
         ...state,
-        user: action.payload,
+        displayedCities: action.payload,
         isFetching: false,
         error: ""
       };
     case FETCH_LOCATIONS_FAIL:
-      console.log("reducer", action);
-
       return {
         ...state,
         error: action.payload
