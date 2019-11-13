@@ -7,6 +7,7 @@ import {
 import initialState from "./initialState";
 
 const loginReducer = (state = initialState, action) => {
+  console.log("Login Reducer", state);
   console.log("reducer", action);
   switch (action.type) {
     case LOGIN_INITIALIZE:
@@ -18,7 +19,13 @@ const loginReducer = (state = initialState, action) => {
     case LOGIN_SUCCESS:
       return {
         ...state,
-        user: action.payload,
+        user: {
+          ...state.user,
+          id: action.payload.id,
+          email: action.payload.email,
+          name: action.payload.name,
+          isLoggedIn: true
+        },
         isFetching: false,
         error: ""
       };
