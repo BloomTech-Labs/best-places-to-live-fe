@@ -10,12 +10,10 @@ import useForm from "react-hook-form";
 const ExplorePage = ({
   fetchLocations,
   fetchFactors,
-  fetchingError,
   history,
   isFetching,
-  locationsError,
-  locationsIsFetching,
-  factors
+  factors,
+  error
 }) => {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = async data => {
@@ -37,12 +35,11 @@ const ExplorePage = ({
     }
     fetchData();
   }, [fetchFactors]);
-
+  
   return (
     <>
       {/* <Error error={locationsError ? "Failure to find locations" : ""} /> */}
-      {fetchingError && <Error error={fetchingError} />}
-      {locationsError && <Error error={locationsError} />}
+      {error && <Error error={error} />}
       <form onSubmit={handleSubmit(onSubmit)}>
         {factors.map(factor => {
           return (
@@ -67,7 +64,8 @@ const ExplorePage = ({
 const mapStateToProps = state => {
   return {
     isFetching: state.isFetching,
-    factors: state.user.factors
+    factors: state.user.factors,
+    error: state.error
   };
 };
 

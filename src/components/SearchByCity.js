@@ -13,9 +13,8 @@ function SearchByCity({ history, fetchLocations, isFetching, error }) {
     return !error ? history.push("/search") : null;
   };
 
-  console.log(errors);
-
-  return (
+  console.log("SearchByCity error", error);
+  return (      
     <>
       {error && <Error error={error} />}
       <form onSubmit={handleSubmit(onSubmit)}>
