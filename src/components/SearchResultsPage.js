@@ -19,7 +19,7 @@ function SearchResultsPage(props) {
 
 const mapStatetoProps = state => {
   return {
-    displayedCities: state.loginReducer.displayedCities
+    displayedCities: state.displayedCities
   };
 };
 

@@ -33,7 +33,7 @@ function SearchByCity({ history, fetchLocations, isFetching, error }) {
 }
 
 const mapStateToProps = state => {
-  const { isFetching, error } = state.locationsReducer;
+  const { isFetching, error } = state;
   return {
     isFetching,
     error

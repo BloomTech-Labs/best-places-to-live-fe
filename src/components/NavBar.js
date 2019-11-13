@@ -42,8 +42,9 @@ const NavBar = ({ isLoggedIn, history, logout }) => {
 };
 
 const mapStatetoProps = state => {
+  console.log(state);
   return {
-    isLoggedIn: state.loginReducer.user.isLoggedIn
+    isLoggedIn: state.user.isLoggedIn
   };
 };
 

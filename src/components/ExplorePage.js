@@ -65,14 +65,9 @@ const ExplorePage = ({
 };
 
 const mapStateToProps = state => {
-  const { isFetching, error } = state.factorsReducer;
-  console.log("ExplorePage", state);
   return {
-    isFetching,
-    factors: state.factorsReducer.user.factors,
-    fetchingError: error,
-    locationsError: state.locationsReducer.error,
-    locationsIsFetching: state.locationsReducer.isFetching
+    isFetching: state.isFetching,
+    factors: state.user.factors
   };
 };
 
