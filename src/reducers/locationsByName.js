@@ -1,28 +1,27 @@
 import {
-  FETCH_LOCATIONS_INITIALIZE,
-  FETCH_LOCATIONS_SUCCESS,
-  FETCH_LOCATIONS_FAIL
+  FETCH_LOCATIONS_BY_NAME_INITIALIZE,
+  FETCH_LOCATIONS_BY_NAME_SUCCESS,
+  FETCH_LOCATIONS_BY_NAME_FAIL
 } from "../actions/index.js";
 
-//something like this
 import initialState from "../reducers/initialState";
 
-const locationsReducer = (state = initialState, action) => {
+const locationsByNameReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_LOCATIONS_INITIALIZE:
+    case FETCH_LOCATIONS_BY_NAME_INITIALIZE:
       return {
         ...state,
         isFetching: true,
         error: ""
       };
-    case FETCH_LOCATIONS_SUCCESS:
+    case FETCH_LOCATIONS_BY_NAME_SUCCESS:
       return {
         ...state,
         displayedCities: action.payload,
         isFetching: false,
         error: ""
       };
-    case FETCH_LOCATIONS_FAIL:
+    case FETCH_LOCATIONS_BY_NAME_FAIL:
       return {
         ...state,
         error: action.payload
@@ -32,4 +31,4 @@ const locationsReducer = (state = initialState, action) => {
   }
 };
 
-export default locationsReducer;
+export default locationsByNameReducer;
