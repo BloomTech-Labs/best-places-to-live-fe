@@ -9,8 +9,13 @@ export const signup = userData => dispatch => {
     .then(res => {
       console.log(res);
       localStorage.setItem("token", res.data.token);
-      localStorage.setItem("id", res.data.id);
-      dispatch({ type: SIGNUP_SUCCESS, payload: res.data });
+      localStorage.setItem("id", res.data._id);
+      dispatch({ type: SIGNUP_SUCCESS, payload: {
+        id: res.data._id,
+        email: res.data.email,
+        name: res.data.name,
+        location: res.data.location
+      } });
       return "Successful";
     })
     .catch(err => {
@@ -19,5 +24,5 @@ export const signup = userData => dispatch => {
           payload: { err, message: "Error: Please try again" }
         });
         return "Failure";
-        });
+    });
 };
