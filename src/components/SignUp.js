@@ -4,8 +4,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { signup } from "../actions/signup.js";
 import Error from "./Error";
-import { Form } from "../styles/form";
-import { Button } from "../styles/button";
+import { Container, Form, Button } from "../styles/index";
 
 function SignUp({ signup, history, error }) {
   const { register, handleSubmit, errors } = useForm();
@@ -22,7 +21,7 @@ function SignUp({ signup, history, error }) {
   console.log(errors);
 
   return (
-    <>
+    <Container>
       {error && <Error error={error} />}
       <Form onSubmit={handleSubmit(onSubmit)}>
         <input
@@ -52,7 +51,7 @@ function SignUp({ signup, history, error }) {
 
         <Button type="submit">Submit</Button>
       </Form>
-    </>
+    </Container>
   );
 }
 

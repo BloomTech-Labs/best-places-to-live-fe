@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
-const Form = styled.form`
+export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  widhtjustify-content: flex-start;
+  width: 10rem;
+  justify-content: center;
 `;
-
-export { Form };
