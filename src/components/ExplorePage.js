@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link, withRouter } from "react-router-dom";
 import Footer from "./Footer";
-import { fetchLocations } from "../actions/locations";
+import { fetchLocationsByFactors } from "../actions/locationsByFactors";
 import { fetchFactors } from "../actions/factors";
 import Error from "./Error";
 import { connect } from "react-redux";
 import useForm from "react-hook-form";
 
 const ExplorePage = ({
-  fetchLocations,
+  fetchLocationsbyFactors,
   fetchFactors,
   history,
   isFetching,
@@ -20,7 +20,7 @@ const ExplorePage = ({
     // event.preventDefault();
     const selectedFactors = Object.keys(data).filter(factor => data[factor]);
     // console.log("checkbox data", selectedFactors);
-    const response = await fetchLocations(selectedFactors);
+    const response = await fetchLocationsByFactors(selectedFactors);
 
     if (response === "Successful") {
       history.push("/search");
@@ -35,7 +35,7 @@ const ExplorePage = ({
     }
     fetchData();
   }, [fetchFactors]);
-  
+
   return (
     <>
       {/* <Error error={locationsError ? "Failure to find locations" : ""} /> */}
@@ -70,8 +70,7 @@ const mapStateToProps = state => {
 };
 
 export default withRouter(
-  connect(
-    mapStateToProps,
-    { fetchLocations, fetchFactors }
-  )(ExplorePage)
+  connect(mapStateToProps, { fetchLocationsByFactors, fetchFactors })(
+    ExplorePage
+  )
 );

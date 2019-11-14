@@ -1,4 +1,5 @@
-import locationsReducer from "./locations";
+import locationsByFactorsReducer from "./locationsByFactors";
+import locationsByNameReducer from "./locationsByName";
 import factorsReducer from "./factors";
 import signupReducer from "./signup";
 import loginReducer from "./login";
@@ -12,7 +13,8 @@ const reducer = reduceReducers(
   loginReducer,
   signupReducer,
   factorsReducer,
-  locationsReducer,
+  locationsByFactorsReducer,
+  locationsByNameReducer,
   logoutReducer
 );
 
