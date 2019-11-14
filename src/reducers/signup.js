@@ -12,27 +12,27 @@ const registerReducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: true,
-        error: ""
+        signupError: ""
       };
     case SIGNUP_SUCCESS:
       return {
-      ...state,
-      user: {
-        ...state.user,
-        id: action.payload.id,
-        email: action.payload.email,
-        name: action.payload.name,
-        location: action.payload.location,
-        isLoggedIn: true
-      },
-      isFetching: false,
-      error: ""
+        ...state,
+        user: {
+          ...state.user,
+          id: action.payload.id,
+          email: action.payload.email,
+          name: action.payload.name,
+          location: action.payload.location,
+          isLoggedIn: true
+        },
+        isFetching: false,
+        signupError: ""
       };
     case SIGNUP_FAIL:
       console.log("reducer", action);
       return {
         ...state,
-        error: action.payload
+        signupError: action.payload
       };
     default:
       return state;

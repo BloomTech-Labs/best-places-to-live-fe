@@ -12,19 +12,19 @@ const locationsByFactorsReducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: true,
-        error: ""
+        fetchLocationsByFactorsError: ""
       };
     case FETCH_LOCATIONS_BY_FACTORS_SUCCESS:
       return {
         ...state,
         displayedCities: action.payload,
         isFetching: false,
-        error: ""
+        fetchLocationsByFactorsError: ""
       };
     case FETCH_LOCATIONS_BY_FACTORS_FAIL:
       return {
         ...state,
-        error: action.payload
+        fetchLocationsByFactorsError: action.payload
       };
     default:
       return state;

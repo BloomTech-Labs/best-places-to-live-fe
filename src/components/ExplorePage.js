@@ -8,12 +8,13 @@ import { connect } from "react-redux";
 import useForm from "react-hook-form";
 
 const ExplorePage = ({
-  fetchLocationsbyFactors,
+  fetchLocationsByFactors,
   fetchFactors,
   history,
   isFetching,
   factors,
-  error
+  fetchFactorsError,
+  fetchLocationsByFactorsError
 }) => {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = async data => {
@@ -38,8 +39,10 @@ const ExplorePage = ({
 
   return (
     <>
-      {/* <Error error={locationsError ? "Failure to find locations" : ""} /> */}
-      {error && <Error error={error} />}
+      {fetchFactorsError && <Error error={fetchFactorsError} />}
+      {fetchLocationsByFactorsError && (
+        <Error error={fetchLocationsByFactorsError} />
+      )}
       <form onSubmit={handleSubmit(onSubmit)}>
         {factors.map(factor => {
           return (
@@ -65,7 +68,8 @@ const mapStateToProps = state => {
   return {
     isFetching: state.isFetching,
     factors: state.user.factors,
-    error: state.error
+    fetchFactorsError: state.fetchFactorsError,
+    fetchLocationsByFactorsError: state.fetchLocationsByFactorsError
   };
 };
 

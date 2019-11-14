@@ -12,7 +12,11 @@ const initialState = {
   },
   displayedCities: [],
   isFetching: false,
-  error: ""
+  fetchLocationsByFactorsError: "",
+  fetchLocationsByNameError: "",
+  fetchFactorsError: "",
+  loginError: "",
+  signupError: ""
 };
 
 export default initialState;

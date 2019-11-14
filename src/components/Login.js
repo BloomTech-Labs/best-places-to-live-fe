@@ -18,7 +18,7 @@ function Login({ login, history, error }) {
     }
   };
   console.log("Login Errors", errors);
-
+  console.log(error);
   return (
     <>
       {error && <Error error={error} />}
@@ -43,15 +43,9 @@ function Login({ login, history, error }) {
 }
 
 const mapStateToProps = state => {
-  const { error } = state;
   return {
-    error
+    error: state.loginError
   };
 };
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    { login }
-  )(Login)
-);
+export default withRouter(connect(mapStateToProps, { login })(Login));

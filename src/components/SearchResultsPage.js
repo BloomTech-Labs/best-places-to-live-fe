@@ -2,12 +2,14 @@ import React from "react";
 import { connect } from "react-redux";
 import CityCard from "./CityCard";
 import Footer from "./Footer";
+import SearchByFactors from "./SearchByFactors";
 
 function SearchResultsPage(props) {
   //props = from state => displayedCities
 
   return (
     <div className="search-results">
+      <SearchByFactors />
       <p className="search title"> Search Results</p>
       {props.displayedCities.map(city => (
         <CityCard city={city} />
