@@ -11,7 +11,7 @@ function Login({ login, history, error }) {
     console.log(login(data));
     const response = await login(data);
     console.log(response);
-    if (response == "Successful") {
+    if (response === "Successful") {
       history.push("/profile");
     } else {
       console.log(response);

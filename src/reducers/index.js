@@ -1,6 +1,6 @@
 import locationsReducer from "./locations";
 import factorsReducer from "./factors";
-import registerReducer from "./register";
+import signupReducer from "./signup";
 import loginReducer from "./login";
 import logoutReducer from "./logout";
 import reduceReducers from "reduce-reducers";
@@ -10,7 +10,7 @@ console.log(initialState);
 const reducer = reduceReducers(
   initialState,
   loginReducer,
-  registerReducer,
+  signupReducer,
   factorsReducer,
   locationsReducer,
   logoutReducer
