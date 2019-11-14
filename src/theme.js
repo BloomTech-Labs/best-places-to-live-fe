@@ -10,7 +10,18 @@ const colors = {
   primary: "#FF4C4C"
 };
 
-const space = [0, 4, 8, 16, 32, 64, 128, 256, 512];
+// const space = [0, 4, 8, 16, 32, 64, 128, 256, 512];
+const space = [
+  "0",
+  ".25rem",
+  ".5rem",
+  "1rem",
+  "2rem",
+  "3rem",
+  "4rem",
+  "8rem",
+  "16rem"
+];
 
 const fontSizes = [".75rem", ".875rem", "1rem", "1.25rem", "1.5rem", "2rem"];
 

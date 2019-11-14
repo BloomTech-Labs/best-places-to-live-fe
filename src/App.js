@@ -10,12 +10,14 @@ import SearchResultsPage from "./components/SearchResultsPage";
 import ProfilePage from "./components/ProfilePage";
 import PrivateRoute from "./components/PrivateRoute";
 import NavBar from "./components/NavBar";
+import GlobalStyle from "./styles/global";
 import theme from "./theme";
 
 function App(props) {
   return (
     <Router>
       <ThemeProvider theme={theme}>
+        <GlobalStyle />
         <NavBar />
         <Route exact path="/" component={LandingPage} />
         <Route path="/explore" component={ExplorePage} />
