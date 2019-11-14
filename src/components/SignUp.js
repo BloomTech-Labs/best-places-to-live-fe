@@ -6,8 +6,13 @@ import { signup } from "../actions/signup.js";
 function SignUp({ signup, history }) {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = async data => {
-    await signup(data);
-    history.push("/login");
+    const response = await signup(data);
+    console.log(response);
+    if (response === "Successful") {
+      history.push("/");
+    } else {
+      console.log(response);
+    }
   };
   console.log(errors);
 
@@ -26,17 +31,17 @@ function SignUp({ signup, history }) {
         ref={register({ required: true, pattern: /^\S+@\S+$/i })}
       />
       <input
-        type="password"
+        type="Password"
         placeholder="password"
         name="password"
         ref={register({ required: true, minLength: 6 })}
       />
-      {/* <input
+      <input
         type="text"
         placeholder="Location"
-        name="Location"
+        name="location"
         ref={register({ required: true, minLength: 2 })}
-      /> */}
+      />
 
       <input type="submit" />
     </form>
