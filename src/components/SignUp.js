@@ -4,6 +4,10 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { signup } from "../actions/signup.js";
 import Error from "./Error";
+import Grid from "@material-ui/core/Grid";
+import Input from "@material-ui/core/Input";
+import Button from "@material-ui/core/Button";
+import Container from "@material-ui/core/Container";
 
 function SignUp({ signup, history, error }) {
   const { register, handleSubmit, errors } = useForm();
@@ -20,37 +24,37 @@ function SignUp({ signup, history, error }) {
   console.log(errors);
 
   return (
-    <>
+    <Container maxWidth="sm">
       {error && <Error error={error} />}
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input
+        <Input
           type="text"
           placeholder="Name"
           name="name"
           ref={register({ required: true, minLength: 2 })}
         />
-        <input
+        <Input
           type="text"
           placeholder="Email"
           name="email"
           ref={register({ required: true, pattern: /^\S+@\S+$/i })}
         />
-        <input
+        <Input
           type="Password"
           placeholder="password"
           name="password"
           ref={register({ required: true, minLength: 6 })}
         />
-        <input
+        <Input
           type="text"
           placeholder="Location"
           name="location"
           ref={register({ required: true, minLength: 2 })}
         />
 
-        <input type="submit" />
+        <Button type="submit">Submit</Button>
       </form>
-    </>
+    </Container>
   );
 }
 
