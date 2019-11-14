@@ -12,19 +12,19 @@ const locationsByNameReducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: true,
-        error: ""
+        fetchLocationsByNameError: ""
       };
     case FETCH_LOCATIONS_BY_NAME_SUCCESS:
       return {
         ...state,
         displayedCities: action.payload,
         isFetching: false,
-        error: ""
+        fetchLocationsByNameError: ""
       };
     case FETCH_LOCATIONS_BY_NAME_FAIL:
       return {
         ...state,
-        error: action.payload
+        fetchLocationsByNameError: action.payload
       };
     default:
       return state;
