@@ -17,7 +17,7 @@ function SearchByCity({ history, fetchLocations, isFetching, error }) {
     }
     // return !error ?  : null;
   };
-
+  
   console.log("SearchByCity error", error);
   return (      
     <>
