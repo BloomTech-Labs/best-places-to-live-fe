@@ -24,7 +24,7 @@ export const login = credentials => dispatch => {
       console.log(err);
       dispatch({
         type: LOGIN_FAIL,
-        payload: { err, message: "Incorrect credentials" }
+        payload: { err, message: err.message }
       });
       return "Failure";
     });

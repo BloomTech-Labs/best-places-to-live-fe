@@ -22,7 +22,7 @@ export const fetchLocationsByFactors = data => dispatch => {
       console.log(err);
       dispatch({
         type: FETCH_LOCATIONS_BY_FACTORS_FAIL,
-        payload: { err, message: "Error in locations" }
+        payload: { err, message: err.message }
       });
       return "Failure";
     });

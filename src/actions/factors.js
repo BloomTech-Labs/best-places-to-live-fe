@@ -15,7 +15,7 @@ export const fetchFactors = () => dispatch => {
     .catch(err => {
       dispatch({
         type: FETCH_FACTORS_FAIL,
-        payload: { err, message: "Error in factors" }
+        payload: { err, message: err.message }
       });
     });
 };
