@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { signup } from "../actions/signup.js";
 import Error from "./Error";
-import { Container, Form, Button } from "../styles/index";
+import { Container, Form, Button, Input } from "../styles/index";
 
 function SignUp({ signup, history, error }) {
   const { register, handleSubmit, errors } = useForm();
@@ -24,25 +24,25 @@ function SignUp({ signup, history, error }) {
     <Container>
       {error && <Error error={error} />}
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <input
+        <Input
           type="text"
           placeholder="Name"
           name="name"
           ref={register({ required: true, minLength: 2 })}
         />
-        <input
+        <Input
           type="text"
           placeholder="Email"
           name="email"
           ref={register({ required: true, pattern: /^\S+@\S+$/i })}
         />
-        <input
+        <Input
           type="Password"
           placeholder="password"
           name="password"
           ref={register({ required: true, minLength: 6 })}
         />
-        <input
+        <Input
           type="text"
           placeholder="Location"
           name="location"

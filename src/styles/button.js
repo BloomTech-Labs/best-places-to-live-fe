@@ -1,10 +1,13 @@
 import styled from "styled-components";
+import theme from "../theme";
 
 export const Button = styled.button`
-  padding: 5px 12px;
-  border-radius: 5px;
+  padding: ${theme.space[2]}px ${theme.space[3]}px;
+  border-radius: ${theme.space[1]}px;
+  transition: 0.275s all ease-in;
 
   &:hover {
     cursor: pointer;
+    opacity: 0.8;
   }
 `;

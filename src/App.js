@@ -10,6 +10,7 @@ import SearchResultsPage from "./components/SearchResultsPage";
 import ProfilePage from "./components/ProfilePage";
 import PrivateRoute from "./components/PrivateRoute";
 import NavBar from "./components/NavBar";
+import theme from "./theme";
 
 function App(props) {
   return (
