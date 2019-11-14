@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import useForm from "react-hook-form";
-import { fetchLocationsbyFactors } from "../actions/locationsByFactors";
+import { fetchLocationsByName } from "../actions/locationsByFactors";
 import { connect } from "react-redux";
 import Error from "./Error";
 import { withRouter } from "react-router-dom";
 
-function SearchByCity({ history, fetchLocations, isFetching, error }) {
+function SearchByCity({ history, fetchLocationsByName, isFetching, error }) {
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = async data => {
-    const response = await fetchLocations({ searchTerm: data.location });
+    const response = await fetchLocationsByName({
+      searchTerm: data.location
+    });
     //If no error, push user to new page else
 
     if (response === "Successful") {
@@ -46,5 +48,5 @@ const mapStateToProps = state => {
 };
 
 export default withRouter(
-  connect(mapStateToProps, { fetchLocations })(SearchByCity)
+  connect(mapStateToProps, { fetchLocationsByName })(SearchByCity)
 );
