@@ -40,10 +40,10 @@ function SearchByCity({ history, fetchLocationsByName, isFetching, error }) {
 }
 
 const mapStateToProps = state => {
-  const { isFetching, error } = state;
+  const { isFetching } = state;
   return {
     isFetching,
-    error
+    error: state.fetchLocationsByNameError
   };
 };
 
