@@ -1,5 +1,6 @@
 import React from "react";
 import useForm from "react-hook-form";
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { signup } from "../actions/signup.js";
 
@@ -7,6 +8,7 @@ function SignUp({ signup, history }) {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = async data => {
     const response = await signup(data);
+    
     console.log(response);
     if (response === "Successful") {
       history.push("/");
@@ -22,7 +24,7 @@ function SignUp({ signup, history }) {
         type="text"
         placeholder="Name"
         name="name"
-        ref={register({ required: true, minLength: 6 })}
+        ref={register({ required: true, minLength: 2 })}
       />
       <input
         type="text"
@@ -48,7 +50,7 @@ function SignUp({ signup, history }) {
   );
 }
 
-export default connect(
+export default withRouter(connect(
   null,
   { signup }
-)(SignUp);
+)(SignUp));
