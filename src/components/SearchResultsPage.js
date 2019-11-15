@@ -4,7 +4,7 @@ import CityCard from "./CityCard";
 import Footer from "./Footer";
 import { Container, Flex, Text } from "../styles/index";
 import SearchByFactors from "./SearchByFactors";
-import SearchByCity from "./SearchByCity";
+import SearchBar from "./SearchBar";
 
 function SearchResultsPage({ displayedCities }) {
   return (
@@ -15,7 +15,7 @@ function SearchResultsPage({ displayedCities }) {
         display="flex"
         justifyContent="center"
       >
-        <SearchByCity />
+        <SearchBar />
         <SearchByFactors />
       </Flex>
       <Text as="h2" textAlign="center">
