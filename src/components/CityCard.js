@@ -1,19 +1,23 @@
+import React from "react";
+import { Card, Image, Text } from "../styles/index";
 
-import React from 'react';
-
-function CityCard(props){
-
-    // passed props
-    //props =  city {img, cityName, cityState, population, costOfLiving}
-    return (
-        <div className= 'city-card'>
-            <img src={props.city.img}/>
-            <p className='city-location'>{props.city.name}, {props.city.cityState}</p>
-            <p className='population'>{props.city.population}</p>
-            <p className='costOfLiving'> {props.city.costOfLiving} </p>
-        </div>
-    )
+function CityCard({ city }) {
+  return (
+    <Card
+      border={"1.5px solid #333"}
+      p={[1, 2]}
+      width={{ _: 1, sm: 1, md: 1 / 2, lg: 1 / 4 }}
+      m={2}
+    >
+      <Text>{city.name}</Text>
+      <Text>Population: {city.population}</Text>
+      {city.photo !==
+        "https://letsmovehomie-city-photoes.nyc3.digitaloceanspaces.com/no-photo-available.jpg" && (
+        <Image src={city.photo} alt="city" width={"100%"} maxWidth={300} />
+      )}
+    </Card>
+  );
 }
 
 //will probably props drill city card, state will have array of cities for search results
-export default CityCard; 
+export default CityCard;

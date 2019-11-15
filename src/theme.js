@@ -7,7 +7,9 @@ breakpoints.lg = breakpoints[2];
 breakpoints.xl = breakpoints[3];
 
 const colors = {
-  primary: "#FF4C4C"
+  primary: "#FF4C4C",
+  white: "#fff",
+  gray: "#333"
 };
 
 const space = [

@@ -1,14 +1,20 @@
 import styled from "styled-components";
 import theme from "../theme";
+import { typography, space, color, border } from "styled-system";
 
 export const Button = styled.button`
-  padding: ${theme.space[2]} ${theme.space[3]};
-  border-radius: 3px;
-  border: 1px solid #333;
+  ${typography};
+  ${space};
+  ${color};
+  ${border}
   transition: 0.275s all ease-in;
-  background-color: #fff;
-  font-size: ${theme.fontSizes[1]};
+  padding: ${theme.space[2]} ${theme.space[3]};
 
+  border: 1px solid ${theme.colors.gray};
+  border-radius: 3px;
+  font-size: ${theme.fontSizes[1]};
+  background-color: ${theme.colors.white};
+  margin-bottom: ${theme.space[4]};
   &:hover {
     cursor: pointer;
     opacity: 0.8;
