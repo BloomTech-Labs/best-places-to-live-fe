@@ -13,7 +13,6 @@ import {
   SignUpP,
   StyledLink
 } from "../styles/index";
-// import { Box } from "styled-system";
 
 function SignUp({ signup, history, error }) {
   const { register, handleSubmit, errors } = useForm();
@@ -62,7 +61,7 @@ function SignUp({ signup, history, error }) {
           <SocialButton Facebook>Continue with Facebook</SocialButton>
           <Button type="submit">Join BPTL</Button>
           <SignUpP>Already have an account?</SignUpP>
-          <StyledLink>Log In</StyledLink>
+          <StyledLink to="/login">Log In</StyledLink>
         </Container>
       </Form>
     </Container>
