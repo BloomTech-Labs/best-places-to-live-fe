@@ -4,6 +4,15 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { signup } from "../actions/signup.js";
 import Error from "./Error";
+import {
+  Container,
+  Form,
+  Button,
+  Input,
+  SocialButton,
+  SignUpP,
+  StyledLink
+} from "../styles/index";
 
 function SignUp({ signup, history, error }) {
   const { register, handleSubmit, errors } = useForm();
@@ -20,37 +29,42 @@ function SignUp({ signup, history, error }) {
   console.log(errors);
 
   return (
-    <>
+    <Container>
       {error && <Error error={error} />}
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input
+      <Form onSubmit={handleSubmit(onSubmit)}>
+        <Input
           type="text"
           placeholder="Name"
           name="name"
           ref={register({ required: true, minLength: 2 })}
         />
-        <input
+        <Input
           type="text"
           placeholder="Email"
           name="email"
           ref={register({ required: true, pattern: /^\S+@\S+$/i })}
         />
-        <input
+        <Input
           type="Password"
           placeholder="password"
           name="password"
           ref={register({ required: true, minLength: 6 })}
         />
-        <input
+        <Input
           type="text"
           placeholder="Location"
           name="location"
           ref={register({ required: true, minLength: 2 })}
         />
-
-        <button type="submit">Submit</button>
-      </form>
-    </>
+        <Container center zeroPadding>
+          <SocialButton Google>Continue with Google</SocialButton>
+          <SocialButton Facebook>Continue with Facebook</SocialButton>
+          <Button type="submit">Join BPTL</Button>
+          <SignUpP>Already have an account?</SignUpP>
+          <StyledLink to="/login">Log In</StyledLink>
+        </Container>
+      </Form>
+    </Container>
   );
 }
 
