@@ -10,7 +10,7 @@ import {
   Button,
   Input,
   SocialButton,
-  SignUpP,
+  Text,
   StyledLink
 } from "../styles/index";
 
@@ -55,11 +55,11 @@ function SignUp({ signup, history, error }) {
           name="location"
           ref={register({ required: true, minLength: 2 })}
         />
-        <Container center zeroPadding>
+        <Container textAlign="center">
           <SocialButton Google>Continue with Google</SocialButton>
           <SocialButton Facebook>Continue with Facebook</SocialButton>
           <Button type="submit">Join BPTL</Button>
-          <SignUpP>Already have an account?</SignUpP>
+          <Text color="primary">Already have an account?</Text>
           <StyledLink to="/login">Log In</StyledLink>
         </Container>
       </Form>

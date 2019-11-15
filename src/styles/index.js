@@ -2,7 +2,6 @@ import { Form } from "./form";
 import { SocialButton, Button } from "./button";
 import { Container } from "./container";
 import { Input } from "./input";
-import { SignUpP } from "./p";
 import { StyledLink } from "./link";
 import { Card } from "./card";
 import { Flex } from "./flex";
@@ -19,7 +18,6 @@ export {
   Input,
   GlobalStyle,
   SocialButton,
-  SignUpP,
   StyledLink,
   Card,
   Flex,
