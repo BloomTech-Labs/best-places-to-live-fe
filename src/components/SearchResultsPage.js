@@ -3,14 +3,14 @@ import { connect } from "react-redux";
 import CityCard from "./CityCard";
 import Footer from "./Footer";
 
-function SearchResultsPage(props) {
+function SearchResultsPage({ displayedCities }) {
   //props = from state => displayedCities
 
   return (
     <div className="search-results">
       <p className="search title"> Search Results</p>
-      {props.displayedCities.map(city => (
-        <CityCard city={city} />
+      {displayedCities.map(city => (
+        <CityCard key={city._id} city={city} />
       ))}
       <Footer />
     </div>
