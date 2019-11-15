@@ -4,7 +4,7 @@ export const axiosWithAuth = () => {
   const token = localStorage.getItem("token");
 
   return axios.create({
-    baseURL: "https://bestplacesbe.herokuapp.com/",
+    baseURL: "https://bestplacesbe-test.herokuapp.com/users",
     headers: {
       Authorization: token
     }

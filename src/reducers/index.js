@@ -1,14 +1,21 @@
-import { combineReducers } from "redux";
-import locationsReducer from "./locations";
+import locationsByFactorsReducer from "./locationsByFactors";
+import locationsByNameReducer from "./locationsByName";
 import factorsReducer from "./factors";
-import registerReducer from "./register";
+import signupReducer from "./signup";
 import loginReducer from "./login";
+import logoutReducer from "./logout";
+import reduceReducers from "reduce-reducers";
+import initialState from "../reducers/initialState";
 
-const reducer = combineReducers({
+console.log(initialState);
+const reducer = reduceReducers(
+  initialState,
   loginReducer,
-  registerReducer,
+  signupReducer,
   factorsReducer,
-  locationsReducer
-});
+  locationsByFactorsReducer,
+  locationsByNameReducer,
+  logoutReducer
+);
 
 export default reducer;

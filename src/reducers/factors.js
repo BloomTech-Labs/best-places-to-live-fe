@@ -4,7 +4,8 @@ import {
   FETCH_FACTORS_FAIL
 } from "../actions/index.js";
 
-import initialState from "./initialState";
+//something like this
+import initialState from "../reducers/initialState";
 
 const factorsReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -12,21 +13,24 @@ const factorsReducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: true,
-        error: ""
+        fetchFactorsError: ""
       };
     case FETCH_FACTORS_SUCCESS:
       return {
         ...state,
-        user: action.payload,
+        user: {
+          ...state.user,
+          factors: [...action.payload]
+        },
         isFetching: false,
-        error: ""
+        fetchFactorsError: ""
       };
     case FETCH_FACTORS_FAIL:
       console.log("reducer", action);
       return {
         ...state,
         isFetching: false,
-        error: action.payload
+        fetchFactorsError: action.payload
       };
     default:
       return state;

@@ -1,30 +1,32 @@
 import React, { useState, useEffect } from "react";
 import { Link, withRouter } from "react-router-dom";
 import Footer from "./Footer";
-import { fetchLocations } from "../actions/locations";
+import { fetchLocationsByFactors } from "../actions/locationsByFactors";
 import { fetchFactors } from "../actions/factors";
 import Error from "./Error";
 import { connect } from "react-redux";
 import useForm from "react-hook-form";
 
 const ExplorePage = ({
-  fetchLocations,
+  fetchLocationsByFactors,
   fetchFactors,
-  fetchingError,
   history,
   isFetching,
-  locationsError,
-  locationsIsFetching,
-  factors
+  factors,
+  fetchFactorsError,
+  fetchLocationsByFactorsError
 }) => {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = async data => {
+    // event.preventDefault();
     const selectedFactors = Object.keys(data).filter(factor => data[factor]);
-    console.log("checkbox data", selectedFactors);
-    const fetchResult = await fetchLocations(selectedFactors);
-    //If no error, push user to new page else
-    if (!locationsError) {
+    // console.log("checkbox data", selectedFactors);
+    const response = await fetchLocationsByFactors(selectedFactors);
+
+    if (response === "Successful") {
       history.push("/search");
+    } else {
+      console.log(response);
     }
   };
 
@@ -37,9 +39,10 @@ const ExplorePage = ({
 
   return (
     <>
-      {/* <Error error={locationsError ? "Failure to find locations" : ""} /> */}
-      {fetchingError && <Error error={fetchingError} />}
-      {locationsError && <Error error={locationsError} />}
+      {fetchFactorsError && <Error error={fetchFactorsError} />}
+      {fetchLocationsByFactorsError && (
+        <Error error={fetchLocationsByFactorsError} />
+      )}
       <form onSubmit={handleSubmit(onSubmit)}>
         {factors.map(factor => {
           return (
@@ -62,19 +65,16 @@ const ExplorePage = ({
 };
 
 const mapStateToProps = state => {
-  const { isFetching, error } = state.factorsReducer;
   return {
-    isFetching,
-    factors: state.factorsReducer.user.factors,
-    fetchingError: error,
-    locationsError: state.locationsReducer.error,
-    locationsIsFetching: state.locationsReducer.isFetching
+    isFetching: state.isFetching,
+    factors: state.user.factors,
+    fetchFactorsError: state.fetchFactorsError,
+    fetchLocationsByFactorsError: state.fetchLocationsByFactorsError
   };
 };
 
 export default withRouter(
-  connect(
-    mapStateToProps,
-    { fetchLocations, fetchFactors }
-  )(ExplorePage)
+  connect(mapStateToProps, { fetchLocationsByFactors, fetchFactors })(
+    ExplorePage
+  )
 );

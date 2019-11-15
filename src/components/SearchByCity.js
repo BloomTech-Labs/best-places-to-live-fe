@@ -1,20 +1,27 @@
 import React, { useState } from "react";
 import useForm from "react-hook-form";
-import { fetchLocations } from "../actions/locations";
+import { fetchLocationsByName } from "../actions/locationsByName";
 import { connect } from "react-redux";
 import Error from "./Error";
+import { withRouter } from "react-router-dom";
 
-function SearchByCity({ history, fetchLocations, isFetching, error }) {
+function SearchByCity({ history, fetchLocationsByName, isFetching, error }) {
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = async data => {
-    const fetchResult = await fetchLocations({ searchTerm: data.location });
+    const response = await fetchLocationsByName({
+      searchTerm: data.location
+    });
     //If no error, push user to new page else
-    return !error ? history.push("/search-results-page") : null;
+
+    if (response === "Successful") {
+      history.push("/search");
+    } else {
+      console.log(response);
+    }
   };
 
-  console.log(errors);
-
+  console.log("SearchByCity error", error);
   return (
     <>
       {error && <Error error={error} />}
@@ -33,14 +40,13 @@ function SearchByCity({ history, fetchLocations, isFetching, error }) {
 }
 
 const mapStateToProps = state => {
-  const { isFetching, error } = state.locationsReducer;
+  const { isFetching } = state;
   return {
     isFetching,
-    error
+    error: state.fetchLocationsByNameError
   };
 };
 
-export default connect(
-  mapStateToProps,
-  { fetchLocations }
-)(SearchByCity);
+export default withRouter(
+  connect(mapStateToProps, { fetchLocationsByName })(SearchByCity)
+);

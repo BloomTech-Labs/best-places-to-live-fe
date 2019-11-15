@@ -13,20 +13,25 @@ const loginReducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: true,
-        error: ""
+        loginError: ""
       };
     case LOGIN_SUCCESS:
       return {
         ...state,
-        user: action.payload,
+        user: {
+          ...state.user,
+          id: action.payload.id,
+          email: action.payload.email,
+          name: action.payload.name,
+          isLoggedIn: true
+        },
         isFetching: false,
-        error: "",
-        isLoggedIn: true
+        loginError: ""
       };
     case LOGIN_FAIL:
       return {
         ...state,
-        error: action.payload
+        loginError: action.payload
       };
     default:
       return state;

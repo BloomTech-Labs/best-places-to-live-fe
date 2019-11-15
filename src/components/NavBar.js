@@ -1,10 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
+import { logout } from "../actions/logout";
 
-const NavBar = ({ isLoggedIn, history }) => {
+const NavBar = ({ isLoggedIn, history, logout }) => {
   const logoutHandler = () => {
-    localStorage.removeItem("token");
+    console.log("here");
+    logout();
     history.push("/");
   };
 
@@ -32,7 +34,7 @@ const NavBar = ({ isLoggedIn, history }) => {
             <NavLink to="/profile">Profile</NavLink>
           </div>
 
-          <button onClick={() => logoutHandler}>Logout </button>
+          <button onClick={logoutHandler}>Logout </button>
         </>
       )}
     </div>
@@ -40,9 +42,15 @@ const NavBar = ({ isLoggedIn, history }) => {
 };
 
 const mapStatetoProps = state => {
+  console.log(state);
   return {
-    isLoggedIn: state.loginReducer.user.isLoggedIn
+    isLoggedIn: state.user.isLoggedIn
   };
 };
 
-export default connect(mapStatetoProps)(NavBar);
+export default withRouter(
+  connect(
+    mapStatetoProps,
+    { logout }
+  )(NavBar)
+);
