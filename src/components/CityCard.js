@@ -1,24 +1,19 @@
 import React from "react";
-import { Card, Image } from "../styles/index";
+import { Card, Image, Text } from "../styles/index";
 
 function CityCard({ city }) {
   return (
-    <Card width={{ _: 1, sm: 1, md: 1 / 2, lg: 1 / 4 }} m={2}>
-      <p className="city-location">{city.name}</p>
-      <p className="population">Population: {city.population}</p>
-      <p className="costOfLiving">
-        Cost of Living Rank: {city.cost_of_living}{" "}
-      </p>
-
+    <Card
+      border={"1.5px solid #333"}
+      p={[1, 2]}
+      width={{ sm: 1, md: 1 / 2, lg: 1 / 4 }}
+      m={2}
+    >
+      <Text>{city.name}</Text>
+      <Text>Population: {city.population}</Text>
       {city.photo !==
         "https://letsmovehomie-city-photoes.nyc3.digitaloceanspaces.com/no-photo-available.jpg" && (
-        <Image
-          src={city.photo}
-          alt="city"
-          className="city-image"
-          width={"100%"}
-          max-width={300}
-        />
+        <Image src={city.photo} alt="city" width={"100%"} maxWidth={300} />
       )}
     </Card>
   );

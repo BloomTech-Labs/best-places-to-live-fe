@@ -8,6 +8,7 @@ import { Card } from "./card";
 import { Flex } from "./flex";
 import { Grid } from "./grid";
 import { Image } from "./image";
+import { Text } from "./text";
 
 import GlobalStyle from "./global";
 
@@ -23,5 +24,6 @@ export {
   Card,
   Flex,
   Grid,
-  Image
+  Image,
+  Text
 };

@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components";
-import { width, space } from "styled-system";
+import { layout, space } from "styled-system";
 
 export const Image = styled.img`
-  ${width};
+  ${layout};
   ${space};
   height: auto;
   ${props =>
