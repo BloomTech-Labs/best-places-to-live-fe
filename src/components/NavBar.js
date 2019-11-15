@@ -48,9 +48,4 @@ const mapStatetoProps = state => {
   };
 };
 
-export default withRouter(
-  connect(
-    mapStatetoProps,
-    { logout }
-  )(NavBar)
-);
+export default withRouter(connect(mapStatetoProps, { logout })(NavBar));
