@@ -4,7 +4,15 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { signup } from "../actions/signup.js";
 import Error from "./Error";
-import { Container, Form, Button, Input, SocialButton } from "../styles/index";
+import {
+  Container,
+  Form,
+  Button,
+  Input,
+  SocialButton,
+  SignUpP,
+  StyledLink
+} from "../styles/index";
 // import { Box } from "styled-system";
 
 function SignUp({ signup, history, error }) {
@@ -53,6 +61,8 @@ function SignUp({ signup, history, error }) {
           <SocialButton Google>Continue with Google</SocialButton>
           <SocialButton Facebook>Continue with Facebook</SocialButton>
           <Button type="submit">Join BPTL</Button>
+          <SignUpP>Already have an account?</SignUpP>
+          <StyledLink>Log In</StyledLink>
         </Container>
       </Form>
     </Container>
