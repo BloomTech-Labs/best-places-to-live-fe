@@ -19,7 +19,6 @@ function SignUp({ signup, history, error }) {
   const onSubmit = async data => {
     const response = await signup(data);
 
-    console.log(response);
     if (response === "Successful") {
       history.push("/");
     } else {
