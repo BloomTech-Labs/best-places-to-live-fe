@@ -13,7 +13,7 @@ function CityCard({ city }) {
       <Text>Population: {city.population}</Text>
       {city.photo !==
         "https://letsmovehomie-city-photoes.nyc3.digitaloceanspaces.com/no-photo-available.jpg" && (
-        <Image src={city.photo} alt="city" width={"100%"} maxWidth={300} />
+        <Image src={city.photo} alt={city.name} width={"100%"} maxWidth={300} />
       )}
     </Card>
   );
