@@ -6,7 +6,7 @@ function CityCard({ city }) {
     <Card
       border={"1.5px solid #333"}
       p={[1, 2]}
-      width={{ sm: 1, md: 1 / 2, lg: 1 / 4 }}
+      width={{ _: 1, sm: 1, md: 1 / 2, lg: 1 / 4 }}
       m={2}
     >
       <Text>{city.name}</Text>
