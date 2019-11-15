@@ -9,4 +9,9 @@ export const Container = styled.div`
     css`
       text-align: center;
     `}
+  ${props =>
+    props.zeroPadding &&
+    css`
+      padding: 0;
+    `}
 `;

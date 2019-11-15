@@ -18,6 +18,8 @@ export const Button = styled.button`
 export const SocialButton = styled.button`
   background-color: #b7b7b7;
   border: 0;
+  width: 100%;
   color: #fff;
   padding: ${theme.space[2]} ${theme.space[3]};
+  margin-bottom: ${theme.space[3]};
 `;

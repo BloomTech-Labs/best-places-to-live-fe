@@ -57,7 +57,7 @@ function SignUp({ signup, history, error }) {
           name="location"
           ref={register({ required: true, minLength: 2 })}
         />
-        <Container center>
+        <Container center zeroPadding>
           <SocialButton Google>Continue with Google</SocialButton>
           <SocialButton Facebook>Continue with Facebook</SocialButton>
           <Button type="submit">Join BPTL</Button>
