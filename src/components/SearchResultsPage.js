@@ -2,18 +2,21 @@ import React from "react";
 import { connect } from "react-redux";
 import CityCard from "./CityCard";
 import Footer from "./Footer";
+import { Container, Flex } from "../styles/index";
 
 function SearchResultsPage({ displayedCities }) {
   //props = from state => displayedCities
 
   return (
-    <div className="search-results">
-      <p className="search title"> Search Results</p>
-      {displayedCities.map(city => (
-        <CityCard key={city._id} city={city} />
-      ))}
+    <Container>
+      <h2 className="search title"> Search Results</h2>
+      <Flex>
+        {displayedCities.map(city => (
+          <CityCard key={city._id} city={city} />
+        ))}
+      </Flex>
       <Footer />
-    </div>
+    </Container>
   );
 }
 
