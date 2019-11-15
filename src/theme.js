@@ -10,7 +10,6 @@ const colors = {
   primary: "#FF4C4C"
 };
 
-// const space = [0, 4, 8, 16, 32, 64, 128, 256, 512];
 const space = [
   "0",
   ".25rem",
@@ -32,5 +31,6 @@ fontSizes.display = fontSizes[5];
 export default {
   breakpoints,
   colors,
-  space
+  space,
+  fontSizes
 };

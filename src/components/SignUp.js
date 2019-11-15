@@ -4,7 +4,8 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { signup } from "../actions/signup.js";
 import Error from "./Error";
-import { Container, Form, Button, Input } from "../styles/index";
+import { Container, Form, Button, Input, SocialButton } from "../styles/index";
+// import { Box } from "styled-system";
 
 function SignUp({ signup, history, error }) {
   const { register, handleSubmit, errors } = useForm();
@@ -48,8 +49,11 @@ function SignUp({ signup, history, error }) {
           name="location"
           ref={register({ required: true, minLength: 2 })}
         />
-
-        <Button type="submit">Submit</Button>
+        <Container center>
+          <SocialButton Google>Continue with Google</SocialButton>
+          <SocialButton Facebook>Continue with Facebook</SocialButton>
+          <Button type="submit">Join BPTL</Button>
+        </Container>
       </Form>
     </Container>
   );

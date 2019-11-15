@@ -1,5 +1,12 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import theme from "../theme";
 
 export const Container = styled.div`
-  /* max-width: 1200px; */
+  padding: 0 ${theme.space[3]};
+
+  ${props =>
+    props.center &&
+    css`
+      text-align: center;
+    `}
 `;
