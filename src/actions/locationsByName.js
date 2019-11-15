@@ -14,7 +14,7 @@ export const fetchLocationsByName = data => dispatch => {
       console.log(res);
       dispatch({
         type: FETCH_LOCATIONS_BY_NAME_SUCCESS,
-        payload: res.data
+        payload: res.data.cities
       });
       return "Successful";
     })
