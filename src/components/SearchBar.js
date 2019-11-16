@@ -1,24 +1,28 @@
 import React, { useState } from "react";
-import useForm from "react-hook-form";
 import { fetchLocationsByName } from "../actions/locationsByName";
 import { connect } from "react-redux";
 import Error from "./Error";
 import { withRouter } from "react-router-dom";
-import { Container, Flex, Input, Button, Form } from "../styles/index";
+import { Container, Flex, Input } from "../styles/index";
 
-function SearchByCity({ history, fetchLocationsByName, isFetching, error }) {
-  const { register, handleSubmit, errors } = useForm();
+function SearchBar({ history, fetchLocationsByName, isFetching, error, page }) {
+  const [location, setLocation] = useState("");
 
-  const onSubmit = async data => {
+  const fetchLocation = async data => {
     const response = await fetchLocationsByName({
-      searchTerm: data.location
+      searchTerm: data
     });
     //If no error, push user to new page else
-
-    if (response === "Successful") {
+    if (response === "Successful" && page === "landing") {
       history.push("/search");
     } else {
       console.log(response);
+    }
+  };
+
+  const handleInput = event => {
+    if (event.keyCode === 13) {
+      fetchLocation(location);
     }
   };
 
@@ -26,16 +30,14 @@ function SearchByCity({ history, fetchLocationsByName, isFetching, error }) {
   return (
     <Container>
       {error && <Error error={error} />}
-      <Form onSubmit={handleSubmit(onSubmit)}>
-        <Input
-          type="text"
-          placeholder="location"
-          name="location"
-          ref={register({ required: true, minLength: 1 })}
-        />
-
-        <Button type="submit">Search</Button>
-      </Form>
+      <Input
+        type="text"
+        placeholder="location"
+        name="location"
+        value={location}
+        onChange={e => setLocation(e.target.value)}
+        onKeyDown={e => handleInput(e)}
+      />
     </Container>
   );
 }
@@ -49,5 +51,5 @@ const mapStateToProps = state => {
 };
 
 export default withRouter(
-  connect(mapStateToProps, { fetchLocationsByName })(SearchByCity)
+  connect(mapStateToProps, { fetchLocationsByName })(SearchBar)
 );

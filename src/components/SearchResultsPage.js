@@ -3,10 +3,21 @@ import { connect } from "react-redux";
 import CityCard from "./CityCard";
 import Footer from "./Footer";
 import { Container, Flex, Text } from "../styles/index";
+import SearchByFactors from "./SearchByFactors";
+import SearchBar from "./SearchBar";
 
 function SearchResultsPage({ displayedCities }) {
   return (
     <Container p={`0 15px`}>
+      <Flex
+        flexDirection="column"
+        alignItems="center"
+        display="flex"
+        justifyContent="center"
+      >
+        <SearchBar />
+        <SearchByFactors />
+      </Flex>
       <Text as="h2" textAlign="center">
         {" "}
         Search Results

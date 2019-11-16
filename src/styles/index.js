@@ -8,6 +8,7 @@ import { Flex } from "./flex";
 import { Grid } from "./grid";
 import { Image } from "./image";
 import { Text } from "./text";
+import { Hero } from "./hero";
 
 import GlobalStyle from "./global";
 
@@ -15,6 +16,7 @@ export {
   Form,
   Button,
   Container,
+  Hero,
   Input,
   GlobalStyle,
   SocialButton,
