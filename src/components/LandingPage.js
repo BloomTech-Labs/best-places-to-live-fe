@@ -1,19 +1,29 @@
 import React from "react";
 import Footer from "./Footer";
-import { Container, StyledLink, Flex, Text } from "../styles/index";
+import SearchBar from "./SearchBar";
+import { Container, StyledLink, Flex, Text, Hero } from "../styles/index";
 
 const LandingPage = () => {
   return (
     <>
       <Container as="main">
-        <Text textAlign="center" as="h2">
-          X Marks the Spot
-        </Text>
-
-        <StyledLink to="/explore">Explore!</StyledLink>
+        <Hero>
+          <Text textAlign="center" as="h2">
+            X Marks the Spot
+          </Text>
+          <SearchBar page="landing" />
+        </Hero>
+        <Container>
+          <Text as="h2">
+            <StyledLink color="black" to="/explore">
+              Explore!
+            </StyledLink>
+          </Text>
+          <Flex>For the category/ factors cards</Flex>
+        </Container>
         <Container>
           <Text as="h2">Popular Cities: </Text>
-          <Flex></Flex>
+          <Flex>For the City cards</Flex>
         </Container>
       </Container>
       <Footer />
