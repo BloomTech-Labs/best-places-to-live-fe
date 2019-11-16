@@ -13,7 +13,6 @@ function SearchBar({ history, fetchLocationsByName, isFetching, error }) {
       searchTerm: data
     });
     //If no error, push user to new page else
-
     if (response === "Successful") {
     } else {
       console.log(response);
@@ -30,7 +29,6 @@ function SearchBar({ history, fetchLocationsByName, isFetching, error }) {
   return (
     <Container>
       {error && <Error error={error} />}
-      {/* <Form onSubmit={handleSubmit(onSubmit)}> */}
       <Input
         type="text"
         placeholder="location"

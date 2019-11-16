@@ -1,16 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import SearchByCity from "./SearchByCity";
 import Footer from "./Footer";
+import { Container, StyledLink, Flex, Text } from "../styles/index";
 
 const LandingPage = () => {
   return (
-    <main>
-      <h1>X Marks the Spot</h1>
-      <SearchByCity />
-      <Link to="/explore">Explore!</Link>
+    <>
+      <Container as="main">
+        <Text textAlign="center" as="h2">
+          X Marks the Spot
+        </Text>
+
+        <StyledLink to="/explore">Explore!</StyledLink>
+        <Container>
+          <Text as="h2">Popular Cities: </Text>
+          <Flex></Flex>
+        </Container>
+      </Container>
       <Footer />
-    </main>
+    </>
   );
 };
 
