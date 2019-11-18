@@ -1,1 +1,0 @@
- export const proxy = "https://stagebe.letsmovehomie.com" // variable created to store base url for the BE
