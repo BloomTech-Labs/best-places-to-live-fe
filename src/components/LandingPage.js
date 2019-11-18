@@ -2,7 +2,6 @@ import React from "react";
 import Footer from "./Footer";
 import SearchBar from "./SearchBar";
 import { Container, StyledLink, Flex, Text, Hero, Box } from "../styles/index";
-import TopCities from "./TopCities";
 
 const LandingPage = () => {
   return (
@@ -28,10 +27,6 @@ const LandingPage = () => {
             </StyledLink>
           </Text>
           <Flex>For the category/ factors cards</Flex>
-        </Container>
-        <Container>
-          <Text as="h2">Popular Cities: </Text>
-          <TopCities />
         </Container>
       </Container>
       <Footer />
