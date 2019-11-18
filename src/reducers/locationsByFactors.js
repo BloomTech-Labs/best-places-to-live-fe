@@ -17,7 +17,11 @@ const locationsByFactorsReducer = (state = initialState, action) => {
     case FETCH_LOCATIONS_BY_FACTORS_SUCCESS:
       return {
         ...state,
-        displayedCities: action.payload,
+        displayedCities: action.payload.filter(
+          city =>
+            city.photo !=
+            "https://letsmovehomie-city-photoes.nyc3.digitaloceanspaces.com/no-photo-available.jpg"
+        ),
         isFetching: false,
         fetchLocationsByFactorsError: ""
       };
