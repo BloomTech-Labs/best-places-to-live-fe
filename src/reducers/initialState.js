@@ -10,14 +10,14 @@ const initialState = {
     isLoggedIn: false
   },
   displayedCities: [],
-  topTen: [],
+  topCities: [],
   isFetching: false,
   fetchLocationsByFactorsError: "",
   fetchLocationsByNameError: "",
   fetchFactorsError: "",
   loginError: "",
   signupError: "",
-  fetchTopTenError: ""
+  fetchTopCitiesError: ""
 };
 
 export default initialState;

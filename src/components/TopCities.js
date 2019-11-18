@@ -4,16 +4,16 @@ import CityCard from "./CityCard";
 import { Container, Flex, Text } from "../styles/index";
 import SearchByFactors from "./SearchByFactors";
 import Error from "./Error";
-import { fetchTopTen } from "../actions/topTen";
+import { fetchTopCities } from "../actions/topCities";
 
-function TopTen({ topTen, fetchTopTenError, fetchTopTen }) {
+function TopCities({ topCities, fetchTopCitiesError, fetchTopCities }) {
   useEffect(() => {
-    const response = fetchTopTen({});
-  }, []);
+    const response = fetchTopCities({});
+  }, [fetchTopCities]);
 
   return (
     <Container p={`0 15px`}>
-      {fetchTopTenError && <Error error={fetchTopTenError} />}
+      {fetchTopCitiesError && <Error error={fetchTopCitiesError} />}
       <Flex
         flexDirection="column"
         alignItems="center"
@@ -22,10 +22,10 @@ function TopTen({ topTen, fetchTopTenError, fetchTopTen }) {
       ></Flex>
       <Text as="h2" textAlign="center">
         {" "}
-        Top Ten
+        Top Cities
       </Text>
       <Flex display="flex" justifyContent="center" flexWrap="wrap">
-        {topTen.map(city => (
+        {topCities.map(city => (
           <CityCard key={city._id} city={city} />
         ))}
       </Flex>
@@ -35,9 +35,9 @@ function TopTen({ topTen, fetchTopTenError, fetchTopTen }) {
 
 const mapStatetoProps = state => {
   return {
-    topTen: state.topTen,
-    fetchTopTenError: state.fetchTopTenError
+    topCities: state.topCities,
+    fetchTopCitiesError: state.fetchTopCitiesError
   };
 };
 
-export default connect(mapStatetoProps, { fetchTopTen })(TopTen);
+export default connect(mapStatetoProps, { fetchTopCities })(TopCities);

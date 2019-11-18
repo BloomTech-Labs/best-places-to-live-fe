@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "./Footer";
 import SearchBar from "./SearchBar";
 import { Container, StyledLink, Flex, Text, Hero } from "../styles/index";
-import TopTen from "./TopTen";
+import TopCities from "./TopCities";
 
 const LandingPage = () => {
   return (
@@ -24,7 +24,7 @@ const LandingPage = () => {
         </Container>
         <Container>
           <Text as="h2">Popular Cities: </Text>
-          <TopTen />
+          <TopCities />
         </Container>
       </Container>
       <Footer />

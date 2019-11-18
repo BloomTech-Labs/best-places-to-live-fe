@@ -6,7 +6,7 @@ import loginReducer from "./login";
 import logoutReducer from "./logout";
 import reduceReducers from "reduce-reducers";
 import initialState from "../reducers/initialState";
-import topTenReducer from "./topTen";
+import topCitiesReducer from "./topCities";
 
 console.log(initialState);
 const reducer = reduceReducers(
@@ -17,7 +17,7 @@ const reducer = reduceReducers(
   locationsByFactorsReducer,
   locationsByNameReducer,
   logoutReducer,
-  topTenReducer
+  topCitiesReducer
 );
 
 export default reducer;

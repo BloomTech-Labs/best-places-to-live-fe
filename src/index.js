@@ -24,7 +24,7 @@ store.subscribe(() => {
   saveState({
     user: store.getState().user,
     displayedCities: store.getState().displayedCities,
-    topTen: store.getState().topTen
+    topCities: store.getState().topCities
   });
 });
 
