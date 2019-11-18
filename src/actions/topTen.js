@@ -9,7 +9,7 @@ export const fetchTopTen = data => dispatch => {
   dispatch({ type: FETCH_TOP_TEN_INITIALIZE });
 
   return axiosWithAuth()
-    .post("/city/topten-score_total", data)
+    .get("/city/topten-score_total")
     .then(res => {
       console.log(res);
       dispatch({
