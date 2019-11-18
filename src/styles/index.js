@@ -9,6 +9,8 @@ import { Grid } from "./grid";
 import { Image } from "./image";
 import { Text } from "./text";
 import { Hero } from "./hero";
+import { Nav } from "./nav";
+import { Box } from "./box";
 
 import GlobalStyle from "./global";
 
@@ -25,5 +27,7 @@ export {
   Flex,
   Grid,
   Image,
-  Text
+  Text,
+  Nav,
+  Box
 };

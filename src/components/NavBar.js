@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { NavLink, withRouter } from "react-router-dom";
 import { logout } from "../actions/logout";
+import { Nav } from "../styles/index";
 
 const NavBar = ({ isLoggedIn, history, logout }) => {
   const logoutHandler = () => {
@@ -11,7 +12,7 @@ const NavBar = ({ isLoggedIn, history, logout }) => {
   };
 
   return (
-    <div>
+    <Nav display="flex" justifyContent="space-around" flexWrap="wrap">
       <div>
         <NavLink to="/">Home</NavLink>
       </div>
@@ -37,7 +38,7 @@ const NavBar = ({ isLoggedIn, history, logout }) => {
           <button onClick={logoutHandler}>Logout </button>
         </>
       )}
-    </div>
+    </Nav>
   );
 };
 
