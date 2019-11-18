@@ -1,4 +1,3 @@
-//something like this
 const initialState = {
   user: {
     factors: [
@@ -11,12 +10,14 @@ const initialState = {
     isLoggedIn: false
   },
   displayedCities: [],
+  topCities: [],
   isFetching: false,
   fetchLocationsByFactorsError: "",
   fetchLocationsByNameError: "",
   fetchFactorsError: "",
   loginError: "",
-  signupError: ""
+  signupError: "",
+  fetchTopCitiesError: ""
 };
 
 export default initialState;
