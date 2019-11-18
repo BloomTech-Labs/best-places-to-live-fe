@@ -1,21 +1,19 @@
-//bestplacesbe-test.herokuapp.com/city/topten-score_total
-
-https: import { axiosWithAuth } from "../utils/axiosWithAuth.js";
+import { axiosWithAuth } from "../utils/axiosWithAuth.js";
 import {
-  FETCH_LOCATIONS_BY_NAME_INITIALIZE,
-  FETCH_LOCATIONS_BY_NAME_SUCCESS,
-  FETCH_LOCATIONS_BY_NAME_FAIL
+  FETCH_TOP_TEN_INITIALIZE,
+  FETCH_TOP_TEN_SUCCESS,
+  FETCH_TOP_TEN_FAIL
 } from "./index";
 
-export const fetchLocationsByName = data => dispatch => {
-  dispatch({ type: FETCH_LOCATIONS_BY_NAME_INITIALIZE });
+export const fetchTopTen = data => dispatch => {
+  dispatch({ type: FETCH_TOP_TEN_INITIALIZE });
 
   return axiosWithAuth()
-    .post("/city/search", data)
+    .post("/city/topten-score_total", data)
     .then(res => {
       console.log(res);
       dispatch({
-        type: FETCH_LOCATIONS_BY_NAME_SUCCESS,
+        type: FETCH_TOP_TEN_SUCCESS,
         payload: res.data.cities
       });
       return "Successful";
@@ -23,7 +21,7 @@ export const fetchLocationsByName = data => dispatch => {
     .catch(err => {
       console.log(err);
       dispatch({
-        type: FETCH_LOCATIONS_BY_NAME_FAIL,
+        type: FETCH_TOP_TEN_FAIL,
         payload: { err, message: err.message }
       });
       return "Failure";
