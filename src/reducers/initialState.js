@@ -16,7 +16,8 @@ const initialState = {
   fetchLocationsByNameError: "",
   fetchFactorsError: "",
   loginError: "",
-  signupError: ""
+  signupError: "",
+  fetchTopTenError: ""
 };
 
 export default initialState;
