@@ -17,7 +17,7 @@ const topTenReducer = (state = initialState, action) => {
     case FETCH_TOP_TEN_SUCCESS:
       return {
         ...state,
-        displayedCities: action.payload,
+        topTen: action.payload,
         isFetching: false,
         fetchTopTenError: ""
       };

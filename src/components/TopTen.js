@@ -6,8 +6,10 @@ import SearchByFactors from "./SearchByFactors";
 import Error from "./Error";
 import { fetchTopTen } from "../actions/topTen";
 
-function TopTen({ displayedCities, fetchTopTenError, fetchTopTen }) {
-  useEffect(() => fetchTopTen({}), []);
+function TopTen({ topTen, fetchTopTenError, fetchTopTen }) {
+  useEffect(() => {
+    const response = fetchTopTen({});
+  }, []);
 
   return (
     <Container p={`0 15px`}>
@@ -23,7 +25,7 @@ function TopTen({ displayedCities, fetchTopTenError, fetchTopTen }) {
         Top Ten
       </Text>
       <Flex display="flex" justifyContent="center" flexWrap="wrap">
-        {displayedCities.map(city => (
+        {topTen.map(city => (
           <CityCard key={city._id} city={city} />
         ))}
       </Flex>
@@ -33,7 +35,7 @@ function TopTen({ displayedCities, fetchTopTenError, fetchTopTen }) {
 
 const mapStatetoProps = state => {
   return {
-    displayedCities: state.displayedCities,
+    topTen: state.topTen,
     fetchTopTenError: state.fetchTopTenError
   };
 };

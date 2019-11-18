@@ -1,4 +1,3 @@
-//something like this
 const initialState = {
   user: {
     factors: [
@@ -11,6 +10,7 @@ const initialState = {
     isLoggedIn: false
   },
   displayedCities: [],
+  topTen: [],
   isFetching: false,
   fetchLocationsByFactorsError: "",
   fetchLocationsByNameError: "",

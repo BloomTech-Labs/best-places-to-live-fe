@@ -16,7 +16,6 @@ export const fetchTopTen = data => dispatch => {
         type: FETCH_TOP_TEN_SUCCESS,
         payload: res.data.cities
       });
-      return "Successful";
     })
     .catch(err => {
       console.log(err);
@@ -24,6 +23,5 @@ export const fetchTopTen = data => dispatch => {
         type: FETCH_TOP_TEN_FAIL,
         payload: { err, message: err.message }
       });
-      return "Failure";
     });
 };

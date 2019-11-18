@@ -23,7 +23,8 @@ const store = createStore(
 store.subscribe(() => {
   saveState({
     user: store.getState().user,
-    displayedCities: store.getState().displayedCities
+    displayedCities: store.getState().displayedCities,
+    topTen: store.getState().topTen
   });
 });
 
