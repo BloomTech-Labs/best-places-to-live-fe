@@ -6,6 +6,7 @@ import { fetchFactors } from "../actions/factors";
 import Error from "./Error";
 import { connect } from "react-redux";
 import useForm from "react-hook-form";
+import CheckOval from "./CheckOval";
 
 const SearchByFactors = ({
   fetchLocationsByFactors,
@@ -47,13 +48,7 @@ const SearchByFactors = ({
         {factors.map(factor => {
           return (
             <>
-              <label htmlFor={factor}>{factor}</label>
-              <input
-                type="checkbox"
-                placeholder={factor}
-                name={factor}
-                ref={register}
-              />
+              <CheckOval factor={factor} register={register} />
             </>
           );
         })}

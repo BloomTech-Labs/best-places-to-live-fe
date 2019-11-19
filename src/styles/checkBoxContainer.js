@@ -4,16 +4,13 @@ import theme from "../theme";
 export const CheckBoxContainer = styled.div`
   margin: 4px;
   background-color: #efefef;
+  border-radius: 4px;
   float: left;
 
   input {
     margin-right: 100px;
     position: absolute;
     top: -20px;
-  }
-
-  label {
-    width: 4em;
   }
 
   span {
