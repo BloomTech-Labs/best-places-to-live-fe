@@ -15,7 +15,10 @@ import {
 } from "../styles/index";
 
 function Login({ login, history, error }) {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit, errors, formState } = useForm({
+    mode: "onChange"
+  });
+  console.log(formState.isValid);
   const onSubmit = async data => {
     console.log(login(data));
     const response = await login(data);
@@ -32,6 +35,7 @@ function Login({ login, history, error }) {
     <Container>
       {error && <Error error={error} />}
       <Form onSubmit={handleSubmit(onSubmit)}>
+        {errors.email && "Your email is required"}
         <Input
           type="text"
           placeholder="Email"
@@ -47,7 +51,9 @@ function Login({ login, history, error }) {
         <Container textAlign="center">
           {/* <SocialButton Google>Continue with Google</SocialButton>
           <SocialButton Facebook>Continue with Facebook</SocialButton> */}
-          <Button type="submit">Login</Button>
+          <Button type="submit" disabled={!formState.isValid}>
+            Login
+          </Button>
           <Text>Already have an account?</Text>
           <StyledLink to="/login">Log In</StyledLink>
         </Container>
