@@ -7,6 +7,7 @@ import Error from "./Error";
 import { connect } from "react-redux";
 import useForm from "react-hook-form";
 import CheckOval from "./CheckOval";
+import { Button } from "../styles/index";
 
 const ExplorePage = ({
   fetchLocationsByFactors,
@@ -53,7 +54,7 @@ const ExplorePage = ({
           );
         })}
 
-        <button type="submit">Explore</button>
+        <Button type="submit">Explore</Button>
       </form>
     </>
   );

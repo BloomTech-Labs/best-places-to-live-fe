@@ -20,7 +20,7 @@ const LandingPage = () => {
           </Box>
           <SearchBar page="landing" />
         </Hero>
-        <Container>
+        <Container textAlign="center">
           <Text as="h2">
             <StyledLink color="black" to="/explore">
               Explore!

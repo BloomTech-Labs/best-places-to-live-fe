@@ -6,6 +6,7 @@ import { fetchFactors } from "../actions/factors";
 import Error from "./Error";
 import { connect } from "react-redux";
 import useForm from "react-hook-form";
+import { Box, Button } from "../styles/index";
 import CheckOval from "./CheckOval";
 
 const SearchByFactors = ({
@@ -52,8 +53,9 @@ const SearchByFactors = ({
             </>
           );
         })}
-
-        <button type="submit">Explore</button>
+        <Box textAlign="center" mt={50}>
+          <Button type="submit">Explore</Button>
+        </Box>
       </form>
     </>
   );
