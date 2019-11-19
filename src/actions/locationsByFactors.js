@@ -1,4 +1,4 @@
-import { axiosWithAuth } from "../utils/axiosWithAuth.js";
+import axios from "axios";
 import {
   FETCH_LOCATIONS_BY_FACTORS_INITIALIZE,
   FETCH_LOCATIONS_BY_FACTORS_SUCCESS,
@@ -7,11 +7,16 @@ import {
 
 export const fetchLocationsByFactors = data => dispatch => {
   dispatch({ type: FETCH_LOCATIONS_BY_FACTORS_INITIALIZE });
+  console.log(data);
 
-  return axiosWithAuth()
-    .post("/city/search", data)
+  /* 
+  {"input1": ["population", "score_safety"]}
+*/
+  console.log({ input1: data });
+  return axios
+    .post("https://best-places-api.herokuapp.com/api", { input1: data })
     .then(res => {
-      console.log(res);
+      console.log(res.data);
       dispatch({
         type: FETCH_LOCATIONS_BY_FACTORS_SUCCESS,
         payload: res.data

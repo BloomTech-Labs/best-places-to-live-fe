@@ -15,7 +15,9 @@ import {
 } from "../styles/index";
 
 function SignUp({ signup, history, error }) {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit, errors, formState } = useForm({
+    mode: "onChange"
+  });
   const onSubmit = async data => {
     const response = await signup(data);
 
@@ -25,30 +27,34 @@ function SignUp({ signup, history, error }) {
       console.log(response);
     }
   };
-  console.log(errors);
 
   return (
     <Container>
       {error && <Error error={error} />}
       <Form onSubmit={handleSubmit(onSubmit)}>
+        {errors.name &&
+          "Your name is required and must be at least 2 characters."}
         <Input
           type="text"
           placeholder="Name"
           name="name"
           ref={register({ required: true, minLength: 2 })}
         />
+        {errors.email && "Your email is required"}
         <Input
           type="text"
           placeholder="Email"
           name="email"
           ref={register({ required: true, pattern: /^\S+@\S+$/i })}
         />
+        {errors.password && "Your password is required"}
         <Input
           type="Password"
           placeholder="password"
           name="password"
-          ref={register({ required: true, minLength: 6 })}
+          ref={register({ required: true })}
         />
+        {errors.location && "Your location is required"}
         <Input
           type="text"
           placeholder="Location"
@@ -58,7 +64,9 @@ function SignUp({ signup, history, error }) {
         <Container textAlign="center">
           {/* <SocialButton Google>Continue with Google</SocialButton>
           <SocialButton Facebook>Continue with Facebook</SocialButton> */}
-          <Button type="submit">Join BPTL</Button>
+          <Button type="submit" disabled={!formState.isValid}>
+            Join BPTL
+          </Button>
           <Text color="primary">Already have an account?</Text>
           <StyledLink to="/login">Log In</StyledLink>
         </Container>

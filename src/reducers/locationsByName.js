@@ -15,9 +15,11 @@ const locationsByNameReducer = (state = initialState, action) => {
         fetchLocationsByNameError: ""
       };
     case FETCH_LOCATIONS_BY_NAME_SUCCESS:
+      var mystring = action.payload;
+      var result = JSON.parse(mystring.replace(/\bNaN\b/g, "null"));
       return {
         ...state,
-        displayedCities: action.payload.filter(
+        displayedCities: result.filter(
           city =>
             city.photo !=
             "https://letsmovehomie-city-photoes.nyc3.digitaloceanspaces.com/no-photo-available.jpg"
