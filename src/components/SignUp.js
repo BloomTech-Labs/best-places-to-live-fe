@@ -56,8 +56,8 @@ function SignUp({ signup, history, error }) {
           ref={register({ required: true, minLength: 2 })}
         />
         <Container textAlign="center">
-          <SocialButton Google>Continue with Google</SocialButton>
-          <SocialButton Facebook>Continue with Facebook</SocialButton>
+          {/* <SocialButton Google>Continue with Google</SocialButton>
+          <SocialButton Facebook>Continue with Facebook</SocialButton> */}
           <Button type="submit">Join BPTL</Button>
           <Text color="primary">Already have an account?</Text>
           <StyledLink to="/login">Log In</StyledLink>
