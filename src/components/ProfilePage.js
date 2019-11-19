@@ -7,7 +7,8 @@ function ProfilePage({ user }) {
   //props = username
   return (
     <Container>
-      <Text>{user.name} </Text>
+      <Text>Name: {user.name} </Text>
+      <Text>Email:</Text>
       <Text>{user.email} </Text>
     </Container>
   );

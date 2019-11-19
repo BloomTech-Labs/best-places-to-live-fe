@@ -42,6 +42,7 @@ function Login({ login, history, error }) {
           name="email"
           ref={register({ required: true, pattern: /^\S+@\S+$/i })}
         />
+        {errors.password && "Your password is required"}
         <Input
           type="password"
           placeholder="password"
