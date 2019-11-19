@@ -1,7 +1,16 @@
 import React from "react";
 import Footer from "./Footer";
 import SearchBar from "./SearchBar";
-import { Container, StyledLink, Flex, Text, Hero, Box } from "../styles/index";
+import {
+  Container,
+  StyledLink,
+  Flex,
+  Text,
+  Hero,
+  Box,
+  Image
+} from "../styles/index";
+import heroImg from "../img/hero";
 
 const LandingPage = () => {
   return (
@@ -15,9 +24,10 @@ const LandingPage = () => {
         >
           <Box>
             <Text textAlign="center" as="h2">
-              X Marks the Spot
+              Nomad's Land
             </Text>
           </Box>
+          <Image src={heroImg} />
           <SearchBar page="landing" />
         </Hero>
         <Container textAlign="center">
