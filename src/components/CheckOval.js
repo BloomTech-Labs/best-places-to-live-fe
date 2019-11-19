@@ -9,10 +9,10 @@ function CheckOval({ factor, register }) {
           type="checkbox"
           value=""
           placeholder={factor}
-          name={factor}
+          name={factor.factor}
           ref={register}
         />
-        <span>{factor}</span>
+        <span>{factor.displayName}</span>
       </label>
     </CheckBoxContainer>
   );
