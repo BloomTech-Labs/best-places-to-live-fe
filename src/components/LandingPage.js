@@ -1,16 +1,8 @@
 import React from "react";
 import Footer from "./Footer";
 import SearchBar from "./SearchBar";
-import {
-  Container,
-  StyledLink,
-  Flex,
-  Text,
-  Hero,
-  Box,
-  Image
-} from "../styles/index";
-import heroImg from "../img/hero";
+import { Container, StyledLink, Flex, Text, Hero, Box } from "../styles/index";
+import heroImg from "../img/hero.jpg";
 
 const LandingPage = () => {
   return (
@@ -21,13 +13,16 @@ const LandingPage = () => {
           justifyContent="center"
           alignItems="center"
           flexDirection="column"
+          backgroundImage={`url(${heroImg})`}
+          backgroundSize="cover"
+          backgroundPosition="center"
+          padding="100px"
         >
           <Box>
             <Text textAlign="center" as="h2">
               Nomad's Land
             </Text>
           </Box>
-          <Image src={heroImg} />
           <SearchBar page="landing" />
         </Hero>
         <Container textAlign="center">
