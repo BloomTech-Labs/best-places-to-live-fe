@@ -4,7 +4,6 @@ import theme from "../theme";
 export const CheckBoxContainer = styled.div`
   margin: 4px;
   background-color: #efefef;
-  border-radius: 4px;
   float: left;
 
   input {
@@ -24,6 +23,10 @@ export const CheckBoxContainer = styled.div`
     padding: 10px 10px;
     border-radius: 4px;
     border: 1px solid #d0d0d0;
+  }
+
+  span:hover {
+    cursor: pointer;
   }
 
   input:checked + span {
