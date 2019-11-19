@@ -12,8 +12,9 @@ export const fetchLocationsByFactors = data => dispatch => {
   /* 
   {"input1": ["population", "score_safety"]}
 */
+  console.log({ input1: data });
   return axios
-    .get("https://best-places-api.herokuapp.com/api", { input1: data })
+    .post("https://best-places-api.herokuapp.com/api", { input1: data })
     .then(res => {
       console.log(res.data);
       dispatch({
