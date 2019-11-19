@@ -5,7 +5,6 @@ export const CheckBoxContainer = styled.div`
   margin: 4px;
   background-color: #efefef;
   border-radius: 4px;
-  border: 1px solid #d0d0d0;
   float: left;
 
   input {
@@ -22,7 +21,9 @@ export const CheckBoxContainer = styled.div`
     text-align: center;
     display: block;
     width: fit-content;
-    padding: 3px 10;
+    padding: 10px 10px;
+    border-radius: 4px;
+    border: 1px solid #d0d0d0;
   }
 
   input:checked + span {
