@@ -1,11 +1,11 @@
 import styled from "styled-components";
+import theme from "../theme";
 
 export const CheckBoxContainer = styled.div`
   margin: 4px;
   background-color: #efefef;
   border-radius: 4px;
   border: 1px solid #d0d0d0;
-  overflow: auto;
   float: left;
 
   input {
@@ -15,14 +15,14 @@ export const CheckBoxContainer = styled.div`
   }
 
   label {
-    float: left;
     width: 4em;
   }
 
   span {
     text-align: center;
-    padding: 3px 0px;
     display: block;
+    width: fit-content;
+    padding: 3px 10;
   }
 
   input:checked + span {
