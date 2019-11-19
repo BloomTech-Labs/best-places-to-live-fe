@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { NavLink, withRouter } from "react-router-dom";
 import { logout } from "../actions/logout";
-import { Nav } from "../styles/index";
+import { Nav, Button } from "../styles/index";
 
 const NavBar = ({ isLoggedIn, history, logout }) => {
   const logoutHandler = () => {
@@ -35,7 +35,7 @@ const NavBar = ({ isLoggedIn, history, logout }) => {
             <NavLink to="/profile">Profile</NavLink>
           </div>
 
-          <button onClick={logoutHandler}>Logout </button>
+          <Button onClick={logoutHandler}>Logout </Button>
         </>
       )}
     </Nav>

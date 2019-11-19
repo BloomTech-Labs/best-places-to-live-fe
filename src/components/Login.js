@@ -45,8 +45,8 @@ function Login({ login, history, error }) {
           ref={register({ required: true })}
         />
         <Container textAlign="center">
-          <SocialButton Google>Continue with Google</SocialButton>
-          <SocialButton Facebook>Continue with Facebook</SocialButton>
+          {/* <SocialButton Google>Continue with Google</SocialButton>
+          <SocialButton Facebook>Continue with Facebook</SocialButton> */}
           <Button type="submit">Login</Button>
           <Text>Already have an account?</Text>
           <StyledLink to="/login">Log In</StyledLink>

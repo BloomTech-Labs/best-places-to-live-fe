@@ -22,7 +22,7 @@ function SearchResultsPage({ displayedCities }) {
         {" "}
         Search Results
       </Text>
-      <Flex display="flex" justifyContent="center" flexWrap="wrap">
+      <Flex as="article" display="flex" justifyContent="center" flexWrap="wrap">
         {displayedCities.map(city => (
           <CityCard key={city._id} city={city} />
         ))}

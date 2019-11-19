@@ -11,6 +11,7 @@ import { Text } from "./text";
 import { Hero } from "./hero";
 import { Nav } from "./nav";
 import { Box } from "./box";
+import { CheckBoxContainer } from "./checkBoxContainer";
 
 import GlobalStyle from "./global";
 
@@ -29,5 +30,6 @@ export {
   Image,
   Text,
   Nav,
-  Box
+  Box,
+  CheckBoxContainer
 };
