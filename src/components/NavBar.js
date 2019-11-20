@@ -13,24 +13,27 @@ const NavBar = ({ isLoggedIn, history, logout }) => {
 
   return (
     <Nav display="flex" justifyContent="space-around" flexWrap="wrap">
-      <div>
-        <NavLink to="/">Home</NavLink>
-      </div>
+      {!isLoggedIn && (
+        <>
+          <div>
+            <NavLink to="/">Home</NavLink>
+          </div>
 
-      <div>
-        <NavLink to="/search">Search</NavLink>
-      </div>
+          <div>
+            <NavLink to="/login">Login</NavLink>
+          </div>
 
-      <div>
-        <NavLink to="/login">Login</NavLink>
-      </div>
-
-      <div>
-        <NavLink to="/signup">Sign Up</NavLink>
-      </div>
+          <div>
+            <NavLink to="/signup">Sign Up</NavLink>
+          </div>
+        </>
+      )}
 
       {isLoggedIn && (
         <>
+          <div>
+            <NavLink to="/">Home</NavLink>
+          </div>
           <div>
             <NavLink to="/profile">Profile</NavLink>
           </div>
