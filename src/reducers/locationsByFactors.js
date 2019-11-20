@@ -20,7 +20,6 @@ const locationsByFactorsReducer = (state = initialState, action) => {
       result = result.filter(
         city => city.photoWeb !== null && city.photoMobile !== null
       );
-      console.log("JAJAJAJA", result);
 
       return {
         ...state,
