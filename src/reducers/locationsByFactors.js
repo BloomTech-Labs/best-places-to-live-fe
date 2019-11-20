@@ -15,16 +15,16 @@ const locationsByFactorsReducer = (state = initialState, action) => {
         fetchLocationsByFactorsError: ""
       };
     case FETCH_LOCATIONS_BY_FACTORS_SUCCESS:
-      var mystring = action.payload;
-      var result = JSON.parse(mystring.replace(/\bNaN\b/g, "null"));
+      const mystring = action.payload;
+      let result = JSON.parse(mystring.replace(/:NaN,/g, ":null,"));
+      result = result.filter(
+        city => city.photoWeb !== null && city.photoMobile !== null
+      );
+      console.log("JAJAJAJA", result);
 
       return {
         ...state,
-        displayedCities: result.filter(
-          city =>
-            city.photo !=
-            "https://letsmovehomie-city-photoes.nyc3.digitaloceanspaces.com/no-photo-available.jpg"
-        ),
+        displayedCities: [...result],
         isFetching: false,
         fetchLocationsByFactorsError: ""
       };
