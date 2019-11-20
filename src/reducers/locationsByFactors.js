@@ -15,15 +15,11 @@ const locationsByFactorsReducer = (state = initialState, action) => {
         fetchLocationsByFactorsError: ""
       };
     case FETCH_LOCATIONS_BY_FACTORS_SUCCESS:
-      const mystring = action.payload;
-      let result = JSON.parse(mystring.replace(/:NaN,/g, ":null,"));
-      result = result.filter(
-        city => city.photoWeb !== null && city.photoMobile !== null
-      );
-
       return {
         ...state,
-        displayedCities: [...result],
+        displayedCities: action.payload.filter(
+          city => city.photoWeb !== null && city.photoMobile !== null
+        ),
         isFetching: false,
         fetchLocationsByFactorsError: ""
       };

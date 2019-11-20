@@ -16,7 +16,7 @@ export const fetchLocationsByFactors = data => dispatch => {
   return axios
     .post("https://best-places-api.herokuapp.com/api", { input1: data })
     .then(res => {
-      console.log(res.data);
+      console.log("actioncreator", res.data);
       dispatch({
         type: FETCH_LOCATIONS_BY_FACTORS_SUCCESS,
         payload: res.data
