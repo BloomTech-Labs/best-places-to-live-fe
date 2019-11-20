@@ -1032,22 +1032,28 @@ let dict1 = [
 ];
 
 let axiosGets = [];
+let newDict1 = [];
 for (let itemD of dict1) {
   for (let itemT of teleportData) {
     if (itemT["name"] === itemD["name"]) {
-      axiosGets.push(axios.get(itemT["href"]));
+      axiosGets.push(axios.get(itemT["href"] + "images"));
+      newDict1.push(dict1[dict1.indexOf(itemD)]);
     }
   }
 }
-
-console.log(axiosGets);
+let finalDict = {};
 
 const response = axios
   .all(axiosGets)
   .then(res => {
-    let temp = res.map(item => item.data);
-    console.log(temp);
+    let axiosGetData = res.map(item => item.data);
+    for (let i = 0; i < newDict1.length; i++) {
+      finalDict.name = newDict1[i]["name"];
+      finalDict.photoWeb = axiosGetData[i]["photos"][0]["image"]["web"];
+      finalDict.photoMobile = axiosGetData[i]["photos"][0]["image"]["mobile"];
+    }
   })
+  .then(res => console.log(finalDict))
   .catch(err => console.log(err));
 
 /* 
