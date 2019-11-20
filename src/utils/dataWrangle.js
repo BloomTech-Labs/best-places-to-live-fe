@@ -659,7 +659,7 @@ let teleportData = [
     name: "New Orleans"
   },
   {
-    href: "https://api.teleport.org/api/urban_areas/slug:new-york/",
+    href: "https:q9//api.teleport.org/api/urban_areas/slug:new-york/",
     name: "New York"
   },
   { href: "https://api.teleport.org/api/urban_areas/slug:nice/", name: "Nice" },
