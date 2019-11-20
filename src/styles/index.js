@@ -5,10 +5,12 @@ import { Input } from "./input";
 import { StyledLink } from "./link";
 import { Card } from "./card";
 import { Flex } from "./flex";
-import { Grid } from "./grid";
 import { Image } from "./image";
 import { Text } from "./text";
 import { Hero } from "./hero";
+import { Nav } from "./nav";
+import { Box } from "./box";
+import { CheckBoxContainer } from "./checkBoxContainer";
 
 import GlobalStyle from "./global";
 
@@ -23,7 +25,9 @@ export {
   StyledLink,
   Card,
   Flex,
-  Grid,
   Image,
-  Text
+  Text,
+  Nav,
+  Box,
+  CheckBoxContainer
 };

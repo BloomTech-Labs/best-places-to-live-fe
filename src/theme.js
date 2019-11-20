@@ -24,6 +24,8 @@ const space = [
   "16rem"
 ];
 
+const fonts = ["Noto Sans"];
+
 const fontSizes = [".75rem", ".875rem", "1rem", "1.25rem", "1.5rem", "2rem"];
 
 // aliases

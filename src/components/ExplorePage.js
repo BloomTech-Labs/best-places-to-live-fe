@@ -6,6 +6,8 @@ import { fetchFactors } from "../actions/factors";
 import Error from "./Error";
 import { connect } from "react-redux";
 import useForm from "react-hook-form";
+import CheckOval from "./CheckOval";
+import { Button } from "../styles/index";
 
 const ExplorePage = ({
   fetchLocationsByFactors,
@@ -20,7 +22,7 @@ const ExplorePage = ({
   const onSubmit = async data => {
     // event.preventDefault();
     const selectedFactors = Object.keys(data).filter(factor => data[factor]);
-    // console.log("checkbox data", selectedFactors);
+    console.log("checkbox data", selectedFactors);
     const response = await fetchLocationsByFactors(selectedFactors);
 
     if (response === "Successful") {
@@ -47,18 +49,12 @@ const ExplorePage = ({
         {factors.map(factor => {
           return (
             <>
-              <label htmlFor={factor}>{factor}</label>
-              <input
-                type="checkbox"
-                placeholder={factor}
-                name={factor}
-                ref={register}
-              />
+              <CheckOval factor={factor} register={register} />
             </>
           );
         })}
 
-        <button type="submit">Explore</button>
+        <Button type="submit">Explore</Button>
       </form>
     </>
   );
