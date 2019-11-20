@@ -1,68 +1,70 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Nomad's Land
 
-## Available Scripts
+You can find the deployed project at [INSERT LINK HERE]
 
-In the project directory, you can run:
+## Contributors
 
-### `yarn start`
+- [Devin Bielejec](https://github.com/Devin-Bielejec)
+- [Nazifa Hossain](https://github.com/ampers-and)
+- [Seth Lachman](https://github.com/stlachman)
+- [Chris Pupo](https://github.com/ChrisPupo22)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Project Overview
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+[Trello](https://trello.com/b/Ff6i9yiF/best-places-to-live)
 
-### `yarn test`
+[Product Vision Document](https://www.notion.so/Best-Places-to-Live-57d6b61b6248443484edaf4d8e0e9092)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Description:
 
-### `yarn build`
+Moving is an inevitable part of life that most people will experience. Often, there's buyer's remorse after the fact for one reason or another. With Let's Move Homie, we strive to get you as much information about a potential place to live in a quick, user friendly manner. Whether you want to look up a specific location you have in mind, or just want to scroll across a map and see how certain cities rank compared to others, Let's Move Homie is here to help.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Key Features
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- Visitors and Users can search a city by address and view it on a map
+- Visitors and Users can browse top 10 popular U.S Cities
+- Visitors can create a user account with a username and password
+- Visitors can search by city and see 4 different statistics (more to come)
+- Visitors can create a profile that saves their favorite cities
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tech Stack
 
-### `yarn eject`
+### Front end built using:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### React w/Hooks
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Why we chose this framework:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Great ecosystem
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Front End Libraries:
 
-## Learn More
+Axios
+Styled-components
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Testing
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Jest and React Testing Library
 
-### Code Splitting
+# Installation Instructions
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Please run yarn install then the following dependencies:
 
-### Analyzing the Bundle Size
+```js
+    "axios": "^0.19.0",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-hook-form": "^3.27.0",
+    "react-redux": "^7.1.3",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
+    "reduce-reducers": "^1.0.4",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^4.4.1",
+    "styled-system": "^5.1.2"
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+### Backend Documentation
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+See https://github.com/Lambda-School-Labs/best-places-to-live-be/backend/blob/master/README.md for details on the backend of our project.
