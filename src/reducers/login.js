@@ -23,6 +23,7 @@ const loginReducer = (state = initialState, action) => {
           id: action.payload.id,
           email: action.payload.email,
           name: action.payload.name,
+          location: action.payload.location,
           isLoggedIn: true
         },
         isFetching: false,
