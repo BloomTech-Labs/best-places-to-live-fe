@@ -1,4 +1,5 @@
 const axios = require("axios");
+const fs = require("fs");
 
 let teleportData = [
   {
@@ -1025,45 +1026,303 @@ let teleportData = [
   }
 ];
 
-//dict1 - "name", photo
-let dict1 = [
-  { name: "Syracuse", photo: "chicken" },
-  { name: "Zurich", photo: "chicken2" }
-];
+const stupid = `https://api.teleport.org/api/urban_areas/slug:aarhus/	Aarhus
+https://api.teleport.org/api/urban_areas/slug:adelaide/	Adelaide
+https://api.teleport.org/api/urban_areas/slug:albuquerque/	Albuquerque
+https://api.teleport.org/api/urban_areas/slug:almaty/	Almaty
+https://api.teleport.org/api/urban_areas/slug:amsterdam/	Amsterdam
+https://api.teleport.org/api/urban_areas/slug:anchorage/	Anchorage
+https://api.teleport.org/api/urban_areas/slug:andorra/	Andorra
+https://api.teleport.org/api/urban_areas/slug:ankara/	Ankara
+https://api.teleport.org/api/urban_areas/slug:asheville/	Asheville
+https://api.teleport.org/api/urban_areas/slug:asuncion/	Asuncion
+https://api.teleport.org/api/urban_areas/slug:athens/	Athens
+https://api.teleport.org/api/urban_areas/slug:atlanta/	Atlanta
+https://api.teleport.org/api/urban_areas/slug:auckland/	Auckland
+https://api.teleport.org/api/urban_areas/slug:austin/	Austin
+https://api.teleport.org/api/urban_areas/slug:baku/	Baku
+https://api.teleport.org/api/urban_areas/slug:bali/	Bali
+https://api.teleport.org/api/urban_areas/slug:baltimore/	Baltimore
+https://api.teleport.org/api/urban_areas/slug:bangkok/	Bangkok
+https://api.teleport.org/api/urban_areas/slug:barcelona/	Barcelona
+https://api.teleport.org/api/urban_areas/slug:beijing/	Beijing
+https://api.teleport.org/api/urban_areas/slug:beirut/	Beirut
+https://api.teleport.org/api/urban_areas/slug:belfast/	Belfast
+https://api.teleport.org/api/urban_areas/slug:belgrade/	Belgrade
+https://api.teleport.org/api/urban_areas/slug:belize-city/	Belize City
+https://api.teleport.org/api/urban_areas/slug:bengaluru/	Bengaluru
+https://api.teleport.org/api/urban_areas/slug:bergen/	Bergen
+https://api.teleport.org/api/urban_areas/slug:berlin/	Berlin
+https://api.teleport.org/api/urban_areas/slug:bern/	Bern
+https://api.teleport.org/api/urban_areas/slug:bilbao/	Bilbao
+https://api.teleport.org/api/urban_areas/slug:birmingham/	Birmingham
+https://api.teleport.org/api/urban_areas/slug:birmingham-al/	Birmingham, AL
+https://api.teleport.org/api/urban_areas/slug:bogota/	Bogota
+https://api.teleport.org/api/urban_areas/slug:boise/	Boise
+https://api.teleport.org/api/urban_areas/slug:bologna/	Bologna
+https://api.teleport.org/api/urban_areas/slug:bordeaux/	Bordeaux
+https://api.teleport.org/api/urban_areas/slug:boston/	Boston
+https://api.teleport.org/api/urban_areas/slug:boulder/	Boulder
+https://api.teleport.org/api/urban_areas/slug:bozeman/	Bozeman
+https://api.teleport.org/api/urban_areas/slug:bratislava/	Bratislava
+https://api.teleport.org/api/urban_areas/slug:brighton/	Brighton
+https://api.teleport.org/api/urban_areas/slug:brisbane/	Brisbane
+https://api.teleport.org/api/urban_areas/slug:bristol/	Bristol
+https://api.teleport.org/api/urban_areas/slug:brno/	Brno
+https://api.teleport.org/api/urban_areas/slug:brussels/	Brussels
+https://api.teleport.org/api/urban_areas/slug:bucharest/	Bucharest
+https://api.teleport.org/api/urban_areas/slug:budapest/	Budapest
+https://api.teleport.org/api/urban_areas/slug:buenos-aires/	Buenos Aires
+https://api.teleport.org/api/urban_areas/slug:buffalo/	Buffalo
+https://api.teleport.org/api/urban_areas/slug:cairo/	Cairo
+https://api.teleport.org/api/urban_areas/slug:calgary/	Calgary
+https://api.teleport.org/api/urban_areas/slug:cambridge/	Cambridge
+https://api.teleport.org/api/urban_areas/slug:cape-town/	Cape Town
+https://api.teleport.org/api/urban_areas/slug:caracas/	Caracas
+https://api.teleport.org/api/urban_areas/slug:cardiff/	Cardiff
+https://api.teleport.org/api/urban_areas/slug:casablanca/	Casablanca
+https://api.teleport.org/api/urban_areas/slug:charleston/	Charleston
+https://api.teleport.org/api/urban_areas/slug:charlotte/	Charlotte
+https://api.teleport.org/api/urban_areas/slug:chattanooga/	Chattanooga
+https://api.teleport.org/api/urban_areas/slug:chennai/	Chennai
+https://api.teleport.org/api/urban_areas/slug:chiang-mai/	Chiang Mai
+https://api.teleport.org/api/urban_areas/slug:chicago/	Chicago
+https://api.teleport.org/api/urban_areas/slug:chisinau/	Chisinau
+https://api.teleport.org/api/urban_areas/slug:christchurch/	Christchurch
+https://api.teleport.org/api/urban_areas/slug:cincinnati/	Cincinnati
+https://api.teleport.org/api/urban_areas/slug:cleveland/	Cleveland
+https://api.teleport.org/api/urban_areas/slug:cluj-napoca/	Cluj-Napoca
+https://api.teleport.org/api/urban_areas/slug:cologne/	Cologne
+https://api.teleport.org/api/urban_areas/slug:colorado-springs/	Colorado Springs
+https://api.teleport.org/api/urban_areas/slug:columbus/	Columbus
+https://api.teleport.org/api/urban_areas/slug:copenhagen/	Copenhagen
+https://api.teleport.org/api/urban_areas/slug:cork/	Cork
+https://api.teleport.org/api/urban_areas/slug:curitiba/	Curitiba
+https://api.teleport.org/api/urban_areas/slug:dallas/	Dallas
+https://api.teleport.org/api/urban_areas/slug:dar-es-salaam/	Dar es Salaam
+https://api.teleport.org/api/urban_areas/slug:delhi/	Delhi
+https://api.teleport.org/api/urban_areas/slug:denver/	Denver
+https://api.teleport.org/api/urban_areas/slug:des-moines/	Des Moines
+https://api.teleport.org/api/urban_areas/slug:detroit/	Detroit
+https://api.teleport.org/api/urban_areas/slug:doha/	Doha
+https://api.teleport.org/api/urban_areas/slug:dresden/	Dresden
+https://api.teleport.org/api/urban_areas/slug:dubai/	Dubai
+https://api.teleport.org/api/urban_areas/slug:dublin/	Dublin
+https://api.teleport.org/api/urban_areas/slug:dusseldorf/	Dusseldorf
+https://api.teleport.org/api/urban_areas/slug:edinburgh/	Edinburgh
+https://api.teleport.org/api/urban_areas/slug:edmonton/	Edmonton
+https://api.teleport.org/api/urban_areas/slug:eindhoven/	Eindhoven
+https://api.teleport.org/api/urban_areas/slug:eugene/	Eugene
+https://api.teleport.org/api/urban_areas/slug:florence/	Florence
+https://api.teleport.org/api/urban_areas/slug:florianopolis/	Florianopolis
+https://api.teleport.org/api/urban_areas/slug:fort-collins/	Fort Collins
+https://api.teleport.org/api/urban_areas/slug:frankfurt/	Frankfurt
+https://api.teleport.org/api/urban_areas/slug:fukuoka/	Fukuoka
+https://api.teleport.org/api/urban_areas/slug:gaillimh/	Galway
+https://api.teleport.org/api/urban_areas/slug:gdansk/	Gdansk
+https://api.teleport.org/api/urban_areas/slug:geneva/	Geneva
+https://api.teleport.org/api/urban_areas/slug:gibraltar/	Gibraltar
+https://api.teleport.org/api/urban_areas/slug:glasgow/	Glasgow
+https://api.teleport.org/api/urban_areas/slug:gothenburg/	Gothenburg
+https://api.teleport.org/api/urban_areas/slug:grenoble/	Grenoble
+https://api.teleport.org/api/urban_areas/slug:guadalajara/	Guadalajara
+https://api.teleport.org/api/urban_areas/slug:guatemala-city/	Guatemala City
+https://api.teleport.org/api/urban_areas/slug:halifax/	Halifax
+https://api.teleport.org/api/urban_areas/slug:hamburg/	Hamburg
+https://api.teleport.org/api/urban_areas/slug:hannover/	Hannover
+https://api.teleport.org/api/urban_areas/slug:havana/	Havana
+https://api.teleport.org/api/urban_areas/slug:helsinki/	Helsinki
+https://api.teleport.org/api/urban_areas/slug:ho-chi-minh-city/	Ho Chi Minh City
+https://api.teleport.org/api/urban_areas/slug:hong-kong/	Hong Kong
+https://api.teleport.org/api/urban_areas/slug:honolulu/	Honolulu
+https://api.teleport.org/api/urban_areas/slug:houston/	Houston
+https://api.teleport.org/api/urban_areas/slug:hyderabad/	Hyderabad
+https://api.teleport.org/api/urban_areas/slug:indianapolis/	Indianapolis
+https://api.teleport.org/api/urban_areas/slug:innsbruck/	Innsbruck
+https://api.teleport.org/api/urban_areas/slug:istanbul/	Istanbul
+https://api.teleport.org/api/urban_areas/slug:jacksonville/	Jacksonville
+https://api.teleport.org/api/urban_areas/slug:jakarta/	Jakarta
+https://api.teleport.org/api/urban_areas/slug:johannesburg/	Johannesburg
+https://api.teleport.org/api/urban_areas/slug:kansas-city/	Kansas City
+https://api.teleport.org/api/urban_areas/slug:karlsruhe/	Karlsruhe
+https://api.teleport.org/api/urban_areas/slug:kathmandu/	Kathmandu
+https://api.teleport.org/api/urban_areas/slug:kiev/	Kiev
+https://api.teleport.org/api/urban_areas/slug:kingston/	Kingston
+https://api.teleport.org/api/urban_areas/slug:knoxville/	Knoxville
+https://api.teleport.org/api/urban_areas/slug:krakow/	Krakow
+https://api.teleport.org/api/urban_areas/slug:kuala-lumpur/	Kuala Lumpur
+https://api.teleport.org/api/urban_areas/slug:kyoto/	Kyoto
+https://api.teleport.org/api/urban_areas/slug:lagos/	Lagos
+https://api.teleport.org/api/urban_areas/slug:la-paz/	La Paz
+https://api.teleport.org/api/urban_areas/slug:las-palmas-de-gran-canaria/	Las Palmas de Gran Canaria
+https://api.teleport.org/api/urban_areas/slug:las-vegas/	Las Vegas
+https://api.teleport.org/api/urban_areas/slug:lausanne/	Lausanne
+https://api.teleport.org/api/urban_areas/slug:leeds/	Leeds
+https://api.teleport.org/api/urban_areas/slug:leipzig/	Leipzig
+https://api.teleport.org/api/urban_areas/slug:lille/	Lille
+https://api.teleport.org/api/urban_areas/slug:lima/	Lima
+https://api.teleport.org/api/urban_areas/slug:lisbon/	Lisbon
+https://api.teleport.org/api/urban_areas/slug:liverpool/	Liverpool
+https://api.teleport.org/api/urban_areas/slug:ljubljana/	Ljubljana
+https://api.teleport.org/api/urban_areas/slug:london/	London
+https://api.teleport.org/api/urban_areas/slug:los-angeles/	Los Angeles
+https://api.teleport.org/api/urban_areas/slug:louisville/	Louisville
+https://api.teleport.org/api/urban_areas/slug:luxembourg/	Luxembourg
+https://api.teleport.org/api/urban_areas/slug:lviv/	Lviv
+https://api.teleport.org/api/urban_areas/slug:lyon/	Lyon
+https://api.teleport.org/api/urban_areas/slug:madison/	Madison
+https://api.teleport.org/api/urban_areas/slug:madrid/	Madrid
+https://api.teleport.org/api/urban_areas/slug:malaga/	Malaga
+https://api.teleport.org/api/urban_areas/slug:malmo/	Malmo
+https://api.teleport.org/api/urban_areas/slug:managua/	Managua
+https://api.teleport.org/api/urban_areas/slug:manchester/	Manchester
+https://api.teleport.org/api/urban_areas/slug:manila/	Manila
+https://api.teleport.org/api/urban_areas/slug:marseille/	Marseille
+https://api.teleport.org/api/urban_areas/slug:medellin/	Medellin
+https://api.teleport.org/api/urban_areas/slug:melbourne/	Melbourne
+https://api.teleport.org/api/urban_areas/slug:memphis/	Memphis
+https://api.teleport.org/api/urban_areas/slug:mexico-city/	Mexico City
+https://api.teleport.org/api/urban_areas/slug:miami/	Miami
+https://api.teleport.org/api/urban_areas/slug:milan/	Milan
+https://api.teleport.org/api/urban_areas/slug:milwaukee/	Milwaukee
+https://api.teleport.org/api/urban_areas/slug:minneapolis-saint-paul/	Minneapolis-Saint Paul
+https://api.teleport.org/api/urban_areas/slug:minsk/	Minsk
+https://api.teleport.org/api/urban_areas/slug:montevideo/	Montevideo
+https://api.teleport.org/api/urban_areas/slug:montreal/	Montreal
+https://api.teleport.org/api/urban_areas/slug:moscow/	Moscow
+https://api.teleport.org/api/urban_areas/slug:mumbai/	Mumbai
+https://api.teleport.org/api/urban_areas/slug:munich/	Munich
+https://api.teleport.org/api/urban_areas/slug:nairobi/	Nairobi
+https://api.teleport.org/api/urban_areas/slug:nantes/	Nantes
+https://api.teleport.org/api/urban_areas/slug:naples/	Naples
+https://api.teleport.org/api/urban_areas/slug:nashville/	Nashville
+https://api.teleport.org/api/urban_areas/slug:new-orleans/	New Orleans
+https://api.teleport.org/api/urban_areas/slug:new-york/	New York
+https://api.teleport.org/api/urban_areas/slug:nice/	Nice
+https://api.teleport.org/api/urban_areas/slug:nicosia/	Nicosia
+https://api.teleport.org/api/urban_areas/slug:oklahoma-city/	Oklahoma City
+https://api.teleport.org/api/urban_areas/slug:omaha/	Omaha
+https://api.teleport.org/api/urban_areas/slug:orlando/	Orlando
+https://api.teleport.org/api/urban_areas/slug:osaka/	Osaka
+https://api.teleport.org/api/urban_areas/slug:oslo/	Oslo
+https://api.teleport.org/api/urban_areas/slug:ottawa/	Ottawa
+https://api.teleport.org/api/urban_areas/slug:oulu/	Oulu
+https://api.teleport.org/api/urban_areas/slug:oxford/	Oxford
+https://api.teleport.org/api/urban_areas/slug:palo-alto/	Palo Alto
+https://api.teleport.org/api/urban_areas/slug:panama/	Panama
+https://api.teleport.org/api/urban_areas/slug:paris/	Paris
+https://api.teleport.org/api/urban_areas/slug:perth/	Perth
+https://api.teleport.org/api/urban_areas/slug:philadelphia/	Philadelphia
+https://api.teleport.org/api/urban_areas/slug:phnom-penh/	Phnom Penh
+https://api.teleport.org/api/urban_areas/slug:phoenix/	Phoenix
+https://api.teleport.org/api/urban_areas/slug:phuket/	Phuket
+https://api.teleport.org/api/urban_areas/slug:pittsburgh/	Pittsburgh
+https://api.teleport.org/api/urban_areas/slug:portland-me/	Portland, ME
+https://api.teleport.org/api/urban_areas/slug:portland-or/	Portland, OR
+https://api.teleport.org/api/urban_areas/slug:porto/	Porto
+https://api.teleport.org/api/urban_areas/slug:porto-alegre/	Porto Alegre
+https://api.teleport.org/api/urban_areas/slug:prague/	Prague
+https://api.teleport.org/api/urban_areas/slug:providence/	Providence
+https://api.teleport.org/api/urban_areas/slug:quebec/	Quebec
+https://api.teleport.org/api/urban_areas/slug:quito/	Quito
+https://api.teleport.org/api/urban_areas/slug:raleigh/	Raleigh
+https://api.teleport.org/api/urban_areas/slug:reykjavik/	Reykjavik
+https://api.teleport.org/api/urban_areas/slug:richmond/	Richmond
+https://api.teleport.org/api/urban_areas/slug:riga/	Riga
+https://api.teleport.org/api/urban_areas/slug:rio-de-janeiro/	Rio De Janeiro
+https://api.teleport.org/api/urban_areas/slug:riyadh/	Riyadh
+https://api.teleport.org/api/urban_areas/slug:rochester/	Rochester
+https://api.teleport.org/api/urban_areas/slug:rome/	Rome
+https://api.teleport.org/api/urban_areas/slug:rotterdam/	Rotterdam
+https://api.teleport.org/api/urban_areas/slug:saint-petersburg/	Saint Petersburg
+https://api.teleport.org/api/urban_areas/slug:salt-lake-city/	Salt Lake City
+https://api.teleport.org/api/urban_areas/slug:san-antonio/	San Antonio
+https://api.teleport.org/api/urban_areas/slug:san-diego/	San Diego
+https://api.teleport.org/api/urban_areas/slug:san-francisco-bay-area/	San Francisco Bay Area
+https://api.teleport.org/api/urban_areas/slug:san-jose/	San Jose
+https://api.teleport.org/api/urban_areas/slug:san-juan/	San Juan
+https://api.teleport.org/api/urban_areas/slug:san-luis-obispo/	San Luis Obispo
+https://api.teleport.org/api/urban_areas/slug:san-salvador/	San Salvador
+https://api.teleport.org/api/urban_areas/slug:santiago/	Santiago
+https://api.teleport.org/api/urban_areas/slug:santo-domingo/	Santo Domingo
+https://api.teleport.org/api/urban_areas/slug:sao-paulo/	Sao Paulo
+https://api.teleport.org/api/urban_areas/slug:sarajevo/	Sarajevo
+https://api.teleport.org/api/urban_areas/slug:saskatoon/	Saskatoon
+https://api.teleport.org/api/urban_areas/slug:seattle/	Seattle
+https://api.teleport.org/api/urban_areas/slug:seoul/	Seoul
+https://api.teleport.org/api/urban_areas/slug:seville/	Seville
+https://api.teleport.org/api/urban_areas/slug:shanghai/	Shanghai
+https://api.teleport.org/api/urban_areas/slug:singapore/	Singapore
+https://api.teleport.org/api/urban_areas/slug:skopje/	Skopje
+https://api.teleport.org/api/urban_areas/slug:sofia/	Sofia
+https://api.teleport.org/api/urban_areas/slug:st-louis/	St. Louis
+https://api.teleport.org/api/urban_areas/slug:stockholm/	Stockholm
+https://api.teleport.org/api/urban_areas/slug:stuttgart/	Stuttgart
+https://api.teleport.org/api/urban_areas/slug:sydney/	Sydney
+https://api.teleport.org/api/urban_areas/slug:taipei/	Taipei
+https://api.teleport.org/api/urban_areas/slug:tallinn/	Tallinn
+https://api.teleport.org/api/urban_areas/slug:tampa-bay-area/	Tampa Bay Area
+https://api.teleport.org/api/urban_areas/slug:tampere/	Tampere
+https://api.teleport.org/api/urban_areas/slug:tartu/	Tartu
+https://api.teleport.org/api/urban_areas/slug:tashkent/	Tashkent
+https://api.teleport.org/api/urban_areas/slug:tbilisi/	Tbilisi
+https://api.teleport.org/api/urban_areas/slug:tehran/	Tehran
+https://api.teleport.org/api/urban_areas/slug:tel-aviv/	Tel Aviv
+https://api.teleport.org/api/urban_areas/slug:the-hague/	The Hague
+https://api.teleport.org/api/urban_areas/slug:thessaloniki/	Thessaloniki
+https://api.teleport.org/api/urban_areas/slug:tokyo/	Tokyo
+https://api.teleport.org/api/urban_areas/slug:toronto/	Toronto
+https://api.teleport.org/api/urban_areas/slug:toulouse/	Toulouse
+https://api.teleport.org/api/urban_areas/slug:tunis/	Tunis
+https://api.teleport.org/api/urban_areas/slug:turin/	Turin
+https://api.teleport.org/api/urban_areas/slug:turku/	Turku
+https://api.teleport.org/api/urban_areas/slug:uppsala/	Uppsala
+https://api.teleport.org/api/urban_areas/slug:utrecht/	Utrecht
+https://api.teleport.org/api/urban_areas/slug:valencia/	Valencia
+https://api.teleport.org/api/urban_areas/slug:valletta/	Valletta
+https://api.teleport.org/api/urban_areas/slug:vancouver/	Vancouver
+https://api.teleport.org/api/urban_areas/slug:victoria/	Victoria
+https://api.teleport.org/api/urban_areas/slug:vienna/	Vienna
+https://api.teleport.org/api/urban_areas/slug:vilnius/	Vilnius
+https://api.teleport.org/api/urban_areas/slug:warsaw/	Warsaw
+https://api.teleport.org/api/urban_areas/slug:washington-dc/	Washington, D.C.
+https://api.teleport.org/api/urban_areas/slug:wellington/	Wellington
+https://api.teleport.org/api/urban_areas/slug:winnipeg/	Winnipeg
+https://api.teleport.org/api/urban_areas/slug:wroclaw/	Wroclaw
+https://api.teleport.org/api/urban_areas/slug:yerevan/	Yerevan
+https://api.teleport.org/api/urban_areas/slug:zagreb/	Zagreb
+https://api.teleport.org/api/urban_areas/slug:zurich/	Zurich`;
+
+const cities = stupid.replace(/\bhttps:(\S)*\b\/\s/g, "");
+const citiesArray = cities.split("\n");
 
 let axiosGets = [];
 let newDict1 = [];
-for (let itemD of dict1) {
+for (let itemD of citiesArray) {
   for (let itemT of teleportData) {
-    if (itemT["name"] === itemD["name"]) {
+    if (itemT["name"] === itemD) {
       axiosGets.push(axios.get(itemT["href"] + "images"));
-      newDict1.push(dict1[dict1.indexOf(itemD)]);
+      newDict1.push(citiesArray[citiesArray.indexOf(itemD)]);
     }
   }
 }
-let finalDict = {};
-
+let finalDict = [];
+console.log(newDict1.length === axiosGets.length);
 const response = axios
   .all(axiosGets)
   .then(res => {
     let axiosGetData = res.map(item => item.data);
     for (let i = 0; i < newDict1.length; i++) {
-      finalDict.name = newDict1[i]["name"];
-      finalDict.photoWeb = axiosGetData[i]["photos"][0]["image"]["web"];
-      finalDict.photoMobile = axiosGetData[i]["photos"][0]["image"]["mobile"];
+      let obj = {};
+      obj.name = newDict1[i];
+      obj.photoWeb = axiosGetData[i]["photos"][0]["image"]["web"];
+      obj.photoMobile = axiosGetData[i]["photos"][0]["image"]["mobile"];
+      finalDict.push(obj);
     }
+
+    fs.writeFile("data.txt", JSON.stringify(finalDict), err => {
+      // In case of a error throw err.
+      if (err) throw err;
+    });
   })
-  .then(res => console.log(finalDict))
   .catch(err => console.log(err));
-
-/* 
-
-#Loop through dict1
-for itemD in dict1:
-  for itemT in teleportData:
-    if itemT["name"] == itemD["name"]:
-      itemD["photo"] = itemT["href"]
-
-print(dict1);
-
-*/
