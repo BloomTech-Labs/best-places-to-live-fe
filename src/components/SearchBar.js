@@ -26,7 +26,6 @@ function SearchBar({ history, fetchLocationsByName, isFetching, error, page }) {
     }
   };
 
-  console.log("SearchByCity error", error);
   return (
     <Container>
       {error && <Error error={error} />}
