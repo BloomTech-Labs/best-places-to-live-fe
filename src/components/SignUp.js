@@ -8,7 +8,6 @@ import {
   Form,
   Button,
   Input,
-  SocialButton,
   Text,
   StyledLink
 } from "../styles/index";
@@ -23,7 +22,6 @@ function SignUp({ signup, error, ...rest }) {
     if (response === "Successful") {
       rest.history.push("/");
     } else {
-      console.log(response);
     }
   };
 

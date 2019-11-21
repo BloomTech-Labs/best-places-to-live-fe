@@ -11,7 +11,6 @@ export const fetchLocationsByName = data => dispatch => {
   return axiosWithAuth()
     .post("/city/search", data)
     .then(res => {
-      console.log(res);
       dispatch({
         type: FETCH_LOCATIONS_BY_NAME_SUCCESS,
         payload: res.data.cities
@@ -19,7 +18,6 @@ export const fetchLocationsByName = data => dispatch => {
       return "Successful";
     })
     .catch(err => {
-      console.log(err);
       dispatch({
         type: FETCH_LOCATIONS_BY_NAME_FAIL,
         payload: { err, message: err.message }

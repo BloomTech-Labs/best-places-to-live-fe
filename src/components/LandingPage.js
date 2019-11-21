@@ -1,8 +1,17 @@
 import React from "react";
 import Footer from "./Footer";
 import SearchBar from "./SearchBar";
-import { Container, StyledLink, Flex, Text, Hero, Box } from "../styles/index";
+import {
+  Container,
+  StyledLink,
+  Flex,
+  Text,
+  Hero,
+  Box,
+  Button
+} from "../styles/index";
 import heroImg from "../img/hero.jpg";
+import TopCities from "./TopCities";
 
 const LandingPage = props => {
   return (
@@ -22,10 +31,10 @@ const LandingPage = props => {
           url(${heroImg})`}
           backgroundSize="cover"
           backgroundPosition="center"
-          padding="100px"
+          padding="130px 100px 100px"
         >
           <Box>
-            <Text textAlign="center" as="h2" color="white">
+            <Text textAlign="center" as="h2" fontSize={"2.5rem"} color="white">
               Live in the Best Place
             </Text>
           </Box>
@@ -34,10 +43,16 @@ const LandingPage = props => {
         <Container textAlign="center">
           <Text as="h2">
             <StyledLink color="black" to="/explore">
-              Explore!
+              <Button> Explore!</Button>
             </StyledLink>
           </Text>
-          <Flex>For the category/ factors cards</Flex>
+          {/* <Flex>For the category/ factors cards</Flex> */}
+        </Container>
+        <Container textAlign="center">
+          <Text as="h2" textAlign="center">
+            Popular Cities
+          </Text>
+          <TopCities />
         </Container>
       </Container>
       <Footer />

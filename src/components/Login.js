@@ -8,7 +8,6 @@ import {
   Form,
   Button,
   Input,
-  SocialButton,
   Text,
   StyledLink
 } from "../styles/index";
@@ -17,19 +16,14 @@ function Login({ login, error, ...rest }) {
   const { register, handleSubmit, errors, formState } = useForm({
     mode: "onChange"
   });
-  console.log(formState.isValid);
   const onSubmit = async data => {
-    console.log(login(data));
     const response = await login(data);
-    console.log(response);
     if (response === "Successful") {
       rest.history.push("/profile");
     } else {
-      console.log(response);
     }
   };
-  console.log("Login Errors", errors);
-  console.log(error);
+
   return (
     <Container>
       {error && <Error error={error} />}

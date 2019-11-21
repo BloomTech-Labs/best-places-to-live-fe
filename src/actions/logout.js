@@ -1,4 +1,3 @@
-import { axiosWithAuth } from "../utils/axiosWithAuth.js";
 import { LOGOUT } from "./index";
 
 export const logout = credentials => dispatch => {
