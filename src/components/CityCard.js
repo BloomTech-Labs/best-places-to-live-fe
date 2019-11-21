@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Card, Image, Text } from "../styles/index";
 
+const [winSize, setWinSize]
 function CityCard({ city, page }) {
   console.log(window.innerWidth);
   if (page && window.innerWidth <= 500) {

@@ -10,7 +10,6 @@ import CheckOval from "./CheckOval";
 const SearchByFactors = ({
   fetchLocationsByFactors,
   fetchFactors,
-  history,
   isFetching,
   factors,
   fetchFactorsError,
