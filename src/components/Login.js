@@ -38,7 +38,7 @@ function Login({ login, error, ...rest }) {
         {errors.password && "Your password is required"}
         <Input
           type="password"
-          placeholder="password"
+          placeholder="Password"
           name="password"
           ref={register({ required: true })}
         />
@@ -46,10 +46,8 @@ function Login({ login, error, ...rest }) {
           {/* <SocialButton Google>Continue with Google</SocialButton>
           <SocialButton Facebook>Continue with Facebook</SocialButton> */}
           <Button type="submit" disabled={!formState.isValid}>
-            Login
+            Log In
           </Button>
-          <Text>Already have an account?</Text>
-          <StyledLink to="/login">Log In</StyledLink>
         </Container>
       </Form>
     </Container>

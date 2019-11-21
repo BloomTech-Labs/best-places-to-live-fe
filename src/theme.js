@@ -9,7 +9,8 @@ breakpoints.xl = breakpoints[3];
 const colors = {
   primary: "#FF4C4C",
   white: "#fff",
-  gray: "#333"
+  gray: "#333",
+  blue: "#0066ff"
 };
 
 const space = [
