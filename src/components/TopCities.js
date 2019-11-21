@@ -2,13 +2,12 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import CityCard from "./CityCard";
 import { Container, Flex, Text } from "../styles/index";
-import SearchByFactors from "./SearchByFactors";
 import Error from "./Error";
 import { fetchTopCities } from "../actions/topCities";
 
 function TopCities({ topCities, fetchTopCitiesError, fetchTopCities }) {
   useEffect(() => {
-    const response = fetchTopCities({});
+    fetchTopCities({});
   }, [fetchTopCities]);
 
   return (

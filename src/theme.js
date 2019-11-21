@@ -36,5 +36,6 @@ export default {
   breakpoints,
   colors,
   space,
-  fontSizes
+  fontSizes,
+  fonts
 };

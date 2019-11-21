@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { fetchLocationsByName } from "../actions/locationsByName";
 import { connect } from "react-redux";
 import Error from "./Error";
-import { withRouter } from "react-router-dom";
-import { Container, Flex, Input } from "../styles/index";
+import { Container, Input } from "../styles/index";
 
 function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
   const [location, setLocation] = useState("");
