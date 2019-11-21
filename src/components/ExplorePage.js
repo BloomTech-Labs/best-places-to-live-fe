@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
 import Footer from "./Footer";
 import { fetchLocationsByFactors } from "../actions/locationsByFactors";
 import { fetchFactors } from "../actions/factors";
@@ -54,6 +53,7 @@ const ExplorePage = ({
 
         <Button type="submit">Explore</Button>
       </form>
+      <Footer />
     </>
   );
 };

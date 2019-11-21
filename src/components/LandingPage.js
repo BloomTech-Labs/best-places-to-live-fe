@@ -26,7 +26,7 @@ const LandingPage = props => {
           padding="130px 100px 100px"
         >
           <Box>
-            <Text textAlign="center" as="h2" color="white">
+            <Text textAlign="center" as="h2" fontSize={"2.5rem"} color="white">
               Live in the Best Place
             </Text>
           </Box>
