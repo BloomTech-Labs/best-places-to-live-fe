@@ -27,7 +27,7 @@ function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
   };
 
   return (
-    <Container>
+    <Container width="100%" display="flex" justifyContent="center">
       {error && <Error error={error} />}
       <Input
         type="text"
