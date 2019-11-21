@@ -2,23 +2,20 @@ import React from "react";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import * as rtl from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
 import "@testing-library/jest-dom/extend-expect";
+import { initialState } from "../reducers/index";
+import reducer from "../reducers";
 import Login from "./Login";
-import initialState from "../reducers/initialState";
-import reducer from "../reducers/index";
-import { createBrowserHistory } from "history";
 
-const history = createBrowserHistory();
-// const store = createStore(reducer, initialState);
+function renderWithRedux({ initialState }) {
+  const store = createStore(reducer, initialState);
 
-// app.test.js
-it("Login Page Renders", () => {
-  const { getByText } = rtl.render(
-    <MemoryRouter history={history}>
-      <Login />
-    </MemoryRouter>
-  );
+  return {
+    ...rtl.render(<Provider store={store}></Provider>),
+    store
+  };
+}
 
-  getByText(/awefaewf/i);
+test("Login render with redux with defaults", () => {
+  const wrapper = renderWithRedux(<Login />);
 });
