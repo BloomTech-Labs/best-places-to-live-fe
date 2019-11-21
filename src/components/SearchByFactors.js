@@ -48,7 +48,6 @@ const SearchByFactors = ({
           justifyContent="center"
           alignItems="center"
           flexWrap="wrap"
-          marginTop="10px"
         >
           {factors.map(factor => {
             return (
@@ -58,7 +57,7 @@ const SearchByFactors = ({
             );
           })}
         </Container>
-        <Box textAlign="center" mt={50}>
+        <Box textAlign="center" mt={15}>
           <Button type="submit">Explore</Button>
         </Box>
       </form>
