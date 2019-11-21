@@ -80,4 +80,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default withRouter(connect(mapStateToProps, { signup })(SignUp));
+export default connect(mapStateToProps, { signup })(SignUp);
