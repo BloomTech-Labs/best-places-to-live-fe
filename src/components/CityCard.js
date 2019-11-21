@@ -10,9 +10,8 @@ function CityCard({ city }) {
       width={{ _: 1, sm: 1, md: 1 / 2, lg: 1 / 4 }}
       m={2}
     >
-      if(!city.short_name && !city.)
-      <Text as="h2">{city.name.slice(0, -4)}</Text>
-      <Text as="h4">{city.name.slice(-2)}</Text>
+      <Text as="h2">{city.short_name}</Text>
+      <Text as="h4">{city.state}</Text>
       <Text as="h6">Population: {city.population}</Text>
       <Image
         src={city.photoWeb}

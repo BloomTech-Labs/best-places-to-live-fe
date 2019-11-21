@@ -5,7 +5,7 @@ import Error from "./Error";
 import { withRouter } from "react-router-dom";
 import { Container, Flex, Input } from "../styles/index";
 
-function SearchBar({ history, fetchLocationsByName, isFetching, error, page }) {
+function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
   const [location, setLocation] = useState("");
 
   const fetchLocation = async data => {
@@ -14,7 +14,7 @@ function SearchBar({ history, fetchLocationsByName, isFetching, error, page }) {
     });
     //If no error, push user to new page else
     if (response === "Successful" && page === "landing") {
-      history.push("/search");
+      rest.history.push("/search");
     } else {
       console.log(response);
     }
@@ -49,6 +49,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default withRouter(
-  connect(mapStateToProps, { fetchLocationsByName })(SearchBar)
-);
+export default connect(mapStateToProps, { fetchLocationsByName })(SearchBar);
