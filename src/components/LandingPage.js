@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import SearchBar from "./SearchBar";
 import { Container, StyledLink, Flex, Text, Hero, Box } from "../styles/index";
 import heroImg from "../img/hero.jpg";
+import TopCities from "./TopCities";
 
 const LandingPage = props => {
   return (
@@ -22,7 +23,7 @@ const LandingPage = props => {
           url(${heroImg})`}
           backgroundSize="cover"
           backgroundPosition="center"
-          padding="100px"
+          padding="130px 100px 100px"
         >
           <Box>
             <Text textAlign="center" as="h2" color="white">
@@ -38,6 +39,9 @@ const LandingPage = props => {
             </StyledLink>
           </Text>
           <Flex>For the category/ factors cards</Flex>
+        </Container>
+        <Container textAlign="center">
+          <TopCities />
         </Container>
       </Container>
       <Footer />
