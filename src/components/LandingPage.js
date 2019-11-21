@@ -1,7 +1,15 @@
 import React from "react";
 import Footer from "./Footer";
 import SearchBar from "./SearchBar";
-import { Container, StyledLink, Flex, Text, Hero, Box } from "../styles/index";
+import {
+  Container,
+  StyledLink,
+  Flex,
+  Text,
+  Hero,
+  Box,
+  Button
+} from "../styles/index";
 import heroImg from "../img/hero.jpg";
 import TopCities from "./TopCities";
 
@@ -35,10 +43,10 @@ const LandingPage = props => {
         <Container textAlign="center">
           <Text as="h2">
             <StyledLink color="black" to="/explore">
-              Explore!
+              <Button> Explore!</Button>
             </StyledLink>
           </Text>
-          <Flex>For the category/ factors cards</Flex>
+          {/* <Flex>For the category/ factors cards</Flex> */}
         </Container>
         <Container textAlign="center">
           <TopCities />

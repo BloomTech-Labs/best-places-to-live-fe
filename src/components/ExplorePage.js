@@ -6,7 +6,7 @@ import Error from "./Error";
 import { connect } from "react-redux";
 import useForm from "react-hook-form";
 import CheckOval from "./CheckOval";
-import { Button, Hero } from "../styles/index";
+import { Button, Hero, Text } from "../styles/index";
 
 const ExplorePage = ({
   fetchLocationsByFactors,
@@ -38,7 +38,16 @@ const ExplorePage = ({
 
   return (
     <>
-      <Hero></Hero>
+      <Hero
+        display="flex"
+        justifyContent="center"
+        background="linear-gradient(190deg, rgba(139, 181, 253, 0) 0%, #2B79FB 100%)"
+        p={"100px"}
+      >
+        <Text color="white" as="h2" fontSize={5}>
+          Explore
+        </Text>
+      </Hero>
       {fetchFactorsError && <Error error={fetchFactorsError} />}
       {fetchLocationsByFactorsError && (
         <Error error={fetchLocationsByFactorsError} />

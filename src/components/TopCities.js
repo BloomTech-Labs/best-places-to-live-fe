@@ -23,7 +23,7 @@ function TopCities({ topCities, fetchTopCitiesError, fetchTopCities }) {
         {" "}
         Top Cities
       </Text>
-      <Flex display="flex" justifyContent="center" flexWrap="wrap">
+      <Flex display="flex" justifyContent="center" flexWrap="wrap" overflow={}>
         {topCities.map(city => (
           <CityCard key={city._id} city={city} />
         ))}
