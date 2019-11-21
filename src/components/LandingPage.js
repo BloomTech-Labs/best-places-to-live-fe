@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar";
 import { Container, StyledLink, Flex, Text, Hero, Box } from "../styles/index";
 import heroImg from "../img/hero.jpg";
 
-const LandingPage = () => {
+const LandingPage = props => {
   return (
     <>
       <Container as="main">
@@ -20,10 +20,10 @@ const LandingPage = () => {
         >
           <Box>
             <Text textAlign="center" as="h2">
-              Nomad's Land
+              Live in the Best Place
             </Text>
           </Box>
-          <SearchBar page="landing" />
+          <SearchBar page="landing" {...props} />
         </Hero>
         <Container textAlign="center">
           <Text as="h2">
@@ -38,5 +38,5 @@ const LandingPage = () => {
     </>
   );
 };
-
+//
 export default LandingPage;

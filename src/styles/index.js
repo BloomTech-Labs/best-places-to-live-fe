@@ -2,7 +2,7 @@ import { Form } from "./form";
 import { SocialButton, Button } from "./button";
 import { Container } from "./container";
 import { Input } from "./input";
-import { StyledLink } from "./link";
+import { StyledLink, StyledNavLink } from "./link";
 import { Card } from "./card";
 import { Flex } from "./flex";
 import { Image } from "./image";
@@ -23,6 +23,7 @@ export {
   GlobalStyle,
   SocialButton,
   StyledLink,
+  StyledNavLink,
   Card,
   Flex,
   Image,

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Router, Route } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import { ThemeProvider } from "styled-components";
 import ReactGA from "react-ga";

@@ -4,4 +4,5 @@ import { flexbox, layout } from "styled-system";
 export const Nav = styled.nav`
   ${layout};
   ${flexbox};
+  padding: 10px;
 `;
