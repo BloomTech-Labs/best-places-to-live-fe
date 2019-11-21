@@ -24,7 +24,6 @@ function TopCities({ topCities, fetchTopCitiesError, fetchTopCities }) {
         Top Cities
       </Text>
       <Flex
-        display="flex"
         justifyContent="center"
         flexDirection="row"
         flexWrap="wrap"

@@ -77,7 +77,7 @@ const ExplorePage = ({
             );
           })}
         </Container>
-        <Flex>
+        <Flex justifyContent="center">
           <Button type="submit">Explore</Button>
         </Flex>
       </form>
