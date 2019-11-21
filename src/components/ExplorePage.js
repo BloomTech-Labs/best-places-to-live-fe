@@ -6,7 +6,8 @@ import Error from "./Error";
 import { connect } from "react-redux";
 import useForm from "react-hook-form";
 import CheckOval from "./CheckOval";
-import { Button, Hero, Text } from "../styles/index";
+import { Button, Hero, Text, Container, Flex } from "../styles/index";
+import exploreImg from "../img/exploreHero.jpg";
 
 const ExplorePage = ({
   fetchLocationsByFactors,
@@ -41,7 +42,13 @@ const ExplorePage = ({
       <Hero
         display="flex"
         justifyContent="center"
-        background="linear-gradient(190deg, rgba(139, 181, 253, 0) 0%, #2B79FB 100%)"
+        background={` 
+        linear-gradient(
+          rgba(0, 0, 0, 0.30), 
+          rgba(0, 0, 0, 0.30)
+        ),
+
+        url(${exploreImg})`}
         p={"100px"}
       >
         <Text color="white" as="h2" fontSize={5}>
@@ -53,15 +60,23 @@ const ExplorePage = ({
         <Error error={fetchLocationsByFactorsError} />
       )}
       <form onSubmit={handleSubmit(onSubmit)}>
-        {factors.map(factor => {
-          return (
-            <>
-              <CheckOval factor={factor} register={register} />
-            </>
-          );
-        })}
-
-        <Button type="submit">Explore</Button>
+        <Container
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          flexDirection="column"
+        >
+          {factors.map(factor => {
+            return (
+              <>
+                <CheckOval factor={factor} register={register} />
+              </>
+            );
+          })}
+        </Container>
+        <Flex>
+          <Button type="submit">Explore</Button>
+        </Flex>
       </form>
       <Footer />
     </>
