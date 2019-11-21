@@ -20,7 +20,7 @@ const LandingPage = props => {
         >
           <Box>
             <Text textAlign="center" as="h2">
-              Nomad's Land
+              Live in the Best Place
             </Text>
           </Box>
           <SearchBar page="landing" {...props} />
