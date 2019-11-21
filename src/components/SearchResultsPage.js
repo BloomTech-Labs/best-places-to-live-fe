@@ -6,7 +6,7 @@ import { Container, Flex, Text } from "../styles/index";
 import SearchByFactors from "./SearchByFactors";
 import SearchBar from "./SearchBar";
 
-function SearchResultsPage({ displayedCities }) {
+function SearchResultsPage({ displayedCities, ...rest }) {
   return (
     <Container p={`0 15px`}>
       <Flex
@@ -15,8 +15,8 @@ function SearchResultsPage({ displayedCities }) {
         display="flex"
         justifyContent="center"
       >
-        <SearchBar />
-        <SearchByFactors />
+        <SearchBar {...rest} />
+        <SearchByFactors {...rest} />
       </Flex>
       <Text as="h2" textAlign="center">
         {" "}

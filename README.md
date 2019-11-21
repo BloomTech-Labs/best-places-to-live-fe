@@ -1,6 +1,6 @@
-# Nomad's Land
+# Live in the Best Place
 
-You can find the deployed project at [INSERT LINK HERE]
+You can find the deployed project [Here](https://www.liveinthebestplace.com)
 
 ## Contributors
 
@@ -45,6 +45,10 @@ Styled-components
 # Testing
 
 Jest and React Testing Library
+
+# Styles
+
+[Documentation]("./src/styles/README.md")
 
 # Installation Instructions
 
