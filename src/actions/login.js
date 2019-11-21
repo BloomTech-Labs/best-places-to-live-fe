@@ -15,7 +15,8 @@ export const login = credentials => dispatch => {
         payload: {
           id: res.data._id,
           email: res.data.email,
-          name: res.data.name
+          name: res.data.name,
+          location: res.data.location
         }
       });
       return "Successful";

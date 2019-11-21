@@ -1,41 +1,31 @@
 import React from "react";
 import { connect } from "react-redux";
-import { NavLink, withRouter } from "react-router-dom";
-import { logout } from "../actions/logout";
-import { Nav, Button } from "../styles/index";
+import { withRouter } from "react-router-dom";
+import { Nav, StyledNavLink } from "../styles/index";
 
-const NavBar = ({ isLoggedIn, history, logout }) => {
-  const logoutHandler = () => {
-    console.log("here");
-    logout();
-    history.push("/");
-  };
-
+const NavBar = ({ isLoggedIn }) => {
   return (
     <Nav display="flex" justifyContent="space-around" flexWrap="wrap">
-      <div>
-        <NavLink to="/">Home</NavLink>
-      </div>
+      {!isLoggedIn && (
+        <>
+          <div>
+            <StyledNavLink to="/">Home</StyledNavLink>
+          </div>
 
-      <div>
-        <NavLink to="/search">Search</NavLink>
-      </div>
-
-      <div>
-        <NavLink to="/login">Login</NavLink>
-      </div>
-
-      <div>
-        <NavLink to="/signup">Sign Up</NavLink>
-      </div>
+          <div>
+            <StyledNavLink to="/signup">Sign Up</StyledNavLink>
+          </div>
+        </>
+      )}
 
       {isLoggedIn && (
         <>
           <div>
-            <NavLink to="/profile">Profile</NavLink>
+            <StyledNavLink to="/">Home</StyledNavLink>
           </div>
-
-          <Button onClick={logoutHandler}>Logout </Button>
+          <div>
+            <StyledNavLink to="/profile">Profile</StyledNavLink>
+          </div>
         </>
       )}
     </Nav>
@@ -49,4 +39,4 @@ const mapStatetoProps = state => {
   };
 };
 
-export default withRouter(connect(mapStatetoProps, { logout })(NavBar));
+export default withRouter(connect(mapStatetoProps)(NavBar));

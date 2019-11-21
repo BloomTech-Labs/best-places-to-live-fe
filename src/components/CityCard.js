@@ -10,8 +10,9 @@ function CityCard({ city }) {
       width={{ _: 1, sm: 1, md: 1 / 2, lg: 1 / 4 }}
       m={2}
     >
-      <Text as="h3">{city.name}</Text>
-      <Text as="h4">Population: {city.population}</Text>
+      <Text as="h2">{city.short_name}</Text>
+      <Text as="h4">{city.state}</Text>
+      <Text as="h6">Population: {city.population}</Text>
       <Image
         src={city.photoWeb}
         alt={city.name}

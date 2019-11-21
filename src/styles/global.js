@@ -354,6 +354,7 @@ const GlobalStyle = createGlobalStyle`
   
   body {
     font-size: 62.5%;
+    font-family: "Noto sans", sans-serif;
   }
 
 `;
