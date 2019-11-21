@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import Footer from "./Footer";
+import React, { useEffect } from "react";
 import { fetchLocationsByFactors } from "../actions/locationsByFactors";
 import { fetchFactors } from "../actions/factors";
 import Error from "./Error";

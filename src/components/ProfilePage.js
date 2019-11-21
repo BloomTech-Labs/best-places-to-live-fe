@@ -10,7 +10,12 @@ function ProfilePage({ user, history, logout }) {
   };
 
   return (
-    <Flex>
+    <Flex
+      flexDirection="column"
+      alignItems="center"
+      display="flex"
+      justifyContent="center"
+    >
       <Text fontWeight="bold">Name: {user.name} </Text>
       <Text>
         <b>Email: </b>
