@@ -4,11 +4,8 @@ import CheckOval from "./CheckOval";
 
 it('renders "Display Name" text', () => {
   const { getByText } = rtl.render(
-    <CheckOval
-      factor={{ factor: "Testing", displayName: React.forwardRef() }}
-      register="irrelevant"
-    />
+    <CheckOval factor={{ factor: "Testing", displayName: "Chicken" }} />
   );
 
-  getByText(/Tacos/i);
+  getByText(/Chicken/i);
 });
