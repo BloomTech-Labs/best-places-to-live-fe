@@ -26,11 +26,11 @@ function TopCities({ topCities, fetchTopCitiesError, fetchTopCities }) {
       <Flex
         justifyContent="center"
         flexDirection="row"
-        flexWrap="wrap"
+        // flexWrap="wrap"
         overflowX="scroll"
       >
         {topCities.map(city => (
-          <CityCard key={city._id} city={city} />
+          <CityCard key={city._id} city={city} page={topCities} />
         ))}
       </Flex>
     </Container>

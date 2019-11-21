@@ -4,7 +4,7 @@ import { fetchFactors } from "../actions/factors";
 import Error from "./Error";
 import { connect } from "react-redux";
 import useForm from "react-hook-form";
-import { Box, Button } from "../styles/index";
+import { Box, Button, Container, Flex } from "../styles/index";
 import CheckOval from "./CheckOval";
 
 const SearchByFactors = ({
@@ -43,13 +43,21 @@ const SearchByFactors = ({
         <Error error={fetchLocationsByFactorsError} />
       )}
       <form onSubmit={handleSubmit(onSubmit)}>
-        {factors.map(factor => {
-          return (
-            <>
-              <CheckOval factor={factor} register={register} />
-            </>
-          );
-        })}
+        <Container
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          flexWrap="wrap"
+          marginTop="10px"
+        >
+          {factors.map(factor => {
+            return (
+              <>
+                <CheckOval factor={factor} register={register} />
+              </>
+            );
+          })}
+        </Container>
         <Box textAlign="center" mt={50}>
           <Button type="submit">Explore</Button>
         </Box>
