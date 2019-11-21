@@ -48,7 +48,7 @@ Jest and React Testing Library
 
 # Styles
 
-[Documentation]("./src/styles/README.md")
+[Documentation]("src\styles\README.md")
 
 # Installation Instructions
 
