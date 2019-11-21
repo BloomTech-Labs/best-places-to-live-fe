@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Card, Image, Text } from "../styles/index";
+import useWindowSize from "../hooks/useWindowSize";
 
-// const [winSize, setWinSize]
 function CityCard({ city, page }) {
-  console.log(window.innerWidth);
-  if (page && window.innerWidth <= 500) {
+  const size = useWindowSize();
+
+  if (page && size.width <= 1000) {
     return (
       <Card
         as="article"
