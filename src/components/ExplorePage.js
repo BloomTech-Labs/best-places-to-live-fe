@@ -42,6 +42,8 @@ const ExplorePage = ({
       <Hero
         display="flex"
         justifyContent="center"
+        backgroundSize="cover"
+        backgroundPosition="center center"
         background={` 
         linear-gradient(
           rgba(0, 0, 0, 0.30), 
@@ -64,7 +66,8 @@ const ExplorePage = ({
           display="flex"
           justifyContent="center"
           alignItems="center"
-          flexDirection="column"
+          flexWrap="wrap"
+          marginTop="10px"
         >
           {factors.map(factor => {
             return (
