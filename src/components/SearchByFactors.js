@@ -1,18 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import Footer from "./Footer";
+import React, { useEffect } from "react";
 import { fetchLocationsByFactors } from "../actions/locationsByFactors";
 import { fetchFactors } from "../actions/factors";
 import Error from "./Error";
 import { connect } from "react-redux";
 import useForm from "react-hook-form";
-import { Box, Button } from "../styles/index";
+import { Box, Button, Container, Flex } from "../styles/index";
 import CheckOval from "./CheckOval";
 
 const SearchByFactors = ({
   fetchLocationsByFactors,
   fetchFactors,
-  history,
   isFetching,
   factors,
   fetchFactorsError,
@@ -23,13 +20,11 @@ const SearchByFactors = ({
   const onSubmit = async data => {
     // event.preventDefault();
     const selectedFactors = Object.keys(data).filter(factor => data[factor]);
-    // console.log("checkbox data", selectedFactors);
     const response = await fetchLocationsByFactors(selectedFactors);
 
     if (response === "Successful") {
       rest.history.push("/search");
     } else {
-      console.log(response);
     }
   };
 
@@ -47,14 +42,21 @@ const SearchByFactors = ({
         <Error error={fetchLocationsByFactorsError} />
       )}
       <form onSubmit={handleSubmit(onSubmit)}>
-        {factors.map(factor => {
-          return (
-            <>
-              <CheckOval factor={factor} register={register} />
-            </>
-          );
-        })}
-        <Box textAlign="center" mt={50}>
+        <Container
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          flexWrap="wrap"
+        >
+          {factors.map(factor => {
+            return (
+              <>
+                <CheckOval factor={factor} register={register} />
+              </>
+            );
+          })}
+        </Container>
+        <Box textAlign="center" mt={15}>
           <Button type="submit">Explore</Button>
         </Box>
       </form>

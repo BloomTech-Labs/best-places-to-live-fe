@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
 import Footer from "./Footer";
 import { fetchLocationsByFactors } from "../actions/locationsByFactors";
 import { fetchFactors } from "../actions/factors";
@@ -7,7 +6,8 @@ import Error from "./Error";
 import { connect } from "react-redux";
 import useForm from "react-hook-form";
 import CheckOval from "./CheckOval";
-import { Button } from "../styles/index";
+import { Button, Hero, Text, Container, Flex } from "../styles/index";
+import exploreImg from "../img/exploreHero.jpg";
 
 const ExplorePage = ({
   fetchLocationsByFactors,
@@ -22,13 +22,11 @@ const ExplorePage = ({
   const onSubmit = async data => {
     // event.preventDefault();
     const selectedFactors = Object.keys(data).filter(factor => data[factor]);
-    console.log("checkbox data", selectedFactors);
     const response = await fetchLocationsByFactors(selectedFactors);
 
     if (response === "Successful") {
       rest.history.push("/search");
     } else {
-      console.log(response);
     }
   };
 
@@ -41,21 +39,49 @@ const ExplorePage = ({
 
   return (
     <>
+      <Hero
+        display="flex"
+        justifyContent="center"
+        backgroundSize="cover"
+        backgroundPosition="center center"
+        background={` 
+        linear-gradient(
+          rgba(0, 0, 0, 0.30), 
+          rgba(0, 0, 0, 0.30)
+        ),
+
+        url(${exploreImg})`}
+        p={"100px"}
+      >
+        <Text color="white" as="h2" fontSize={5}>
+          Explore
+        </Text>
+      </Hero>
       {fetchFactorsError && <Error error={fetchFactorsError} />}
       {fetchLocationsByFactorsError && (
         <Error error={fetchLocationsByFactorsError} />
       )}
       <form onSubmit={handleSubmit(onSubmit)}>
-        {factors.map(factor => {
-          return (
-            <>
-              <CheckOval factor={factor} register={register} />
-            </>
-          );
-        })}
-
-        <Button type="submit">Explore</Button>
+        <Container
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          flexWrap="wrap"
+          marginTop="10px"
+        >
+          {factors.map(factor => {
+            return (
+              <>
+                <CheckOval factor={factor} register={register} />
+              </>
+            );
+          })}
+        </Container>
+        <Flex justifyContent="center">
+          <Button type="submit">Explore</Button>
+        </Flex>
       </form>
+      <Footer />
     </>
   );
 };

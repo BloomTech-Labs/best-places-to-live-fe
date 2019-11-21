@@ -3,18 +3,17 @@ import { LOGOUT } from "../actions/index.js";
 import initialState from "./initialState";
 
 const logoutReducer = (state = initialState, action) => {
-  console.log("reducer", action);
   switch (action.type) {
     case LOGOUT:
       return {
         ...state,
-          user: {
-            factors: state.user.factors,
-            name:"",
-            email: "",
-            location: "",
-            isLoggedIn: false
-          },
+        user: {
+          factors: state.user.factors,
+          name: "",
+          email: "",
+          location: "",
+          isLoggedIn: false
+        }
       };
     default:
       return state;

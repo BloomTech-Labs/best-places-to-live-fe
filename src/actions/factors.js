@@ -1,8 +1,7 @@
-import { axiosWithAuth } from "../utils/axiosWithAuth.js";
 import {
   FETCH_FACTORS_INITIALIZE,
-  FETCH_FACTORS_SUCCESS,
-  FETCH_FACTORS_FAIL
+  FETCH_FACTORS_SUCCESS
+  // FETCH_FACTORS_FAIL
 } from "./index";
 
 export const fetchFactors = () => dispatch => {

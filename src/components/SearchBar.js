@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { fetchLocationsByName } from "../actions/locationsByName";
 import { connect } from "react-redux";
 import Error from "./Error";
-import { withRouter } from "react-router-dom";
-import { Container, Flex, Input } from "../styles/index";
+import { Container, Input } from "../styles/index";
 
 function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
   const [location, setLocation] = useState("");
@@ -16,7 +15,6 @@ function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
     if (response === "Successful" && page === "landing") {
       rest.history.push("/search");
     } else {
-      console.log(response);
     }
   };
 
@@ -27,13 +25,16 @@ function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
   };
 
   return (
-    <Container>
+    <Container width="100%" display="flex" justifyContent="center">
       {error && <Error error={error} />}
       <Input
         type="text"
         placeholder="location"
         name="location"
         value={location}
+        width={150}
+        fontSize={2}
+        maxWidth="100%"
         onChange={e => setLocation(e.target.value)}
         onKeyDown={e => handleInput(e)}
       />

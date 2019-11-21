@@ -2,13 +2,12 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import CityCard from "./CityCard";
 import { Container, Flex, Text } from "../styles/index";
-import SearchByFactors from "./SearchByFactors";
 import Error from "./Error";
 import { fetchTopCities } from "../actions/topCities";
 
 function TopCities({ topCities, fetchTopCitiesError, fetchTopCities }) {
   useEffect(() => {
-    const response = fetchTopCities({});
+    fetchTopCities({});
   }, [fetchTopCities]);
 
   return (
@@ -20,13 +19,14 @@ function TopCities({ topCities, fetchTopCitiesError, fetchTopCities }) {
         display="flex"
         justifyContent="center"
       ></Flex>
-      <Text as="h2" textAlign="center">
-        {" "}
-        Top Cities
-      </Text>
-      <Flex display="flex" justifyContent="center" flexWrap="wrap">
+      <Flex
+        justifyContent="center"
+        flexDirection="row"
+        // flexWrap="wrap"
+        overflowX="scroll"
+      >
         {topCities.map(city => (
-          <CityCard key={city._id} city={city} />
+          <CityCard key={city._id} city={city} page="topCities" />
         ))}
       </Flex>
     </Container>
