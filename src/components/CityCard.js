@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Card, Image, Text } from "../styles/index";
 
 function CityCard({ city, page }) {
-  if (page === "topCities") {
+  console.log(window.innerWidth);
+  if (page && window.innerWidth <= 500) {
     return (
       <Card
         as="article"
@@ -10,13 +11,13 @@ function CityCard({ city, page }) {
         p={[1, 2]}
         width={{ _: 1, sm: 1, md: 1 / 2, lg: 1 / 4 }}
         m={2}
-        flexBasis="0 0 25"
+        flex="0 0 50%"
       >
         <Text as="h2">{city.short_name}</Text>
         <Text as="h4">{city.state}</Text>
         <Text as="h6">Population: {city.population}</Text>
         <Image
-          src={city.photoWeb}
+          src={city.photoMobile}
           alt={city.name}
           width={"100%"}
           maxWidth={300}

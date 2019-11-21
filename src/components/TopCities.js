@@ -30,7 +30,7 @@ function TopCities({ topCities, fetchTopCitiesError, fetchTopCities }) {
         overflowX="scroll"
       >
         {topCities.map(city => (
-          <CityCard key={city._id} city={city} page={topCities} />
+          <CityCard key={city._id} city={city} page="topCities" />
         ))}
       </Flex>
     </Container>

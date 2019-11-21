@@ -29,40 +29,32 @@
 
 [UX Design files](https://www.figma.com/file/1qnSbpXmic6GoI90zjZyt9/Labs18_Best-Places-to-Live%2C-Ryan-Lee%2C-Martin-Campbell?node-id=219%3A2)
 
-Our mission is to be the best resource for researching cities to live. We aim to empower users with data and give them the confidence that where they are going meets their needs, standards, and expectations of living and environment. the factors that influence that decision.
+Moving is an inevitable part of life that most people will experience. Often, there's buyer's remorse after the fact for one reason or another. With Let's Move Homie, we strive to get you as much information about a potential place to live in a quick, user friendly manner. Whether you want to look up a specific location you have in mind, or just want to scroll across a map and see how certain cities rank compared to others, Let's Move Homie is here to help.
 
 ### 4️⃣ Key Features
 
-- feature one
-- feature two
-- feature three
-- feature four
-- feature five
+- Login/Logout
+- Profile
+- Factors (User clicks checkbox for which factor is important)
+- Top-10 cities (Roughly standardized top 10 cities)
+- Map - City Outlines
 
 ## 1️⃣ Tech Stack
 
-### Front end built using:
+### Front end built using: React, Axios, Redux
 
-#### _Front end framework goes here_
+#### REACT
 
-🚫 Why did you choose this framework?
+- Strong React Ecosystem
+- Reusable components
+- Great state management
+- Great Dev tools
 
-- point one
-- point two
-- point three
-- point four
-
-🚫List the rest of the front end features and libraries in the same format as the framework above.
-
-#### Front end deployed to `🚫insert service here`
+#### Front end deployed to `Netlify`
 
 #### [Back end](🚫link to back end repo here) built using:
 
-#### 🚫 back end framework goes here
-
-- point one
-- point two
-- point three
+MongoDB, Express and NodeJS, REST API
 
 🚫 List the rest of the back end end features and libraries in the same format as the framework above
 
