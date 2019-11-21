@@ -1,17 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Container, Text, Button } from "../styles/index";
+import { Flex, Text, Button } from "../styles/index";
 import { logout } from "../actions/logout";
 
 function ProfilePage({ user, history, logout }) {
   const logoutHandler = () => {
-    console.log("here");
     logout();
     history.push("/");
   };
 
   return (
-    <Container>
+    <Flex>
       <Text fontWeight="bold">Name: {user.name} </Text>
       <Text>
         <b>Email: </b>
@@ -22,7 +21,7 @@ function ProfilePage({ user, history, logout }) {
         {user.location}
       </Text>
       <Button onClick={logoutHandler}>Logout </Button>
-    </Container>
+    </Flex>
   );
 }
 

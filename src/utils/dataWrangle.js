@@ -1307,7 +1307,7 @@ for (let itemD of citiesArray) {
   }
 }
 let finalDict = [];
-console.log(newDict1.length === axiosGets.length);
+
 const response = axios
   .all(axiosGets)
   .then(res => {

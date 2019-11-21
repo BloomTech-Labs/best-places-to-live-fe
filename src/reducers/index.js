@@ -8,7 +8,6 @@ import reduceReducers from "reduce-reducers";
 import initialState from "../reducers/initialState";
 import topCitiesReducer from "./topCities";
 
-console.log(initialState);
 const reducer = reduceReducers(
   initialState,
   loginReducer,

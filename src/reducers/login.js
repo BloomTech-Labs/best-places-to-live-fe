@@ -7,7 +7,6 @@ import {
 import initialState from "./initialState";
 
 const loginReducer = (state = initialState, action) => {
-  console.log("reducer", action);
   switch (action.type) {
     case LOGIN_INITIALIZE:
       return {

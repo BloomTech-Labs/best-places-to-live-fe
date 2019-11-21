@@ -26,7 +26,6 @@ const factorsReducer = (state = initialState, action) => {
         fetchFactorsError: ""
       };
     case FETCH_FACTORS_FAIL:
-      console.log("reducer", action);
       return {
         ...state,
         isFetching: false,

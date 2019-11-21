@@ -16,7 +16,6 @@ function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
     if (response === "Successful" && page === "landing") {
       rest.history.push("/search");
     } else {
-      console.log(response);
     }
   };
 
@@ -34,6 +33,9 @@ function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
         placeholder="location"
         name="location"
         value={location}
+        width={150}
+        fontSize={2}
+        maxWidth="100%"
         onChange={e => setLocation(e.target.value)}
         onKeyDown={e => handleInput(e)}
       />

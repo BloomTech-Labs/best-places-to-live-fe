@@ -22,13 +22,11 @@ const ExplorePage = ({
   const onSubmit = async data => {
     // event.preventDefault();
     const selectedFactors = Object.keys(data).filter(factor => data[factor]);
-    console.log("checkbox data", selectedFactors);
     const response = await fetchLocationsByFactors(selectedFactors);
 
     if (response === "Successful") {
       rest.history.push("/search");
     } else {
-      console.log(response);
     }
   };
 

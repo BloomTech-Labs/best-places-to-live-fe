@@ -1,4 +1,3 @@
-import { axiosWithAuth } from "../utils/axiosWithAuth.js";
 import {
   FETCH_TOP_CITIES_INITIALIZE,
   FETCH_TOP_CITIES_SUCCESS,
@@ -14,7 +13,6 @@ export const fetchTopCities = data => dispatch => {
       input1: ["score_total"]
     })
     .then(res => {
-      console.log(res.data);
       dispatch({
         type: FETCH_TOP_CITIES_SUCCESS,
         payload: res.data
