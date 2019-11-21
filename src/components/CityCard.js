@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Card, Image, Text } from "../styles/index";
+import React from "react";
+import { Card, Image, Text, Hero } from "../styles/index";
 import useWindowSize from "../hooks/useWindowSize";
 
 function CityCard({ city, page }) {
@@ -9,66 +9,63 @@ function CityCard({ city, page }) {
     return (
       <Card
         as="article"
-        border={"1.5px solid #333"}
+        borderRadius={3}
         p={[1, 2]}
         width={{ _: 1, sm: 1, md: 1 / 2, lg: 1 / 4 }}
         m={2}
         flex="0 0 50%"
+        background={` 
+          linear-gradient(
+            rgba(0, 0, 0, 0.30), 
+            rgba(0, 0, 0, 0.30)
+          ),
+          url(${city.photoMobile})`}
+        backgroundSize="cover"
+        backgroundPosition="center"
+        padding="130px 100px 100px"
       >
-        <Text as="h2">{city.short_name}</Text>
-        <Text as="h4">{city.state}</Text>
-        <Text as="h6">Population: {city.population}</Text>
-        <Image
-          src={city.photoMobile}
-          alt={city.name}
-          width={"100%"}
-          maxWidth={300}
-        />
+        <Text as="h1" color="white">
+          {city.short_name}
+        </Text>
+        <Text as="h2" color="white">
+          {city.state}
+        </Text>
+        <Text as="h6" color="white">
+          {" "}
+          Population: {city.population}
+        </Text>
       </Card>
     );
   }
   return (
     <Card
       as="article"
-      border={"1.5px solid #333"}
+      borderRadius={3}
       p={[1, 2]}
       width={{ _: 1, sm: 1, md: 1 / 2, lg: 1 / 4 }}
       m={2}
+      background={` 
+          linear-gradient(
+            rgba(0, 0, 0, 0.30), 
+            rgba(0, 0, 0, 0.30)
+          ),
+          
+          url(${city.photoWeb})`}
+      backgroundSize="cover"
+      backgroundPosition="center"
+      backgroundRepeat="no-repeat"
     >
-      <Text as="h2">{city.short_name}</Text>
-      <Text as="h4">{city.state}</Text>
-      <Text as="h6">Population: {city.population}</Text>
-      <Image
-        src={city.photoWeb}
-        alt={city.name}
-        width={"100%"}
-        maxWidth={300}
-      />
+      <Text as="h1" color="white">
+        {city.short_name}
+      </Text>
+      <Text as="h2" color="white">
+        {city.state}
+      </Text>
+      <Text as="h6" color="white">
+        Population: {city.population}
+      </Text>
     </Card>
   );
 }
 
-//will probably props drill city card, state will have array of cities for search results
 export default CityCard;
-
-/* 
-    <Card
-      as="article"
-      border={"1.5px solid #333"}
-      p={[1, 2]}
-      width={{ _: 1, sm: 1, md: 1 / 2, lg: 1 / 4 }}
-      m={2}
-    >
-      <Text as="h2">{city.short_name}</Text>
-      <Text as="h4">{city.state}</Text>
-      <Text as="h6">Population: {city.population}</Text>
-      <Image
-        src={city.photoWeb}
-        alt={city.name}
-        width={"100%"}
-        maxWidth={300}
-      />
-    </Card>
-
-
-*/
