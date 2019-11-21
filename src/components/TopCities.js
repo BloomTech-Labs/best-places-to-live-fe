@@ -19,10 +19,6 @@ function TopCities({ topCities, fetchTopCitiesError, fetchTopCities }) {
         display="flex"
         justifyContent="center"
       ></Flex>
-      <Text as="h2" textAlign="center">
-        {" "}
-        Top Cities
-      </Text>
       <Flex
         justifyContent="center"
         flexDirection="row"

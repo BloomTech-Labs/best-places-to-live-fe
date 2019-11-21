@@ -52,11 +52,9 @@ Moving is an inevitable part of life that most people will experience. Often, th
 
 #### Front end deployed to `Netlify`
 
-#### [Back end](🚫link to back end repo here) built using:
+#### [Back end](https://github.com/Lambda-School-Labs/best-places-to-live-be/backend/blob/master/README.md) built using:
 
 MongoDB, Express and NodeJS, REST API
-
-🚫 List the rest of the back end end features and libraries in the same format as the framework above
 
 # APIs
 

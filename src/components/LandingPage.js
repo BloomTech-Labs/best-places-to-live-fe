@@ -49,6 +49,9 @@ const LandingPage = props => {
           {/* <Flex>For the category/ factors cards</Flex> */}
         </Container>
         <Container textAlign="center">
+          <Text as="h2" textAlign="center">
+            Popular Cities
+          </Text>
           <TopCities />
         </Container>
       </Container>
