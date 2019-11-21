@@ -13,13 +13,19 @@ const LandingPage = props => {
           justifyContent="center"
           alignItems="center"
           flexDirection="column"
-          backgroundImage={`url(${heroImg})`}
+          background={` 
+          linear-gradient(
+            rgba(0, 0, 0, 0.30), 
+            rgba(0, 0, 0, 0.30)
+          ),
+          
+          url(${heroImg})`}
           backgroundSize="cover"
           backgroundPosition="center"
           padding="100px"
         >
           <Box>
-            <Text textAlign="center" as="h2">
+            <Text textAlign="center" as="h2" color="white">
               Live in the Best Place
             </Text>
           </Box>
