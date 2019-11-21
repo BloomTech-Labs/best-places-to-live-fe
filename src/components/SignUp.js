@@ -64,7 +64,9 @@ function SignUp({ signup, error, ...rest }) {
           <Button type="submit" disabled={!formState.isValid}>
             Join BPTL
           </Button>
-          <Text color="primary">Already have an account?</Text>
+          <Text as="h3" color="black">
+            Already have an account?
+          </Text>
           <StyledLink to="/login">Log In</StyledLink>
         </Container>
       </Form>

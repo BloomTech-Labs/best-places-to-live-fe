@@ -48,8 +48,6 @@ function Login({ login, error, ...rest }) {
           <Button type="submit" disabled={!formState.isValid}>
             Login
           </Button>
-          <Text>Already have an account?</Text>
-          <StyledLink to="/login">Log In</StyledLink>
         </Container>
       </Form>
     </Container>
