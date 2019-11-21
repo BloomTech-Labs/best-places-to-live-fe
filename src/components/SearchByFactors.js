@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import { fetchLocationsByFactors } from "../actions/locationsByFactors";
 import { fetchFactors } from "../actions/factors";
@@ -16,7 +16,8 @@ const SearchByFactors = ({
   isFetching,
   factors,
   fetchFactorsError,
-  fetchLocationsByFactorsError
+  fetchLocationsByFactorsError,
+  ...rest
 }) => {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = async data => {
@@ -26,7 +27,7 @@ const SearchByFactors = ({
     const response = await fetchLocationsByFactors(selectedFactors);
 
     if (response === "Successful") {
-      history.push("/search");
+      rest.history.push("/search");
     } else {
       console.log(response);
     }
@@ -70,8 +71,7 @@ const mapStateToProps = state => {
   };
 };
 
-export default withRouter(
-  connect(mapStateToProps, { fetchLocationsByFactors, fetchFactors })(
-    SearchByFactors
-  )
-);
+export default connect(mapStateToProps, {
+  fetchLocationsByFactors,
+  fetchFactors
+})(SearchByFactors);

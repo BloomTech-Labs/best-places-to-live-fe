@@ -3,9 +3,9 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import * as rtl from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import { initialState } from "./reducers/index";
-import reducer from "./reducers";
-import App from "./App";
+import { initialState } from "../reducers/index";
+import reducer from "../reducers";
+import TopCities from "./TopCities";
 
 function renderWithRedux({ initialState }) {
   const store = createStore(reducer, initialState);
@@ -16,6 +16,6 @@ function renderWithRedux({ initialState }) {
   };
 }
 
-test("Login render with redux with defaults", () => {
-  const wrapper = renderWithRedux(<App />);
+test("can render with redux with defaults", () => {
+  const wrapper = renderWithRedux(<TopCities />);
 });

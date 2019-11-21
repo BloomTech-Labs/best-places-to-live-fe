@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
 import { Nav, StyledNavLink } from "../styles/index";
 
 const NavBar = ({ isLoggedIn }) => {
@@ -33,10 +32,9 @@ const NavBar = ({ isLoggedIn }) => {
 };
 
 const mapStatetoProps = state => {
-  console.log(state);
   return {
     isLoggedIn: state.user.isLoggedIn
   };
 };
 
-export default withRouter(connect(mapStatetoProps)(NavBar));
+export default connect(mapStatetoProps)(NavBar);
