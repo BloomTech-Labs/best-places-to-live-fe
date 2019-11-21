@@ -18,9 +18,7 @@ const topCitiesReducer = (state = initialState, action) => {
       return {
         ...state,
         topCities: action.payload.filter(
-          city =>
-            city.photo !=
-            "https://letsmovehomie-city-photoes.nyc3.digitaloceanspaces.com/no-photo-available.jpg"
+          city => city.photoWeb !== null && city.photoMobile !== null
         ),
         isFetching: false,
         fetchTopCitiesError: ""
