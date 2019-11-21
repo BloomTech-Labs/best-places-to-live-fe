@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Image, Text, Hero } from "../styles/index";
+import { Container, Card, Image, Text, Hero } from "../styles/index";
 import useWindowSize from "../hooks/useWindowSize";
 
 function CityCard({ city, page }) {
@@ -55,15 +55,17 @@ function CityCard({ city, page }) {
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
     >
-      <Text as="h1" color="white">
-        {city.short_name}
-      </Text>
-      <Text as="h2" color="white">
-        {city.state}
-      </Text>
-      <Text as="h6" color="white">
-        Population: {city.population}
-      </Text>
+      <Container textAlign="center">
+        <Text as="h1" color="white">
+          {city.short_name}
+        </Text>
+        <Text as="h2" color="white">
+          {city.state}
+        </Text>
+        <Text as="h6" color="white">
+          Population: {city.population}
+        </Text>
+      </Container>
     </Card>
   );
 }

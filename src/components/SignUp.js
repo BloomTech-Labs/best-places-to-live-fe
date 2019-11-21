@@ -47,7 +47,7 @@ function SignUp({ signup, error, ...rest }) {
         {errors.password && "Your password is required"}
         <Input
           type="Password"
-          placeholder="password"
+          placeholder="Password"
           name="password"
           ref={register({ required: true })}
         />
@@ -62,12 +62,16 @@ function SignUp({ signup, error, ...rest }) {
           {/* <SocialButton Google>Continue with Google</SocialButton>
           <SocialButton Facebook>Continue with Facebook</SocialButton> */}
           <Button type="submit" disabled={!formState.isValid}>
-            Join BPTL
+            Sign Up
           </Button>
-          <Text as="h3" color="black">
+          <Text as="h1" color="black">
             Already have an account?
           </Text>
-          <StyledLink to="/login">Log In</StyledLink>
+          <StyledLink to="/login">
+            <Text as="h1" color="blue">
+              Log In
+            </Text>
+          </StyledLink>
         </Container>
       </Form>
     </Container>
