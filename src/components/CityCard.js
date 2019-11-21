@@ -19,7 +19,7 @@ function CityCard({ city, page }) {
             rgba(0, 0, 0, 0.30), 
             rgba(0, 0, 0, 0.30)
           ),
-          url(${city.photoMobile})`}
+          url(${city.secure_url})`}
         backgroundSize="cover"
         backgroundPosition="center"
         padding="130px 100px 100px"
@@ -50,7 +50,7 @@ function CityCard({ city, page }) {
             rgba(0, 0, 0, 0.30)
           ),
           
-          url(${city.photoWeb})`}
+          url(${city.secure_url})`}
       backgroundSize="cover"
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
