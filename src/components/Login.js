@@ -1,6 +1,5 @@
 import React from "react";
 import useForm from "react-hook-form";
-import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { login } from "../actions/login.js";
 import Error from "./Error";
@@ -14,7 +13,7 @@ import {
   StyledLink
 } from "../styles/index";
 
-function Login({ login, history, error }) {
+function Login({ login, error, ...rest }) {
   const { register, handleSubmit, errors, formState } = useForm({
     mode: "onChange"
   });
@@ -24,7 +23,7 @@ function Login({ login, history, error }) {
     const response = await login(data);
     console.log(response);
     if (response === "Successful") {
-      history.push("/profile");
+      rest.history.push("/profile");
     } else {
       console.log(response);
     }
@@ -69,4 +68,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default withRouter(connect(mapStateToProps, { login })(Login));
+export default connect(mapStateToProps, { login })(Login);

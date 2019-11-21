@@ -1,6 +1,5 @@
 import React from "react";
 import useForm from "react-hook-form";
-import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { signup } from "../actions/signup.js";
 import Error from "./Error";
@@ -14,7 +13,7 @@ import {
   StyledLink
 } from "../styles/index";
 
-function SignUp({ signup, history, error }) {
+function SignUp({ signup, error, ...rest }) {
   const { register, handleSubmit, errors, formState } = useForm({
     mode: "onChange"
   });
@@ -22,7 +21,7 @@ function SignUp({ signup, history, error }) {
     const response = await signup(data);
 
     if (response === "Successful") {
-      history.push("/");
+      rest.history.push("/");
     } else {
       console.log(response);
     }

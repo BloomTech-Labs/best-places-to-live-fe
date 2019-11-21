@@ -14,7 +14,7 @@ const store = createStore(reducer, initialState);
 
 // app.test.js
 it("Login Page Renders", () => {
-  const { getByText, debug } = rtl.render(
+  const { getByText } = rtl.render(
     <Provider store={store}>
       <Router history={history}>
         <Login />
@@ -22,6 +22,5 @@ it("Login Page Renders", () => {
     </Provider>
   );
 
-  debug();
   getByText(/awefaewf/i);
 });
