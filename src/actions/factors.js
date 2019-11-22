@@ -29,7 +29,7 @@ export const fetchFactors = () => dispatch => {
     { rank: 11, factor: "score_safety", displayName: "Safety" },
     { rank: 12, factor: "score_startups", displayName: "Start Ups" },
     { rank: 13, factor: "score_taxation", displayName: "Taxation" },
-    { rank: 14, factor: "population", displayName: "Population" }
+    { rank: 14, factor: "population_size", displayName: "Population" }
   ];
 
   dispatch({ type: FETCH_FACTORS_SUCCESS, payload: factors });

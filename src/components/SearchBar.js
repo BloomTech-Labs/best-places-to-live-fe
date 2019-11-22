@@ -29,7 +29,7 @@ function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
       {error && <Error error={error} />}
       <Input
         type="text"
-        placeholder="location"
+        placeholder="Find a city"
         name="location"
         value={location}
         width={150}
