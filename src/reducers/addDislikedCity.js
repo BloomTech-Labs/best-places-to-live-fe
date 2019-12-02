@@ -19,15 +19,15 @@ const addDislikedCityReducer = (state = initialState, action) => {
         ...state,
         user: {
           ...state.user,
-          dilikes: action.payload
+          dislikes: action.payload
         },
         isFetching: false,
-        addLikedCitiesError: ""
+        addDislikedCitiesError: ""
       };
     case ADD_DISLIKED_CITY_FAIL:
       return {
         ...state,
-        addLikedCitiesError: action.payload
+        addDislikedCitiesError: action.payload
       };
     default:
       return state;
