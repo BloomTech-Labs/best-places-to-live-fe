@@ -4,6 +4,7 @@ import {
   ADD_DISLIKED_CITY_INITIALIZE,
   ADD_DISLIKED_CITY_SUCCESS
 } from "./index";
+import { toast } from "react-toastify";
 
 export const addDislikedCity = data => dispatch => {
   dispatch({ type: ADD_DISLIKED_CITY_INITIALIZE });
@@ -16,6 +17,7 @@ export const addDislikedCity = data => dispatch => {
         type: ADD_DISLIKED_CITY_SUCCESS,
         payload: res.data
       });
+      toast.success("City Disliked Successfully");
       return "Successful";
     })
     .catch(err => {
@@ -23,6 +25,7 @@ export const addDislikedCity = data => dispatch => {
         type: ADD_DISLIKED_CITY_FAIL,
         payload: { err, message: err.message }
       });
+      toast.warn("City Disliked Failure");
       return "Failure";
     });
 };
