@@ -13,7 +13,9 @@ const initialState = {
   fetchFactorsError: "",
   loginError: "",
   signupError: "",
-  fetchTopCitiesError: ""
+  fetchTopCitiesError: "",
+  addLikedCitiesError: "",
+  addDislikedCitiesError: ""
 };
 
 export default initialState;
