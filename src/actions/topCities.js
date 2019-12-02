@@ -4,6 +4,7 @@ import {
   FETCH_TOP_CITIES_FAIL
 } from "./index";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export const fetchTopCities = data => dispatch => {
   dispatch({ type: FETCH_TOP_CITIES_INITIALIZE });
@@ -23,5 +24,6 @@ export const fetchTopCities = data => dispatch => {
         type: FETCH_TOP_CITIES_FAIL,
         payload: { err, message: err.message }
       });
+      toast.error(err.message);
     });
 };
