@@ -6,7 +6,7 @@ import {
   DELETE_DISLIKED_CITY_SUCCESS
 } from "./index";
 
-export const deleteLikedCity = data => dispatch => {
+export const deleteDislikedCity = data => dispatch => {
   dispatch({ type: DELETE_DISLIKED_CITY_INITIALIZE });
 
   /* Data in body of request is {id, cityID} */

@@ -4,6 +4,7 @@ import { Container, Flex, Text, Button } from "../styles/index";
 import { logout } from "../actions/logout";
 import Footer from "./Footer";
 import EditFactors from "./EditFactors";
+import LikedCities from "./LikedCities";
 
 function ProfilePage({ user, history, logout, ...rest }) {
   const logoutHandler = () => {
@@ -30,6 +31,7 @@ function ProfilePage({ user, history, logout, ...rest }) {
         </Text>
         <Button onClick={logoutHandler}>Logout </Button>
       </Flex>
+      <LikedCities />
       <EditFactors />
       <Footer />
     </Container>
