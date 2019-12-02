@@ -53,7 +53,7 @@ function SearchResultsPage({ displayedCities, ...rest }) {
           flexWrap="wrap"
         >
           {displayedCities.map(city => (
-            <CityCard key={city._id} city={city} />
+            <CityCard {...rest} key={city._id} city={city} />
           ))}
         </Flex>
         <Footer />

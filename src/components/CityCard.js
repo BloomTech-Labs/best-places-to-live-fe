@@ -4,7 +4,7 @@ import useWindowSize from "../hooks/useWindowSize";
 import LikeIcon from "./LikeIcon";
 import DislikeIcon from "./DislikeIcon";
 
-function CityCard({ city, page }) {
+function CityCard({ city, page, ...rest }) {
   const size = useWindowSize();
   let flexSizeProperty;
   if (page && size.width <= 1000) {
@@ -31,8 +31,8 @@ function CityCard({ city, page }) {
       backgroundRepeat="no-repeat"
     >
       <Flex justifyContent="space-between" p={[1, 2]}>
-        <LikeIcon />
-        <DislikeIcon />
+        <LikeIcon {...rest} />
+        <DislikeIcon {...rest} />
       </Flex>
       <Container p={[1, 2]}>
         <Text as="h1" color="white">
