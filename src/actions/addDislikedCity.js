@@ -17,8 +17,7 @@ export const addDislikedCity = data => dispatch => {
         type: ADD_DISLIKED_CITY_SUCCESS,
         payload: res.data
       });
-      toast.success("City Disliked Successfully");
-      return "Successful";
+      toast.success("Success - City was added to your dislikes!");
     })
     .catch(err => {
       dispatch({
@@ -26,6 +25,5 @@ export const addDislikedCity = data => dispatch => {
         payload: { err, message: err.message }
       });
       toast.error(err.message);
-      return "Failure";
     });
 };
