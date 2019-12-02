@@ -6,11 +6,6 @@ import { FaTimes } from "react-icons/fa";
 function DislikeIcon({ addDislikedCity, ...rest }) {
   const handleClick = async () => {
     const response = await addDislikedCity();
-
-    if (response === "Failure") {
-      rest.history.push("/signup");
-    } else {
-    }
   };
   return (
     <FaTimes

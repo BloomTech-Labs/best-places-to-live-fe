@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { fetchLocationsByName } from "../actions/locationsByName";
 import { connect } from "react-redux";
-import Error from "./Error";
 import { Container, Input } from "../styles/index";
 
 function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
@@ -26,7 +25,6 @@ function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
 
   return (
     <Container width="100%" display="flex" justifyContent="center">
-      {error && <Error error={error} />}
       <Input
         type="text"
         placeholder="Find a city"
@@ -45,8 +43,7 @@ function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
 const mapStateToProps = state => {
   const { isFetching } = state;
   return {
-    isFetching,
-    error: state.fetchLocationsByNameError
+    isFetching
   };
 };
 

@@ -12,7 +12,7 @@ const addLikedCityReducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: true,
-        addLikedCitiesError: ""
+        error: ""
       };
     case ADD_LIKED_CITY_SUCCESS:
       return {
@@ -22,12 +22,12 @@ const addLikedCityReducer = (state = initialState, action) => {
           likes: action.payload
         },
         isFetching: false,
-        addLikedCitiesError: ""
+        error: ""
       };
     case ADD_LIKED_CITY_FAIL:
       return {
         ...state,
-        addLikedCitiesError: action.payload
+        error: action.payload
       };
     default:
       return state;

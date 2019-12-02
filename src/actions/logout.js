@@ -1,4 +1,5 @@
 import { LOGOUT } from "./index";
+import { toast } from "react-toastify";
 
 export const logout = credentials => dispatch => {
   dispatch({ type: LOGOUT });
@@ -9,4 +10,5 @@ export const logout = credentials => dispatch => {
   dispatch({
     type: LOGOUT
   });
+  toast.success("Logout Successful! - See you soon!");
 };

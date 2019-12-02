@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import Footer from "./Footer";
 import { fetchLocationsByFactors } from "../actions/locationsByFactors";
 import { fetchFactors } from "../actions/factors";
-import Error from "./Error";
 import { connect } from "react-redux";
 import useForm from "react-hook-form";
 import CheckOval from "./CheckOval";
@@ -14,8 +13,6 @@ const ExplorePage = ({
   fetchFactors,
   isFetching,
   factors,
-  fetchFactorsError,
-  fetchLocationsByFactorsError,
   ...rest
 }) => {
   const { register, handleSubmit, errors } = useForm();
@@ -57,10 +54,6 @@ const ExplorePage = ({
           Explore
         </Text>
       </Hero>
-      {fetchFactorsError && <Error error={fetchFactorsError} />}
-      {fetchLocationsByFactorsError && (
-        <Error error={fetchLocationsByFactorsError} />
-      )}
       <form onSubmit={handleSubmit(onSubmit)}>
         <Container
           display="flex"
@@ -89,9 +82,7 @@ const ExplorePage = ({
 const mapStateToProps = state => {
   return {
     isFetching: state.isFetching,
-    factors: state.user.factors,
-    fetchFactorsError: state.fetchFactorsError,
-    fetchLocationsByFactorsError: state.fetchLocationsByFactorsError
+    factors: state.user.factors
   };
 };
 

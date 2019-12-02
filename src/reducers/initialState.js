@@ -8,14 +8,7 @@ const initialState = {
   displayedCities: [],
   topCities: [],
   isFetching: false,
-  fetchLocationsByFactorsError: "",
-  fetchLocationsByNameError: "",
-  fetchFactorsError: "",
-  loginError: "",
-  signupError: "",
-  fetchTopCitiesError: "",
-  addLikedCitiesError: "",
-  addDislikedCitiesError: ""
+  error: ""
 };
 
 export default initialState;
