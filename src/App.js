@@ -15,6 +15,7 @@ import GlobalStyle from "./styles/global";
 import theme from "./theme";
 import { initializeAnalytics } from "./googleAnalytics/googleAnalytics";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const history = createBrowserHistory();
 

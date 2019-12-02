@@ -25,7 +25,7 @@ export const addDislikedCity = data => dispatch => {
         type: ADD_DISLIKED_CITY_FAIL,
         payload: { err, message: err.message }
       });
-      toast.warn("City Disliked Failure");
+      toast.error(err.message);
       return "Failure";
     });
 };
