@@ -5,7 +5,12 @@ import { Container, Flex, Text } from "../styles/index";
 import Error from "./Error";
 import { fetchTopCities } from "../actions/topCities";
 
-function TopCities({ topCities, fetchTopCitiesError, fetchTopCities }) {
+function TopCities({
+  topCities,
+  fetchTopCitiesError,
+  fetchTopCities,
+  ...props
+}) {
   useEffect(() => {
     fetchTopCities({});
   }, [fetchTopCities]);
@@ -26,7 +31,7 @@ function TopCities({ topCities, fetchTopCitiesError, fetchTopCities }) {
         overflowX="scroll"
       >
         {topCities.map(city => (
-          <CityCard key={city._id} city={city} page="topCities" />
+          <CityCard key={city.id} city={city} page="topCities" {...props} />
         ))}
       </Flex>
     </Container>
