@@ -1,4 +1,4 @@
-import axios from "axios";
+import { axiosWithAuth } from "../utils/axiosWithAuth.js";
 import {
   ADD_DISLIKED_CITY_FAIL,
   ADD_DISLIKED_CITY_INITIALIZE,
@@ -9,7 +9,7 @@ export const addDislikedCity = data => dispatch => {
   dispatch({ type: ADD_DISLIKED_CITY_INITIALIZE });
 
   /* Data in body of request is {id, cityID} */
-  return axios
+  return axiosWithAuth()
     .post("/users", data)
     .then(res => {
       dispatch({
