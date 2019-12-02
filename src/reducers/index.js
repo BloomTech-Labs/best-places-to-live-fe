@@ -9,6 +9,8 @@ import initialState from "../reducers/initialState";
 import topCitiesReducer from "./topCities";
 import addLikedCityReducer from "./addLikedCity";
 import addDislikedCityReducer from "./addDislikedCity";
+import deleteLikedCityReducer from "./deleteLikedCity";
+import deleteDislikedCityReducer from "./deleteDislikedCity";
 
 const reducer = reduceReducers(
   initialState,
@@ -20,7 +22,9 @@ const reducer = reduceReducers(
   logoutReducer,
   topCitiesReducer,
   addLikedCityReducer,
-  addDislikedCityReducer
+  addDislikedCityReducer,
+  deleteLikedCityReducer,
+  deleteDislikedCityReducer
 );
 
 export default reducer;

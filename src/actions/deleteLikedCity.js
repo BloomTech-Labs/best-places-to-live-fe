@@ -27,3 +27,5 @@ export const deleteLikedCity = data => dispatch => {
       toast.error(err.message);
     });
 };
+
+export default deleteLikedCityReducer;

@@ -11,7 +11,7 @@ export const editFactors = data => dispatch => {
   axiosWithAuth()
     .put("/backendpointneeded", data)
     .then(res => {
-      dispatch({ type: EDIT_FACTORS_SUCCESS });
+      dispatch({ type: EDIT_FACTORS_SUCCESS, payload: res.data });
     })
     .catch(err => {
       dispatch({
