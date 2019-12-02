@@ -7,6 +7,7 @@ import logoutReducer from "./logout";
 import reduceReducers from "reduce-reducers";
 import initialState from "../reducers/initialState";
 import topCitiesReducer from "./topCities";
+import addLikedCityReducer from "./addLikedCity";
 
 const reducer = reduceReducers(
   initialState,
@@ -16,7 +17,8 @@ const reducer = reduceReducers(
   locationsByFactorsReducer,
   locationsByNameReducer,
   logoutReducer,
-  topCitiesReducer
+  topCitiesReducer,
+  addLikedCityReducer
 );
 
 export default reducer;

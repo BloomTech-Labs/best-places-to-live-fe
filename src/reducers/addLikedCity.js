@@ -12,21 +12,22 @@ const addLikedCityReducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: true,
-        fetchLocationsByFactorsError: ""
+        addLikedCitiesError: ""
       };
     case ADD_LIKED_CITY_SUCCESS:
       return {
         ...state,
-        displayedCities: action.payload.filter(
-          city => city.photoWeb !== null && city.photoMobile !== null
-        ),
+        user: {
+          ...state.user,
+          likes: action.payload
+        },
         isFetching: false,
-        fetchLocationsByFactorsError: ""
+        addLikedCitiesError: ""
       };
     case ADD_LIKED_CITY_FAIL:
       return {
         ...state,
-        fetchLocationsByFactorsError: action.payload
+        addLikedCitiesError: action.payload
       };
     default:
       return state;
