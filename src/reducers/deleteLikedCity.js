@@ -34,4 +34,4 @@ const deleteLikedCityReducer = (state = initialState, action) => {
   }
 };
 
-export default addLikedCityReducer;
+export default deleteLikedCityReducer;

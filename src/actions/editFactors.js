@@ -1,4 +1,5 @@
 import { toast } from "react-toastify";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 import {
   EDIT_FACTORS_INITIALIZE,
   EDIT_FACTORS_SUCCESS,
@@ -12,6 +13,7 @@ export const editFactors = data => dispatch => {
     .put("/backendpointneeded", data)
     .then(res => {
       dispatch({ type: EDIT_FACTORS_SUCCESS, payload: res.data });
+      toast.success("Factors Saved!");
     })
     .catch(err => {
       dispatch({
