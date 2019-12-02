@@ -12,7 +12,7 @@ const topCitiesReducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: true,
-        fetchTopCitiesError: ""
+        error: ""
       };
     case FETCH_TOP_CITIES_SUCCESS:
       return {
@@ -21,12 +21,12 @@ const topCitiesReducer = (state = initialState, action) => {
           city => city.photoWeb !== null && city.photoMobile !== null
         ),
         isFetching: false,
-        fetchTopCitiesError: ""
+        error: ""
       };
     case FETCH_TOP_CITIES_FAIL:
       return {
         ...state,
-        fetchTopCitiesError: action.payload
+        error: action.payload
       };
     default:
       return state;
