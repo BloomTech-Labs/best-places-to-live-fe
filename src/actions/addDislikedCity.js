@@ -1,10 +1,10 @@
+import { toast } from "react-toastify";
 import { axiosWithAuth } from "../utils/axiosWithAuth.js";
 import {
   ADD_DISLIKED_CITY_FAIL,
   ADD_DISLIKED_CITY_INITIALIZE,
   ADD_DISLIKED_CITY_SUCCESS
 } from "./index";
-import { toast } from "react-toastify";
 
 export const addDislikedCity = data => dispatch => {
   dispatch({ type: ADD_DISLIKED_CITY_INITIALIZE });
