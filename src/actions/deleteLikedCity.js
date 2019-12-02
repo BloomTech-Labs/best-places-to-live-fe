@@ -1,27 +1,27 @@
 import { toast } from "react-toastify";
 import { axiosWithAuth } from "../utils/axiosWithAuth.js";
 import {
-  ADD_LIKED_CITY_FAIL,
-  ADD_LIKED_CITY_INITIALIZE,
-  ADD_LIKED_CITY_SUCCESS
+  DELETE_LIKED_CITY_FAIL,
+  DELETE_LIKED_CITY_INITIALIZE,
+  DELETE_LIKED_CITY_SUCCESS
 } from "./index";
 
-export const addLikedCity = data => dispatch => {
-  dispatch({ type: ADD_LIKED_CITY_INITIALIZE });
+export const deleteLikedCity = data => dispatch => {
+  dispatch({ type: DELETE_LIKED_CITY_INITIALIZE });
 
   /* Data in body of request is {id, cityID} */
   return axiosWithAuth()
-    .post("/users", data)
+    .delete("/users", data)
     .then(res => {
       dispatch({
-        type: ADD_LIKED_CITY_SUCCESS,
+        type: DELETE_LIKED_CITY_SUCCESS,
         payload: res.data
       });
-      toast.success("Success - City was added to your likes!");
+      toast.success("Success - City was removed from your likes!");
     })
     .catch(err => {
       dispatch({
-        type: ADD_LIKED_CITY_FAIL,
+        type: DELETE_LIKED_CITY_FAIL,
         payload: { err, message: err.message }
       });
       toast.error(err.message);
