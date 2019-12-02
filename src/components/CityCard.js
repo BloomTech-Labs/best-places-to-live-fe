@@ -3,6 +3,8 @@ import { Container, Card, Flex, Image, Text, Hero } from "../styles/index";
 import useWindowSize from "../hooks/useWindowSize";
 import { IconContext } from "react-icons";
 import { FaRegHeart, FaTimes } from "react-icons/fa";
+import LikeIcon from "./LikeIcon";
+import DislikeIcon from "./DislikeIcon";
 
 function CityCard({ city, page }) {
   const size = useWindowSize();
@@ -33,8 +35,8 @@ function CityCard({ city, page }) {
       backgroundRepeat="no-repeat"
     >
       <Flex justifyContent="space-between">
-        <FaRegHeart style={{ color: "white" }} />
-        <FaTimes style={{ color: "white" }} />
+        <LikeIcon />
+        <DislikeIcon />
       </Flex>
       <Container>
         <Text as="h1" color="white">
