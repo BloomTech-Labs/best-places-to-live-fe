@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Card, Flex, Image, Text, Hero } from "../styles/index";
 import useWindowSize from "../hooks/useWindowSize";
+import { IconContext } from "react-icons";
 import { FaRegHeart, FaTimes } from "react-icons/fa";
 
 function CityCard({ city, page }) {
@@ -24,10 +25,11 @@ function CityCard({ city, page }) {
         backgroundSize="cover"
         backgroundPosition="center"
         padding="130px 100px 100px"
+        backgroundRepeat="no-repeat"
       >
-        <Flex>
-          <FaRegHeart />
-          <FaTimes />
+        <Flex justifyContent="space-between">
+          <FaRegHeart style={{ color: "white" }} />
+          <FaTimes style={{ color: "white" }} />
         </Flex>
         <Container>
           <Text as="h1" color="white">
@@ -62,7 +64,7 @@ function CityCard({ city, page }) {
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
     >
-      <Flex>
+      <Flex justifyContent="space-between">
         <FaRegHeart />
         <FaTimes />
       </Flex>
