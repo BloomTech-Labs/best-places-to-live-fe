@@ -2,22 +2,15 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import CityCard from "./CityCard";
 import { Container, Flex, Text } from "../styles/index";
-import Error from "./Error";
 import { fetchTopCities } from "../actions/topCities";
 
-function TopCities({
-  topCities,
-  fetchTopCitiesError,
-  fetchTopCities,
-  ...props
-}) {
+function TopCities({ topCities, fetchTopCities, ...props }) {
   useEffect(() => {
     fetchTopCities({});
   }, [fetchTopCities]);
 
   return (
     <Container p={`0 15px`}>
-      {fetchTopCitiesError && <Error error={fetchTopCitiesError} />}
       <Flex
         flexDirection="column"
         alignItems="center"
@@ -40,8 +33,7 @@ function TopCities({
 
 const mapStatetoProps = state => {
   return {
-    topCities: state.topCities,
-    fetchTopCitiesError: state.fetchTopCitiesError
+    topCities: state.topCities
   };
 };
 
