@@ -1,6 +1,7 @@
 import React from "react";
-import { Container, Card, Image, Text, Hero } from "../styles/index";
+import { Container, Card, Flex, Image, Text, Hero } from "../styles/index";
 import useWindowSize from "../hooks/useWindowSize";
+import { FaRegHeart, FaTimes } from "react-icons/fa";
 
 function CityCard({ city, page }) {
   const size = useWindowSize();
@@ -24,16 +25,22 @@ function CityCard({ city, page }) {
         backgroundPosition="center"
         padding="130px 100px 100px"
       >
-        <Text as="h1" color="white">
-          {city.short_name}
-        </Text>
-        <Text as="h2" color="white">
-          {city.state}
-        </Text>
-        <Text as="h6" color="white">
-          {" "}
-          Population: {city.population}
-        </Text>
+        <Flex>
+          <FaRegHeart />
+          <FaTimes />
+        </Flex>
+        <Container>
+          <Text as="h1" color="white">
+            {city.short_name}
+          </Text>
+          <Text as="h2" color="white">
+            {city.state}
+          </Text>
+          <Text as="h6" color="white">
+            {" "}
+            Population: {city.population}
+          </Text>
+        </Container>
       </Card>
     );
   }
@@ -55,6 +62,10 @@ function CityCard({ city, page }) {
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
     >
+      <Flex>
+        <FaRegHeart />
+        <FaTimes />
+      </Flex>
       <Container textAlign="center">
         <Text as="h1" color="white">
           {city.short_name}
