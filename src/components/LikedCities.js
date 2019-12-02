@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 import CityCard from "./CityCard";
 
 function LikedCities({ cities, deleteLikedCity, ...rest }) {
+  const deleteLike = "deleteLike";
+
   return (
     <>
       <Container p={`0 15px`}>
@@ -19,7 +21,13 @@ function LikedCities({ cities, deleteLikedCity, ...rest }) {
           flexWrap="wrap"
         >
           {cities.map(city => (
-            <CityCard page="profile" {...rest} key={city.id} city={city} />
+            <CityCard
+              actionType={deleteLike}
+              page="profile"
+              {...rest}
+              key={city.id}
+              city={city}
+            />
           ))}
         </Flex>
       </Container>
