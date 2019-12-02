@@ -30,7 +30,7 @@ function CityCard({ city, page }) {
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
     >
-      <Flex justifyContent="space-between" p={[1, 1]}>
+      <Flex justifyContent="space-between" p={[1, 2]}>
         <LikeIcon />
         <DislikeIcon />
       </Flex>
