@@ -10,7 +10,7 @@ function LikedCities({ cities, deleteLikedCity, ...rest }) {
       <Container p={`0 15px`}>
         <Text as="h2" textAlign="center">
           {" "}
-          Like Cities
+          Liked Cities
         </Text>
         <Flex
           as="article"
@@ -19,7 +19,7 @@ function LikedCities({ cities, deleteLikedCity, ...rest }) {
           flexWrap="wrap"
         >
           {cities.map(city => (
-            <CityCard {...rest} key={city.id} city={city} />
+            <CityCard page="profile" {...rest} key={city.id} city={city} />
           ))}
         </Flex>
       </Container>

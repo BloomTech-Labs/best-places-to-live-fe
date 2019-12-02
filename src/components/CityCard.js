@@ -30,8 +30,11 @@ function CityCard({ city, page, ...rest }) {
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
     >
-      <Flex justifyContent="space-between" p={[1, 2]}>
-        <LikeIcon {...rest} />
+      <Flex
+        justifyContent={page !== "profile" ? "space-between" : "flex-end"}
+        p={[1, 2]}
+      >
+        {page !== "profile" && <LikeIcon {...rest} />}
         <DislikeIcon {...rest} />
       </Flex>
       <Container p={[1, 2]}>
