@@ -1,8 +1,6 @@
 import React from "react";
 import { Container, Card, Flex, Image, Text, Hero } from "../styles/index";
 import useWindowSize from "../hooks/useWindowSize";
-import { IconContext } from "react-icons";
-import { FaRegHeart, FaTimes } from "react-icons/fa";
 import LikeIcon from "./LikeIcon";
 import DislikeIcon from "./DislikeIcon";
 
@@ -19,7 +17,6 @@ function CityCard({ city, page }) {
     <Card
       as="article"
       borderRadius={3}
-      p={[1, 2]}
       width={{ _: 1, sm: 1, md: 1 / 2, lg: 1 / 4 }}
       m={2}
       flex={flexSizeProperty}
@@ -31,14 +28,13 @@ function CityCard({ city, page }) {
           url(${city.secure_url})`}
       backgroundSize="cover"
       backgroundPosition="center"
-      padding="130px 100px 100px"
       backgroundRepeat="no-repeat"
     >
-      <Flex justifyContent="space-between">
+      <Flex justifyContent="space-between" p={[1, 1]}>
         <LikeIcon />
         <DislikeIcon />
       </Flex>
-      <Container>
+      <Container p={[1, 2]}>
         <Text as="h1" color="white">
           {city.short_name}
         </Text>

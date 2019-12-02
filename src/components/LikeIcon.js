@@ -3,7 +3,7 @@ import { Container, Card, Flex, Image, Text, Hero } from "../styles/index";
 import { FaRegHeart } from "react-icons/fa";
 
 function LikeIcon() {
-  return <FaRegHeart style={{ color: "white" }} />;
+  return <FaRegHeart style={{ color: "white", fontSize: "20px" }} />;
 }
 
 export default LikeIcon;
