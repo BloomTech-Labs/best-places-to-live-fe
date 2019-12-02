@@ -52,7 +52,7 @@ const LandingPage = props => {
           <Text as="h2" textAlign="center">
             Popular Cities
           </Text>
-          <TopCities />
+          <TopCities {...props} />
         </Container>
       </Container>
       <Footer />

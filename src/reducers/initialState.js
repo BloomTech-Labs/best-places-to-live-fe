@@ -1,13 +1,9 @@
 const initialState = {
   user: {
-    factors: [
-      "Job Market",
-      "Food",
-      "Chicken",
-      "Number of Diapers",
-      "Proximity to Rack City"
-    ],
-    isLoggedIn: false
+    factors: [],
+    isLoggedIn: false,
+    likes: [],
+    dislikes: []
   },
   displayedCities: [],
   topCities: [],
@@ -17,7 +13,9 @@ const initialState = {
   fetchFactorsError: "",
   loginError: "",
   signupError: "",
-  fetchTopCitiesError: ""
+  fetchTopCitiesError: "",
+  addLikedCitiesError: "",
+  addDislikedCitiesError: ""
 };
 
 export default initialState;

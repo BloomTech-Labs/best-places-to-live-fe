@@ -57,6 +57,7 @@ const SearchByFactors = ({
           })}
         </Container>
         <Box textAlign="center" mt={15}>
+          <Button>Save</Button>
           <Button type="submit">Explore</Button>
         </Box>
       </form>
