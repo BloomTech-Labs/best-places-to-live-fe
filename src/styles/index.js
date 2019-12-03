@@ -5,6 +5,7 @@ import { Input } from "./input";
 import { StyledLink, StyledNavLink } from "./link";
 import { Card } from "./card";
 import { Flex } from "./flex";
+import { Grid } from "./grid";
 import { Image } from "./image";
 import { Text } from "./text";
 import { Hero } from "./hero";
@@ -26,6 +27,7 @@ export {
   StyledNavLink,
   Card,
   Flex,
+  Grid,
   Image,
   Text,
   Nav,

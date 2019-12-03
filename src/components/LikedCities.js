@@ -25,7 +25,7 @@ function LikedCities({ cities, deleteLikedCity, ...rest }) {
               actionType={deleteLike}
               page="profile"
               {...rest}
-              key={city.id}
+              key={city._id}
               city={city}
             />
           ))}

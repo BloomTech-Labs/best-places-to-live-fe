@@ -27,6 +27,6 @@ export const CheckBoxContainer = styled.div`
   }
 
   input:checked + span {
-    background-color: #efefef;
+    background-color: #959595;
   }
 `;
