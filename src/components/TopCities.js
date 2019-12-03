@@ -21,6 +21,7 @@ function TopCities({ topCities, fetchTopCities, ...props }) {
         justifyContent="center"
         flexDirection="row"
         // flexWrap="wrap"
+        overflowY="hidden"
         overflowX="scroll"
       >
         {topCities.map(city => (
