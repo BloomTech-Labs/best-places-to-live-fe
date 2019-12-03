@@ -6,7 +6,7 @@ const CityPage = () => {
   return (
     <main>
       <h1>This is the city page</h1>
-      <Link to="/search-results-page">Here are your results!</Link>
+      <Link to="/search">Here are your results!</Link>
       <Footer />
     </main>
   );
