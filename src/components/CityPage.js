@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 import { baseURL } from "../utils/axiosWithAuth";
 import Footer from "./Footer";
-import axios from "axios";
 
 const CityPage = ({ match }) => {
   const cityID = match.params.id;
@@ -14,25 +13,36 @@ const CityPage = ({ match }) => {
     },
     body: JSON.stringify({ ids: [cityID] })
   });
+  console.log(response.response);
 
-  let cityName, stateName;
-  if (response.response != null) {
-    cityName = response.response.data[0].short_name;
-    stateName = response.response.data[0].state;
+  if (!response.response || response.isLoading) {
+    return (
+      <main>
+        <h2>Loading...</h2>
+        <Footer />
+      </main>
+    );
+  } else {
+    let cityName, stateName, queryString, photo, cityInfo;
+
+    cityInfo = response.response.data[0];
+    cityName = cityInfo.short_name;
+    stateName = cityInfo.state;
+
+    queryString = cityInfo.full_name;
+    photo = cityInfo.secure_url;
+
+    return (
+      <main>
+        <h1>
+          This is {cityName}. We're in {stateName} now!
+        </h1>
+        <Link to="/search">Here are your results!</Link>
+
+        <Footer />
+      </main>
+    );
   }
-  const queryString = `${cityName}, ${stateName}`;
-  console.log(queryString);
-
-  return (
-    <main>
-      <h1>
-        This is {cityName}. We're in {stateName} now!
-      </h1>
-      <Link to="/search">Here are your results!</Link>
-
-      <Footer />
-    </main>
-  );
 };
 
 export default CityPage;
