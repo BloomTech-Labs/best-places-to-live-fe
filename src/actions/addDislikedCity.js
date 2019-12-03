@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { axiosWithAuth } from "../utils/axiosWithAuth.js";
 import {
   ADD_DISLIKED_CITY_FAIL,
@@ -16,13 +17,13 @@ export const addDislikedCity = data => dispatch => {
         type: ADD_DISLIKED_CITY_SUCCESS,
         payload: res.data
       });
-      return "Successful";
+      toast.success("Success - City was added to your dislikes!");
     })
     .catch(err => {
       dispatch({
         type: ADD_DISLIKED_CITY_FAIL,
         payload: { err, message: err.message }
       });
-      return "Failure";
+      toast.error(err.message);
     });
 };

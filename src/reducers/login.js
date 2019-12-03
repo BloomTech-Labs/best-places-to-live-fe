@@ -12,7 +12,7 @@ const loginReducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: true,
-        loginError: ""
+        error: ""
       };
     case LOGIN_SUCCESS:
       return {
@@ -26,12 +26,12 @@ const loginReducer = (state = initialState, action) => {
           isLoggedIn: true
         },
         isFetching: false,
-        loginError: ""
+        error: ""
       };
     case LOGIN_FAIL:
       return {
         ...state,
-        loginError: action.payload
+        error: action.payload
       };
     default:
       return state;

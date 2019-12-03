@@ -12,7 +12,7 @@ const registerReducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: true,
-        signupError: ""
+        error: ""
       };
     case SIGNUP_SUCCESS:
       return {
@@ -26,12 +26,12 @@ const registerReducer = (state = initialState, action) => {
           isLoggedIn: true
         },
         isFetching: false,
-        signupError: ""
+        error: ""
       };
     case SIGNUP_FAIL:
       return {
         ...state,
-        signupError: action.payload
+        error: action.payload
       };
     default:
       return state;

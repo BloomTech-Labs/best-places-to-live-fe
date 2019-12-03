@@ -1,5 +1,6 @@
 import { axiosWithAuth } from "../utils/axiosWithAuth.js";
 import { SIGNUP_INITIALIZE, SIGNUP_SUCCESS, SIGNUP_FAIL } from "./index";
+import { toast } from "react-toastify";
 
 export const signup = userData => dispatch => {
   dispatch({ type: SIGNUP_INITIALIZE });
@@ -24,6 +25,7 @@ export const signup = userData => dispatch => {
         type: SIGNUP_FAIL,
         payload: { err, message: err.message }
       });
+      toast.error(err.message);
       return "Failure";
     });
 };

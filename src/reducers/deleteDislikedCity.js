@@ -1,30 +1,30 @@
 import {
-  ADD_LIKED_CITY_FAIL,
-  ADD_LIKED_CITY_INITIALIZE,
-  ADD_LIKED_CITY_SUCCESS
+  DELETE_DISLIKED_CITY_FAIL,
+  DELETE_DISLIKED_CITY_INITIALIZE,
+  DELETE_DISLIKED_CITY_SUCCESS
 } from "../actions/index.js";
 
 import initialState from "./initialState";
 
-const addLikedCityReducer = (state = initialState, action) => {
+const deleteDislikedCityReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_LIKED_CITY_INITIALIZE:
+    case DELETE_DISLIKED_CITY_INITIALIZE:
       return {
         ...state,
         isFetching: true,
         error: ""
       };
-    case ADD_LIKED_CITY_SUCCESS:
+    case DELETE_DISLIKED_CITY_SUCCESS:
       return {
         ...state,
         user: {
           ...state.user,
-          likes: action.payload
+          dislikes: action.payload
         },
         isFetching: false,
         error: ""
       };
-    case ADD_LIKED_CITY_FAIL:
+    case DELETE_DISLIKED_CITY_FAIL:
       return {
         ...state,
         error: action.payload
@@ -34,4 +34,4 @@ const addLikedCityReducer = (state = initialState, action) => {
   }
 };
 
-export default addLikedCityReducer;
+export default deleteDislikedCityReducer;

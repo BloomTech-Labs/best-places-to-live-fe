@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import { typography, color } from "styled-system";
+import { typography, color, layout } from "styled-system";
 import { Link, NavLink } from "react-router-dom";
 import theme from "../theme";
 
 export const StyledLink = styled(Link)`
   ${typography};
   ${color};
+  ${layout};
   text-decoration: none;
 `;
 

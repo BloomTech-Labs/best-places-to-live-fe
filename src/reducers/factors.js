@@ -13,7 +13,7 @@ const factorsReducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: true,
-        fetchFactorsError: ""
+        error: ""
       };
     case FETCH_FACTORS_SUCCESS:
       return {
@@ -23,13 +23,13 @@ const factorsReducer = (state = initialState, action) => {
           factors: [...action.payload]
         },
         isFetching: false,
-        fetchFactorsError: ""
+        error: ""
       };
     case FETCH_FACTORS_FAIL:
       return {
         ...state,
         isFetching: false,
-        fetchFactorsError: action.payload
+        error: action.payload
       };
     default:
       return state;

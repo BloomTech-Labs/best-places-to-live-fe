@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { Container, Flex, Text, Button } from "../styles/index";
 import { logout } from "../actions/logout";
 import Footer from "./Footer";
+import EditFactors from "./EditFactors";
+import LikedCities from "./LikedCities";
+import DislikedCities from "./DislikedCities";
 
-function ProfilePage({ user, history, logout }) {
+function ProfilePage({ user, history, logout, ...rest }) {
   const logoutHandler = () => {
     logout();
     history.push("/");
@@ -29,6 +32,9 @@ function ProfilePage({ user, history, logout }) {
         </Text>
         <Button onClick={logoutHandler}>Logout </Button>
       </Flex>
+      <LikedCities />
+      <DislikedCities />
+      {/* <EditFactors /> */}
       <Footer />
     </Container>
   );
@@ -41,4 +47,6 @@ const mapStatetoProps = state => {
   };
 };
 
-export default connect(mapStatetoProps, { logout })(ProfilePage);
+export default connect(mapStatetoProps, {
+  logout
+})(ProfilePage);

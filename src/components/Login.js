@@ -2,7 +2,6 @@ import React from "react";
 import useForm from "react-hook-form";
 import { connect } from "react-redux";
 import { login } from "../actions/login.js";
-import Error from "./Error";
 import {
   Container,
   Form,
@@ -12,7 +11,7 @@ import {
   StyledLink
 } from "../styles/index";
 
-function Login({ login, error, ...rest }) {
+function Login({ login, ...rest }) {
   const { register, handleSubmit, errors, formState } = useForm({
     mode: "onChange"
   });
@@ -26,7 +25,6 @@ function Login({ login, error, ...rest }) {
 
   return (
     <Container>
-      {error && <Error error={error} />}
       <Form onSubmit={handleSubmit(onSubmit)}>
         {errors.email && "Your email is required"}
         <Input
@@ -54,10 +52,4 @@ function Login({ login, error, ...rest }) {
   );
 }
 
-const mapStateToProps = state => {
-  return {
-    error: state.loginError
-  };
-};
-
-export default connect(mapStateToProps, { login })(Login);
+export default connect(null, { login })(Login);

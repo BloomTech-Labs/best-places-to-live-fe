@@ -4,6 +4,7 @@ import {
   FETCH_LOCATIONS_BY_FACTORS_SUCCESS,
   FETCH_LOCATIONS_BY_FACTORS_FAIL
 } from "./index";
+import { toast } from "react-toastify";
 
 export const fetchLocationsByFactors = data => dispatch => {
   dispatch({ type: FETCH_LOCATIONS_BY_FACTORS_INITIALIZE });
@@ -24,6 +25,7 @@ export const fetchLocationsByFactors = data => dispatch => {
         type: FETCH_LOCATIONS_BY_FACTORS_FAIL,
         payload: { err, message: err.message }
       });
+      toast.error(err.message);
       return "Failure";
     });
 };

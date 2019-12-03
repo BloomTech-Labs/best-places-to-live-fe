@@ -12,7 +12,7 @@ const addDislikedCityReducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: true,
-        addDislikedCitiesError: ""
+        error: ""
       };
     case ADD_DISLIKED_CITY_SUCCESS:
       return {
@@ -22,12 +22,12 @@ const addDislikedCityReducer = (state = initialState, action) => {
           dislikes: action.payload
         },
         isFetching: false,
-        addDislikedCitiesError: ""
+        error: ""
       };
     case ADD_DISLIKED_CITY_FAIL:
       return {
         ...state,
-        addDislikedCitiesError: action.payload
+        error: action.payload
       };
     default:
       return state;

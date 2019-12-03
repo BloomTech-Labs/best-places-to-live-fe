@@ -2,7 +2,6 @@ import React from "react";
 import useForm from "react-hook-form";
 import { connect } from "react-redux";
 import { signup } from "../actions/signup.js";
-import Error from "./Error";
 import {
   Container,
   Form,
@@ -12,7 +11,7 @@ import {
   StyledLink
 } from "../styles/index";
 
-function SignUp({ signup, error, ...rest }) {
+function SignUp({ signup, ...rest }) {
   const { register, handleSubmit, errors, formState } = useForm({
     mode: "onChange"
   });
@@ -27,7 +26,6 @@ function SignUp({ signup, error, ...rest }) {
 
   return (
     <Container>
-      {error && <Error error={error} />}
       <Form onSubmit={handleSubmit(onSubmit)}>
         {errors.name &&
           "Your name is required and must be at least 2 characters."}
@@ -78,10 +76,4 @@ function SignUp({ signup, error, ...rest }) {
   );
 }
 
-const mapStateToProps = state => {
-  return {
-    error: state.signupError
-  };
-};
-
-export default connect(mapStateToProps, { signup })(SignUp);
+export default connect(null, { signup })(SignUp);
