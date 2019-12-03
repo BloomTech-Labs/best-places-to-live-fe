@@ -26,6 +26,7 @@ export const SocialButton = styled.a`
   color: white
   width: 145px;
   text-align: center;
+  font-weight: heavy;
   text-decoration: none;
   padding: ${theme.space[2]} ${theme.space[3]};
   margin-bottom: ${theme.space[4]};

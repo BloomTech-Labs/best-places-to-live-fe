@@ -20,6 +20,7 @@ function LikeIcon({ addLikedCity, ...rest }) {
 
     &:hover {
       cursor: pointer;
+      fill: red;
     }
   `;
 
