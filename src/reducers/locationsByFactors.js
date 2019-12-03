@@ -17,9 +17,7 @@ const locationsByFactorsReducer = (state = initialState, action) => {
     case FETCH_LOCATIONS_BY_FACTORS_SUCCESS:
       return {
         ...state,
-        displayedCities: action.payload.filter(
-          city => city.photoWeb !== null && city.photoMobile !== null
-        ),
+        displayedCities: action.payload,
         isFetching: false,
         error: ""
       };

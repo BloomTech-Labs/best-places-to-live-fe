@@ -16,6 +16,7 @@ import theme from "./theme";
 import { initializeAnalytics } from "./googleAnalytics/googleAnalytics";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import CityPage from "./components/CityPage";
 
 const history = createBrowserHistory();
 
@@ -35,6 +36,7 @@ function App(props) {
         <NavBar />
         <ToastContainer autoClose={2000} />
         <Route exact path="/" component={LandingPage} />
+        <Route path="/city/:id" component={CityPage} />
         <Route path="/explore" component={ExplorePage} />
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />
