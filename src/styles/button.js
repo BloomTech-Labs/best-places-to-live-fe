@@ -9,7 +9,6 @@ export const Button = styled.button`
   ${border}
   transition: 0.275s all ease-in;
   padding: ${theme.space[2]} ${theme.space[3]};
-
   border: 1px solid ${theme.colors.gray};
   border-radius: 3px;
   font-size: ${theme.fontSizes[1]};
@@ -26,10 +25,11 @@ export const SocialButton = styled.a`
   color: white
   width: 145px;
   text-align: center;
-  font-weight: heavy;
   text-decoration: none;
+  border-radius: 3px;
   padding: ${theme.space[2]} ${theme.space[3]};
   margin-bottom: ${theme.space[4]};
+  font-weight: bolder;
 
   &:hover {
     cursor: pointer;

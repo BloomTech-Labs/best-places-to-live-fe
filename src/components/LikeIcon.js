@@ -17,10 +17,12 @@ function LikeIcon({ addLikedCity, ...rest }) {
   const StyledRegHeart = styled(FiHeart)`
     color: #fff;
     font-size: 20px;
+    fill: transparent;
+    transition: fill 0.2s ease-in-out;
 
     &:hover {
       cursor: pointer;
-      fill: red;
+      fill: #e81919;
     }
   `;
 
