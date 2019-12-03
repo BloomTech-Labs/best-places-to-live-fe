@@ -37,9 +37,9 @@ const CityPage = ({ match }) => {
     console.log(photo);
     return (
       <Container as="main">
-        <Flex justifyContent="space-between" p={[1, 2]} bg="black">
-          <LikeIcon />
-          <DislikeIcon />
+        <Flex justifyContent="space-between" p={[1, 2]}>
+          <LikeIcon iconColor />
+          <DislikeIcon iconColor />
         </Flex>
 
         <Hero
