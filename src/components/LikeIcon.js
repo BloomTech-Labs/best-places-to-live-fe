@@ -2,7 +2,7 @@ import React from "react";
 import { addLikedCity } from "../actions/addLikedCity";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { FaRegHeart } from "react-icons/fa";
+import { FiHeart } from "react-icons/fi";
 
 function LikeIcon({ addLikedCity, ...rest }) {
   const handleClick = async () => {
@@ -14,7 +14,7 @@ function LikeIcon({ addLikedCity, ...rest }) {
     }
   };
 
-  const StyledRegHeart = styled(FaRegHeart)`
+  const StyledRegHeart = styled(FiHeart)`
     color: #fff;
     font-size: 20px;
 

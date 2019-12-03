@@ -10,7 +10,8 @@ import {
   Text,
   StyledLink,
   FacebookButton,
-  GoogleButton
+  GoogleButton,
+  Flex
 } from "../styles/index";
 
 function Login({ login, ...rest }) {
@@ -48,14 +49,17 @@ function Login({ login, ...rest }) {
           </Button>
         </Container>
       </Form>
-      <FacebookButton
-        Facebook
-        href="https://bestplacesbe.herokuapp.com/auth/facebook
+
+      <Flex flexDirection="column" alignItems="center">
+        <FacebookButton
+          Facebook
+          href="https://bestplacesbe.herokuapp.com/auth/facebook
     "
-      >
-        Continue with Facebook
-      </FacebookButton>
-      <GoogleButton Google>Continue with Google</GoogleButton>
+        >
+          Continue with Facebook
+        </FacebookButton>
+        <GoogleButton Google>Continue with Google</GoogleButton>
+      </Flex>
     </Container>
   );
 }

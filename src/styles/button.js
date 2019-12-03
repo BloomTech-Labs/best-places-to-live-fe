@@ -24,7 +24,8 @@ export const Button = styled.button`
 export const SocialButton = styled.a`
   border: 0;
   color: white
-  width: 100%;
+  width: 145px;
+  text-align: center;
   text-decoration: none;
   padding: ${theme.space[2]} ${theme.space[3]};
   margin-bottom: ${theme.space[4]};
