@@ -7,19 +7,29 @@ import axios from "axios";
 
 const CityPage = ({ match }) => {
   const cityID = match.params.id;
-  console.log(cityID);
-  const data = useFetch(`${baseURL}city`, {
+  const response = useFetch(`${baseURL}city`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({ ids: [cityID] })
   });
-  console.log(data);
+
+  let cityName, stateName;
+  if (response.response != null) {
+    cityName = response.response.data[0].short_name;
+    stateName = response.response.data[0].state;
+  }
+  const queryString = `${cityName}, ${stateName}`;
+  console.log(queryString);
+
   return (
     <main>
-      <h1>This is the city page</h1>
+      <h1>
+        This is {cityName}. We're in {stateName} now!
+      </h1>
       <Link to="/search">Here are your results!</Link>
+
       <Footer />
     </main>
   );
