@@ -6,7 +6,9 @@ import axios from "axios";
 const CityPage = ({ match }) => {
   const cityID = match.params.id;
 
-  useEffect(async () => {}, []);
+  useEffect(async () => {
+    const response = await axios.post("");
+  }, []);
 
   return (
     <main>
