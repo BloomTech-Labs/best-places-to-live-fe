@@ -1,7 +1,8 @@
 import React from "react";
 import { addLikedCity } from "../actions/addLikedCity";
+import styled from "styled-components";
 import { connect } from "react-redux";
-import { FaRegHeart } from "react-icons/fa";
+import { FiHeart } from "react-icons/fi";
 
 function LikeIcon({ addLikedCity, ...rest }) {
   const handleClick = async () => {
@@ -13,12 +14,19 @@ function LikeIcon({ addLikedCity, ...rest }) {
     }
   };
 
-  return (
-    <FaRegHeart
-      onClick={handleClick}
-      style={{ color: "white", fontSize: "20px" }}
-    />
-  );
+  const StyledRegHeart = styled(FiHeart)`
+    color: #fff;
+    font-size: 20px;
+    fill: transparent;
+    transition: fill 0.2s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      fill: #e81919;
+    }
+  `;
+
+  return <StyledRegHeart onClick={handleClick} />;
 }
 
 /* Future: Good place to put errors, connect to state */

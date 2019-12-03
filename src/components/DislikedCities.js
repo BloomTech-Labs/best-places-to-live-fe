@@ -25,7 +25,7 @@ function DislikedCities({ cities, deleteDislikedCity, ...rest }) {
               actionType={deleteDislike}
               page="profile"
               {...rest}
-              key={city.id}
+              key={city._id}
               city={city}
             />
           ))}

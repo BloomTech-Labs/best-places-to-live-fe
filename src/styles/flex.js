@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {
+  color,
   flexbox,
   layout,
   display,
@@ -16,4 +17,5 @@ export const Flex = styled.div`
   ${typography};
   ${space};
   ${background};
+  ${color};
 `;

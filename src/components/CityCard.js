@@ -25,7 +25,6 @@ function CityCard({ city, page, ...rest }) {
     <Card
       as="article"
       borderRadius={3}
-      width={{ _: 1, sm: 1, md: 1 / 2, lg: 1 / 4 }}
       m={2}
       flex={flexSizeProperty}
       background={` 
@@ -49,7 +48,7 @@ function CityCard({ city, page, ...rest }) {
         display="inline-block"
         height="100%"
         width="100%"
-        to={`/city/${city.id}`}
+        to={`/city/${city._id}`}
       >
         <Container p={[1, 2]}>
           <Text as="h1" color="white">

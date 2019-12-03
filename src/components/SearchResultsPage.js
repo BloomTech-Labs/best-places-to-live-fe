@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import CityCard from "./CityCard";
 import Footer from "./Footer";
-import { Container, Flex, Text, Hero, Box } from "../styles/index";
+import { Container, Flex, Grid, Text, Hero, Box } from "../styles/index";
 import SearchByFactors from "./SearchByFactors";
 import heroImg from "../img/seattle.jpg";
 import SearchBar from "./SearchBar";
@@ -46,16 +46,11 @@ function SearchResultsPage({ displayedCities, ...rest }) {
           {" "}
           Search Results
         </Text>
-        <Flex
-          as="article"
-          display="flex"
-          justifyContent="center"
-          flexWrap="wrap"
-        >
+        <Grid>
           {displayedCities.map(city => (
-            <CityCard {...rest} key={city.id} city={city} />
+            <CityCard {...rest} key={city._id} city={city} />
           ))}
-        </Flex>
+        </Grid>
         <Footer />
       </Container>
     </>
