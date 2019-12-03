@@ -21,7 +21,7 @@ export const Button = styled.button`
   }
 `;
 
-export const SocialButton = styled.button`
+export const SocialButton = styled.a`
   background-color: #b7b7b7;
   border: 0;
   width: 100%;
