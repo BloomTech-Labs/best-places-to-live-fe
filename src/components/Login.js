@@ -8,7 +8,8 @@ import {
   Button,
   Input,
   Text,
-  StyledLink
+  StyledLink,
+  SocialButton
 } from "../styles/index";
 
 function Login({ login, ...rest }) {
@@ -41,13 +42,20 @@ function Login({ login, ...rest }) {
           ref={register({ required: true })}
         />
         <Container textAlign="center">
-          {/* <SocialButton Google>Continue with Google</SocialButton>
-          <SocialButton Facebook>Continue with Facebook</SocialButton> */}
+          <SocialButton Google>Continue with Google</SocialButton>
+
           <Button type="submit" disabled={!formState.isValid}>
             Log In
           </Button>
         </Container>
       </Form>
+      <SocialButton
+        Facebook
+        href="https://bestplacesbe.herokuapp.com/auth/facebook
+    "
+      >
+        Continue with Facebook
+      </SocialButton>
     </Container>
   );
 }
