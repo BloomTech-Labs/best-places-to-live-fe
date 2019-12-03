@@ -38,14 +38,19 @@ function CityCard({ city, page, ...rest }) {
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
     >
-      <StyledLink to={`/city/${city.id}`}>
-        <Flex
-          justifyContent={page !== "profile" ? "space-between" : "flex-end"}
-          p={[1, 2]}
-        >
-          {page !== "profile" && <LikeIcon {...rest} />}
-          <DislikeIcon {...rest} />
-        </Flex>
+      <Flex
+        justifyContent={page !== "profile" ? "space-between" : "flex-end"}
+        p={[1, 2]}
+      >
+        {page !== "profile" && <LikeIcon {...rest} />}
+        <DislikeIcon {...rest} />
+      </Flex>
+      <StyledLink
+        display="inline-block"
+        height="100%"
+        width="100%"
+        to={`/city/${city.id}`}
+      >
         <Container p={[1, 2]}>
           <Text as="h1" color="white">
             {city.short_name}
