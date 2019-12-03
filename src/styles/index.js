@@ -1,5 +1,5 @@
 import { Form } from "./form";
-import { SocialButton, Button } from "./button";
+import { SocialButton, Button, FacebookButton, GoogleButton } from "./button";
 import { Container } from "./container";
 import { Input } from "./input";
 import { StyledLink, StyledNavLink } from "./link";
@@ -23,6 +23,8 @@ export {
   Input,
   GlobalStyle,
   SocialButton,
+  FacebookButton,
+  GoogleButton,
   StyledLink,
   StyledNavLink,
   Card,

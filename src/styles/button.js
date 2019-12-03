@@ -22,14 +22,23 @@ export const Button = styled.button`
 `;
 
 export const SocialButton = styled.a`
-  background-color: #b7b7b7;
   border: 0;
+  color: white
   width: 100%;
-  color: #fff;
+  text-decoration: none;
   padding: ${theme.space[2]} ${theme.space[3]};
   margin-bottom: ${theme.space[4]};
 
   &:hover {
     cursor: pointer;
+    opacity: 0.7;
   }
+`;
+
+export const FacebookButton = styled(SocialButton)`
+  background-color: #3b5998;
+`;
+
+export const GoogleButton = styled(SocialButton)`
+  background-color: #dd4b39;
 `;
