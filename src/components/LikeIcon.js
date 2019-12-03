@@ -15,7 +15,7 @@ function LikeIcon({ addLikedCity, ...rest }) {
   };
 
   const StyledRegHeart = styled(FiHeart)`
-    color: #fff;
+    color: ${() => (rest.iconColor ? "black" : "white")};
     font-size: 20px;
     fill: transparent;
     transition: fill 0.2s ease-in-out;
