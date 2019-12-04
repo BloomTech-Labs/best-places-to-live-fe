@@ -9,7 +9,9 @@ import {
   Input,
   Text,
   StyledLink,
-  SocialButton
+  FacebookButton,
+  GoogleButton,
+  Flex
 } from "../styles/index";
 
 function Login({ login, ...rest }) {
@@ -42,22 +44,25 @@ function Login({ login, ...rest }) {
           ref={register({ required: true })}
         />
         <Container textAlign="center">
-          <SocialButton Google>Continue with Google</SocialButton>
-
           <Button type="submit" disabled={!formState.isValid}>
             Log In
           </Button>
         </Container>
-      </Form>
-      <SocialButton
-        Facebook
-        href="https://bestplacesbe.herokuapp.com/auth/facebook
+
+        <Flex flexDirection="column" alignItems="center">
+          <FacebookButton
+            Facebook
+            href="https://bestplacesbe.herokuapp.com/auth/facebook
     "
-      >
-        Continue with Facebook
-      </SocialButton>
+          >
+            Continue with Facebook
+          </FacebookButton>
+          <GoogleButton Google>Continue with Google</GoogleButton>
+        </Flex>
+      </Form>
     </Container>
   );
 }
 
 export default connect(null, { login })(Login);
+//something

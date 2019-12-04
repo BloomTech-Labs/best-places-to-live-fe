@@ -1,10 +1,17 @@
 import { Form } from "./form";
-import { SocialButton, Button } from "./button";
+import {
+  SocialButton,
+  Button,
+  FacebookButton,
+  GoogleButton,
+  LinkButton
+} from "./button";
 import { Container } from "./container";
 import { Input } from "./input";
 import { StyledLink, StyledNavLink } from "./link";
 import { Card } from "./card";
 import { Flex } from "./flex";
+import { Grid } from "./grid";
 import { Image } from "./image";
 import { Text } from "./text";
 import { Hero } from "./hero";
@@ -22,10 +29,14 @@ export {
   Input,
   GlobalStyle,
   SocialButton,
+  FacebookButton,
+  GoogleButton,
+  LinkButton,
   StyledLink,
   StyledNavLink,
   Card,
   Flex,
+  Grid,
   Image,
   Text,
   Nav,

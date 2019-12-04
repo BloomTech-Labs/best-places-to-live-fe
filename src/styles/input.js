@@ -8,6 +8,7 @@ export const Input = styled.input`
   border: 1.5px solid #fff;
   box-shadow: 3px 7px 10px rgba(0, 0, 0, 0.45);
   font-size: ${theme.fontSizes.body};
+  line-height: 1.4;
   ${typography};
   ${layout};
 `;

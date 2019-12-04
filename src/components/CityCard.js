@@ -25,7 +25,6 @@ function CityCard({ city, page, ...rest }) {
     <Card
       as="article"
       borderRadius={3}
-      width={{ _: 1, sm: 1, md: 1 / 2, lg: 1 / 4 }}
       m={2}
       flex={flexSizeProperty}
       background={` 
@@ -42,14 +41,28 @@ function CityCard({ city, page, ...rest }) {
         justifyContent={page !== "profile" ? "space-between" : "flex-end"}
         p={[1, 2]}
       >
-        {page !== "profile" && <LikeIcon {...rest} />}
-        <DislikeIcon {...rest} />
+        {page !== "profile" && (
+          <LikeIcon
+            city={{
+              city_id: city._id,
+              city_name: city.name
+            }}
+            {...rest}
+          />
+        )}
+        <DislikeIcon
+          city={{
+            city_id: city._id,
+            city_name: city.name
+          }}
+          {...rest}
+        />
       </Flex>
       <StyledLink
         display="inline-block"
         height="100%"
         width="100%"
-        to={`/city/${city.id}`}
+        to={`/city/${city._id}`}
       >
         <Container p={[1, 2]}>
           <Text as="h1" color="white">

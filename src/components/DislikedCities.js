@@ -25,7 +25,7 @@ function DislikedCities({ cities, deleteDislikedCity, ...rest }) {
               actionType={deleteDislike}
               page="profile"
               {...rest}
-              key={city.id}
+              key={city._id}
               city={city}
             />
           ))}
@@ -38,8 +38,7 @@ function DislikedCities({ cities, deleteDislikedCity, ...rest }) {
 const mapStatetoProps = state => {
   const { user } = state;
   return {
-    // cities: user.state.dislikes
-    cities: state.displayedCities
+    cities: state.user.dislikes
   };
 };
 

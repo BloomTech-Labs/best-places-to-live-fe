@@ -4,7 +4,7 @@ import { Container, Flex, Text, Hero, Box } from "../styles/index";
 import { connect } from "react-redux";
 import CityCard from "./CityCard";
 
-function LikedCities({ cities, deleteLikedCity, ...rest }) {
+function LikedCities({ likedCities, deleteLikedCity, ...rest }) {
   const deleteLike = "deleteLike";
 
   return (
@@ -20,12 +20,12 @@ function LikedCities({ cities, deleteLikedCity, ...rest }) {
           justifyContent="center"
           flexWrap="wrap"
         >
-          {cities.map(city => (
+          {likedCities.map(city => (
             <CityCard
               actionType={deleteLike}
               page="profile"
               {...rest}
-              key={city.id}
+              key={city._id}
               city={city}
             />
           ))}
@@ -37,9 +37,9 @@ function LikedCities({ cities, deleteLikedCity, ...rest }) {
 
 const mapStatetoProps = state => {
   const { user } = state;
+  console.log(state.user.likes);
   return {
-    // cities: user.state.likes
-    cities: state.displayedCities
+    likedCities: state.user.likes
   };
 };
 
