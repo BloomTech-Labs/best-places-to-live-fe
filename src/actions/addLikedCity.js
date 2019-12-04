@@ -9,13 +9,13 @@ import {
 export const addLikedCity = data => dispatch => {
   dispatch({ type: ADD_LIKED_CITY_INITIALIZE });
 
-  /* Data in body of request is {city_id, city_name, city_photo} */
+  /* Data in body of request is {city_id, city_name} */
   return axiosWithAuth()
-    .post("/users/profile/cities", data)
+    .post("/users/likes", data)
     .then(res => {
       dispatch({
         type: ADD_LIKED_CITY_SUCCESS,
-        payload: res.data
+        payload: res.data.likes
       });
       toast.success("Success - City was added to your likes!");
     })

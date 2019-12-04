@@ -11,11 +11,11 @@ export const deleteLikedCity = data => dispatch => {
 
   /* Data in body of request is {id, cityID} */
   return axiosWithAuth()
-    .delete("/users", data)
+    .delete("/users/likes", data)
     .then(res => {
       dispatch({
         type: DELETE_LIKED_CITY_SUCCESS,
-        payload: res.data
+        payload: res.data.likes
       });
       toast.success("Success - City was removed from your likes!");
     })
