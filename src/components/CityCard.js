@@ -13,6 +13,7 @@ import LikeIcon from "./LikeIcon";
 import DislikeIcon from "./DislikeIcon";
 
 function CityCard({ city, page, ...rest }) {
+  console.log(city);
   const size = useWindowSize();
   let flexSizeProperty;
   if (page && size.width <= 1000) {
@@ -44,7 +45,6 @@ function CityCard({ city, page, ...rest }) {
         {page !== "profile" && (
           <LikeIcon
             city={{
-              city_photo: city.secure_url,
               city_id: city._id,
               city_name: city.name
             }}
@@ -53,7 +53,6 @@ function CityCard({ city, page, ...rest }) {
         )}
         <DislikeIcon
           city={{
-            city_photo: city.secure_url,
             city_id: city._id,
             city_name: city.name
           }}

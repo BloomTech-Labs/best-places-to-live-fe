@@ -36,8 +36,7 @@ const CityPage = ({ match }) => {
     //For Backend
     const city = {
       city_name: cityInfo.name,
-      city_id: cityID,
-      city_photo: photo
+      city_id: cityID
     };
     return (
       <Container as="main" maxWidth="1000px" margin="0 auto">
