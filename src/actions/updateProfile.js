@@ -1,8 +1,8 @@
 import { axiosWithAuth } from "../utils/axiosWithAuth.js";
 import {
-  UPDATE_PROFILE,
-  UPDATE_PROFILEUPDATE_PROFILE_SUCCESS,
-  UPDATE_PROFILEUPDATE_PROFILE_FAIL
+  UPDATE_PROFILE_INITIALIZE,
+  UPDATE_PROFILE_SUCCESS,
+  UPDATE_PROFILE_FAIL
 } from "./index";
 import { toast } from "react-toastify";
 
