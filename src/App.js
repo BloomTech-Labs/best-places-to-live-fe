@@ -17,6 +17,7 @@ import { initializeAnalytics } from "./googleAnalytics/googleAnalytics";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import CityPage from "./components/CityPage";
+import ProfileSettings from "./components/ProfileSettings";
 
 const history = createBrowserHistory();
 
@@ -42,6 +43,7 @@ function App(props) {
         <Route path="/login" component={Login} />
         <Route path="/search" component={SearchResultsPage} />
         <PrivateRoute path="/profile" component={ProfilePage} />
+        <PrivateRoute path="/settings" component={ProfileSettings} />
       </ThemeProvider>
     </Router>
   );

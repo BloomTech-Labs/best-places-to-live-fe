@@ -1,13 +1,10 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { Container, Flex, Text, Button } from "../styles/index";
+import { Container, Flex, Text, Button, LinkButton } from "../styles/index";
 import { logout } from "../actions/logout";
 import Footer from "./Footer";
-import EditFactors from "./EditFactors";
-import LikedCities from "./LikedCities";
-import DislikedCities from "./DislikedCities";
 
-function ProfilePage({ user, history, logout, ...rest }) {
+function ProfileSettings({ user, history, logout, ...rest }) {
   const logoutHandler = () => {
     logout();
     history.push("/");
@@ -30,6 +27,13 @@ function ProfilePage({ user, history, logout, ...rest }) {
           <b>Location: </b>
           {user.location}
         </Text>
+
+        {/*  Navlink to password change page */}
+
+        <Button onClick={logoutHandler}>Logout </Button>
+        {/* waiting on backend */}
+        <LinkButton>Delete Account</LinkButton>
+      </Flex>
         <Button onClick={logoutHandler}>Logout </Button>
       </Flex>
       <LikedCities />
@@ -49,4 +53,4 @@ const mapStatetoProps = state => {
 
 export default connect(mapStatetoProps, {
   logout
-})(ProfilePage);
+})(ProfileSettings);

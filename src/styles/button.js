@@ -22,7 +22,7 @@ export const Button = styled.button`
 
 export const SocialButton = styled.a`
   border: 0;
-  color: white
+  color: white;
   width: 145px;
   text-align: center;
   text-decoration: none;
@@ -34,6 +34,19 @@ export const SocialButton = styled.a`
   &:hover {
     cursor: pointer;
     opacity: 0.7;
+  }
+`;
+
+export const LinkButton = styled.button`
+  ${typography};
+  ${space};
+  ${color};
+  ${border}
+  border: 0;
+  text-decoration: underline;
+
+  &:hover {
+    cursor: pointer;
   }
 `;
 
