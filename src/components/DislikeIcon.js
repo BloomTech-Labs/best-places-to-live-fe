@@ -4,7 +4,7 @@ import { deleteDislikedCity } from "../actions/deleteDislikedCity";
 import { deleteLikedCity } from "../actions/deleteLikedCity";
 import { connect } from "react-redux";
 import { FaTimes } from "react-icons/fa";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 function DislikeIcon({
   addDislikedCity,
@@ -23,9 +23,11 @@ function DislikeIcon({
       response = await addDislikedCity();
     }
   };
+  console.log(rest.iconColor);
 
   const StyledFaTimes = styled(FaTimes)`
-    color: #fff;
+    color: ${() => (rest.iconColor ? "black" : "white")};
+
     font-size: 20px;
 
     transition: opacity 0.2s ease-in-out;
