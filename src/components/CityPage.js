@@ -36,7 +36,7 @@ const CityPage = ({ match }) => {
     photo = cityInfo.secure_url;
     console.log(photo);
     return (
-      <Container as="main">
+      <Container as="main" maxWidth="1000px" margin="0 auto">
         <Flex justifyContent="space-between" p={[1, 2]}>
           <LikeIcon iconColor />
           <DislikeIcon iconColor />
