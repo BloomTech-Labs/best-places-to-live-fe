@@ -9,9 +9,9 @@ import {
 export const addLikedCity = data => dispatch => {
   dispatch({ type: ADD_LIKED_CITY_INITIALIZE });
 
-  /* Data in body of request is {id, cityID} */
+  /* Data in body of request is {city_id, city_name, city_photo} */
   return axiosWithAuth()
-    .post("/users", data)
+    .post("/users/profile/cities", data)
     .then(res => {
       dispatch({
         type: ADD_LIKED_CITY_SUCCESS,

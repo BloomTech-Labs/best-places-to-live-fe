@@ -41,8 +41,24 @@ function CityCard({ city, page, ...rest }) {
         justifyContent={page !== "profile" ? "space-between" : "flex-end"}
         p={[1, 2]}
       >
-        {page !== "profile" && <LikeIcon {...rest} />}
-        <DislikeIcon {...rest} />
+        {page !== "profile" && (
+          <LikeIcon
+            city={{
+              city_photo: city.secure_url,
+              city_id: city._id,
+              city_name: city.name
+            }}
+            {...rest}
+          />
+        )}
+        <DislikeIcon
+          city={{
+            city_photo: city.secure_url,
+            city_id: city._id,
+            city_name: city.name
+          }}
+          {...rest}
+        />
       </Flex>
       <StyledLink
         display="inline-block"

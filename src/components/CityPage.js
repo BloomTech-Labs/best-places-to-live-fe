@@ -26,20 +26,24 @@ const CityPage = ({ match }) => {
       </Container>
     );
   } else {
-    let cityName, stateName, queryString, photo, cityInfo;
+    const cityInfo = response.response.data[0];
+    const cityName = cityInfo.short_name;
+    const stateName = cityInfo.state;
+    const cityID = cityInfo._id;
+    const fullName = cityInfo.full_name;
+    const photo = cityInfo.secure_url;
 
-    cityInfo = response.response.data[0];
-    cityName = cityInfo.short_name;
-    stateName = cityInfo.state;
-
-    queryString = cityInfo.full_name;
-    photo = cityInfo.secure_url;
-    console.log(photo);
+    //For Backend
+    const city = {
+      city_name: cityInfo.name,
+      city_id: cityID,
+      city_photo: photo
+    };
     return (
       <Container as="main" maxWidth="1000px" margin="0 auto">
         <Flex justifyContent="space-between" p={[1, 2]}>
-          <LikeIcon iconColor />
-          <DislikeIcon iconColor />
+          <LikeIcon iconColor city={city} />
+          <DislikeIcon iconColor city={city} />
         </Flex>
 
         <Hero
