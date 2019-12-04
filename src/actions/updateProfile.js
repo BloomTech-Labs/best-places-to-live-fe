@@ -6,22 +6,20 @@ import {
 } from "./index";
 import { toast } from "react-toastify";
 
-export const updateProfileupdateProfile = userData => dispatch => {
+export const updateProfile = userData => dispatch => {
   dispatch({ type: UPDATE_PROFILE_INITIALIZE });
   return axiosWithAuth()
-    .post(`/users/register`, userData)
+    .put(`/users/profile`, userData)
     .then(res => {
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("id", res.data._id);
       dispatch({
         type: UPDATE_PROFILE_SUCCESS,
         payload: {
           id: res.data._id,
           email: res.data.email,
-          name: res.data.name,
-          location: res.data.location
+          name: res.data.name
         }
       });
+      toast.success("Profile successfully updated!");
       return "Successful";
     })
     .catch(err => {
