@@ -1,34 +1,32 @@
 import {
-  FETCH_FACTORS_INITIALIZE,
-  FETCH_FACTORS_SUCCESS,
-  FETCH_FACTORS_FAIL
+  DELETE_LIKED_CITY_FAIL,
+  DELETE_LIKED_CITY_INITIALIZE,
+  DELETE_LIKED_CITY_SUCCESS
 } from "../actions/index.js";
 
-//something like this
-import initialState from "../reducers/initialState";
+import initialState from "./initialState";
 
-const factorsReducer = (state = initialState, action) => {
+const deleteLikedCityReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_FACTORS_INITIALIZE:
+    case DELETE_LIKED_CITY_INITIALIZE:
       return {
         ...state,
         isFetching: true,
         error: ""
       };
-    case FETCH_FACTORS_SUCCESS:
+    case DELETE_LIKED_CITY_SUCCESS:
       return {
         ...state,
         user: {
           ...state.user,
-          factors: [...action.payload]
+          likes: action.payload
         },
         isFetching: false,
         error: ""
       };
-    case FETCH_FACTORS_FAIL:
+    case DELETE_LIKED_CITY_FAIL:
       return {
         ...state,
-        isFetching: false,
         error: action.payload
       };
     default:
@@ -36,4 +34,4 @@ const factorsReducer = (state = initialState, action) => {
   }
 };
 
-export default factorsReducer;
+export default deleteLikedCityReducer;

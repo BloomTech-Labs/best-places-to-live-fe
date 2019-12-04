@@ -2,17 +2,19 @@ import React from "react";
 import useForm from "react-hook-form";
 import { connect } from "react-redux";
 import { login } from "../actions/login.js";
-import Error from "./Error";
 import {
   Container,
   Form,
   Button,
   Input,
   Text,
-  StyledLink
+  StyledLink,
+  FacebookButton,
+  GoogleButton,
+  Flex
 } from "../styles/index";
 
-function Login({ login, error, ...rest }) {
+function Login({ login, ...rest }) {
   const { register, handleSubmit, errors, formState } = useForm({
     mode: "onChange"
   });
@@ -26,7 +28,6 @@ function Login({ login, error, ...rest }) {
 
   return (
     <Container>
-      {error && <Error error={error} />}
       <Form onSubmit={handleSubmit(onSubmit)}>
         {errors.email && "Your email is required"}
         <Input
@@ -43,21 +44,25 @@ function Login({ login, error, ...rest }) {
           ref={register({ required: true })}
         />
         <Container textAlign="center">
-          {/* <SocialButton Google>Continue with Google</SocialButton>
-          <SocialButton Facebook>Continue with Facebook</SocialButton> */}
           <Button type="submit" disabled={!formState.isValid}>
             Log In
           </Button>
         </Container>
+
+        <Flex flexDirection="column" alignItems="center">
+          <FacebookButton
+            Facebook
+            href="https://bestplacesbe.herokuapp.com/auth/facebook
+    "
+          >
+            Continue with Facebook
+          </FacebookButton>
+          <GoogleButton Google>Continue with Google</GoogleButton>
+        </Flex>
       </Form>
     </Container>
   );
 }
 
-const mapStateToProps = state => {
-  return {
-    error: state.loginError
-  };
-};
-
-export default connect(mapStateToProps, { login })(Login);
+export default connect(null, { login })(Login);
+//something

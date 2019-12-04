@@ -1,29 +1,34 @@
 import {
-  FETCH_LOCATIONS_BY_NAME_INITIALIZE,
-  FETCH_LOCATIONS_BY_NAME_SUCCESS,
-  FETCH_LOCATIONS_BY_NAME_FAIL
+  EDIT_FACTORS_INITIALIZE,
+  EDIT_FACTORS_SUCCESS,
+  EDIT_FACTORS_FAIL
 } from "../actions/index.js";
 
+//something like this
 import initialState from "../reducers/initialState";
 
-const locationsByNameReducer = (state = initialState, action) => {
+const editFactorsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_LOCATIONS_BY_NAME_INITIALIZE:
+    case EDIT_FACTORS_INITIALIZE:
       return {
         ...state,
         isFetching: true,
         error: ""
       };
-    case FETCH_LOCATIONS_BY_NAME_SUCCESS:
+    case EDIT_FACTORS_SUCCESS:
       return {
         ...state,
-        displayedCities: action.payload,
+        user: {
+          ...state.user,
+          factors: [...action.payload]
+        },
         isFetching: false,
         error: ""
       };
-    case FETCH_LOCATIONS_BY_NAME_FAIL:
+    case EDIT_FACTORS_FAIL:
       return {
         ...state,
+        isFetching: false,
         error: action.payload
       };
     default:
@@ -31,4 +36,4 @@ const locationsByNameReducer = (state = initialState, action) => {
   }
 };
 
-export default locationsByNameReducer;
+export default editFactorsReducer;

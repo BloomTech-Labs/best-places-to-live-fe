@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const CheckBoxContainer = styled.div`
   margin: 4px;
-  background-color: #efefef;
+  background-color: white;
+  border: 1px solid black;
   border-radius: 4px;
   float: left;
 
@@ -26,7 +27,6 @@ export const CheckBoxContainer = styled.div`
   }
 
   input:checked + span {
-    background-color: #911;
-    color: #fff;
+    background-color: #959595;
   }
 `;

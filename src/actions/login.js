@@ -1,5 +1,6 @@
 import { axiosWithAuth } from "../utils/axiosWithAuth.js";
 import { LOGIN_INITIALIZE, LOGIN_SUCCESS, LOGIN_FAIL } from "./index";
+import { toast } from "react-toastify";
 
 export const login = credentials => dispatch => {
   dispatch({ type: LOGIN_INITIALIZE });
@@ -25,6 +26,7 @@ export const login = credentials => dispatch => {
         type: LOGIN_FAIL,
         payload: { err, message: err.message }
       });
+      toast.error(err.message);
       return "Failure";
     });
 };

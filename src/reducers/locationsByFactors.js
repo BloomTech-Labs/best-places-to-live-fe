@@ -12,21 +12,19 @@ const locationsByFactorsReducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: true,
-        fetchLocationsByFactorsError: ""
+        error: ""
       };
     case FETCH_LOCATIONS_BY_FACTORS_SUCCESS:
       return {
         ...state,
-        displayedCities: action.payload.filter(
-          city => city.photoWeb !== null && city.photoMobile !== null
-        ),
+        displayedCities: action.payload,
         isFetching: false,
-        fetchLocationsByFactorsError: ""
+        error: ""
       };
     case FETCH_LOCATIONS_BY_FACTORS_FAIL:
       return {
         ...state,
-        fetchLocationsByFactorsError: action.payload
+        error: action.payload
       };
     default:
       return state;
