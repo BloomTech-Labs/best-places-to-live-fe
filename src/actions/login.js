@@ -16,7 +16,10 @@ export const login = credentials => dispatch => {
           id: res.data._id,
           email: res.data.email,
           name: res.data.name,
-          location: res.data.location
+          location: res.data.location,
+          likes: res.data.likes,
+          dislikes: res.data.dislikes,
+          factors: res.data.factors
         }
       });
       return "Successful";
