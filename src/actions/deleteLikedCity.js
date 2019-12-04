@@ -13,6 +13,7 @@ export const deleteLikedCity = data => dispatch => {
   return axiosWithAuth()
     .delete("/users/likes", data)
     .then(res => {
+      console.log(res);
       dispatch({
         type: DELETE_LIKED_CITY_SUCCESS,
         payload: res.data.likes

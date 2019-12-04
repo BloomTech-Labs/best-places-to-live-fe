@@ -13,7 +13,6 @@ import LikeIcon from "./LikeIcon";
 import DislikeIcon from "./DislikeIcon";
 
 function CityCard({ city, page, ...rest }) {
-  console.log(city);
   const size = useWindowSize();
   let flexSizeProperty;
   if (page && size.width <= 1000) {
