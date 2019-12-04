@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Nav, StyledNavLink } from "../styles/index";
+import { FaCog } from "react-icons/fa";
 
 const NavBar = ({ isLoggedIn }) => {
   return (
@@ -24,6 +25,10 @@ const NavBar = ({ isLoggedIn }) => {
           </div>
           <div>
             <StyledNavLink to="/profile">Profile</StyledNavLink>
+            <StyledNavLink to="/settings">
+              {" "}
+              <FaCog />{" "}
+            </StyledNavLink>
           </div>
         </>
       )}

@@ -38,8 +38,7 @@ function DislikedCities({ cities, deleteDislikedCity, ...rest }) {
 const mapStatetoProps = state => {
   const { user } = state;
   return {
-    // cities: user.state.dislikes
-    cities: state.displayedCities
+    cities: state.user.dislikes
   };
 };
 

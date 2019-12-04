@@ -11,11 +11,11 @@ export const addDislikedCity = data => dispatch => {
 
   /* Data in body of request is {id, cityID} */
   return axiosWithAuth()
-    .post("/users", data)
+    .post("/users/dislikes", data)
     .then(res => {
       dispatch({
         type: ADD_DISLIKED_CITY_SUCCESS,
-        payload: res.data
+        payload: res.data.dislikes
       });
       toast.success("Success - City was added to your dislikes!");
     })

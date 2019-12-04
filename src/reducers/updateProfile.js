@@ -1,20 +1,20 @@
 import {
-  LOGIN_INITIALIZE,
-  LOGIN_SUCCESS,
-  LOGIN_FAIL
+  UPDATE_PROFILE_INITIALIZE,
+  UPDATE_PROFILE_SUCCESS,
+  UPDATE_PROFILE_FAIL
 } from "../actions/index.js";
 
 import initialState from "./initialState";
 
-const loginReducer = (state = initialState, action) => {
+const updateProfileReducer = (state = initialState, action) => {
   switch (action.type) {
-    case LOGIN_INITIALIZE:
+    case UPDATE_PROFILE_INITIALIZE:
       return {
         ...state,
         isFetching: true,
         error: ""
       };
-    case LOGIN_SUCCESS:
+    case UPDATE_PROFILE_SUCCESS:
       return {
         ...state,
         user: {
@@ -22,16 +22,12 @@ const loginReducer = (state = initialState, action) => {
           id: action.payload.id,
           email: action.payload.email,
           name: action.payload.name,
-          location: action.payload.location,
-          likes: action.payload.likes,
-          dislikes: action.payload.dislikes,
-          factors: action.payload.factors,
           isLoggedIn: true
         },
         isFetching: false,
         error: ""
       };
-    case LOGIN_FAIL:
+    case UPDATE_PROFILE_FAIL:
       return {
         ...state,
         error: action.payload
@@ -41,4 +37,4 @@ const loginReducer = (state = initialState, action) => {
   }
 };
 
-export default loginReducer;
+export default updateProfileReducer;

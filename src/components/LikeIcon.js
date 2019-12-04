@@ -4,9 +4,9 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import { FiHeart } from "react-icons/fi";
 
-function LikeIcon({ addLikedCity, ...rest }) {
+function LikeIcon({ addLikedCity, city, ...rest }) {
   const handleClick = async () => {
-    const response = await addLikedCity();
+    const response = await addLikedCity(city);
 
     if (response === "Failure") {
       rest.history.push("/signup");
