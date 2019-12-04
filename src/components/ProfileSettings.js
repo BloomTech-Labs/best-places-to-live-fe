@@ -19,7 +19,7 @@ function ProfileSettings({ user, history, logout, ...rest }) {
     mode: "onChange"
   });
   const onSubmit = async data => {
-    const response = await updateProfile(data); //TODO put action
+    const response = await updateProfile(data);
   };
 
   const logoutHandler = () => {
@@ -39,21 +39,21 @@ function ProfileSettings({ user, history, logout, ...rest }) {
           {errors.name && "Your name is required"}
           <Input
             type="text"
-            placeholder={user.name}
+            value={user.name}
             name="name"
             ref={register({ required: true, pattern: /^\S+@\S+$/i })}
           />
           {errors.email && "Your email is required"}
           <Input
             type="text"
-            placeholder={user.email}
+            value={user.email}
             name="email"
             ref={register({ required: true, pattern: /^\S+@\S+$/i })}
           />
           {errors.location && "Your location is required"}
           <Input
             type="text"
-            placeholder={user.location}
+            value={user.location}
             name="location"
             ref={register({ required: true, pattern: /^\S+@\S+$/i })}
           />
