@@ -34,11 +34,6 @@ function ProfileSettings({ user, history, logout, ...rest }) {
         {/* waiting on backend */}
         <LinkButton>Delete Account</LinkButton>
       </Flex>
-        <Button onClick={logoutHandler}>Logout </Button>
-      </Flex>
-      <LikedCities />
-      <DislikedCities />
-      {/* <EditFactors /> */}
       <Footer />
     </Container>
   );
