@@ -1,10 +1,27 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { Container, Flex, Text, Button, LinkButton } from "../styles/index";
+import useForm from "react-hook-form";
+import {
+  Container,
+  Form,
+  Input,
+  Flex,
+  Text,
+  Button,
+  LinkButton
+} from "../styles/index";
+import { updateProfile } from "../actions/updateProfile";
 import { logout } from "../actions/logout";
 import Footer from "./Footer";
 
 function ProfileSettings({ user, history, logout, ...rest }) {
+  const { register, handleSubmit, errors, formState } = useForm({
+    mode: "onChange"
+  });
+  const onSubmit = async data => {
+    const response = await updateProfile(data); //TODO put action
+  };
+
   const logoutHandler = () => {
     logout();
     history.push("/");
@@ -18,15 +35,35 @@ function ProfileSettings({ user, history, logout, ...rest }) {
         display="flex"
         justifyContent="center"
       >
-        <Text fontWeight="bold">Name: {user.name} </Text>
-        <Text>
-          <b>Email: </b>
-          {user.email}
-        </Text>
-        <Text>
-          <b>Location: </b>
-          {user.location}
-        </Text>
+        <Form onSubmit={handleSubmit(onSubmit)}>
+          {errors.name && "Your name is required"}
+          <Input
+            type="text"
+            placeholder={user.name}
+            name="name"
+            ref={register({ required: true, pattern: /^\S+@\S+$/i })}
+          />
+          {errors.email && "Your email is required"}
+          <Input
+            type="text"
+            placeholder={user.email}
+            name="email"
+            ref={register({ required: true, pattern: /^\S+@\S+$/i })}
+          />
+          {errors.location && "Your location is required"}
+          <Input
+            type="text"
+            placeholder={user.location}
+            name="location"
+            ref={register({ required: true, pattern: /^\S+@\S+$/i })}
+          />
+
+          <Container textAlign="center">
+            <Button type="submit" disabled={!formState.isValid}>
+              Update
+            </Button>
+          </Container>
+        </Form>
 
         {/*  Navlink to password change page */}
 
