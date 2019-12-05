@@ -50,6 +50,13 @@ function ProfileSettings({ user, history, logout, ...rest }) {
             name="email"
             ref={register({ required: true, pattern: /^\S+@\S+$/i })}
           />
+          {errors.password && "Your password is required"}
+          <Input
+            type="text"
+            value={user.password}
+            name="password"
+            ref={register({ required: true })}
+          />
           {errors.location && "Your location is required"}
           <Input
             type="text"
