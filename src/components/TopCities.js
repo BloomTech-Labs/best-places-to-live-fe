@@ -15,8 +15,6 @@ function TopCities({
     fetchTopCities(factor);
   }, [fetchTopCities]);
 
-  console.log(topCities[factor]);
-
   if (topCities[factor]) {
     return (
       <Container p={`0 15px`}>
@@ -28,7 +26,7 @@ function TopCities({
           overflowX="scroll"
         >
           {topCities[factor].map(city => (
-            <CityCard key={city._id} city={city} page="topCities" {...props} />
+            <CityCard key={city._id} city={city} page="landing" {...props} />
           ))}
         </Flex>
       </Container>

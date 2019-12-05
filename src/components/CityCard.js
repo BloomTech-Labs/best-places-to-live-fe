@@ -39,9 +39,10 @@ function CityCard({ city, page, ...rest }) {
     >
       <Flex
         justifyContent={page !== "profile" ? "space-between" : "flex-end"}
+        display={page == "landing" ? "hidden" : ""}
         p={[1, 2]}
       >
-        {page !== "profile" && (
+        {page == "search" && (
           <LikeIcon
             city={{
               city_id: city._id,
