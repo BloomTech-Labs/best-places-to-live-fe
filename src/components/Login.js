@@ -50,15 +50,19 @@ function Login({ login, ...rest }) {
         </Container>
 
         <Flex flexDirection="column" alignItems="center">
-          {/* Stretch Goal - not implementing currently*/}
-          {/* <FacebookButton
+          <FacebookButton
             Facebook
             href="https://bestplacesbe.herokuapp.com/auth/facebook
     "
           >
             Continue with Facebook
           </FacebookButton>
-          <GoogleButton Google>Continue with Google</GoogleButton> */}
+          <GoogleButton
+            Google
+            href="https://bestplacesbe.herokuapp.com/auth/google"
+          >
+            Continue with Google
+          </GoogleButton>
         </Flex>
       </Form>
     </Container>
