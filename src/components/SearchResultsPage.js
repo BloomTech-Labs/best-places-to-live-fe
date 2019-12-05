@@ -48,7 +48,7 @@ function SearchResultsPage({ displayedCities, ...rest }) {
         </Text>
         <Grid>
           {displayedCities.map(city => (
-            <CityCard {...rest} key={city._id} city={city} />
+            <CityCard {...rest} key={city._id} city={city} page="search" />
           ))}
         </Grid>
         <Footer />

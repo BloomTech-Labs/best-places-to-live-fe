@@ -51,13 +51,15 @@ function CityCard({ city, page, ...rest }) {
             {...rest}
           />
         )}
-        <DislikeIcon
-          city={{
-            city_id: city._id,
-            city_name: city.name
-          }}
-          {...rest}
-        />
+        {(page == "profile" || page == "search") && (
+          <DislikeIcon
+            city={{
+              city_id: city._id,
+              city_name: city.name
+            }}
+            {...rest}
+          />
+        )}
       </Flex>
       <StyledLink
         display="inline-block"
