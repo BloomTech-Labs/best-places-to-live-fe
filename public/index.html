@@ -31,6 +31,20 @@
     <title>Live in the Best Place</title>
   </head>
   <body>
+      <script>
+          window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '428115667857775',
+              xfbml      : true,
+              version    : '{5}'
+            });
+            FB.AppEvents.logPageView();
+          };
+        </script>
+        
+        <script async defer 
+          src="https://connect.facebook.net/en_US/sdk.js"></script>
+        </script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--

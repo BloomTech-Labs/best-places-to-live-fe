@@ -15,9 +15,12 @@ import { logout } from "../actions/logout";
 import Footer from "./Footer";
 
 function ProfileSettings({ user, history, logout, updateProfile, ...rest }) {
-  const { register, handleSubmit, errors, formState } = useForm({ mode: 'onChange'});
+  const { register, handleSubmit, errors, formState } = useForm({
+    mode: "onChange"
+  });
   const onSubmit = async data => {
     const response = await updateProfile(data);
+    l;
   };
 
   const logoutHandler = () => {
@@ -40,7 +43,7 @@ function ProfileSettings({ user, history, logout, updateProfile, ...rest }) {
             defaultValue={user.name}
             name="name"
             ref={register({ required: true, minLength: 2 })}
-        />
+          />
           {errors.email && "Your email is required"}
           <Input
             type="text"
@@ -90,4 +93,6 @@ const mapStatetoProps = state => {
   };
 };
 
-export default connect(mapStatetoProps, { logout, updateProfile})(ProfileSettings);
+export default connect(mapStatetoProps, { logout, updateProfile })(
+  ProfileSettings
+);
