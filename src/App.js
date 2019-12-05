@@ -35,7 +35,7 @@ function App(props) {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <NavBar />
-        <ToastContainer autoClose={2000} />
+        <ToastContainer position="bottom-right" autoClose={2000} />
         <Route exact path="/" component={LandingPage} />
         <Route path="/city/:id" component={CityPage} />
         <Route path="/explore" component={ExplorePage} />
