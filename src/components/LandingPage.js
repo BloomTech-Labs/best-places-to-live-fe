@@ -12,8 +12,11 @@ import {
 } from "../styles/index";
 import heroImg from "../img/hero.jpg";
 import TopCities from "./TopCities";
+import { factors, randomFactor } from "../utils/factors";
 
 const LandingPage = props => {
+  const chosenFactor = randomFactor(factors);
+
   return (
     <>
       <Container as="main">
@@ -54,9 +57,9 @@ const LandingPage = props => {
           </Text>
           <TopCities factor="score_total" {...props} />
           <Text as="h2" textAlign="center">
-            Environmentally Friendly Cities
+            Best {chosenFactor.displayName} Cities
           </Text>
-          <TopCities factor="score_environmental_quality" {...props} />
+          <TopCities factor={chosenFactor.factor} {...props} />
         </Container>
       </Container>
       <Footer />

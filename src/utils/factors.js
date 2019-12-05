@@ -22,3 +22,7 @@ export const factors = [
   { rank: 13, factor: "score_taxation", displayName: "Taxation" },
   { rank: 14, factor: "population", displayName: "Population" }
 ];
+
+export const randomFactor = factors => {
+  return factors[Math.floor(Math.random() * factors.length)];
+};

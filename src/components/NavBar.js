@@ -8,7 +8,7 @@ const NavBar = ({ isLoggedIn }) => {
       {!isLoggedIn && (
         <>
           <div>
-            <StyledNavLink to="/">Home</StyledNavLink>
+            <StyledNavLink to="/">Live In The Best Place</StyledNavLink>
           </div>
 
           <Flex justifyContent="space-between" width="20vw" minWidth="120px">
@@ -21,7 +21,7 @@ const NavBar = ({ isLoggedIn }) => {
       {isLoggedIn && (
         <>
           <div>
-            <StyledNavLink to="/">Home</StyledNavLink>
+            <StyledNavLink to="/">Live In The Best Place</StyledNavLink>
           </div>
           <div>
             <StyledNavLink to="/profile">Profile</StyledNavLink>
