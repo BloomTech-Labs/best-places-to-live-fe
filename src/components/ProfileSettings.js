@@ -15,18 +15,22 @@ import { logout } from "../actions/logout";
 import Footer from "./Footer";
 
 function ProfileSettings({ user, history, logout, ...rest }) {
-  const { register, handleSubmit, errors, formState, setValue } = useForm({
-    mode: "onChange"
-  });
+  const { register, handleSubmit, errors, formState, setValue } = useForm({ mode: 'onChange'});
   const onSubmit = async data => {
+    console.log(data)
     const response = await updateProfile(data);
   };
 
+  const handleChange = e => {
+    console.log(errors)
+  }
 
   const logoutHandler = () => {
     logout();
     history.push("/");
   };
+
+  
 
   return (
     <Container>
@@ -42,8 +46,9 @@ function ProfileSettings({ user, history, logout, ...rest }) {
             type="text"
             defaultValue={user.name}
             name="name"
-            ref={register({ required: true, pattern: /^\S+@\S+$/i })}
-          />
+            onChange={handleChange}
+            ref={register({ required: true, minLength: 2 })}
+        />
           {errors.email && "Your email is required"}
           <Input
             type="text"
@@ -57,7 +62,7 @@ function ProfileSettings({ user, history, logout, ...rest }) {
             type="text"
             defaultValue={user.location}
             name="location"
-            ref={register({ required: true, pattern: /^\S+@\S+$/i })}
+            ref={register({ required: true, minLength: 2 })}
           />
 
           {errors.password && "Enter your password to make changes"}
