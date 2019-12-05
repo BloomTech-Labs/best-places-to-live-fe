@@ -11,7 +11,7 @@ export const deleteDislikedCity = data => dispatch => {
 
   /* Data in body of request is {id, cityID} */
   return axiosWithAuth()
-    .delete("/users/dislikes", data)
+    .delete("/users/dislikes", {data})
     .then(res => {
       console.log(res.data.dislikes);
       dispatch({
