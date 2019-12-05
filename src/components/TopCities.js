@@ -4,9 +4,9 @@ import CityCard from "./CityCard";
 import { Container, Flex, Text } from "../styles/index";
 import { fetchTopCities } from "../actions/topCities";
 
-function TopCities({ topCities, fetchTopCities, ...props }) {
+function TopCities({ topCities, factor, fetchTopCities, ...props }) {
   useEffect(() => {
-    fetchTopCities({});
+    fetchTopCities(factor);
   }, [fetchTopCities]);
 
   return (

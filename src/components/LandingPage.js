@@ -52,7 +52,11 @@ const LandingPage = props => {
           <Text as="h2" textAlign="center">
             Popular Cities
           </Text>
-          <TopCities {...props} />
+          <TopCities factor="score_total" {...props} />
+          <Text as="h2" textAlign="center">
+            Environmentally Friendly Cities
+          </Text>
+          <TopCities factor="score_environmental_quality" {...props} />
         </Container>
       </Container>
       <Footer />

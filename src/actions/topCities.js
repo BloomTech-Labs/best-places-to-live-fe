@@ -8,10 +8,10 @@ import { toast } from "react-toastify";
 
 export const fetchTopCities = data => dispatch => {
   dispatch({ type: FETCH_TOP_CITIES_INITIALIZE });
-
+  //data is the factor as a string
   return axios
     .post("https://best-places-api.herokuapp.com/api", {
-      input1: ["score_total"]
+      input1: [data]
     })
     .then(res => {
       dispatch({
