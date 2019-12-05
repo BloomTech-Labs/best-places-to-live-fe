@@ -7,7 +7,6 @@ import {
 import initialState from "./initialState";
 
 const updateProfileReducer = (state = initialState, action) => {
-  console.log(action);
   switch (action.type) {
     case UPDATE_PROFILE_INITIALIZE:
       return {

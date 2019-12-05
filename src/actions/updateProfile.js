@@ -8,11 +8,9 @@ import { toast } from "react-toastify";
 
 export const updateProfile = userData => dispatch => {
   dispatch({ type: UPDATE_PROFILE_INITIALIZE });
-  console.log(userData)
   return axiosWithAuth()
     .put(`/users/profile`, userData)
     .then(res => {
-      console.log(res);
       dispatch({
         type: UPDATE_PROFILE_SUCCESS,
         payload: {
@@ -24,7 +22,6 @@ export const updateProfile = userData => dispatch => {
       return "Successful";
     })
     .catch(err => {
-      console.log(err);
       dispatch({
         type: UPDATE_PROFILE_FAIL,
         payload: { err, message: err.message }

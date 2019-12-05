@@ -17,10 +17,7 @@ import Footer from "./Footer";
 function ProfileSettings({ user, history, logout, updateProfile, ...rest }) {
   const { register, handleSubmit, errors, formState } = useForm({ mode: 'onChange'});
   const onSubmit = async data => {
-    
     const response = await updateProfile(data);
-
-    console.log(response);
   };
 
   const logoutHandler = () => {
