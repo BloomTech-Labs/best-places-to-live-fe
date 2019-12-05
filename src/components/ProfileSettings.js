@@ -14,10 +14,8 @@ import { updateProfile } from "../actions/updateProfile";
 import { logout } from "../actions/logout";
 import Footer from "./Footer";
 
-function ProfileSettings({ user, history, logout, ...rest }) {
-  const { register, handleSubmit, errors, formState } = useForm({
-    mode: "onChange"
-  });
+function ProfileSettings({ user, history, logout, updateProfile, ...rest }) {
+  const { register, handleSubmit, errors, formState } = useForm({ mode: 'onChange'});
   const onSubmit = async data => {
     const response = await updateProfile(data);
   };
@@ -39,23 +37,32 @@ function ProfileSettings({ user, history, logout, ...rest }) {
           {errors.name && "Your name is required"}
           <Input
             type="text"
-            value={user.name}
+            defaultValue={user.name}
             name="name"
-            ref={register({ required: true, pattern: /^\S+@\S+$/i })}
-          />
+            ref={register({ required: true, minLength: 2 })}
+        />
           {errors.email && "Your email is required"}
           <Input
             type="text"
-            value={user.email}
+            defaultValue={user.email}
             name="email"
             ref={register({ required: true, pattern: /^\S+@\S+$/i })}
           />
+
           {errors.location && "Your location is required"}
           <Input
             type="text"
-            value={user.location}
+            defaultValue={user.location}
             name="location"
-            ref={register({ required: true, pattern: /^\S+@\S+$/i })}
+            ref={register({ required: true, minLength: 2 })}
+          />
+
+          {errors.password && "Enter your password to make changes"}
+          <Input
+            type="Password"
+            placeholder="Password"
+            name="password"
+            ref={register({ required: true })}
           />
 
           <Container textAlign="center">
@@ -83,6 +90,4 @@ const mapStatetoProps = state => {
   };
 };
 
-export default connect(mapStatetoProps, {
-  logout
-})(ProfileSettings);
+export default connect(mapStatetoProps, { logout, updateProfile})(ProfileSettings);

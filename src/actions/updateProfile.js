@@ -14,7 +14,6 @@ export const updateProfile = userData => dispatch => {
       dispatch({
         type: UPDATE_PROFILE_SUCCESS,
         payload: {
-          id: res.data._id,
           email: res.data.email,
           name: res.data.name
         }
