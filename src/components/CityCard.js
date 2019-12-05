@@ -24,7 +24,7 @@ function CityCard({ city, page, ...rest }) {
   return (
     <Card
       as="article"
-      borderRadius={3}
+      borderRadius={15}
       m={2}
       flex={flexSizeProperty}
       background={` 

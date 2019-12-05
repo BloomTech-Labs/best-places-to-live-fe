@@ -57,7 +57,7 @@ const LandingPage = props => {
           </Text>
           <TopCities factor="score_total" {...props} />
           <Text as="h2" textAlign="center">
-            Best {chosenFactor.displayName} Cities
+            Best Cities for {chosenFactor.displayName}
           </Text>
           <TopCities factor={chosenFactor.factor} {...props} />
         </Container>
