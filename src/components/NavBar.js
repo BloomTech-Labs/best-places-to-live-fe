@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Nav, StyledNavLink } from "../styles/index";
-import { FaCog } from "react-icons/fa";
+import { Nav, StyledNavLink, Flex, SettingsCog } from "../styles/index";
 
 const NavBar = ({ isLoggedIn }) => {
   return (
@@ -9,25 +8,26 @@ const NavBar = ({ isLoggedIn }) => {
       {!isLoggedIn && (
         <>
           <div>
-            <StyledNavLink to="/">Home</StyledNavLink>
+            <StyledNavLink to="/">Live In The Best Place</StyledNavLink>
           </div>
 
-          <div>
+          <Flex justifyContent="space-between" width="20vw" minWidth="120px">
+            <StyledNavLink to="/login">Log In</StyledNavLink>
             <StyledNavLink to="/signup">Sign Up</StyledNavLink>
-          </div>
+          </Flex>
         </>
       )}
 
       {isLoggedIn && (
         <>
           <div>
-            <StyledNavLink to="/">Home</StyledNavLink>
+            <StyledNavLink to="/">Live In The Best Place</StyledNavLink>
           </div>
           <div>
             <StyledNavLink to="/profile">Profile</StyledNavLink>
             <StyledNavLink to="/settings">
               {" "}
-              <FaCog />{" "}
+              <SettingsCog />{" "}
             </StyledNavLink>
           </div>
         </>

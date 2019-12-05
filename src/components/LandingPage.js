@@ -12,8 +12,11 @@ import {
 } from "../styles/index";
 import heroImg from "../img/hero.jpg";
 import TopCities from "./TopCities";
+import { factors, randomFactor } from "../utils/factors";
 
 const LandingPage = props => {
+  const chosenFactor = randomFactor(factors);
+
   return (
     <>
       <Container as="main">
@@ -46,13 +49,18 @@ const LandingPage = props => {
               <Button> Explore!</Button>
             </StyledLink>
           </Text>
-          {/* <Flex>For the category/ factors cards</Flex> */}
         </Container>
         <Container textAlign="center">
           <Text as="h2" textAlign="center">
             Popular Cities
           </Text>
-          <TopCities {...props} />
+          <TopCities factor="score_total" {...props} />
+        </Container>
+        <Container textAlign="center">
+          <Text as="h2" textAlign="center">
+            Best Cities for {chosenFactor.displayName}
+          </Text>
+          <TopCities factor={chosenFactor.factor} {...props} />
         </Container>
       </Container>
       <Footer />
