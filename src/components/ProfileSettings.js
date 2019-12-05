@@ -20,7 +20,6 @@ function ProfileSettings({ user, history, logout, updateProfile, ...rest }) {
   });
   const onSubmit = async data => {
     const response = await updateProfile(data);
-    l;
   };
 
   const logoutHandler = () => {
