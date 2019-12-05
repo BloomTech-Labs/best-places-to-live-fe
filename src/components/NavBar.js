@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Nav, StyledNavLink, Flex } from "../styles/index";
-import styled from "styled-components";
+import { Nav, StyledNavLink, Flex, SettingsCog } from "../styles/index";
 
 const NavBar = ({ isLoggedIn }) => {
   return (
@@ -28,7 +27,7 @@ const NavBar = ({ isLoggedIn }) => {
             <StyledNavLink to="/profile">Profile</StyledNavLink>
             <StyledNavLink to="/settings">
               {" "}
-              <FaCogStyle />{" "}
+              <SettingsCog />{" "}
             </StyledNavLink>
           </div>
         </>

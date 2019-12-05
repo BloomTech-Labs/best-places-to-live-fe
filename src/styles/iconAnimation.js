@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { FaCog } from "react-icons/fa";
 
-export const SettingCog = styled(FaCog)`
+export const SettingsCog = styled(FaCog)`
   position: absolute;
   transition-property: transform;
   transition-duration: 1s;
