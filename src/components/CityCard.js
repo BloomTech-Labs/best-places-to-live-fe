@@ -16,7 +16,7 @@ function CityCard({ city, page, ...rest }) {
   const size = useWindowSize();
   let flexSizeProperty;
   if (page && size.width <= 1000) {
-    flexSizeProperty = "0 0 50%";
+    flexSizeProperty = "0 0 37%";
   } else {
     flexSizeProperty = "0 0 20%";
   }
