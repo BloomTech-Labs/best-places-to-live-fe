@@ -15,12 +15,13 @@ import { logout } from "../actions/logout";
 import Footer from "./Footer";
 
 function ProfileSettings({ user, history, logout, ...rest }) {
-  const { register, handleSubmit, errors, formState } = useForm({
+  const { register, handleSubmit, errors, formState, setValue } = useForm({
     mode: "onChange"
   });
   const onSubmit = async data => {
     const response = await updateProfile(data);
   };
+
 
   const logoutHandler = () => {
     logout();
@@ -39,30 +40,32 @@ function ProfileSettings({ user, history, logout, ...rest }) {
           {errors.name && "Your name is required"}
           <Input
             type="text"
-            value={user.name}
+            defaultValue={user.name}
             name="name"
             ref={register({ required: true, pattern: /^\S+@\S+$/i })}
           />
           {errors.email && "Your email is required"}
           <Input
             type="text"
-            value={user.email}
+            defaultValue={user.email}
             name="email"
             ref={register({ required: true, pattern: /^\S+@\S+$/i })}
           />
-          {errors.password && "Your password is required"}
-          <Input
-            type="text"
-            value={user.password}
-            name="password"
-            ref={register({ required: true })}
-          />
+
           {errors.location && "Your location is required"}
           <Input
             type="text"
-            value={user.location}
+            defaultValue={user.location}
             name="location"
             ref={register({ required: true, pattern: /^\S+@\S+$/i })}
+          />
+
+          {errors.password && "Enter your password to make changes"}
+          <Input
+            type="Password"
+            placeholder="Password"
+            name="password"
+            ref={register({ required: true })}
           />
 
           <Container textAlign="center">
