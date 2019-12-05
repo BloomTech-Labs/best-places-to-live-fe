@@ -57,7 +57,12 @@ function Login({ login, ...rest }) {
           >
             Continue with Facebook
           </FacebookButton>
-          <GoogleButton Google>Continue with Google</GoogleButton>
+          <GoogleButton
+            Google
+            href="https://bestplacesbe.herokuapp.com/auth/google"
+          >
+            Continue with Google
+          </GoogleButton>
         </Flex>
       </Form>
     </Container>
