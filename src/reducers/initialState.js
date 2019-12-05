@@ -6,7 +6,7 @@ const initialState = {
     dislikes: []
   },
   displayedCities: [],
-  topCities: { score_total: [] },
+  topCities: {},
   isFetching: false,
   error: ""
 };

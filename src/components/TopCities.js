@@ -4,37 +4,44 @@ import CityCard from "./CityCard";
 import { Container, Flex, Text } from "../styles/index";
 import { fetchTopCities } from "../actions/topCities";
 
-function TopCities({ topCities, factor, fetchTopCities, ...props }) {
+function TopCities({
+  topCities,
+  isFetching,
+  factor,
+  fetchTopCities,
+  ...props
+}) {
   useEffect(() => {
     fetchTopCities(factor);
   }, [fetchTopCities]);
-  console.log(topCities);
-  return (
-    <Container p={`0 15px`}>
-      <Flex
-        flexDirection="column"
-        alignItems="center"
-        display="flex"
-        justifyContent="center"
-      ></Flex>
-      <Flex
-        justifyContent="center"
-        flexDirection="row"
-        // flexWrap="wrap"
-        overflowY="hidden"
-        overflowX="scroll"
-      >
-        {topCities.map(city => (
-          <CityCard key={city._id} city={city} page="topCities" {...props} />
-        ))}
-      </Flex>
-    </Container>
-  );
+
+  console.log(topCities[factor]);
+
+  if (topCities[factor]) {
+    return (
+      <Container p={`0 15px`}>
+        <Flex
+          justifyContent="center"
+          flexDirection="row"
+          // flexWrap="wrap"
+          overflowY="hidden"
+          overflowX="scroll"
+        >
+          {topCities[factor].map(city => (
+            <CityCard key={city._id} city={city} page="topCities" {...props} />
+          ))}
+        </Flex>
+      </Container>
+    );
+  } else {
+    return <p>Is Loading</p>;
+  }
 }
 
 const mapStatetoProps = state => {
   return {
-    topCities: state.topCities
+    topCities: state.topCities,
+    isFetching: state.isFetching
   };
 };
 
