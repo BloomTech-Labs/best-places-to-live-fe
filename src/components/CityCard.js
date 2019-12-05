@@ -18,7 +18,7 @@ function CityCard({ city, page, ...rest }) {
   if (page && size.width <= 1000) {
     flexSizeProperty = "0 0 50%";
   } else {
-    flexSizeProperty = "";
+    flexSizeProperty = "0 0 20%";
   }
 
   return (

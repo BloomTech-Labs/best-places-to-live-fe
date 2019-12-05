@@ -19,7 +19,6 @@ function TopCities({
     return (
       <Container p={`0 15px`}>
         <Flex
-          justifyContent="center"
           flexDirection="row"
           // flexWrap="wrap"
           overflowY="hidden"
