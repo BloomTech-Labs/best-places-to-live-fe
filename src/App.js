@@ -44,8 +44,6 @@ function App(props) {
         <Route path="/search" component={SearchResultsPage} />
         <PrivateRoute path="/profile" component={ProfilePage} />
         <PrivateRoute path="/settings" component={ProfileSettings} />
-        <PrivateRoute path="/profile" component={ProfilePage} />
-        <PrivateRoute path="/settings" component={ProfileSettings} />
       </ThemeProvider>
     </Router>
   );
