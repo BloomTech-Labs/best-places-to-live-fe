@@ -8,7 +8,7 @@ function TopCities({ topCities, factor, fetchTopCities, ...props }) {
   useEffect(() => {
     fetchTopCities(factor);
   }, [fetchTopCities]);
-
+  console.log(topCities);
   return (
     <Container p={`0 15px`}>
       <Flex
