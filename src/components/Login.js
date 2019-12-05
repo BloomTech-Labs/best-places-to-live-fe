@@ -59,7 +59,7 @@ function Login({ login, ...rest }) {
           </FacebookButton>
           <GoogleButton
             Google
-            href="https://bestplacesbe.herokuapp.com/auth/google"
+            href="https://bestplacesbe-contest.herokuapp.com/auth/google"
           >
             Continue with Google
           </GoogleButton>

@@ -6,7 +6,7 @@ const initialState = {
     dislikes: []
   },
   displayedCities: [],
-  topCities: [],
+  topCities: {},
   isFetching: false,
   error: ""
 };

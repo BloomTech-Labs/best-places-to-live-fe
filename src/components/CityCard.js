@@ -16,15 +16,15 @@ function CityCard({ city, page, ...rest }) {
   const size = useWindowSize();
   let flexSizeProperty;
   if (page && size.width <= 1000) {
-    flexSizeProperty = "0 0 50%";
+    flexSizeProperty = "0 0 37%";
   } else {
-    flexSizeProperty = "";
+    flexSizeProperty = "0 0 20%";
   }
 
   return (
     <Card
       as="article"
-      borderRadius={3}
+      borderRadius={15}
       m={2}
       flex={flexSizeProperty}
       background={` 
@@ -39,9 +39,10 @@ function CityCard({ city, page, ...rest }) {
     >
       <Flex
         justifyContent={page !== "profile" ? "space-between" : "flex-end"}
+        display={page == "landing" ? "hidden" : ""}
         p={[1, 2]}
       >
-        {page !== "profile" && (
+        {page == "search" && (
           <LikeIcon
             city={{
               city_id: city._id,
@@ -50,13 +51,15 @@ function CityCard({ city, page, ...rest }) {
             {...rest}
           />
         )}
-        <DislikeIcon
-          city={{
-            city_id: city._id,
-            city_name: city.name
-          }}
-          {...rest}
-        />
+        {(page == "profile" || page == "search") && (
+          <DislikeIcon
+            city={{
+              city_id: city._id,
+              city_name: city.name
+            }}
+            {...rest}
+          />
+        )}
       </Flex>
       <StyledLink
         display="inline-block"
