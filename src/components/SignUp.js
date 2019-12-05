@@ -65,11 +65,11 @@ function SignUp({ signup, ...rest }) {
           <Text as="h1" color="black">
             Already have an account?
           </Text>
-          <StyledLink to="/login">
+          {/* <StyledLink to="/login">
             <Text as="h1" color="blue">
               Log In
             </Text>
-          </StyledLink>
+          </StyledLink> */}
         </Container>
       </Form>
     </Container>

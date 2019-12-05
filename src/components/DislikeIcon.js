@@ -30,11 +30,13 @@ function DislikeIcon({
 
     font-size: 20px;
 
-    transition: opacity 0.2s ease-in-out;
+    transition: all 0.225s ease-in-out;
 
     &:hover {
       cursor: pointer;
+      fill: #e81919;
       opacity: 0.75;
+      transform: scale(1.5);
     }
   `;
 

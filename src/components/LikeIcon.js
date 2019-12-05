@@ -18,11 +18,12 @@ function LikeIcon({ addLikedCity, city, ...rest }) {
     color: ${() => (rest.iconColor ? "black" : "white")};
     font-size: 20px;
     fill: transparent;
-    transition: fill 0.2s ease-in-out;
+    transition: all 0.225s ease-in-out;
 
     &:hover {
       cursor: pointer;
       fill: #e81919;
+      transform: scale(1.5);
     }
   `;
 

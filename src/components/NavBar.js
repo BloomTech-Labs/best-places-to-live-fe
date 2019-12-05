@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Nav, StyledNavLink } from "../styles/index";
-import { FaCog } from "react-icons/fa";
+import { Nav, StyledNavLink, Flex } from "../styles/index";
+import styled from "styled-components";
 
 const NavBar = ({ isLoggedIn }) => {
   return (
@@ -12,9 +12,10 @@ const NavBar = ({ isLoggedIn }) => {
             <StyledNavLink to="/">Home</StyledNavLink>
           </div>
 
-          <div>
+          <Flex justifyContent="space-between" width="20vw" minWidth="1">
+            <StyledNavLink to="/login">Log In</StyledNavLink>
             <StyledNavLink to="/signup">Sign Up</StyledNavLink>
-          </div>
+          </Flex>
         </>
       )}
 
@@ -27,7 +28,7 @@ const NavBar = ({ isLoggedIn }) => {
             <StyledNavLink to="/profile">Profile</StyledNavLink>
             <StyledNavLink to="/settings">
               {" "}
-              <FaCog />{" "}
+              <FaCogStyle />{" "}
             </StyledNavLink>
           </div>
         </>
