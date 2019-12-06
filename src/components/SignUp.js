@@ -42,12 +42,16 @@ function SignUp({ signup, ...rest }) {
           name="email"
           ref={register({ required: true, pattern: /^\S+@\S+$/i })}
         />
-        {errors.password && "Your password is required"}
+        {errors.password &&
+          "Your password is required. Password must have at least 1 lowercase letter, 1 uppercase letter, 1 number, 1 special character, and must be at least 8 characters."}
         <Input
           type="Password"
           placeholder="Password"
           name="password"
-          ref={register({ required: true })}
+          ref={register({
+            required: true,
+            pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/
+          })}
         />
         {errors.location && "Your location is required"}
         <Input
@@ -65,11 +69,6 @@ function SignUp({ signup, ...rest }) {
           <Text as="h1" color="black">
             Already have an account?
           </Text>
-          {/* <StyledLink to="/login">
-            <Text as="h1" color="blue">
-              Log In
-            </Text>
-          </StyledLink> */}
         </Container>
       </Form>
     </Container>
