@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import { useFetch } from "../hooks/useFetch";
 import { baseURL } from "../utils/axiosWithAuth";
-import { Container, Flex, Text, Image, Hero } from "../styles/index";
+import { Container, Flex, Text, Hero } from "../styles/index";
 import Footer from "./Footer";
 import LikeIcon from "./LikeIcon";
 import DislikeIcon from "./DislikeIcon";
 
-const CityPage = ({ match }) => {
+const CityPage = ({ match, likes }) => {
   const cityID = match.params.id;
   const response = useFetch(`${baseURL}city`, {
     method: "POST",
@@ -39,10 +40,14 @@ const CityPage = ({ match }) => {
       city_name: cityInfo.name,
       city_id: cityID
     };
+
+    const isLiked = (currentCityID, likedCities) =>
+      likedCities.find(({ _id }) => _id === currentCityID);
+
     return (
       <Container as="main" maxWidth="1000px" margin="0 auto">
         <Flex justifyContent="space-between" p={[1, 2]}>
-          <LikeIcon iconColor city={city} />
+          <LikeIcon iconColor city={city} liked={isLiked(cityID, likes)} />
           <DislikeIcon iconColor city={city} />
         </Flex>
 
@@ -74,4 +79,11 @@ const CityPage = ({ match }) => {
   }
 };
 
-export default CityPage;
+const mapStateToProps = state => {
+  const { user } = state;
+  return {
+    likes: user.likes
+  };
+};
+
+export default connect(mapStateToProps, {})(CityPage);
