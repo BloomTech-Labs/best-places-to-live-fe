@@ -11,6 +11,7 @@ import {
 import useWindowSize from "../hooks/useWindowSize";
 import LikeIcon from "./LikeIcon";
 import DislikeIcon from "./DislikeIcon";
+import { connect } from "react-redux";
 
 function CityCard({ city, page, ...rest }) {
   const size = useWindowSize();
@@ -84,4 +85,4 @@ function CityCard({ city, page, ...rest }) {
   );
 }
 
-export default CityCard;
+export default connect(null, {})(CityCard);

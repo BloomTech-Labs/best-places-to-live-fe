@@ -26,6 +26,7 @@ const CityPage = ({ match }) => {
       </Container>
     );
   } else {
+    console.log(response);
     const cityInfo = response.response.data[0];
     const cityName = cityInfo.short_name;
     const stateName = cityInfo.state;
