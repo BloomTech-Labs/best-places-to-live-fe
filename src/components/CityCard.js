@@ -1,19 +1,11 @@
 import React from "react";
-import {
-  Container,
-  Card,
-  Flex,
-  Image,
-  Text,
-  Hero,
-  StyledLink
-} from "../styles/index";
+import { Container, Card, Flex, Text, StyledLink } from "../styles/index";
 import useWindowSize from "../hooks/useWindowSize";
 import LikeIcon from "./LikeIcon";
 import DislikeIcon from "./DislikeIcon";
 import { connect } from "react-redux";
 
-function CityCard({ city, page, ...rest }) {
+function CityCard({ city, page, likes, ...rest }) {
   const size = useWindowSize();
   let flexSizeProperty;
   if (page && size.width <= 1000) {
@@ -21,6 +13,9 @@ function CityCard({ city, page, ...rest }) {
   } else {
     flexSizeProperty = "0 0 20%";
   }
+
+  const isLiked = (currentCity, likedCities) =>
+    likedCities.find(({ _id }) => _id === currentCity._id);
 
   return (
     <Card
@@ -49,6 +44,7 @@ function CityCard({ city, page, ...rest }) {
               city_id: city._id,
               city_name: city.name
             }}
+            liked={isLiked(city, likes)}
             {...rest}
           />
         )}
@@ -85,4 +81,11 @@ function CityCard({ city, page, ...rest }) {
   );
 }
 
-export default connect(null, {})(CityCard);
+const mapStateToProps = state => {
+  const { user } = state;
+  return {
+    likes: user.likes
+  };
+};
+
+export default connect(mapStateToProps, {})(CityCard);
