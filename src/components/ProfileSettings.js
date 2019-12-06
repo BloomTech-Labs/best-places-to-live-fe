@@ -64,7 +64,10 @@ function ProfileSettings({ user, history, logout, updateProfile, ...rest }) {
             type="Password"
             placeholder="Password"
             name="password"
-            ref={register({ required: true })}
+            ref={register({
+              required: true,
+              pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/
+            })}
           />
 
           <Container textAlign="center">
