@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import { FiHeart } from "react-icons/fi";
 
-function LikeIcon({ addLikedCity, city, ...rest }) {
+function LikeIcon({ addLikedCity, city, liked, ...rest }) {
   const handleClick = async () => {
     const response = await addLikedCity(city);
 
@@ -17,7 +17,7 @@ function LikeIcon({ addLikedCity, city, ...rest }) {
   const StyledRegHeart = styled(FiHeart)`
     color: ${() => (rest.iconColor ? "black" : "white")};
     font-size: 20px;
-    fill: transparent;
+    fill: ${() => (liked ? "red" : "transparent")};
     transition: all 0.225s ease-in-out;
 
     &:hover {
