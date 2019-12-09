@@ -66,9 +66,6 @@ function SignUp({ signup, ...rest }) {
           <Button type="submit" disabled={!formState.isValid}>
             Sign Up
           </Button>
-          <Text as="h1" color="black">
-            Already have an account?
-          </Text>
         </Container>
       </Form>
     </Container>
