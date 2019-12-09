@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { fetchLocationsByName } from "../actions/locationsByName";
 import { connect } from "react-redux";
-import { Container, Input } from "../styles/index";
+import { Container, Input, StyledSearchBar } from "../styles/index";
 
 function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
   const [location, setLocation] = useState("");
@@ -24,15 +24,15 @@ function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
   };
 
   return (
-    <Container width="100%" display="flex" justifyContent="center">
-      <Input
+    <Container width="20%" display="flex" justifyContent="center">
+      <StyledSearchBar
         type="text"
-        placeholder="Find a city"
+        placeholder="Search for cities or states"
         name="location"
         value={location}
-        width={150}
+        width={1500}
         fontSize={2}
-        maxWidth="100%"
+        width="100%"
         onChange={e => setLocation(e.target.value)}
         onKeyDown={e => handleInput(e)}
       />

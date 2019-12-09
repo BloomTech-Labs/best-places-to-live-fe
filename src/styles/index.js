@@ -7,7 +7,7 @@ import {
   LinkButton
 } from "./button";
 import { Container } from "./container";
-import { Input } from "./input";
+import { Input, StyledSearchBar } from "./input";
 import { StyledLink, StyledNavLink } from "./link";
 import { Card } from "./card";
 import { Flex } from "./flex";
@@ -43,5 +43,6 @@ export {
   Nav,
   Box,
   CheckBoxContainer,
-  SettingsCog
+  SettingsCog,
+  StyledSearchBar
 };
