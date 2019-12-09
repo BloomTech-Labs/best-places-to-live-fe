@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 
 export const fetchLocationsByName = data => dispatch => {
   dispatch({ type: FETCH_LOCATIONS_BY_NAME_INITIALIZE });
-
+  console.log("data before action creator", data);
   return axiosWithAuth()
     .post("/city/spec-search?limit=10", data)
     .then(res => {
