@@ -49,7 +49,7 @@ function Login({ login, ...rest }) {
           </Button>
         </Container>
 
-        <Flex flexDirection="column" alignItems="center">
+        {/* <Flex flexDirection="column" alignItems="center">
           <FacebookButton
             Facebook
             href="https://bestplacesbe.herokuapp.com/auth/facebook
@@ -63,7 +63,7 @@ function Login({ login, ...rest }) {
           >
             Continue with Google
           </GoogleButton>
-        </Flex>
+        </Flex> */}
       </Form>
     </Container>
   );

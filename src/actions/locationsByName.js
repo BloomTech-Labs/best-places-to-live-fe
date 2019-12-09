@@ -10,7 +10,7 @@ export const fetchLocationsByName = data => dispatch => {
   dispatch({ type: FETCH_LOCATIONS_BY_NAME_INITIALIZE });
 
   return axiosWithAuth()
-    .post("/city/search", data)
+    .post("/city/spec-search?limit=10", data)
     .then(res => {
       dispatch({
         type: FETCH_LOCATIONS_BY_NAME_SUCCESS,
