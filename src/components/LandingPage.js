@@ -25,25 +25,20 @@ const LandingPage = props => {
         <SearchBar page="landing" {...props} />
         <Hero
           display="flex"
-          justifyContent="center"
-          alignItems="center"
-          flexDirection="column"
           background={` 
           linear-gradient(
             rgba(0, 0, 0, 0.30), 
             rgba(0, 0, 0, 0.30)
           ),
-          
           url(${heroImg})`}
           backgroundSize="cover"
           backgroundPosition="center"
-          padding="130px 100px 100px"
+          height="30vw"
+          maxHeight="280px"
         >
-          <Box>
-            <Text textAlign="left" as="h2" fontSize={"2.5rem"} color="white">
-              Discover Your Next Hometown
-            </Text>
-          </Box>
+          <Text textAlign="left" as="h2" fontSize={"2.5rem"} color="white">
+            Discover Your Next Hometown
+          </Text>
         </Hero>
         <Container textAlign="center">
           <Text as="h2">
