@@ -52,20 +52,25 @@ const LandingPage = props => {
             </StyledLink>
           </Text>
         </Container>
-        <Container maxWidth="1200px" margin={"0 auto"} textAlign="center">
-          <Text as="h2" textAlign="center">
+        <Container
+          maxWidth="1200px"
+          margin={"0 auto"}
+          textAlign="center"
+          p={`0 15px`}
+        >
+          <Text as="h2" textAlign="left">
             Categories
           </Text>
           <Categories />
         </Container>
-        <Container textAlign="center">
-          <Text as="h2" textAlign="center">
+        <Container textAlign="center" p={`0 15px`}>
+          <Text as="h2" textAlign="left">
             Popular Cities
           </Text>
           <TopCities factor="score_total" {...props} />
         </Container>
-        <Container textAlign="center">
-          <Text as="h2" textAlign="center">
+        <Container textAlign="center" p={`0 15px`}>
+          <Text as="h2" textAlign="left">
             Best Cities for {chosenFactor.displayName}
           </Text>
           <TopCities factor={chosenFactor.factor} {...props} />

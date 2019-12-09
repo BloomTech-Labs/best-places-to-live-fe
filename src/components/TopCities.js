@@ -17,15 +17,21 @@ function TopCities({
 
   if (topCities[factor]) {
     return (
-      <Container p={`0 15px`}>
+      <Container>
         <Flex
           flexDirection="row"
           // flexWrap="wrap"
           overflowY="hidden"
           overflowX="scroll"
         >
-          {topCities[factor].map(city => (
-            <CityCard key={city._id} city={city} page="landing" {...props} />
+          {topCities[factor].map((city, index) => (
+            <CityCard
+              key={city._id}
+              city={city}
+              page="landing"
+              index={index}
+              {...props}
+            />
           ))}
         </Flex>
       </Container>

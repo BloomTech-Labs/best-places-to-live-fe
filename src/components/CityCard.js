@@ -5,7 +5,7 @@ import LikeIcon from "./LikeIcon";
 import DislikeIcon from "./DislikeIcon";
 import { connect } from "react-redux";
 
-function CityCard({ city, page, likes, ...rest }) {
+function CityCard({ city, page, likes, index, ...rest }) {
   const size = useWindowSize();
   let flexSizeProperty;
   if (page && size.width <= 1000) {
@@ -21,7 +21,7 @@ function CityCard({ city, page, likes, ...rest }) {
     <Card
       as="article"
       borderRadius={15}
-      m={2}
+      m={page === "landing" && index === 0 ? ".5rem .5rem .5rem 0" : ".5rem"}
       flex={flexSizeProperty}
       background={` 
           linear-gradient(
