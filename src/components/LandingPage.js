@@ -59,19 +59,19 @@ const LandingPage = props => {
           p={`0 15px`}
         >
           <Text as="h2" textAlign="left">
-            Categories
+            Categories:
           </Text>
           <Categories />
         </Container>
         <Container textAlign="center" p={`0 15px`}>
           <Text as="h2" textAlign="left">
-            Popular Cities
+            Popular Cities:
           </Text>
           <TopCities factor="score_total" {...props} />
         </Container>
         <Container textAlign="center" p={`0 15px`}>
           <Text as="h2" textAlign="left">
-            Best Cities for {chosenFactor.displayName}
+            Best Cities for {chosenFactor.displayName}:
           </Text>
           <TopCities factor={chosenFactor.factor} {...props} />
         </Container>

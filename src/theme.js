@@ -10,7 +10,9 @@ const colors = {
   primary: "#FF4C4C",
   white: "#fff",
   gray: "#333",
-  blue: "#0066ff"
+  blue: "#0066ff",
+  baliHai: "#808EAC",
+  portGore: "#2A2855"
 };
 
 const space = [
