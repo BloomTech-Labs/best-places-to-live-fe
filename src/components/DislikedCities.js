@@ -1,6 +1,6 @@
 import React from "react";
 import { deleteDislikedCity } from "../actions/deleteDislikedCity";
-import { Container, Flex, Text, Hero, Box } from "../styles/index";
+import { Container, Flex, Text, Hero, Box, Grid } from "../styles/index";
 import { connect } from "react-redux";
 import CityCard from "./CityCard";
 
@@ -14,12 +14,7 @@ function DislikedCities({ cities, deleteDislikedCity, ...rest }) {
           {" "}
           Disliked Cities
         </Text>
-        <Flex
-          as="article"
-          display="flex"
-          justifyContent="center"
-          flexWrap="wrap"
-        >
+        <Grid>
           {cities.map(city => (
             <CityCard
               actionType={deleteDislike}
@@ -29,7 +24,7 @@ function DislikedCities({ cities, deleteDislikedCity, ...rest }) {
               city={city}
             />
           ))}
-        </Flex>
+        </Grid>
       </Container>
     </>
   );

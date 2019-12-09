@@ -12,3 +12,14 @@ export const Input = styled.input`
   ${typography};
   ${layout};
 `;
+
+export const StyledSearchBar = styled.input`
+  margin-bottom: ${theme.space[4]};
+  padding: ${theme.space[2]} ${theme.space[3]};
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  font-size: ${theme.fontSizes.body};
+  line-height: 1.4;
+  ${typography};
+  ${layout};
+`;

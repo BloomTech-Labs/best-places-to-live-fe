@@ -1,6 +1,6 @@
 import React from "react";
 import { deleteLikedCity } from "../actions/deleteLikedCity";
-import { Container, Flex, Text, Hero, Box } from "../styles/index";
+import { Container, Flex, Text, Hero, Box, Grid } from "../styles/index";
 import { connect } from "react-redux";
 import CityCard from "./CityCard";
 
@@ -12,14 +12,9 @@ function LikedCities({ likedCities, deleteLikedCity, ...rest }) {
       <Container p={`0 15px`}>
         <Text as="h2" textAlign="center">
           {" "}
-          Liked Cities
+          Saved Cities
         </Text>
-        <Flex
-          as="article"
-          display="flex"
-          justifyContent="center"
-          flexWrap="wrap"
-        >
+        <Grid>
           {likedCities.map(city => (
             <CityCard
               actionType={deleteLike}
@@ -29,7 +24,7 @@ function LikedCities({ likedCities, deleteLikedCity, ...rest }) {
               city={city}
             />
           ))}
-        </Flex>
+        </Grid>
       </Container>
     </>
   );

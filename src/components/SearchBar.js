@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { fetchLocationsByName } from "../actions/locationsByName";
 import { connect } from "react-redux";
-import { Container, Input } from "../styles/index";
+import styled from "styled-components";
+import theme from "../theme";
+import useDebounce from "../hooks/useDebounce";
+import { Container, Input, StyledSearchBar } from "../styles/index";
 
 function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
   const [location, setLocation] = useState("");
@@ -17,23 +20,29 @@ function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
     }
   };
 
+  const handleChange = e => {
+    console.log(e);
+    setLocation(e.target.value);
+  };
+
   const handleInput = event => {
+    console.log(event);
     if (event.keyCode === 13) {
       fetchLocation(location);
     }
   };
 
   return (
-    <Container width="100%" display="flex" justifyContent="center">
-      <Input
+    <Container m={"0 auto"} display="flex" justifyContent="center">
+      <StyledSearchBar
         type="text"
-        placeholder="Find a city"
+        placeholder="Search for cities or states"
         name="location"
         value={location}
-        width={150}
         fontSize={2}
         maxWidth="100%"
-        onChange={e => setLocation(e.target.value)}
+        width="320px"
+        onChange={e => handleChange(e)}
         onKeyDown={e => handleInput(e)}
       />
     </Container>

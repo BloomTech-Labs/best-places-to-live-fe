@@ -3,9 +3,7 @@ import { connect } from "react-redux";
 import { Container, Flex, Text, Button } from "../styles/index";
 import { logout } from "../actions/logout";
 import Footer from "./Footer";
-import EditFactors from "./EditFactors";
 import LikedCities from "./LikedCities";
-import DislikedCities from "./DislikedCities";
 
 function ProfilePage({ user, history, logout, ...rest }) {
   const logoutHandler = () => {
@@ -33,8 +31,6 @@ function ProfilePage({ user, history, logout, ...rest }) {
         <Button onClick={logoutHandler}>Logout </Button>
       </Flex>
       <LikedCities />
-      <DislikedCities />
-      {/* <EditFactors /> */}
       <Footer />
     </Container>
   );

@@ -13,6 +13,7 @@ import {
 import { updateProfile } from "../actions/updateProfile";
 import { logout } from "../actions/logout";
 import Footer from "./Footer";
+import DislikedCities from "./DislikedCities";
 
 function ProfileSettings({ user, history, logout, updateProfile, ...rest }) {
   const { register, handleSubmit, errors, formState } = useForm({
@@ -76,14 +77,15 @@ function ProfileSettings({ user, history, logout, updateProfile, ...rest }) {
             </Button>
           </Container>
         </Form>
-
         {/*  Navlink to password change page */}
-
         <Button onClick={logoutHandler}>Logout </Button>
-        {/* waiting on backend */}
-        <LinkButton>Delete Account</LinkButton>
       </Flex>
-      <Footer />
+      <DislikedCities />
+      {/* waiting on backend */}
+      <Container textAlign="center">
+        <LinkButton>Delete Account</LinkButton>
+        <Footer />
+      </Container>
     </Container>
   );
 }

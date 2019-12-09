@@ -8,11 +8,13 @@ import {
   Text,
   Hero,
   Box,
-  Button
+  Button,
+  Grid
 } from "../styles/index";
 import heroImg from "../img/hero.jpg";
 import TopCities from "./TopCities";
 import { factors, randomFactor } from "../utils/factors";
+import Categories from "./Categories";
 
 const LandingPage = props => {
   const chosenFactor = randomFactor(factors);
@@ -20,6 +22,7 @@ const LandingPage = props => {
   return (
     <>
       <Container as="main">
+        <SearchBar page="landing" {...props} />
         <Hero
           display="flex"
           justifyContent="center"
@@ -37,11 +40,10 @@ const LandingPage = props => {
           padding="130px 100px 100px"
         >
           <Box>
-            <Text textAlign="center" as="h2" fontSize={"2.5rem"} color="white">
-              Live in the Best Place
+            <Text textAlign="left" as="h2" fontSize={"2.5rem"} color="white">
+              Discover Your Next Hometown
             </Text>
           </Box>
-          <SearchBar page="landing" {...props} />
         </Hero>
         <Container textAlign="center">
           <Text as="h2">
@@ -50,14 +52,25 @@ const LandingPage = props => {
             </StyledLink>
           </Text>
         </Container>
-        <Container textAlign="center">
-          <Text as="h2" textAlign="center">
+        <Container
+          maxWidth="1200px"
+          margin={"0 auto"}
+          textAlign="center"
+          p={`0 15px`}
+        >
+          <Text as="h2" textAlign="left">
+            Categories
+          </Text>
+          <Categories />
+        </Container>
+        <Container textAlign="center" p={`0 15px`}>
+          <Text as="h2" textAlign="left">
             Popular Cities
           </Text>
           <TopCities factor="score_total" {...props} />
         </Container>
-        <Container textAlign="center">
-          <Text as="h2" textAlign="center">
+        <Container textAlign="center" p={`0 15px`}>
+          <Text as="h2" textAlign="left">
             Best Cities for {chosenFactor.displayName}
           </Text>
           <TopCities factor={chosenFactor.factor} {...props} />
