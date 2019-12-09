@@ -1,7 +1,7 @@
 import React from "react";
 import { factors } from "../utils/factors";
 import Icon from "./Icon";
-// import { Container, Text } from "..styles/index";
+import { Container, Text } from "..styles/index";
 
 //More Button
 
