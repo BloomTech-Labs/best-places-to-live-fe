@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { fetchLocationsByName } from "../actions/locationsByName";
 import { connect } from "react-redux";
+import styled from "styled-components";
+import theme from "../theme";
 import { Container, Input, StyledSearchBar } from "../styles/index";
 
 function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
@@ -23,20 +25,28 @@ function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
     }
   };
 
+  const StyledContainer = styled(Container)`
+    width: 90%;
+    margin: 0 auto;
+
+    @media (min-width: ${theme.breakpoints.sm}) {
+      width: 20%;
+    }
+  `;
+
   return (
-    <Container width="20%" display="flex" justifyContent="center">
+    <StyledContainer display="flex" justifyContent="center">
       <StyledSearchBar
         type="text"
         placeholder="Search for cities or states"
         name="location"
         value={location}
-        width={1500}
         fontSize={2}
         width="100%"
         onChange={e => setLocation(e.target.value)}
         onKeyDown={e => handleInput(e)}
       />
-    </Container>
+    </StyledContainer>
   );
 }
 
