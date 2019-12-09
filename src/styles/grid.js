@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import {
   grid,
   layout,
@@ -19,6 +19,13 @@ export const Grid = styled.div`
   ${space};
   ${background};
   grid-template-columns: 1fr;
+
+  ${props =>
+    props.fourColumns &&
+    css`
+      grid-template-columns: repeat(4, 1fr);
+    `}
+
 
   @media (min-width: ${theme.breakpoints.sm}) {
     grid-template-columns: repeat(2, 1fr);

@@ -8,7 +8,8 @@ import {
   Text,
   Hero,
   Box,
-  Button
+  Button,
+  Grid
 } from "../styles/index";
 import heroImg from "../img/hero.jpg";
 import TopCities from "./TopCities";
@@ -21,6 +22,7 @@ const LandingPage = props => {
   return (
     <>
       <Container as="main">
+        <SearchBar page="landing" {...props} />
         <Hero
           display="flex"
           justifyContent="center"
@@ -42,7 +44,6 @@ const LandingPage = props => {
               Live in the Best Place
             </Text>
           </Box>
-          <SearchBar page="landing" {...props} />
         </Hero>
         <Container textAlign="center">
           <Text as="h2">
@@ -51,7 +52,7 @@ const LandingPage = props => {
             </StyledLink>
           </Text>
         </Container>
-        <Container textAlign="center">
+        <Container maxWidth="1200px" margin={"0 auto"} textAlign="center">
           <Text as="h2" textAlign="center">
             Categories
           </Text>
