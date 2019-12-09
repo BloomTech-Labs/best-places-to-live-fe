@@ -13,6 +13,7 @@ import {
 import heroImg from "../img/hero.jpg";
 import TopCities from "./TopCities";
 import { factors, randomFactor } from "../utils/factors";
+import Categories from "./Categories";
 
 const LandingPage = props => {
   const chosenFactor = randomFactor(factors);
@@ -49,6 +50,12 @@ const LandingPage = props => {
               <Button> Explore!</Button>
             </StyledLink>
           </Text>
+        </Container>
+        <Container textAlign="center">
+          <Text as="h2" textAlign="center">
+            Categories
+          </Text>
+          <Categories />
         </Container>
         <Container textAlign="center">
           <Text as="h2" textAlign="center">
