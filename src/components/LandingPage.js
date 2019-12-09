@@ -63,7 +63,7 @@ const LandingPage = props => {
           </Text>
           <Categories />
         </Container>
-        <Container textAlign="center" p={`0 15px`}>
+        <Container textAlign="center" p={`0 15px`} height="auto">
           <Text as="h2" textAlign="left">
             Popular Cities:
           </Text>

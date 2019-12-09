@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-import { width, space, border, flexbox, background } from "styled-system";
+import { layout, space, border, flexbox, background } from "styled-system";
 
 export const Card = styled.div`
   ${space};
   ${border};
-  ${width};
+  ${layout};
   ${flexbox};
   ${background};
 `;
