@@ -23,6 +23,28 @@ export const factors = [
   { rank: 14, factor: "population", displayName: "Population" }
 ];
 
+/* 
+React Icon Names for Each Factor
+
+"Commute Time"               IoIosClock
+"Cost of Living"             FaMoneyBill
+"Economy"                    AiOutlineDollar
+"Education"                 MdSchool
+"Environmental Quality"     FaLeaf
+"Healthcare"                FaRegHospital
+"Housing"                  FaHome
+"Internet"                     FaWifi
+"Leisure and Culture"       GiAqueduct
+"Outdoors"                  GiForestCamp
+"Safety"                  IoIosWarning
+"Start Ups"                IoIosRocket
+"Taxation"              FaWpforms
+"Population"               IoMdPeople
+"More"                      IoIosMore
+
+
+*/
+
 export const randomFactor = factors => {
   return factors[Math.floor(Math.random() * factors.length)];
 };
