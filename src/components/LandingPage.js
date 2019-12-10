@@ -29,8 +29,13 @@ const LandingPage = props => {
         <Modal show={show} handleClose={hideModal}>
           <ExplorePage />
         </Modal>
-        <Button display={show ? "none" : ""} onClick={showModal}>
-          Apply Filters
+        <Button
+          display={show ? "none" : ""}
+          onClick={showModal}
+          borderRadius="45rem"
+          borderColor="blue"
+        >
+          Add Filters
         </Button>
         <Hero
           display="flex"

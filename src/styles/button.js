@@ -6,12 +6,12 @@ export const Button = styled.button`
   ${typography};
   ${space};
   ${color};
-  ${border}
   ${layout};
   transition: 0.275s all ease-in;
   padding: ${theme.space[2]} ${theme.space[3]};
   border: 1px solid ${theme.colors.gray};
   border-radius: 3px;
+  ${border};
   font-size: ${theme.fontSizes[1]};
   background-color: ${theme.colors.white};
   margin-bottom: ${theme.space[4]};

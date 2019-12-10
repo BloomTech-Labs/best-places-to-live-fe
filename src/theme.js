@@ -13,7 +13,8 @@ const colors = {
   blue: "#0066ff",
   baliHai: "#808EAC",
   portGore: "#2A2855",
-  silver: "#C4C4C4"
+  silver: "#C4C4C4",
+  navy: "#045BED"
 };
 
 const space = [
