@@ -7,6 +7,7 @@ import { Container, Flex, Text, Hero } from "../styles/index";
 import Footer from "./Footer";
 import LikeIcon from "./LikeIcon";
 import DislikeIcon from "./DislikeIcon";
+import theme from "../theme";
 
 const CityPage = ({ match, likes }) => {
   const cityID = match.params.id;
@@ -34,6 +35,7 @@ const CityPage = ({ match, likes }) => {
     const cityID = cityInfo._id;
     const fullName = cityInfo.full_name;
     const photo = cityInfo.secure_url;
+    const summary = cityInfo.Summary;
 
     //For Backend
     const city = {
@@ -45,34 +47,36 @@ const CityPage = ({ match, likes }) => {
       likedCities.find(({ _id }) => _id === currentCityID);
 
     return (
-      <Container as="main" maxWidth="1000px" margin="0 auto">
-        <Flex justifyContent="space-between" p={[1, 2]}>
+      <Container as="main" maxWidth="600px" margin="0 auto">
+        <Container textAlign="center">
+          <Text as="h1">{cityName}</Text>
           <LikeIcon iconColor city={city} liked={isLiked(cityID, likes)} />
-          <DislikeIcon iconColor city={city} />
-        </Flex>
+          <Text as="h2">{stateName}</Text>
 
-        <Hero
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          flexDirection="column"
-          background={` 
+          <Hero
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            flexDirection="column"
+            background={` 
           linear-gradient(
             rgba(0, 0, 0, 0.30), 
             rgba(0, 0, 0, 0.30)
           ),
           
           url(${photo})`}
-          backgroundSize="cover"
-          backgroundPosition="center"
-          padding="130px 100px 100px"
-        />
-
-        <Text as="h1">
-          This is {cityName}. We're in {stateName} now!
-        </Text>
-        <Link to="/search">Here are your results!</Link>
-
+            backgroundSize="cover"
+            backgroundPosition="center"
+            padding="130px 100px 100px"
+          />
+          <Container
+            backgroundColor={theme.colors.silver}
+            padding="1rem .75rem"
+            margin="3rem 4rem"
+          >
+            <Text as="p">{summary}</Text>
+          </Container>
+        </Container>
         <Footer />
       </Container>
     );

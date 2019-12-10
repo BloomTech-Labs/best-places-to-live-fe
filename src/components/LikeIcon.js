@@ -3,14 +3,19 @@ import { addLikedCity } from "../actions/addLikedCity";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { FiHeart } from "react-icons/fi";
+import { deleteLikedCity } from "../actions/deleteLikedCity";
 
-function LikeIcon({ addLikedCity, city, liked, ...rest }) {
+function LikeIcon({ addLikedCity, deleteLikedCity, city, liked, ...rest }) {
   const handleClick = async () => {
-    const response = await addLikedCity(city);
+    let response;
+    if (liked) {
+      response = await deleteLikedCity({ city_id: city.city_id });
+    } else {
+      response = await addLikedCity(city);
+    }
 
     if (response === "Failure") {
       rest.history.push("/signup");
-    } else {
     }
   };
 
@@ -31,4 +36,4 @@ function LikeIcon({ addLikedCity, city, liked, ...rest }) {
 }
 
 /* Future: Good place to put errors, connect to state */
-export default connect(null, { addLikedCity })(LikeIcon);
+export default connect(null, { addLikedCity, deleteLikedCity })(LikeIcon);
