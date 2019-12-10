@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import theme from "../theme";
-import { typography, space, color, border } from "styled-system";
+import { typography, space, color, border, layout } from "styled-system";
 
 export const Button = styled.button`
   ${typography};
   ${space};
   ${color};
   ${border}
+  ${layout};
   transition: 0.275s all ease-in;
   padding: ${theme.space[2]} ${theme.space[3]};
   border: 1px solid ${theme.colors.gray};

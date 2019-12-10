@@ -1,31 +1,35 @@
 import React from "react";
 import { Container, Button } from "../styles/index";
+import styled from "styled-components";
 
 const Modal = ({ handleClose, show, children }) => {
+  const ModalContainer = styled.div`
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(255, 255, 255);
+    display: ${() => (show ? "block" : "none")};
+  `;
+
+  const ModalContent = styled.div`
+    position: fixed;
+    background-color: white;
+    width: 80%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  `;
+
   return (
-    <Container
-      display={show ? "block" : "none"}
-      position="fixed"
-      top="0"
-      left="0"
-      width="100%"
-      height="100%"
-      background="rgba(0, 0, 0, 0.6)"
-    >
-      <Container
-        as="section"
-        position="fixed"
-        background="white"
-        width="80%"
-        height="auto"
-        top="50%"
-        left="50%"
-        transform="translate(-50%,-50%)"
-      >
+    <ModalContainer display={show ? "block" : "none"}>
+      <ModalContent>
         {children}
         <Button onClick={handleClose}>close</Button>
-      </Container>
-    </Container>
+      </ModalContent>
+    </ModalContainer>
   );
 };
 
