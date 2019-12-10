@@ -28,23 +28,25 @@ function TopCities({
       <Flex flexDirection="row" overflowY="hidden" overflowX="scroll">
         {topCities[factor].map((city, index) => (
           <Flex flexDirection="column" height="12rem">
-            <Card
-              as="article"
-              borderRadius={15}
-              m={index === 0 ? ".5rem .5rem .5rem 0" : ".5rem"}
-              flex={flexSizeProperty}
-              background={`url(${city.secure_url})`}
-              backgroundSize="cover"
-              backgroundPosition="center"
-              backgroundRepeat="no-repeat"
-              padding="2.5rem 1.5rem"
-              width="9rem"
-              key={city._id}
-              city={city}
-              page="landing"
-              index={index}
-              {...props}
-            />
+            <StyledLink to={`/city/${city._id}`}>
+              <Card
+                as="article"
+                borderRadius={15}
+                m={index === 0 ? ".5rem .5rem .5rem 0" : ".5rem"}
+                flex={flexSizeProperty}
+                background={`url(${city.secure_url})`}
+                backgroundSize="cover"
+                backgroundPosition="center"
+                backgroundRepeat="no-repeat"
+                padding="2.5rem 1.5rem"
+                width="9rem"
+                key={city._id}
+                city={city}
+                page="landing"
+                index={index}
+                {...props}
+              />
+            </StyledLink>
             <StyledLink display="inline-block" to={`/city/${city._id}`}>
               <Text
                 as="h2"

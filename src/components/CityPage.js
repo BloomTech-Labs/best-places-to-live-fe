@@ -46,35 +46,35 @@ const CityPage = ({ match, likes }) => {
       likedCities.find(({ _id }) => _id === currentCityID);
 
     return (
-      <Container as="main" maxWidth="1000px" margin="0 auto">
+      <Container as="main" maxWidth="820px" margin="0 auto">
         <Flex justifyContent="space-between" p={[1, 2]}>
           <LikeIcon iconColor city={city} liked={isLiked(cityID, likes)} />
           <DislikeIcon iconColor city={city} />
         </Flex>
+        <Container textAlign="center">
+          <Text as="h1">{cityName}</Text>
+          <Text as="h2">{stateName}</Text>
 
-        <Hero
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          flexDirection="column"
-          background={` 
+          <Hero
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            flexDirection="column"
+            background={` 
           linear-gradient(
             rgba(0, 0, 0, 0.30), 
             rgba(0, 0, 0, 0.30)
           ),
           
           url(${photo})`}
-          backgroundSize="cover"
-          backgroundPosition="center"
-          padding="130px 100px 100px"
-        />
+            backgroundSize="cover"
+            backgroundPosition="center"
+            padding="130px 100px 100px"
+          />
 
-        <Text as="h1">
-          This is {cityName}. We're in {stateName} now!
-        </Text>
-        <Text as="p">{summary}</Text>
-        <Link to="/search">Here are your results!</Link>
-
+          <Text as="p">{summary}</Text>
+          <Link to="/search">Here are your results!</Link>
+        </Container>
         <Footer />
       </Container>
     );
