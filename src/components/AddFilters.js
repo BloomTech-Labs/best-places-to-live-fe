@@ -23,24 +23,9 @@ const AddFilters = ({ fetchLocationsByFactors, isFetching, ...rest }) => {
 
   return (
     <>
-      <Hero
-        display="flex"
-        justifyContent="center"
-        backgroundSize="cover"
-        backgroundPosition="center center"
-        background={` 
-        linear-gradient(
-          rgba(0, 0, 0, 0.30), 
-          rgba(0, 0, 0, 0.30)
-        ),
-
-        url(${exploreImg})`}
-        p={"100px"}
-      >
-        <Text color="white" as="h2" fontSize={5}>
-          Explore
-        </Text>
-      </Hero>
+      <Text color="white" as="h2" fontSize={5}>
+        Explore
+      </Text>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Container
           display="flex"

@@ -21,9 +21,10 @@ export const StyledSearchBar = styled.input`
   border-radius: 10px;
   font-size: ${theme.fontSizes.body};
   line-height: 1.4;  
-  fontSize={2};
-  maxWidth=100%;
-  width=375px;
+  fontSize: {2};
+  max-width: 100%;
+  padding-left: 40px;
+  width:375px;
   ${typography};
   ${layout};
   ${space};

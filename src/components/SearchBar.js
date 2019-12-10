@@ -66,12 +66,8 @@ function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
         placeholder="Search for cities or states"
         name="location"
         value={location}
-        fontSize={2}
-        maxWidth="100%"
-        width="375px"
         onChange={e => handleChange(e)}
         onKeyDown={e => handleInput(e)}
-        paddingLeft="40px"
       />
     </Container>
   );
