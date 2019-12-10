@@ -14,7 +14,9 @@ const colors = {
   baliHai: "#808EAC",
   portGore: "#2A2855",
   silver: "#C4C4C4",
-  navy: "#045BED"
+  navy: "#045BED",
+  cornflowerBlue: "#8BB5FD",
+  choronozon: "#232326"
 };
 
 const space = [
