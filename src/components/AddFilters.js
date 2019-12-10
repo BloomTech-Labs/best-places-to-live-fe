@@ -41,11 +41,9 @@ const AddFilters = ({ fetchLocationsByFactors, isFetching, ...rest }) => {
           width="15%"
           margin="0 auto"
         >
-          {factors.map(factor => {
+          {factors.map((factor, index) => {
             return (
-              <>
-                <CheckOval factor={factor} register={register} />
-              </>
+              <CheckOval key={index} factor={factor} register={register} />
             );
           })}
         </Container>
