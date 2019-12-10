@@ -34,6 +34,7 @@ const CityPage = ({ match, likes }) => {
     const cityID = cityInfo._id;
     const fullName = cityInfo.full_name;
     const photo = cityInfo.secure_url;
+    const summary = cityInfo.Summary;
 
     //For Backend
     const city = {
@@ -71,6 +72,7 @@ const CityPage = ({ match, likes }) => {
         <Text as="h1">
           This is {cityName}. We're in {stateName} now!
         </Text>
+        <Text as="p">{summary}</Text>
         <Link to="/search">Here are your results!</Link>
 
         <Footer />
