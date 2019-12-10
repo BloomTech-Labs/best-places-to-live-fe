@@ -2,7 +2,15 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import CityCard from "./CityCard";
 import Footer from "./Footer";
-import { Container, Flex, Grid, Text, Hero, Box } from "../styles/index";
+import {
+  Container,
+  Flex,
+  Grid,
+  Text,
+  Hero,
+  Box,
+  Button
+} from "../styles/index";
 import heroImg from "../img/seattle.jpg";
 import SearchBar from "./SearchBar";
 import AddFilters from "./AddFilters";
@@ -54,10 +62,20 @@ function SearchResultsPage({ displayedCities, ...rest }) {
           display="flex"
           justifyContent="center"
         >
+          <Button
+            display={show ? "none" : ""}
+            onClick={showModal}
+            borderRadius="45rem"
+            borderColor="blue"
+            alignSelf="flex-start"
+            width="40%"
+            marginBottom=".5rem"
+          >
+            Add Filters
+          </Button>
           <Modal show={show} handleClose={hideModal}>
             <AddFilters />
           </Modal>
-          <AddFilters />
         </Flex>
         <Text as="h2" textAlign="center">
           {" "}

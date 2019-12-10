@@ -58,8 +58,8 @@ function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
     // />
 
     <Container position="relative">
-      <Container position="absolute">
-        <IoIosSearch fontSize="35px" />
+      <Container position="absolute" top="7px" left="8px">
+        <IoIosSearch fontSize="25px" />
       </Container>
       <StyledSearchBar
         type="text"
