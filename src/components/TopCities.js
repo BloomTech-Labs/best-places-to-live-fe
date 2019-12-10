@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { Container, Flex, Text, Card, StyledLink } from "../styles/index";
+import { Flex, Text, Card, StyledLink } from "../styles/index";
 import { fetchTopCities } from "../actions/topCities";
 import useWindowSize from "../hooks/useWindowSize";
 import theme from "../theme";
+
 function TopCities({
   topCities,
   isFetching,
@@ -13,7 +14,7 @@ function TopCities({
 }) {
   useEffect(() => {
     fetchTopCities(factor);
-  }, [fetchTopCities]);
+  }, [fetchTopCities, factor]);
 
   const size = useWindowSize();
   let flexSizeProperty;
@@ -27,7 +28,7 @@ function TopCities({
     return (
       <Flex flexDirection="row" overflowY="hidden" overflowX="scroll">
         {topCities[factor].map((city, index) => (
-          <Flex flexDirection="column" height="12rem">
+          <Flex flexDirection="column" height="12rem" key={index}>
             <StyledLink to={`/city/${city._id}`}>
               <Card
                 as="article"

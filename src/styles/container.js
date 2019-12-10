@@ -1,5 +1,13 @@
 import styled from "styled-components";
-import { layout, space, typography, flexbox, color } from "styled-system";
+import {
+  layout,
+  space,
+  typography,
+  flexbox,
+  color,
+  position,
+  border
+} from "styled-system";
 
 export const Container = styled.div`
   ${layout};
@@ -7,4 +15,6 @@ export const Container = styled.div`
   ${flexbox};
   ${typography};
   ${color};
+  ${position};
+  ${border};
 `;

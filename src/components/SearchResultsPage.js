@@ -1,13 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import CityCard from "./CityCard";
 import Footer from "./Footer";
-import { Container, Flex, Grid, Text, Hero, Box } from "../styles/index";
-import SearchByFactors from "./SearchByFactors";
+import {
+  Container,
+  Flex,
+  Grid,
+  Text,
+  Hero,
+  Box,
+  Button
+} from "../styles/index";
 import heroImg from "../img/seattle.jpg";
 import SearchBar from "./SearchBar";
+import AddFilters from "./AddFilters";
+import Modal from "./Modal";
 
 function SearchResultsPage({ displayedCities, ...rest }) {
+  const [show, setShow] = useState(false);
+
+  const showModal = () => {
+    setShow(true);
+  };
+
+  const hideModal = () => {
+    setShow(false);
+  };
+
   return (
     <>
       <Hero
@@ -40,7 +59,19 @@ function SearchResultsPage({ displayedCities, ...rest }) {
           display="flex"
           justifyContent="center"
         >
-          <SearchByFactors {...rest} />
+          <Button
+            display={show ? "none" : ""}
+            onClick={showModal}
+            borderRadius="45rem"
+            borderColor="blue"
+            width="40%"
+            margin=".5rem"
+          >
+            Add Filters
+          </Button>
+          <Modal show={show}>
+            <AddFilters handleClose={hideModal} {...rest} />
+          </Modal>
         </Flex>
         <Text as="h2" textAlign="center">
           {" "}

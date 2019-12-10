@@ -1,19 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "./Footer";
 import SearchBar from "./SearchBar";
-import { Container, StyledLink, Text, Hero, Button } from "../styles/index";
+import { Container, Text, Hero, Button } from "../styles/index";
 import heroImg from "../img/hero.jpg";
 import TopCities from "./TopCities";
 import { factors, randomFactor } from "../utils/factors";
 import Categories from "./Categories";
+import Modal from "./Modal";
+import AddFilters from "./AddFilters";
 
 const LandingPage = props => {
   const chosenFactor = randomFactor(factors);
 
+  const [show, setShow] = useState(false);
+
+  const showModal = () => {
+    setShow(true);
+  };
+
+  const hideModal = () => {
+    setShow(false);
+  };
+
   return (
     <>
       <Container as="main">
-        <SearchBar page="landing" {...props} />
+        <Modal show={show}>
+          <AddFilters handleClose={hideModal} {...props} />
+        </Modal>
+
+        <Container
+          m={"0 auto"}
+          display="flex"
+          flexDirection="column"
+          maxWidth="290px"
+        >
+          <SearchBar page="landing" {...props} />
+
+          <Button
+            display={show ? "none" : ""}
+            onClick={showModal}
+            borderRadius="45rem"
+            borderColor="blue"
+            alignSelf="flex-start"
+            width="40%"
+            marginBottom=".5rem"
+          >
+            Add Filters
+          </Button>
+        </Container>
         <Hero
           display="flex"
           background={` 
@@ -37,13 +72,6 @@ const LandingPage = props => {
             Discover Your Next Hometown
           </Text>
         </Hero>
-        <Container textAlign="center">
-          <Text as="h2">
-            <StyledLink color="black" to="/explore">
-              <Button> Explore!</Button>
-            </StyledLink>
-          </Text>
-        </Container>
         <Container
           maxWidth="1200px"
           margin={"0 auto"}
@@ -53,7 +81,7 @@ const LandingPage = props => {
           <Text as="h2" textAlign="left">
             Categories:
           </Text>
-          <Categories />
+          <Categories {...props} />
         </Container>
         <Container textAlign="center" p={`0 15px`} height="auto">
           <Text as="h2" textAlign="left">

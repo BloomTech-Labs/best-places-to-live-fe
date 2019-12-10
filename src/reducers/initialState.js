@@ -1,6 +1,5 @@
 const initialState = {
   user: {
-    factors: [],
     isLoggedIn: false,
     likes: [],
     dislikes: []

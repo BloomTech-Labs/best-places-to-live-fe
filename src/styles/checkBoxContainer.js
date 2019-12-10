@@ -9,8 +9,8 @@ export const CheckBoxContainer = styled.div`
 
   input {
     margin-right: 100px;
-    position: absolute;
     top: -20px;
+    display: none;
   }
 
   span {
