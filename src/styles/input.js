@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import theme from "../theme";
-import { layout, typography } from "styled-system";
+import { layout, typography, space } from "styled-system";
 
 export const Input = styled.input`
   margin-bottom: ${theme.space[4]};
@@ -11,6 +11,7 @@ export const Input = styled.input`
   line-height: 1.4;
   ${typography};
   ${layout};
+  ${space};
 `;
 
 export const StyledSearchBar = styled.input`
@@ -19,7 +20,11 @@ export const StyledSearchBar = styled.input`
   border: 1px solid lightgrey;
   border-radius: 10px;
   font-size: ${theme.fontSizes.body};
-  line-height: 1.4;
+  line-height: 1.4;  
+  fontSize={2};
+  maxWidth=100%;
+  width=375px;
   ${typography};
   ${layout};
+  ${space};
 `;

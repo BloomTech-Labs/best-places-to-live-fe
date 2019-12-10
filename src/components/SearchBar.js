@@ -33,19 +33,47 @@ function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
     }
   };
 
+  /*
+    outside div - relative/
+    icon
+    inner div/
+    label
+    input
+     /close inner div
+     /close outer div
+  */
+
   return (
-    <StyledSearchBar
-      type="text"
-      placeholder="&#xF002; Search for cities or states"
-      name="location"
-      value={location}
-      fontSize={2}
-      fontFamily="FontAwesome"
-      maxWidth="100%"
-      width="320px"
-      onChange={e => handleChange(e)}
-      onKeyDown={e => handleInput(e)}
-    />
+    // <StyledSearchBar
+    //   type="text"
+    //   placeholder="&#xF002; Search for cities or states"
+    //   name="location"
+    //   value={location}
+    //   fontSize={2}
+    //   fontFamily="FontAwesome"
+    //   maxWidth="100%"
+    //   width="375px"
+    //   onChange={e => handleChange(e)}
+    //   onKeyDown={e => handleInput(e)}
+    // />
+
+    <Container position="relative">
+      <Container position="absolute">
+        <IoIosSearch fontSize="35px" />
+      </Container>
+      <StyledSearchBar
+        type="text"
+        placeholder="Search for cities or states"
+        name="location"
+        value={location}
+        fontSize={2}
+        maxWidth="100%"
+        width="375px"
+        onChange={e => handleChange(e)}
+        onKeyDown={e => handleInput(e)}
+        paddingLeft="40px"
+      />
+    </Container>
   );
 }
 

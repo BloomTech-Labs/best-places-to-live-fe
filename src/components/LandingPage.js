@@ -34,7 +34,7 @@ const LandingPage = props => {
           display="flex"
           alignItems="center"
           flexDirection="column"
-          maxWidth="350px"
+          maxWidth="400px"
         >
           <SearchBar page="landing" {...props} />
 
@@ -89,7 +89,7 @@ const LandingPage = props => {
           <Text as="h2" textAlign="left">
             Categories:
           </Text>
-          <Categories />
+          <Categories {...props} />
         </Container>
         <Container textAlign="center" p={`0 15px`} height="auto">
           <Text as="h2" textAlign="left">

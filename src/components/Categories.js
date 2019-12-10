@@ -3,14 +3,35 @@ import { factors } from "../utils/factors";
 import Icon from "./Icon";
 import theme from "../theme";
 import { Text, Flex, Grid } from "../styles/index";
-
+import { fetchLocationsByFactors } from "../actions/locationsByFactors";
+import { connect } from "react-redux";
 //More Button
 
-const Categories = () => {
+const Categories = ({
+  fetchLocationsByFactors,
+  isFetching,
+  factors,
+  ...rest
+}) => {
+  const sendToSearchPage = async category => {
+    // event.preventDefault();
+    const response = await fetchLocationsByFactors([category.factor]);
+
+    if (response === "Successful") {
+      rest.history.push("/search");
+    } else {
+    }
+  };
+
   return (
     <Grid fourColumns>
       {factors.map(category => (
-        <Flex flexWrap="wrap" alignItems="center" flexDirection="column">
+        <Flex
+          onClick={() => sendToSearchPage(category)}
+          flexWrap="wrap"
+          alignItems="center"
+          flexDirection="column"
+        >
           <Icon
             icon={category.iconPath}
             size={50}
@@ -32,4 +53,13 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+const mapStateToProps = state => {
+  return {
+    isFetching: state.isFetching,
+    factors: state.user.factors
+  };
+};
+
+export default connect(mapStateToProps, {
+  fetchLocationsByFactors
+})(Categories);
