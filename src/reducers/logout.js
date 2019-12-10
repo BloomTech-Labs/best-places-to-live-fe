@@ -8,7 +8,8 @@ const logoutReducer = (state = initialState, action) => {
       return {
         ...state,
         user: {
-          factors: state.user.factors,
+          likes: [],
+          dislikes: [],
           name: "",
           email: "",
           location: "",
