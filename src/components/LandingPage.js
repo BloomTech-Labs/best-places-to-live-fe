@@ -33,7 +33,7 @@ const LandingPage = props => {
           m={"0 auto"}
           display="flex"
           flexDirection="column"
-          maxWidth="400px"
+          maxWidth="290px"
         >
           <SearchBar page="landing" {...props} />
 
