@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "../styles/index";
 import styled from "styled-components";
 
-const Modal = ({ handleClose, show, children }) => {
+const Modal = ({ show, children }) => {
   const ModalContainer = styled.div`
     width: 100%;
     height: 100%;
@@ -29,10 +29,7 @@ const Modal = ({ handleClose, show, children }) => {
 
   return (
     <ModalContainer display={show ? "block" : "none"}>
-      <ModalContent>
-        {children}
-        <Button onClick={handleClose}>close</Button>
-      </ModalContent>
+      <ModalContent>{children}</ModalContent>
     </ModalContainer>
   );
 };

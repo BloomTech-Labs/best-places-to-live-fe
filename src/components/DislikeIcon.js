@@ -11,11 +11,15 @@ function DislikeIcon({
   deleteDislikedCity,
   deleteLikedCity,
   city,
+  handleClose,
   ...rest
 }) {
   const handleClick = async () => {
     let response;
-    console.log(rest.actionType);
+    console.log(handleClose);
+    if (rest.actionType === "closeModal") {
+      handleClose();
+    }
     if (rest.actionType === "deleteLike") {
       response = await deleteLikedCity({ city_id: city.city_id });
     } else if (rest.actionType === "deleteDislike") {

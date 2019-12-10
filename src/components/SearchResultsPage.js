@@ -69,8 +69,8 @@ function SearchResultsPage({ displayedCities, ...rest }) {
           >
             Add Filters
           </Button>
-          <Modal show={show} handleClose={hideModal}>
-            <AddFilters {...rest} />
+          <Modal show={show}>
+            <AddFilters handleClose={hideModal} {...rest} />
           </Modal>
         </Flex>
         <Text as="h2" textAlign="center">

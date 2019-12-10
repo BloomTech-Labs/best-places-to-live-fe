@@ -25,8 +25,8 @@ const LandingPage = props => {
   return (
     <>
       <Container as="main">
-        <Modal show={show} handleClose={hideModal}>
-          <AddFilters {...props} />
+        <Modal show={show}>
+          <AddFilters handleClose={hideModal} {...props} />
         </Modal>
 
         <Container

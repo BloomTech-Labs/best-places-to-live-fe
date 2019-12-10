@@ -6,8 +6,15 @@ import useForm from "react-hook-form";
 import CheckOval from "./CheckOval";
 import { Button, Text, Container, Flex } from "../styles/index";
 import { factors } from "../utils/factors";
+import DislikeIcon from "./DislikeIcon";
 
-const AddFilters = ({ fetchLocationsByFactors, isFetching, ...rest }) => {
+const AddFilters = ({
+  fetchLocationsByFactors,
+  isFetching,
+  handleClose,
+  ...rest
+}) => {
+  console.log("add filters", handleClose);
   const { register, handleSubmit } = useForm();
   const onSubmit = async data => {
     // event.preventDefault();
@@ -25,7 +32,10 @@ const AddFilters = ({ fetchLocationsByFactors, isFetching, ...rest }) => {
       <Container flexWrap="nowrap" display="flex">
         <Button>Clear All</Button>
         <Text>Filters</Text>
-        <Button>{/* Dislike? */}X</Button>
+        <DislikeIcon
+          actionType="closeModal"
+          handleClose={handleClose}
+        ></DislikeIcon>
       </Container>
       <Text color="black" as="h2" fontSize={5}>
         Refine Your Search
@@ -47,10 +57,9 @@ const AddFilters = ({ fetchLocationsByFactors, isFetching, ...rest }) => {
           })}
         </Container>
         <Flex justifyContent="center">
-          <Button type="submit">Explore</Button>
+          <Button type="submit">Submit</Button>
         </Flex>
       </form>
-      <Footer />
     </>
   );
 };
