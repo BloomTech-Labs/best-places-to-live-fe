@@ -46,8 +46,8 @@ function TopCities({
                 index={index}
                 {...props}
               />
-            </StyledLink>
-            <StyledLink display="inline-block" to={`/city/${city._id}`}>
+              {/* </StyledLink>
+            <StyledLink display="inline-block" to={`/city/${city._id}`}> */}
               <Text
                 as="h2"
                 fontWeight="normal"

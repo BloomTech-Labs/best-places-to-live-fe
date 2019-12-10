@@ -7,6 +7,7 @@ import { Container, Flex, Text, Hero } from "../styles/index";
 import Footer from "./Footer";
 import LikeIcon from "./LikeIcon";
 import DislikeIcon from "./DislikeIcon";
+import theme from "../theme";
 
 const CityPage = ({ match, likes }) => {
   const cityID = match.params.id;
@@ -71,9 +72,13 @@ const CityPage = ({ match, likes }) => {
             backgroundPosition="center"
             padding="130px 100px 100px"
           />
-
-          <Text as="p">{summary}</Text>
-          <Link to="/search">Here are your results!</Link>
+          <Container
+            backgroundColor={theme.colors.silver}
+            padding="1rem .75rem"
+            margin="3rem 4rem"
+          >
+            <Text as="p">{summary}</Text>
+          </Container>
         </Container>
         <Footer />
       </Container>
