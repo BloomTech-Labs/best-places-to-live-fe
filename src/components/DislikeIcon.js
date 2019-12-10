@@ -18,7 +18,6 @@ function DislikeIcon({
     let response;
     if (rest.actionType === "closeModal") {
       handleClose();
-      return;
     }
     if (rest.actionType === "deleteLike") {
       response = await deleteLikedCity({ city_id: city.city_id });
