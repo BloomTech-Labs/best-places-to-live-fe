@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import CityCard from "./CityCard";
 import Footer from "./Footer";
 import { Container, Flex, Grid, Text, Hero, Box } from "../styles/index";
-import SearchByFactors from "./SearchByFactors";
 import heroImg from "../img/seattle.jpg";
 import SearchBar from "./SearchBar";
 
@@ -40,7 +39,7 @@ function SearchResultsPage({ displayedCities, ...rest }) {
           display="flex"
           justifyContent="center"
         >
-          <SearchByFactors {...rest} />
+          {/* Apply Filters Modal */}
         </Flex>
         <Text as="h2" textAlign="center">
           {" "}

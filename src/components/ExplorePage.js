@@ -1,20 +1,14 @@
 import React, { useEffect } from "react";
 import Footer from "./Footer";
 import { fetchLocationsByFactors } from "../actions/locationsByFactors";
-import { fetchFactors } from "../actions/factors";
 import { connect } from "react-redux";
 import useForm from "react-hook-form";
 import CheckOval from "./CheckOval";
 import { Button, Hero, Text, Container, Flex } from "../styles/index";
 import exploreImg from "../img/exploreHero.jpg";
+import { factors } from "../utils/factors";
 
-const ExplorePage = ({
-  fetchLocationsByFactors,
-  fetchFactors,
-  isFetching,
-  factors,
-  ...rest
-}) => {
+const ExplorePage = ({ fetchLocationsByFactors, isFetching, ...rest }) => {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = async data => {
     // event.preventDefault();
@@ -26,13 +20,6 @@ const ExplorePage = ({
     } else {
     }
   };
-
-  useEffect(() => {
-    async function fetchData() {
-      await fetchFactors();
-    }
-    fetchData();
-  }, [fetchFactors]);
 
   return (
     <>
@@ -81,12 +68,10 @@ const ExplorePage = ({
 
 const mapStateToProps = state => {
   return {
-    isFetching: state.isFetching,
-    factors: state.user.factors
+    isFetching: state.isFetching
   };
 };
 
 export default connect(mapStateToProps, {
-  fetchLocationsByFactors,
-  fetchFactors
+  fetchLocationsByFactors
 })(ExplorePage);
