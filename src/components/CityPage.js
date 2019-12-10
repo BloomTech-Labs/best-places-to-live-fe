@@ -48,9 +48,6 @@ const CityPage = ({ match, likes }) => {
 
     return (
       <Container as="main" maxWidth="600px" margin="0 auto">
-        <Flex justifyContent="space-between" p={[1, 2]}>
-          <DislikeIcon iconColor city={city} />
-        </Flex>
         <Container textAlign="center">
           <Text as="h1">{cityName}</Text>
           <LikeIcon iconColor city={city} liked={isLiked(cityID, likes)} />
