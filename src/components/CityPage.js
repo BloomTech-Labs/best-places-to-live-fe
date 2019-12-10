@@ -47,13 +47,13 @@ const CityPage = ({ match, likes }) => {
       likedCities.find(({ _id }) => _id === currentCityID);
 
     return (
-      <Container as="main" maxWidth="820px" margin="0 auto">
+      <Container as="main" maxWidth="600px" margin="0 auto">
         <Flex justifyContent="space-between" p={[1, 2]}>
-          <LikeIcon iconColor city={city} liked={isLiked(cityID, likes)} />
           <DislikeIcon iconColor city={city} />
         </Flex>
         <Container textAlign="center">
           <Text as="h1">{cityName}</Text>
+          <LikeIcon iconColor city={city} liked={isLiked(cityID, likes)} />
           <Text as="h2">{stateName}</Text>
 
           <Hero
