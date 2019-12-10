@@ -20,12 +20,13 @@ const Categories = ({ fetchLocationsByFactors, isFetching, ...rest }) => {
 
   return (
     <Grid fourColumns>
-      {factors.map(category => (
+      {factors.map((category, index) => (
         <Flex
           onClick={() => sendToSearchPage(category)}
           flexWrap="wrap"
           alignItems="center"
           flexDirection="column"
+          key={index}
         >
           <Icon
             icon={category.iconPath}

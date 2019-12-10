@@ -72,13 +72,6 @@ const LandingPage = props => {
             Discover Your Next Hometown
           </Text>
         </Hero>
-        <Container textAlign="center">
-          <Text as="h2">
-            <StyledLink color="black" to="/explore">
-              <Button> Explore!</Button>
-            </StyledLink>
-          </Text>
-        </Container>
         <Container
           maxWidth="1200px"
           margin={"0 auto"}
