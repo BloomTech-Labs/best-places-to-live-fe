@@ -22,44 +22,32 @@ function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
   };
 
   const handleChange = e => {
-    console.log(e);
     setLocation(e.target.value);
   };
 
   const handleInput = event => {
-    console.log(event);
     if (event.keyCode === 13) {
       fetchLocation(location);
     }
   };
 
-  /*
-    outside div - relative/
-    icon
-    inner div/
-    label
-    input
-     /close inner div
-     /close outer div
-  */
-
   return (
-    // <StyledSearchBar
-    //   type="text"
-    //   placeholder="&#xF002; Search for cities or states"
-    //   name="location"
-    //   value={location}
-    //   fontSize={2}
-    //   fontFamily="FontAwesome"
-    //   maxWidth="100%"
-    //   width="375px"
-    //   onChange={e => handleChange(e)}
-    //   onKeyDown={e => handleInput(e)}
-    // />
-
-    <Container position="relative">
-      <Container position="absolute" top="7px" left="8px">
-        <IoIosSearch fontSize="25px" />
+    <Flex marginBottom="20px">
+      <Container
+        border="1px solid lightgrey"
+        borderTopLeftRadius="10px"
+        borderBottomLeftRadius="10px"
+        display="inline-block"
+        padding=".5em .75em"
+        borderRight="0"
+        backgroundColor="#fff"
+      >
+        <IoIosSearch
+          display="inline"
+          fontSize="25px"
+          width="auto"
+          height="auto"
+        />
       </Container>
       <StyledSearchBar
         type="text"
@@ -69,7 +57,7 @@ function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
         onChange={e => handleChange(e)}
         onKeyDown={e => handleInput(e)}
       />
-    </Container>
+    </Flex>
   );
 }
 

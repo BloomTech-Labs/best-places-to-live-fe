@@ -21,6 +21,10 @@ const Modal = ({ handleClose, show, children }) => {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    //Modal to scroll
+    max-height: 100vh;
+    overflow-y: auto;
   `;
 
   return (

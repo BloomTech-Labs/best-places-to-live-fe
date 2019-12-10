@@ -7,12 +7,7 @@ import { fetchLocationsByFactors } from "../actions/locationsByFactors";
 import { connect } from "react-redux";
 //More Button
 
-const Categories = ({
-  fetchLocationsByFactors,
-  isFetching,
-  factors,
-  ...rest
-}) => {
+const Categories = ({ fetchLocationsByFactors, isFetching, ...rest }) => {
   const sendToSearchPage = async category => {
     // event.preventDefault();
     const response = await fetchLocationsByFactors([category.factor]);
@@ -55,8 +50,7 @@ const Categories = ({
 
 const mapStateToProps = state => {
   return {
-    isFetching: state.isFetching,
-    factors: state.user.factors
+    isFetching: state.isFetching
   };
 };
 

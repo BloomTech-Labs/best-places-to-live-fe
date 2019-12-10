@@ -23,6 +23,11 @@ const AddFilters = ({ fetchLocationsByFactors, isFetching, ...rest }) => {
 
   return (
     <>
+      <Container flexWrap="nowrap" display="flex">
+        <Button>Clear All</Button>
+        <Text>Filters</Text>
+        <Button>{/* Dislike? */}X</Button>
+      </Container>
       <Text color="black" as="h2" fontSize={5}>
         Refine Your Search
       </Text>
@@ -33,6 +38,8 @@ const AddFilters = ({ fetchLocationsByFactors, isFetching, ...rest }) => {
           alignItems="center"
           flexWrap="wrap"
           marginTop="10px"
+          width="15%"
+          margin="0 auto"
         >
           {factors.map(factor => {
             return (

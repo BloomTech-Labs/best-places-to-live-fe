@@ -5,7 +5,8 @@ import {
   typography,
   flexbox,
   color,
-  position
+  position,
+  border
 } from "styled-system";
 
 export const Container = styled.div`
@@ -15,4 +16,5 @@ export const Container = styled.div`
   ${typography};
   ${color};
   ${position};
+  ${border};
 `;
