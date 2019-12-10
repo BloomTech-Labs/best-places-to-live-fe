@@ -15,10 +15,11 @@ export const CheckBoxContainer = styled.div`
   span {
     text-align: center;
     display: block;
-    width: fit-content;
+    width: 100%;
     padding: 10px 10px;
     border-radius: 45rem;
     color: #232326;
+    box-sizing: border-box;
   }
 
   span:hover {
