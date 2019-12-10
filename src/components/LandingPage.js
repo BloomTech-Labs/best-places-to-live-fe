@@ -1,16 +1,7 @@
 import React from "react";
 import Footer from "./Footer";
 import SearchBar from "./SearchBar";
-import {
-  Container,
-  StyledLink,
-  Flex,
-  Text,
-  Hero,
-  Box,
-  Button,
-  Grid
-} from "../styles/index";
+import { Container, StyledLink, Text, Hero, Button } from "../styles/index";
 import heroImg from "../img/hero.jpg";
 import TopCities from "./TopCities";
 import { factors, randomFactor } from "../utils/factors";
@@ -25,25 +16,26 @@ const LandingPage = props => {
         <SearchBar page="landing" {...props} />
         <Hero
           display="flex"
-          justifyContent="center"
-          alignItems="center"
-          flexDirection="column"
           background={` 
           linear-gradient(
             rgba(0, 0, 0, 0.30), 
             rgba(0, 0, 0, 0.30)
           ),
-          
           url(${heroImg})`}
           backgroundSize="cover"
           backgroundPosition="center"
-          padding="130px 100px 100px"
+          height="25vw"
+          minHeight="220px"
         >
-          <Box>
-            <Text textAlign="left" as="h2" fontSize={"2.5rem"} color="white">
-              Discover Your Next Hometown
-            </Text>
-          </Box>
+          <Text
+            marginLeft="10%"
+            textAlign="left"
+            as="h2"
+            fontSize={[4, 6]}
+            color="white"
+          >
+            Discover Your Next Hometown
+          </Text>
         </Hero>
         <Container textAlign="center">
           <Text as="h2">
@@ -59,19 +51,19 @@ const LandingPage = props => {
           p={`0 15px`}
         >
           <Text as="h2" textAlign="left">
-            Categories
+            Categories:
           </Text>
           <Categories />
         </Container>
-        <Container textAlign="center" p={`0 15px`}>
+        <Container textAlign="center" p={`0 15px`} height="auto">
           <Text as="h2" textAlign="left">
-            Popular Cities
+            Popular Cities:
           </Text>
           <TopCities factor="score_total" {...props} />
         </Container>
         <Container textAlign="center" p={`0 15px`}>
           <Text as="h2" textAlign="left">
-            Best Cities for {chosenFactor.displayName}
+            Best Cities for {chosenFactor.displayName}:
           </Text>
           <TopCities factor={chosenFactor.factor} {...props} />
         </Container>

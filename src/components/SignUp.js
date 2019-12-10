@@ -43,7 +43,7 @@ function SignUp({ signup, ...rest }) {
           ref={register({ required: true, pattern: /^\S+@\S+$/i })}
         />
         {errors.password &&
-          "Your password is required. Password must have at least 1 lowercase letter, 1 uppercase letter, 1 number, 1 special character, and must be at least 8 characters."}
+          "Your password is required. Password must have at least 1 lowercase letter, 1 uppercase letter, 1 numeral, 1 special character, and must be at least 8 characters."}
         <Input
           type="Password"
           placeholder="Password"
