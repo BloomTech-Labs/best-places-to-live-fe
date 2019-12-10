@@ -2,9 +2,8 @@ import styled from "styled-components";
 
 export const CheckBoxContainer = styled.div`
   margin: 4px;
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 4px;
+  background-color: #e6e4ea;
+  border-radius: 45rem;
   float: left;
 
   input {
@@ -18,8 +17,8 @@ export const CheckBoxContainer = styled.div`
     display: block;
     width: fit-content;
     padding: 10px 10px;
-    border-radius: 4px;
-    border: 1px solid #d0d0d0;
+    border-radius: 45rem;
+    color: #232326;
   }
 
   span:hover {
@@ -27,6 +26,7 @@ export const CheckBoxContainer = styled.div`
   }
 
   input:checked + span {
-    background-color: #959595;
+    background-color: #8bb5fd;
+    color: white;
   }
 `;
