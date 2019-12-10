@@ -14,7 +14,6 @@ const AddFilters = ({
   handleClose,
   ...rest
 }) => {
-  console.log("add filters", handleClose);
   const { register, handleSubmit } = useForm();
   const onSubmit = async data => {
     // event.preventDefault();
@@ -35,6 +34,7 @@ const AddFilters = ({
         <DislikeIcon
           actionType="closeModal"
           handleClose={handleClose}
+          iconColor="black"
         ></DislikeIcon>
       </Container>
       <Text color="black" as="h2" fontSize={5}>
