@@ -67,9 +67,8 @@ function SearchResultsPage({ displayedCities, ...rest }) {
             onClick={showModal}
             borderRadius="45rem"
             borderColor="blue"
-            alignSelf="flex-start"
             width="40%"
-            marginBottom=".5rem"
+            margin=".5rem"
           >
             Add Filters
           </Button>
