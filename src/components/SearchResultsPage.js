@@ -15,11 +15,8 @@ import heroImg from "../img/seattle.jpg";
 import SearchBar from "./SearchBar";
 import AddFilters from "./AddFilters";
 import Modal from "./Modal";
-import { factors, randomFactor } from "../utils/factors";
 
 function SearchResultsPage({ displayedCities, ...rest }) {
-  const chosenFactor = randomFactor(factors);
-
   const [show, setShow] = useState(false);
 
   const showModal = () => {

@@ -1,15 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Footer from "./Footer";
 import { fetchLocationsByFactors } from "../actions/locationsByFactors";
 import { connect } from "react-redux";
 import useForm from "react-hook-form";
 import CheckOval from "./CheckOval";
-import { Button, Hero, Text, Container, Flex } from "../styles/index";
-import exploreImg from "../img/exploreHero.jpg";
+import { Button, Text, Container, Flex } from "../styles/index";
 import { factors } from "../utils/factors";
 
 const AddFilters = ({ fetchLocationsByFactors, isFetching, ...rest }) => {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit } = useForm();
   const onSubmit = async data => {
     // event.preventDefault();
     const selectedFactors = Object.keys(data).filter(factor => data[factor]);

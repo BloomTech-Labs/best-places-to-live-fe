@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import useForm from "react-hook-form";
 import {
@@ -6,7 +6,6 @@ import {
   Form,
   Input,
   Flex,
-  Text,
   Button,
   LinkButton
 } from "../styles/index";
@@ -20,7 +19,7 @@ function ProfileSettings({ user, history, logout, updateProfile, ...rest }) {
     mode: "onChange"
   });
   const onSubmit = async data => {
-    const response = await updateProfile(data);
+    await updateProfile(data);
   };
 
   const logoutHandler = () => {

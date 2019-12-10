@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Footer from "./Footer";
 import SearchBar from "./SearchBar";
-import { Container, StyledLink, Text, Hero, Button } from "../styles/index";
+import { Container, Text, Hero, Button } from "../styles/index";
 import heroImg from "../img/hero.jpg";
 import TopCities from "./TopCities";
 import { factors, randomFactor } from "../utils/factors";

@@ -1,12 +1,11 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import { connect } from "react-redux";
 import { useFetch } from "../hooks/useFetch";
 import { baseURL } from "../utils/axiosWithAuth";
-import { Container, Flex, Text, Hero } from "../styles/index";
+import { Container, Text, Hero } from "../styles/index";
 import Footer from "./Footer";
 import LikeIcon from "./LikeIcon";
-import DislikeIcon from "./DislikeIcon";
+// import DislikeIcon from "./DislikeIcon";
 import theme from "../theme";
 
 const CityPage = ({ match, likes }) => {
@@ -33,7 +32,6 @@ const CityPage = ({ match, likes }) => {
     const cityName = cityInfo.short_name;
     const stateName = cityInfo.state;
     const cityID = cityInfo._id;
-    const fullName = cityInfo.full_name;
     const photo = cityInfo.secure_url;
     const summary = cityInfo.Summary;
 

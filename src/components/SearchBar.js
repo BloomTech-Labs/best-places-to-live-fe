@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { fetchLocationsByName } from "../actions/locationsByName";
 import { connect } from "react-redux";
-import styled from "styled-components";
-import theme from "../theme";
-import useDebounce from "../hooks/useDebounce";
-import { Container, Input, StyledSearchBar, Flex } from "../styles/index";
+import { Container, StyledSearchBar, Flex } from "../styles/index";
 import { IoIosSearch } from "react-icons/io";
 
 function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { Container, Flex, Text, Button } from "../styles/index";
 import { logout } from "../actions/logout";

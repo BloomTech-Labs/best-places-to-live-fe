@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Button } from "../styles/index";
+import { Button } from "../styles/index";
 import styled from "styled-components";
 
 const Modal = ({ handleClose, show, children }) => {
