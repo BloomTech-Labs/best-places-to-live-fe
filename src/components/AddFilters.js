@@ -23,8 +23,8 @@ const AddFilters = ({ fetchLocationsByFactors, isFetching, ...rest }) => {
 
   return (
     <>
-      <Text color="white" as="h2" fontSize={5}>
-        Explore
+      <Text color="black" as="h2" fontSize={5}>
+        Refine Your Search
       </Text>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Container

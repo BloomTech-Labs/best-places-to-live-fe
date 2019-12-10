@@ -32,7 +32,6 @@ const LandingPage = props => {
         <Container
           m={"0 auto"}
           display="flex"
-          alignItems="center"
           flexDirection="column"
           maxWidth="400px"
         >

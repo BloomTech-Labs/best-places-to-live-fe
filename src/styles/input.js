@@ -22,10 +22,14 @@ export const StyledSearchBar = styled.input`
   font-size: ${theme.fontSizes.body};
   line-height: 1.4;  
   fontSize: {2};
-  max-width: 100%;
+  width: 100%;
   padding-left: 40px;
-  width:375px;
+  max-width: 215px;
   ${typography};
   ${layout};
   ${space};
+
+  @media (min-width: ${theme.breakpoints.sm}) {
+    max-width:375px;
+  }
 `;
