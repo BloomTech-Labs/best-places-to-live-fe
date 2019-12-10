@@ -25,18 +25,31 @@ const LandingPage = props => {
   return (
     <>
       <Container as="main">
-        <SearchBar page="landing" {...props} />
         <Modal show={show} handleClose={hideModal}>
           <ExplorePage />
         </Modal>
-        <Button
-          display={show ? "none" : ""}
-          onClick={showModal}
-          borderRadius="45rem"
-          borderColor="blue"
+
+        <Container
+          m={"0 auto"}
+          display="flex"
+          alignItems="center"
+          flexDirection="column"
+          maxWidth="350px"
         >
-          Add Filters
-        </Button>
+          <SearchBar page="landing" {...props} />
+
+          <Button
+            display={show ? "none" : ""}
+            onClick={showModal}
+            borderRadius="45rem"
+            borderColor="blue"
+            alignSelf="flex-start"
+            width="40%"
+            marginBottom=".5rem"
+          >
+            Add Filters
+          </Button>
+        </Container>
         <Hero
           display="flex"
           background={` 

@@ -14,7 +14,7 @@ export const Input = styled.input`
 `;
 
 export const StyledSearchBar = styled.input`
-  margin-bottom: ${theme.space[4]};
+  margin-bottom: ${theme.space[2]};
   padding: ${theme.space[2]} ${theme.space[3]};
   border: 1px solid lightgrey;
   border-radius: 10px;

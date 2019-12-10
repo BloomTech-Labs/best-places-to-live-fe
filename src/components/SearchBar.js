@@ -4,7 +4,8 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import theme from "../theme";
 import useDebounce from "../hooks/useDebounce";
-import { Container, Input, StyledSearchBar } from "../styles/index";
+import { Container, Input, StyledSearchBar, Flex } from "../styles/index";
+import { IoIosSearch } from "react-icons/io";
 
 function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
   const [location, setLocation] = useState("");
@@ -33,19 +34,18 @@ function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
   };
 
   return (
-    <Container m={"0 auto"} display="flex" justifyContent="center">
-      <StyledSearchBar
-        type="text"
-        placeholder="Search for cities or states"
-        name="location"
-        value={location}
-        fontSize={2}
-        maxWidth="100%"
-        width="320px"
-        onChange={e => handleChange(e)}
-        onKeyDown={e => handleInput(e)}
-      />
-    </Container>
+    <StyledSearchBar
+      type="text"
+      placeholder="&#xF002; Search for cities or states"
+      name="location"
+      value={location}
+      fontSize={2}
+      fontFamily="FontAwesome"
+      maxWidth="100%"
+      width="320px"
+      onChange={e => handleChange(e)}
+      onKeyDown={e => handleInput(e)}
+    />
   );
 }
 
