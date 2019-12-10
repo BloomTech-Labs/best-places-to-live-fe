@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "./Footer";
 import SearchBar from "./SearchBar";
 import { Container, StyledLink, Text, Hero, Button } from "../styles/index";
@@ -6,14 +6,30 @@ import heroImg from "../img/hero.jpg";
 import TopCities from "./TopCities";
 import { factors, randomFactor } from "../utils/factors";
 import Categories from "./Categories";
+import Modal from "./Modal";
+import ExplorePage from "./ExplorePage";
 
 const LandingPage = props => {
   const chosenFactor = randomFactor(factors);
+
+  const [show, setShow] = useState(false);
+
+  const showModal = () => {
+    setShow(true);
+  };
+
+  const hideModal = () => {
+    setShow(false);
+  };
 
   return (
     <>
       <Container as="main">
         <SearchBar page="landing" {...props} />
+        <Modal show={show} handleClose={hideModal}>
+          <ExplorePage />
+        </Modal>
+        <Button onClick={showModal}>Apply Filters</Button>
         <Hero
           display="flex"
           background={` 
