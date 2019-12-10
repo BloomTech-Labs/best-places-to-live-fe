@@ -29,7 +29,15 @@ const space = [
 
 const fonts = ["Noto Sans"];
 
-const fontSizes = [".75rem", ".875rem", "1rem", "1.25rem", "1.5rem", "2rem"];
+const fontSizes = [
+  ".75rem",
+  ".875rem",
+  "1rem",
+  "1.25rem",
+  "1.5rem",
+  "2rem",
+  "2.5rem"
+];
 
 // aliases
 fontSizes.body = fontSizes[2];

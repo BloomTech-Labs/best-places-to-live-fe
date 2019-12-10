@@ -72,10 +72,10 @@ function CityCard({ city, page, likes, index, ...rest }) {
           <Text as="h2" color="white">
             {city.state}
           </Text>
-          <Text as="h6" color="white">
+          {/* <Text as="h6" color="white">
             {" "}
             Population: {city.population}
-          </Text>
+          </Text> */}
         </Container>
       </StyledLink>
     </Card>

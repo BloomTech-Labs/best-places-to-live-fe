@@ -25,13 +25,7 @@ function TopCities({
 
   if (topCities[factor]) {
     return (
-      <Flex
-        flexDirection="row"
-        // flexWrap="wrap"
-        overflowY="hidden"
-        overflowX="scroll"
-        // height="15rem"
-      >
+      <Flex flexDirection="row" overflowY="hidden" overflowX="scroll">
         {topCities[factor].map((city, index) => (
           <Flex flexDirection="column" height="12rem">
             <Card
@@ -39,12 +33,7 @@ function TopCities({
               borderRadius={15}
               m={index === 0 ? ".5rem .5rem .5rem 0" : ".5rem"}
               flex={flexSizeProperty}
-              background={` 
-                    linear-gradient(
-                      rgba(0, 0, 0, 0.30), 
-                      rgba(0, 0, 0, 0.30)
-                    ),
-                    url(${city.secure_url})`}
+              background={`url(${city.secure_url})`}
               backgroundSize="cover"
               backgroundPosition="center"
               backgroundRepeat="no-repeat"

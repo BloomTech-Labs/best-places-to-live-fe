@@ -1,16 +1,7 @@
 import React from "react";
 import Footer from "./Footer";
 import SearchBar from "./SearchBar";
-import {
-  Container,
-  StyledLink,
-  Flex,
-  Text,
-  Hero,
-  Box,
-  Button,
-  Grid
-} from "../styles/index";
+import { Container, StyledLink, Text, Hero, Button } from "../styles/index";
 import heroImg from "../img/hero.jpg";
 import TopCities from "./TopCities";
 import { factors, randomFactor } from "../utils/factors";
@@ -33,10 +24,16 @@ const LandingPage = props => {
           url(${heroImg})`}
           backgroundSize="cover"
           backgroundPosition="center"
-          height="30vw"
-          maxHeight="280px"
+          height="25vw"
+          minHeight="220px"
         >
-          <Text textAlign="left" as="h2" fontSize={"2.5rem"} color="white">
+          <Text
+            marginLeft="10%"
+            textAlign="left"
+            as="h2"
+            fontSize={[4, 6]}
+            color="white"
+          >
             Discover Your Next Hometown
           </Text>
         </Hero>
