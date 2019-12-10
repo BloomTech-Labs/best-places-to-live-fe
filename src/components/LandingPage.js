@@ -7,7 +7,7 @@ import TopCities from "./TopCities";
 import { factors, randomFactor } from "../utils/factors";
 import Categories from "./Categories";
 import Modal from "./Modal";
-import ExplorePage from "./ExplorePage";
+import AddFilters from "./AddFilters";
 
 const LandingPage = props => {
   const chosenFactor = randomFactor(factors);
@@ -26,7 +26,7 @@ const LandingPage = props => {
     <>
       <Container as="main">
         <Modal show={show} handleClose={hideModal}>
-          <ExplorePage />
+          <AddFilters />
         </Modal>
 
         <Container

@@ -4,7 +4,6 @@ import { createBrowserHistory } from "history";
 import { ThemeProvider } from "styled-components";
 import ReactGA from "react-ga";
 import LandingPage from "./components/LandingPage";
-import ExplorePage from "./components/ExplorePage";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import SearchResultsPage from "./components/SearchResultsPage";
@@ -38,7 +37,6 @@ function App(props) {
         <ToastContainer position="bottom-right" autoClose={2000} />
         <Route exact path="/" component={LandingPage} />
         <Route path="/city/:id" component={CityPage} />
-        <Route path="/explore" component={ExplorePage} />
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />
         <Route path="/search" component={SearchResultsPage} />
