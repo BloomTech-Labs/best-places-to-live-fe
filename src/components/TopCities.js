@@ -27,7 +27,7 @@ function TopCities({
     return (
       <Flex flexDirection="row" overflowY="hidden" overflowX="scroll">
         {topCities[factor].map((city, index) => (
-          <Flex flexDirection="column" height="12rem">
+          <Flex flexDirection="column" height="12rem" key={index}>
             <StyledLink to={`/city/${city._id}`}>
               <Card
                 as="article"
