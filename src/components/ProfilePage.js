@@ -1,16 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Container, Flex, Text, Button } from "../styles/index";
-import { logout } from "../actions/logout";
+import { MdPerson, MdLocationOn } from "react-icons/md";
+import { Container, Flex, Text, Button, Box } from "../styles/index";
+import theme from "../theme";
 import Footer from "./Footer";
 import LikedCities from "./LikedCities";
 
-function ProfilePage({ user, history, logout, ...rest }) {
-  const logoutHandler = () => {
-    logout();
-    history.push("/");
-  };
-
+function ProfilePage({ user, history, ...rest }) {
+  const name = user.name.split(" ");
+  const firstName = user.name[0];
+  const lastName = name[name.length - 1];
   return (
     <Container>
       <Flex
@@ -18,17 +17,23 @@ function ProfilePage({ user, history, logout, ...rest }) {
         alignItems="center"
         display="flex"
         justifyContent="center"
+        mb={5}
       >
-        <Text fontWeight="bold">Name: {user.name} </Text>
-        <Text>
-          <b>Email: </b>
-          {user.email}
+        <Text as="h2" fontSize={4} mb={4}>
+          {firstName[0] + lastName[0]}
         </Text>
-        <Text>
-          <b>Location: </b>
+        <Text m="0.3rem 0" as="h3" fontSize={2}>
+          <Box as="span" verticalAlign="middle" mr={1}>
+            <MdPerson fill={`${theme.colors.baliHai}`} />
+          </Box>
+          {user.name}{" "}
+        </Text>
+        <Text m="0.3rem 0" as="h3" fontSize={2}>
+          <Box as="span" verticalAlign="middle" mr={1}>
+            <MdLocationOn fill={`${theme.colors.baliHai}`} />
+          </Box>
           {user.location}
         </Text>
-        <Button onClick={logoutHandler}>Logout </Button>
       </Flex>
       <LikedCities />
       <Footer />
@@ -43,6 +48,4 @@ const mapStatetoProps = state => {
   };
 };
 
-export default connect(mapStatetoProps, {
-  logout
-})(ProfilePage);
+export default connect(mapStatetoProps, {})(ProfilePage);

@@ -10,7 +10,7 @@ function LikedCities({ likedCities, deleteLikedCity, ...rest }) {
   return (
     <>
       <Container p={`0 15px`}>
-        <Text as="h2" textAlign="center">
+        <Text as="h3" fontSize={3} textAlign="center">
           {" "}
           Saved Cities
         </Text>
