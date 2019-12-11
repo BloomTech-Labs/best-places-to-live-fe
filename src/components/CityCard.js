@@ -72,10 +72,6 @@ function CityCard({ city, page, likes, index, ...rest }) {
           <Text as="h2" color="white" textAlign="center" fontSize={2}>
             {city.state}
           </Text>
-          {/* <Text as="h6" color="white">
-            {" "}
-            Population: {city.population}
-          </Text> */}
         </Container>
       </StyledLink>
     </Card>
