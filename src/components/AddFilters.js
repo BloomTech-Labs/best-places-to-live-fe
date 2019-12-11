@@ -1,37 +1,11 @@
 import React from "react";
-import { fetchLocationsByFactors } from "../actions/locationsByFactors";
-import { connect } from "react-redux";
-import useForm from "react-hook-form";
-import CheckOval from "./CheckOval";
-import { Button, Text, Container, Input, Flex, Nav } from "../styles/index";
-import { factors, categoriesWithFactors } from "../utils/factors";
+import { Button, Text, Container, Flex, Nav } from "../styles/index";
 import DislikeIcon from "./DislikeIcon";
 import theme from "../theme";
+import CategoryForm from "./CategoryForm";
+import { connect } from "react-redux";
 
-const AddFilters = ({
-  fetchLocationsByFactors,
-  isFetching,
-  handleClose,
-  ...rest
-}) => {
-  const { register, handleSubmit, reset } = useForm();
-  const onSubmit = async data => {
-    // event.preventDefault();
-    const selectedFactors = Object.keys(data).filter(factor => data[factor]);
-    const response = await fetchLocationsByFactors(selectedFactors);
-
-    if (response === "Successful") {
-      rest.history.push("/search");
-    }
-
-    //Closes modal if already on page
-    handleClose();
-  };
-
-  const resetForm = () => {
-    document.querySelector("#reset").click();
-  };
-
+const AddFilters = ({ handleClose, ...rest }) => {
   return (
     <>
       <Container
@@ -45,7 +19,6 @@ const AddFilters = ({
             marginBottom="0"
             backgroundColor="athensGray"
             padding="0"
-            onClick={resetForm}
           >
             Clear All
           </Button>
@@ -74,71 +47,15 @@ const AddFilters = ({
       >
         Select the variables most important to you:
       </Text>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Flex
-          flexDirection="column"
-          maxWidth="600px"
-          flexWrap="wrap"
-          width="100%"
-          margin="0 auto"
-          alignItems="center"
-        >
-          {Object.keys(categoriesWithFactors).map(category => {
-            return (
-              <Flex flexDirection="column" alignItems="center">
-                <Text
-                  as="h3"
-                  textAlign="center"
-                  fontSize="1.25rem"
-                  color="choronozon"
-                >
-                  {category}
-                </Text>
-                <Flex flexWrap="wrap" justifyContent="center">
-                  {categoriesWithFactors[category].map((factor, index) => {
-                    return (
-                      <CheckOval
-                        key={index}
-                        factor={factor}
-                        register={register}
-                      />
-                    );
-                  })}
-                </Flex>
-              </Flex>
-            );
-          })}
-        </Flex>
-        <Flex
-          marginTop="0.8rem"
-          alignItems="center"
-          justifyContent="center"
-          backgroundColor="athensGray"
-          padding="0.5rem 0"
-          borderTop={`0.5px solid ${theme.colors.blackPearl}`}
-        >
-          <Input id="reset" type="reset" display="none" />
-          <Button
-            type="submit"
-            color="white"
-            backgroundColor="scienceBlue"
-            marginBottom="0rem"
-            fontSize="1rem"
-          >
-            SUBMIT
-          </Button>
-        </Flex>
-      </form>
+      <CategoryForm handleClose={handleClose} {...rest} />
     </>
   );
 };
 
 const mapStateToProps = state => {
   return {
-    isFetching: state.isFetching
+    selectedFactors: state.selectedFactors
   };
 };
 
-export default connect(mapStateToProps, {
-  fetchLocationsByFactors
-})(AddFilters);
+export default connect(mapStateToProps, null)(AddFilters);
