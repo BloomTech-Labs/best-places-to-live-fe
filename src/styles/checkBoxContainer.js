@@ -20,6 +20,7 @@ export const CheckBoxContainer = styled.div`
     border-radius: 45rem;
     color: #232326;
     box-sizing: border-box;
+    font-size: 1rem;
   }
 
   span:hover {
@@ -27,7 +28,7 @@ export const CheckBoxContainer = styled.div`
   }
 
   input:checked + span {
-    background-color: #8bb5fd;
+    background-color: #024bca;
     color: white;
   }
 `;

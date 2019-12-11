@@ -4,8 +4,11 @@ import { connect } from "react-redux";
 import useForm from "react-hook-form";
 import CheckOval from "./CheckOval";
 import { Button, Text, Container, Flex, Grid } from "../styles/index";
-import { factors } from "../utils/factors";
+import { factors, categoriesWithFactors } from "../utils/factors";
 import DislikeIcon from "./DislikeIcon";
+import theme from "../theme";
+
+console.log(categoriesWithFactors);
 
 const AddFilters = ({
   fetchLocationsByFactors,
@@ -47,15 +50,21 @@ const AddFilters = ({
         Refine Your Search
       </Text>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Grid maxWidth="600px" width="100%" margin="0 auto">
+        <Flex maxWidth="600px" width="100%" margin="0 auto">
           {factors.map((factor, index) => {
             return (
               <CheckOval key={index} factor={factor} register={register} />
             );
           })}
-        </Grid>
+        </Flex>
         <Flex justifyContent="center">
-          <Button type="submit">Submit</Button>
+          <Button
+            type="submit"
+            color="white"
+            backgroundColor={theme.colors.mediumCyanBlue}
+          >
+            Submit
+          </Button>
         </Flex>
       </form>
     </>
