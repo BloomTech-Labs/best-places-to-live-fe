@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { fetchLocationsByFactors } from "../actions/locationsByFactors";
 import { factors, categoriesWithFactors } from "../utils/factors";
 import CheckOval from "./CheckOval";
@@ -7,10 +7,16 @@ import theme from "../theme";
 import useForm from "react-hook-form";
 import { connect } from "react-redux";
 
-const CategoryForm = ({ selectedFactors, handleClose, ...rest }) => {
-  const { register, handleSubmit, reset } = useForm();
+const CategoryForm = ({
+  selectedFactors,
+  handleClose,
+  fetchLocationsByFactors,
+  isFetching,
+  ...rest
+}) => {
+  const { register, handleSubmit, reset, setValue } = useForm();
   const onSubmit = async data => {
-    // event.preventDefault();
+    console.log(data);
     const chosenFactors = Object.keys(data).filter(factor => data[factor]);
     const response = await fetchLocationsByFactors(chosenFactors);
 
@@ -22,9 +28,13 @@ const CategoryForm = ({ selectedFactors, handleClose, ...rest }) => {
     handleClose();
   };
 
-  // if (selectFactors.length > 0) {
-  //   setV;
-  // }
+  useEffect(() => {
+    console.log(selectedFactors);
+    if (selectedFactors) {
+      selectedFactors.forEach(factor => setValue(factor, true));
+    }
+  }, [selectedFactors]);
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Flex
@@ -85,7 +95,8 @@ const CategoryForm = ({ selectedFactors, handleClose, ...rest }) => {
 
 const mapStateToProps = state => {
   return {
-    selectedFactors: state.selectedFactors
+    selectedFactors: state.selectedFactors,
+    isFetching: state.isFetching
   };
 };
 
