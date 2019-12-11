@@ -17,7 +17,8 @@ const locationsByFactorsReducer = (state = initialState, action) => {
     case FETCH_LOCATIONS_BY_FACTORS_SUCCESS:
       return {
         ...state,
-        displayedCities: action.payload,
+        displayedCities: action.payload.cities,
+        selectedFactors: action.payload.selectedFactors,
         isFetching: false,
         error: ""
       };

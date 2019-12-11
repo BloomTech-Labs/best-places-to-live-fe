@@ -23,7 +23,10 @@ export const fetchLocationsByFactors = data => dispatch => {
       console.log(res);
       dispatch({
         type: FETCH_LOCATIONS_BY_FACTORS_SUCCESS,
-        payload: token ? res.data.final : res.data.result
+        payload: {
+          cities: token ? res.data.final : res.data.result,
+          selectedFactors: data
+        }
       });
       return "Successful";
     })
