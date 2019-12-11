@@ -22,8 +22,10 @@ const AddFilters = ({
 
     if (response === "Successful") {
       rest.history.push("/search");
-    } else {
     }
+
+    //Closes modal if already on page
+    handleClose();
   };
 
   return (
