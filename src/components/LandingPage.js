@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Footer from "./Footer";
 import SearchBar from "./SearchBar";
-import { Container, Text, Hero, Button } from "../styles/index";
+import { Container, Text, Hero, Button, StyledLink } from "../styles/index";
 import heroImg from "../img/hero.jpg";
 import TopCities from "./TopCities";
 import { factors, randomFactor } from "../utils/factors";
@@ -71,6 +71,7 @@ const LandingPage = props => {
           >
             Discover Your Next Hometown
           </Text>
+          <StyledLink to="/sign-up">Get Started</StyledLink>
         </Hero>
         <Container
           maxWidth="1200px"
