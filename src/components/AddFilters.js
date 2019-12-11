@@ -38,7 +38,7 @@ const AddFilters = ({
         maxWidth="800px"
         width="100%"
       >
-        <Button>Clear All</Button>
+        <Button border="none">Clear All</Button>
         <Text>Filters</Text>
         <DislikeIcon
           actionType="closeModal"
@@ -49,22 +49,36 @@ const AddFilters = ({
       <Text textAlign="center" color="black" as="h2" fontSize={5}>
         Refine Your Search
       </Text>
+      <Text textAlign="center" color="black" as="h3" fontSize={2}>
+        Select the variables most important to you:
+      </Text>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Flex maxWidth="600px" flexWrap="wrap" width="100%" margin="0 auto">
+        <Flex
+          flexDirection="column"
+          maxWidth="600px"
+          flexWrap="wrap"
+          width="100%"
+          margin="0 auto"
+          alignItems="center"
+        >
           {Object.keys(categoriesWithFactors).map(category => {
             return (
-              <>
-                <h1>{category}</h1>
-                {categoriesWithFactors[category].map((factor, index) => {
-                  return (
-                    <CheckOval
-                      key={index}
-                      factor={factor}
-                      register={register}
-                    />
-                  );
-                })}{" "}
-              </>
+              <Flex flexDirection="column" alignItems="center">
+                <Text as="h3" textAlign="center" fontSize="1.25rem">
+                  {category}
+                </Text>
+                <Flex flexWrap="wrap" justifyContent="center">
+                  {categoriesWithFactors[category].map((factor, index) => {
+                    return (
+                      <CheckOval
+                        key={index}
+                        factor={factor}
+                        register={register}
+                      />
+                    );
+                  })}
+                </Flex>
+              </Flex>
             );
           })}
         </Flex>
@@ -73,6 +87,7 @@ const AddFilters = ({
             type="submit"
             color="white"
             backgroundColor={theme.colors.mediumCyanBlue}
+            marginTop=".5rem"
           >
             Submit
           </Button>

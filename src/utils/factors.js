@@ -214,7 +214,7 @@ const categories = {
   "Well Being": [11, 5, 6]
 };
 
-const categoriesWithFactors = {};
+export const categoriesWithFactors = {};
 
 Object.keys(categories).forEach(category => {
   if (!categoriesWithFactors[category]) {
@@ -224,8 +224,6 @@ Object.keys(categories).forEach(category => {
     categoriesWithFactors[category].push(factors[factorIndex - 1]);
   });
 });
-
-console.log(categoriesWithFactors);
 
 /* 
 React Icon Names for Each Factor
