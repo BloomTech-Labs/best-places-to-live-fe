@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const CheckBoxContainer = styled.div`
   margin: 4px;
   background-color: #e6e4ea;
-  border-radius: 45rem;
+  border-radius: 3rem;
   float: left;
 
   input {
@@ -17,9 +17,12 @@ export const CheckBoxContainer = styled.div`
     display: block;
     width: 100%;
     padding: 10px 10px;
-    border-radius: 45rem;
+    border-radius: 3rem;
     color: #232326;
     box-sizing: border-box;
+    font-size: 1rem;
+    /* for fast moused chrome users       user-select: none;
+    */
   }
 
   span:hover {
@@ -27,7 +30,7 @@ export const CheckBoxContainer = styled.div`
   }
 
   input:checked + span {
-    background-color: #8bb5fd;
+    background-color: #024bca;
     color: white;
   }
 `;

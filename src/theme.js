@@ -16,7 +16,10 @@ const colors = {
   silver: "#C4C4C4",
   navy: "#045BED",
   cornflowerBlue: "#8BB5FD",
-  choronozon: "#232326"
+  choronozon: "#232326",
+  scienceBlue: "#024BCA",
+  athensGray: "#F7F7FA",
+  blackPearl: "rgba(4, 3, 22, 0.2)"
 };
 
 const space = [

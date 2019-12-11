@@ -35,11 +35,11 @@ function CityCard({ city, page, likes, index, ...rest }) {
       p={[1, 2]}
     >
       <Flex
-        justifyContent={page !== "profile" ? "space-between" : "flex-end"}
+        justifyContent={page !== "profile" ? "space-between" : "flex-start"}
         display={page === "landing" ? "none" : ""}
         p={[1, 2]}
       >
-        {page === "search" && (
+        {(page === "profile" || page === "search") && (
           <LikeIcon
             city={{
               city_id: city._id,
@@ -49,7 +49,7 @@ function CityCard({ city, page, likes, index, ...rest }) {
             {...rest}
           />
         )}
-        {(page === "profile" || page === "search") && (
+        {page === "search" && (
           <DislikeIcon
             city={{
               city_id: city._id,
@@ -66,16 +66,12 @@ function CityCard({ city, page, likes, index, ...rest }) {
         to={`/city/${city._id}`}
       >
         <Container p={[1, 2]} display={page === "landing" ? "none" : ""}>
-          <Text as="h1" color="white">
+          <Text as="h1" color="white" textAlign="center" fontSize={4}>
             {city.short_name}
           </Text>
-          <Text as="h2" color="white">
+          <Text as="h2" color="white" textAlign="center" fontSize={2}>
             {city.state}
           </Text>
-          {/* <Text as="h6" color="white">
-            {" "}
-            Population: {city.population}
-          </Text> */}
         </Container>
       </StyledLink>
     </Card>

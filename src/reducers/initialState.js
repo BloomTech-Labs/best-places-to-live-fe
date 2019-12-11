@@ -4,6 +4,7 @@ const initialState = {
     likes: [],
     dislikes: []
   },
+  selectedFactors: [],
   displayedCities: [],
   topCities: {},
   isFetching: false,

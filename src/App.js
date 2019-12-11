@@ -37,7 +37,7 @@ function App(props) {
         <ToastContainer position="bottom-right" autoClose={2000} />
         <Route exact path="/" component={LandingPage} />
         <Route path="/city/:id" component={CityPage} />
-        <Route path="/signup" component={SignUp} />
+        <Route path="/sign-up" component={SignUp} />
         <Route path="/login" component={Login} />
         <Route path="/search" component={SearchResultsPage} />
         <PrivateRoute path="/profile" component={ProfilePage} />

@@ -5,18 +5,29 @@ import {
   FETCH_LOCATIONS_BY_FACTORS_FAIL
 } from "./index";
 import { toast } from "react-toastify";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 export const fetchLocationsByFactors = data => dispatch => {
   dispatch({ type: FETCH_LOCATIONS_BY_FACTORS_INITIALIZE });
   /* 
   {"input1": ["population", "score_safety"]}
 */
-  return axios
-    .post("https://best-places-api.herokuapp.com/api", { input1: data })
+  const token = localStorage.getItem("token");
+  const url = token
+    ? "https://bestplacesbe-test.herokuapp.com/city/spec-ds"
+    : "https://bestplacesbe-test.herokuapp.com/city/ds";
+
+  console.log(url);
+  return axiosWithAuth()
+    .post(url, { input1: data })
     .then(res => {
+      console.log(res);
       dispatch({
         type: FETCH_LOCATIONS_BY_FACTORS_SUCCESS,
-        payload: res.data
+        payload: {
+          cities: token ? res.data.final : res.data.result,
+          selectedFactors: data
+        }
       });
       return "Successful";
     })

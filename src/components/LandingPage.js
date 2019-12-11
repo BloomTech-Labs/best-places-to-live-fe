@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Footer from "./Footer";
 import SearchBar from "./SearchBar";
-import { Container, Text, Hero, Button } from "../styles/index";
+import { Container, Text, Hero, Button, StyledLink } from "../styles/index";
 import heroImg from "../img/hero.jpg";
 import TopCities from "./TopCities";
 import { factors, randomFactor } from "../utils/factors";
@@ -62,15 +62,23 @@ const LandingPage = props => {
           height="25vw"
           minHeight="220px"
         >
-          <Text
-            marginLeft="10%"
-            textAlign="left"
-            as="h2"
-            fontSize={[4, 6]}
-            color="white"
-          >
-            Discover Your Next Hometown
-          </Text>
+          <Container marginLeft="10%">
+            <Text textAlign="left" as="h2" fontSize={[4, 6]} color="white">
+              Discover Your Next Hometown
+            </Text>
+            <StyledLink
+              display="inline-block"
+              padding="0.6rem 1.2rem"
+              border-radius="4px"
+              fontSize="0.8rem"
+              color="white"
+              backgroundColor="rgba(0,0,0,0.3)"
+              fontWeight="bold"
+              to="/sign-up"
+            >
+              Get Started
+            </StyledLink>
+          </Container>
         </Hero>
         <Container
           maxWidth="1200px"

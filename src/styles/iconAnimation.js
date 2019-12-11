@@ -6,7 +6,7 @@ export const SettingsCog = styled(FaCog)`
   transition-property: transform;
   transition-duration: 1s;
 
-  :hover {
+  &:hover {
     animation-name: rotate;
     animation-duration: 2.5s;
     animation-iteration-count: infinite;

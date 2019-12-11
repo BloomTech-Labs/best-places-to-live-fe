@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { useFetch } from "../hooks/useFetch";
 import { baseURL } from "../utils/axiosWithAuth";
 import { Container, Text, Hero } from "../styles/index";
+import LoadingComponent from "./LoadingComponent";
 import Footer from "./Footer";
 import LikeIcon from "./LikeIcon";
 // import DislikeIcon from "./DislikeIcon";
@@ -22,7 +23,7 @@ const CityPage = ({ match, likes }) => {
   if (!response.response || response.isLoading) {
     return (
       <Container as="main">
-        <h2>Loading...</h2>
+        <LoadingComponent />
         <Footer />
       </Container>
     );
@@ -50,7 +51,6 @@ const CityPage = ({ match, likes }) => {
           <Text as="h1">{cityName}</Text>
           <LikeIcon iconColor city={city} liked={isLiked(cityID, likes)} />
           <Text as="h2">{stateName}</Text>
-
           <Hero
             display="flex"
             justifyContent="center"
@@ -73,6 +73,10 @@ const CityPage = ({ match, likes }) => {
             margin="3rem 4rem"
           >
             <Text as="p">{summary}</Text>
+          </Container>
+
+          <Container backgroundColor="silver" padding="2rem 2rem">
+            <Text>Data Vizzzzzzzzzzzzzzzzzzzzzz</Text>
           </Container>
         </Container>
         <Footer />
