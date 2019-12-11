@@ -21,6 +21,8 @@ export const CheckBoxContainer = styled.div`
     color: #232326;
     box-sizing: border-box;
     font-size: 1rem;
+    /* for fast moused chrome users */
+    user-select: none;
   }
 
   span:hover {
