@@ -66,10 +66,10 @@ function CityCard({ city, page, likes, index, ...rest }) {
         to={`/city/${city._id}`}
       >
         <Container p={[1, 2]} display={page === "landing" ? "none" : ""}>
-          <Text as="h1" color="white">
+          <Text as="h1" color="white" textAlign="center" fontSize={4}>
             {city.short_name}
           </Text>
-          <Text as="h2" color="white">
+          <Text as="h2" color="white" textAlign="center" fontSize={2}>
             {city.state}
           </Text>
           {/* <Text as="h6" color="white">
