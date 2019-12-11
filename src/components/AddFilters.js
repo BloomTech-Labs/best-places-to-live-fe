@@ -3,7 +3,7 @@ import { fetchLocationsByFactors } from "../actions/locationsByFactors";
 import { connect } from "react-redux";
 import useForm from "react-hook-form";
 import CheckOval from "./CheckOval";
-import { Button, Text, Container, Flex, Nav } from "../styles/index";
+import { Button, Text, Container, Input, Flex, Nav } from "../styles/index";
 import { factors, categoriesWithFactors } from "../utils/factors";
 import DislikeIcon from "./DislikeIcon";
 import theme from "../theme";
@@ -14,7 +14,7 @@ const AddFilters = ({
   handleClose,
   ...rest
 }) => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const onSubmit = async data => {
     // event.preventDefault();
     const selectedFactors = Object.keys(data).filter(factor => data[factor]);
@@ -26,6 +26,10 @@ const AddFilters = ({
 
     //Closes modal if already on page
     handleClose();
+  };
+
+  const resetForm = () => {
+    document.querySelector("#reset").click();
   };
 
   return (
@@ -41,6 +45,7 @@ const AddFilters = ({
             marginBottom="0"
             backgroundColor="athensGray"
             padding="0"
+            onClick={resetForm}
           >
             Clear All
           </Button>
@@ -112,6 +117,7 @@ const AddFilters = ({
           padding="0.5rem 0"
           borderTop={`0.5px solid ${theme.colors.blackPearl}`}
         >
+          <Input id="reset" type="reset" display="none" />
           <Button
             type="submit"
             color="white"
