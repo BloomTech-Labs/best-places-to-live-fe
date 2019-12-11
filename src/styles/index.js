@@ -18,6 +18,7 @@ import { Hero } from "./hero";
 import { Nav } from "./nav";
 import { Box } from "./box";
 import { CheckBoxContainer } from "./checkBoxContainer";
+import { SettingsCog } from "./iconAnimation";
 import GlobalStyle from "./global";
 
 export {

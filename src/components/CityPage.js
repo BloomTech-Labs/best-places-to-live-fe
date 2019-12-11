@@ -51,7 +51,6 @@ const CityPage = ({ match, likes }) => {
           <Text as="h1">{cityName}</Text>
           <LikeIcon iconColor city={city} liked={isLiked(cityID, likes)} />
           <Text as="h2">{stateName}</Text>
-          <LoadingComponent />
           <Hero
             display="flex"
             justifyContent="center"
@@ -74,6 +73,10 @@ const CityPage = ({ match, likes }) => {
             margin="3rem 4rem"
           >
             <Text as="p">{summary}</Text>
+          </Container>
+
+          <Container backgroundColor="silver" padding="2rem 2rem">
+            <Text>Data Vizzzzzzzzzzzzzzzzzzzzzz</Text>
           </Container>
         </Container>
         <Footer />
