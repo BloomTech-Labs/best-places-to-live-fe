@@ -3,12 +3,10 @@ import { fetchLocationsByFactors } from "../actions/locationsByFactors";
 import { connect } from "react-redux";
 import useForm from "react-hook-form";
 import CheckOval from "./CheckOval";
-import { Button, Text, Container, Flex, Grid } from "../styles/index";
+import { Button, Text, Container, Flex, Nav } from "../styles/index";
 import { factors, categoriesWithFactors } from "../utils/factors";
 import DislikeIcon from "./DislikeIcon";
 import theme from "../theme";
-
-console.log(categoriesWithFactors);
 
 const AddFilters = ({
   fetchLocationsByFactors,
@@ -31,27 +29,42 @@ const AddFilters = ({
   return (
     <>
       <Container
-        flexWrap="nowrap"
-        display="flex"
-        justifyContent="space-between"
-        margin="8px auto 0"
-        maxWidth="800px"
         width="100%"
         borderBottom={`.5px solid ${theme.colors.blackPearl}`}
         backgroundColor="athensGray"
       >
-        <Button border="none">Clear All</Button>
-        <Text>Filters</Text>
-        <DislikeIcon
-          actionType="closeModal"
-          handleClose={handleClose}
-          iconColor="black"
-        ></DislikeIcon>
+        <Nav display="grid" gridTemplateColumns="1fr 4fr 1fr">
+          <Button
+            border="none"
+            marginBottom="0"
+            backgroundColor="athensGray"
+            padding="0"
+          >
+            Clear All
+          </Button>
+          <Text textAlign="center" fontSize="1.25rem">
+            Filters
+          </Text>
+          <Flex justifyContent="center" alignItems="center">
+            <DislikeIcon
+              actionType="closeModal"
+              handleClose={handleClose}
+              iconColor="black"
+            ></DislikeIcon>
+          </Flex>
+        </Nav>
       </Container>
-      <Text textAlign="center" color="black" as="h2" fontSize={5}>
+      <Text textAlign="center" color="choronozon" as="h2" fontSize={5}>
         Refine Your Search
       </Text>
-      <Text textAlign="center" color="black" as="h3" fontSize={2}>
+      <Text
+        textAlign="center"
+        color="black"
+        as="h3"
+        fontSize={2}
+        color="choronozon"
+        fontWeight="normal"
+      >
         Select the variables most important to you:
       </Text>
       <form onSubmit={handleSubmit(onSubmit)}>
