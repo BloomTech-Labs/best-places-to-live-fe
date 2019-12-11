@@ -6,4 +6,5 @@ export const Text = styled.p`
   ${color};
   ${space};
   ${layout};
+  font-weight: normal;
 `;
