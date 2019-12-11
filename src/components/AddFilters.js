@@ -6,6 +6,11 @@ import CategoryForm from "./CategoryForm";
 import { connect } from "react-redux";
 
 const AddFilters = ({ handleClose, ...rest }) => {
+  const resetForm = () => {
+    const reset = document.getElementById("reset");
+    reset.click();
+  };
+
   return (
     <>
       <Container
@@ -19,6 +24,7 @@ const AddFilters = ({ handleClose, ...rest }) => {
             marginBottom="0"
             backgroundColor="athensGray"
             padding="0"
+            onClick={resetForm}
           >
             Clear All
           </Button>
@@ -47,7 +53,7 @@ const AddFilters = ({ handleClose, ...rest }) => {
       >
         Select the variables most important to you:
       </Text>
-      <CategoryForm handleClose={handleClose} {...rest} />
+      <CategoryForm resetForm={resetForm} handleClose={handleClose} {...rest} />
     </>
   );
 };

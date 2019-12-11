@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { fetchLocationsByFactors } from "../actions/locationsByFactors";
 import { categoriesWithFactors } from "../utils/factors";
 import CheckOval from "./CheckOval";
-import { Button, Text, Flex } from "../styles/index";
+import { Button, Text, Flex, Input } from "../styles/index";
 import theme from "../theme";
 import useForm from "react-hook-form";
 import { connect } from "react-redux";
@@ -31,8 +31,6 @@ const CategoryForm = ({
   useEffect(() => {
     //Change inputs to true if they are in selected factors in state
     selectedFactors.forEach(factor => setValue(factor, true));
-
-    return () => {};
   }, []);
 
   return (
@@ -79,12 +77,14 @@ const CategoryForm = ({
         padding="0.5rem 0"
         borderTop={`0.5px solid ${theme.colors.blackPearl}`}
       >
+        <Input type="reset" id="reset" display="none" />
         <Button
           type="submit"
           color="white"
           backgroundColor="scienceBlue"
           marginBottom="0rem"
           fontSize="1rem"
+          borderRadius=".5rem"
         >
           SUBMIT
         </Button>
