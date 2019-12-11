@@ -62,12 +62,14 @@ function SearchResultsPage({ displayedCities, ...rest }) {
           <Button
             display={show ? "none" : ""}
             onClick={showModal}
-            borderRadius="45rem"
+            borderRadius="1.25rem"
             borderColor="blue"
-            width="40%"
+            padding="0.65rem 2rem"
             margin=".5rem"
+            backgroundColor="scienceBlue"
+            color="white"
           >
-            Add Filters
+            Edit Filters
           </Button>
           <Modal show={show} handleClose={hideModal}>
             <AddFilters handleClose={hideModal} {...rest} />
