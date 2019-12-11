@@ -214,14 +214,12 @@ const categories = {
   "Well Being": [11, 5, 6]
 };
 
-export const categoriesWithFactors = {
-  Affordability: [],
-  "Quality of Life": [],
-  People: [],
-  "Well Being": []
-};
+const categoriesWithFactors = {};
 
 Object.keys(categories).forEach(category => {
+  if (!categoriesWithFactors[category]) {
+    categoriesWithFactors[category] = [];
+  }
   categories[category].forEach(factorIndex => {
     categoriesWithFactors[category].push(factors[factorIndex - 1]);
   });

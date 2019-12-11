@@ -50,10 +50,21 @@ const AddFilters = ({
         Refine Your Search
       </Text>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Flex maxWidth="600px" width="100%" margin="0 auto">
-          {factors.map((factor, index) => {
+        <Flex maxWidth="600px" flexWrap="wrap" width="100%" margin="0 auto">
+          {Object.keys(categoriesWithFactors).map(category => {
             return (
-              <CheckOval key={index} factor={factor} register={register} />
+              <>
+                <h1>{category}</h1>
+                {categoriesWithFactors[category].map((factor, index) => {
+                  return (
+                    <CheckOval
+                      key={index}
+                      factor={factor}
+                      register={register}
+                    />
+                  );
+                })}{" "}
+              </>
             );
           })}
         </Flex>
