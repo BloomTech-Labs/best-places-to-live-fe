@@ -207,6 +207,8 @@ export const factors = [
   }
 ];
 
+export const factorNames = factors.map(factor => factor.factor);
+
 const categories = {
   Affordability: [12, 3, 2, 13],
   "Quality of Life": [9, 10, 8, 4],

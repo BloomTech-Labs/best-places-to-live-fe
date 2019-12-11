@@ -15,7 +15,7 @@ function LikeIcon({ addLikedCity, deleteLikedCity, city, liked, ...rest }) {
     }
 
     if (response === "Failure") {
-      rest.history.push("/signup");
+      rest.history.push("/sign-up");
     }
   };
 
