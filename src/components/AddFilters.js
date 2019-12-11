@@ -37,6 +37,8 @@ const AddFilters = ({
         margin="8px auto 0"
         maxWidth="800px"
         width="100%"
+        borderBottom={`.5px solid ${theme.colors.blackPearl}`}
+        backgroundColor="athensGray"
       >
         <Button border="none">Clear All</Button>
         <Text>Filters</Text>
@@ -64,7 +66,12 @@ const AddFilters = ({
           {Object.keys(categoriesWithFactors).map(category => {
             return (
               <Flex flexDirection="column" alignItems="center">
-                <Text as="h3" textAlign="center" fontSize="1.25rem">
+                <Text
+                  as="h3"
+                  textAlign="center"
+                  fontSize="1.25rem"
+                  color="choronozon"
+                >
                   {category}
                 </Text>
                 <Flex flexWrap="wrap" justifyContent="center">
@@ -82,14 +89,22 @@ const AddFilters = ({
             );
           })}
         </Flex>
-        <Flex justifyContent="center">
+        <Flex
+          marginTop="0.8rem"
+          alignItems="center"
+          justifyContent="center"
+          backgroundColor="athensGray"
+          padding="0.5rem 0"
+          borderTop={`0.5px solid ${theme.colors.blackPearl}`}
+        >
           <Button
             type="submit"
             color="white"
-            backgroundColor={theme.colors.mediumCyanBlue}
-            marginTop=".5rem"
+            backgroundColor="scienceBlue"
+            marginBottom="0rem"
+            fontSize="1rem"
           >
-            Submit
+            SUBMIT
           </Button>
         </Flex>
       </form>
