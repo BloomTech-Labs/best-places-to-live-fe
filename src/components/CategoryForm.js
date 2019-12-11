@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { fetchLocationsByFactors } from "../actions/locationsByFactors";
-import { factors, categoriesWithFactors } from "../utils/factors";
+import { categoriesWithFactors } from "../utils/factors";
 import CheckOval from "./CheckOval";
-import { Button, Text, Input, Flex, Form } from "../styles/index";
+import { Button, Text, Flex } from "../styles/index";
 import theme from "../theme";
 import useForm from "react-hook-form";
 import { connect } from "react-redux";
@@ -29,11 +29,11 @@ const CategoryForm = ({
   };
 
   useEffect(() => {
-    console.log(selectedFactors);
-    if (selectedFactors) {
-      selectedFactors.forEach(factor => setValue(factor, true));
-    }
-  }, [selectedFactors]);
+    //Change inputs to true if they are in selected factors in state
+    selectedFactors.forEach(factor => setValue(factor, true));
+
+    return () => {};
+  }, []);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -103,18 +103,3 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps, { fetchLocationsByFactors })(
   CategoryForm
 );
-
-/*
-        <button
-          type="button"
-          onClick={() => {
-            setValue("isDeveloper", true);
-          }}
-        >
-          Set All Values
-        </button>
-
-        map over array, setValue({name}, true);
-
-
-*/
