@@ -2,14 +2,7 @@ import React from "react";
 import useForm from "react-hook-form";
 import { connect } from "react-redux";
 import { signup } from "../actions/signup.js";
-import {
-  Container,
-  Form,
-  Button,
-  Input,
-  Text,
-  StyledLink
-} from "../styles/index";
+import { Container, Form, Button, Input } from "../styles/index";
 
 function SignUp({ signup, ...rest }) {
   const { register, handleSubmit, errors, formState } = useForm({
@@ -42,12 +35,16 @@ function SignUp({ signup, ...rest }) {
           name="email"
           ref={register({ required: true, pattern: /^\S+@\S+$/i })}
         />
-        {errors.password && "Your password is required"}
+        {errors.password &&
+          "Your password is required. Password must have at least 1 lowercase letter, 1 uppercase letter, 1 numeral, 1 special character, and must be at least 8 characters."}
         <Input
           type="Password"
           placeholder="Password"
           name="password"
-          ref={register({ required: true })}
+          ref={register({
+            required: true,
+            pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/
+          })}
         />
         {errors.location && "Your location is required"}
         <Input
@@ -62,14 +59,6 @@ function SignUp({ signup, ...rest }) {
           <Button type="submit" disabled={!formState.isValid}>
             Sign Up
           </Button>
-          <Text as="h1" color="black">
-            Already have an account?
-          </Text>
-          {/* <StyledLink to="/login">
-            <Text as="h1" color="blue">
-              Log In
-            </Text>
-          </StyledLink> */}
         </Container>
       </Form>
     </Container>

@@ -13,7 +13,7 @@ const NavBar = ({ isLoggedIn }) => {
 
           <Flex justifyContent="space-between" width="20vw" minWidth="120px">
             <StyledNavLink to="/login">Log In</StyledNavLink>
-            <StyledNavLink to="/signup">Sign Up</StyledNavLink>
+            <StyledNavLink to="/sign-up">Sign Up</StyledNavLink>
           </Flex>
         </>
       )}

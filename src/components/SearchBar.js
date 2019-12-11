@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { fetchLocationsByName } from "../actions/locationsByName";
 import { connect } from "react-redux";
-import { Container, Input } from "../styles/index";
+import { Container, StyledSearchBar, Flex } from "../styles/index";
+import { IoIosSearch } from "react-icons/io";
 
 function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
   const [location, setLocation] = useState("");
@@ -17,6 +18,10 @@ function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
     }
   };
 
+  const handleChange = e => {
+    setLocation(e.target.value);
+  };
+
   const handleInput = event => {
     if (event.keyCode === 13) {
       fetchLocation(location);
@@ -24,19 +29,32 @@ function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
   };
 
   return (
-    <Container width="100%" display="flex" justifyContent="center">
-      <Input
+    <Flex marginBottom="20px">
+      <Container
+        border="1px solid lightgrey"
+        borderTopLeftRadius="10px"
+        borderBottomLeftRadius="10px"
+        display="inline-block"
+        padding=".5em .75em"
+        borderRight="0"
+        backgroundColor="#fff"
+      >
+        <IoIosSearch
+          display="inline"
+          fontSize="25px"
+          width="auto"
+          height="auto"
+        />
+      </Container>
+      <StyledSearchBar
         type="text"
-        placeholder="Find a city"
+        placeholder="Search for cities or states"
         name="location"
         value={location}
-        width={150}
-        fontSize={2}
-        maxWidth="100%"
-        onChange={e => setLocation(e.target.value)}
+        onChange={e => handleChange(e)}
         onKeyDown={e => handleInput(e)}
       />
-    </Container>
+    </Flex>
   );
 }
 

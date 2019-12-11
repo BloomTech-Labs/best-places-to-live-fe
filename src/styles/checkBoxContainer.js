@@ -2,24 +2,27 @@ import styled from "styled-components";
 
 export const CheckBoxContainer = styled.div`
   margin: 4px;
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 4px;
+  background-color: #e6e4ea;
+  border-radius: 3rem;
   float: left;
 
   input {
     margin-right: 100px;
-    position: absolute;
     top: -20px;
+    display: none;
   }
 
   span {
     text-align: center;
     display: block;
-    width: fit-content;
+    width: 100%;
     padding: 10px 10px;
-    border-radius: 4px;
-    border: 1px solid #d0d0d0;
+    border-radius: 3rem;
+    color: #232326;
+    box-sizing: border-box;
+    font-size: 1rem;
+    /* for fast moused chrome users       user-select: none;
+    */
   }
 
   span:hover {
@@ -27,6 +30,7 @@ export const CheckBoxContainer = styled.div`
   }
 
   input:checked + span {
-    background-color: #959595;
+    background-color: #024bca;
+    color: white;
   }
 `;

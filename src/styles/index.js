@@ -7,7 +7,7 @@ import {
   LinkButton
 } from "./button";
 import { Container } from "./container";
-import { Input } from "./input";
+import { Input, StyledSearchBar } from "./input";
 import { StyledLink, StyledNavLink } from "./link";
 import { Card } from "./card";
 import { Flex } from "./flex";
@@ -19,7 +19,6 @@ import { Nav } from "./nav";
 import { Box } from "./box";
 import { CheckBoxContainer } from "./checkBoxContainer";
 import { SettingsCog } from "./iconAnimation";
-
 import GlobalStyle from "./global";
 
 export {
@@ -43,5 +42,6 @@ export {
   Nav,
   Box,
   CheckBoxContainer,
-  SettingsCog
+  SettingsCog,
+  StyledSearchBar
 };

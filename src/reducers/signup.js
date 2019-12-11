@@ -25,8 +25,7 @@ const registerReducer = (state = initialState, action) => {
           location: action.payload.location,
           isLoggedIn: true,
           likes: action.payload.likes,
-          dislikes: action.payload.dislikes,
-          factors: action.payload.factors
+          dislikes: action.payload.dislikes
         },
         isFetching: false,
         error: ""

@@ -3,21 +3,26 @@ import { addLikedCity } from "../actions/addLikedCity";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { FiHeart } from "react-icons/fi";
+import { deleteLikedCity } from "../actions/deleteLikedCity";
 
-function LikeIcon({ addLikedCity, city, ...rest }) {
+function LikeIcon({ addLikedCity, deleteLikedCity, city, liked, ...rest }) {
   const handleClick = async () => {
-    const response = await addLikedCity(city);
+    let response;
+    if (liked) {
+      response = await deleteLikedCity({ city_id: city.city_id });
+    } else {
+      response = await addLikedCity(city);
+    }
 
     if (response === "Failure") {
-      rest.history.push("/signup");
-    } else {
+      rest.history.push("/sign-up");
     }
   };
 
   const StyledRegHeart = styled(FiHeart)`
     color: ${() => (rest.iconColor ? "black" : "white")};
     font-size: 20px;
-    fill: transparent;
+    fill: ${() => (liked ? "red" : "transparent")};
     transition: all 0.225s ease-in-out;
 
     &:hover {
@@ -31,4 +36,4 @@ function LikeIcon({ addLikedCity, city, ...rest }) {
 }
 
 /* Future: Good place to put errors, connect to state */
-export default connect(null, { addLikedCity })(LikeIcon);
+export default connect(null, { addLikedCity, deleteLikedCity })(LikeIcon);

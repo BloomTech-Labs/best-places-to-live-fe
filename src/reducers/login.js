@@ -25,7 +25,6 @@ const loginReducer = (state = initialState, action) => {
           location: action.payload.location,
           likes: action.payload.likes,
           dislikes: action.payload.dislikes,
-          factors: action.payload.factors,
           isLoggedIn: true
         },
         isFetching: false,

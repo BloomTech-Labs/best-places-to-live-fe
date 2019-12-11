@@ -15,8 +15,6 @@ const topCitiesReducer = (state = initialState, action) => {
         error: ""
       };
     case FETCH_TOP_CITIES_SUCCESS:
-      console.log("initial state", state.topCities);
-      console.log("action payload", action.payload);
       return {
         ...state,
         topCities: { ...state.topCities, ...action.payload },

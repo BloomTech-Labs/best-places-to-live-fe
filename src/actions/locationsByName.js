@@ -8,9 +8,11 @@ import { toast } from "react-toastify";
 
 export const fetchLocationsByName = data => dispatch => {
   dispatch({ type: FETCH_LOCATIONS_BY_NAME_INITIALIZE });
-
+  //Check if user is logged in
+  const token = localStorage.getItem("token");
+  const url = token ? "/city/spec-search" : "/city/search";
   return axiosWithAuth()
-    .post("/city/search", data)
+    .post(url, data)
     .then(res => {
       dispatch({
         type: FETCH_LOCATIONS_BY_NAME_SUCCESS,

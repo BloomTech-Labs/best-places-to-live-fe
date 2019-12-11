@@ -1,10 +1,10 @@
 const initialState = {
   user: {
-    factors: [],
     isLoggedIn: false,
     likes: [],
     dislikes: []
   },
+  selectedFactors: [],
   displayedCities: [],
   topCities: {},
   isFetching: false,

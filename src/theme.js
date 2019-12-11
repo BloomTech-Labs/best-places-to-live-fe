@@ -10,7 +10,16 @@ const colors = {
   primary: "#FF4C4C",
   white: "#fff",
   gray: "#333",
-  blue: "#0066ff"
+  blue: "#0066ff",
+  baliHai: "#808EAC",
+  portGore: "#2A2855",
+  silver: "#C4C4C4",
+  navy: "#045BED",
+  cornflowerBlue: "#8BB5FD",
+  choronozon: "#232326",
+  scienceBlue: "#024BCA",
+  athensGray: "#F7F7FA",
+  blackPearl: "rgba(4, 3, 22, 0.2)"
 };
 
 const space = [
@@ -27,7 +36,15 @@ const space = [
 
 const fonts = ["Noto Sans"];
 
-const fontSizes = [".75rem", ".875rem", "1rem", "1.25rem", "1.5rem", "2rem"];
+const fontSizes = [
+  ".75rem",
+  ".875rem",
+  "1rem",
+  "1.25rem",
+  "1.5rem",
+  "2rem",
+  "2.5rem"
+];
 
 // aliases
 fontSizes.body = fontSizes[2];

@@ -2,17 +2,7 @@ import React from "react";
 import useForm from "react-hook-form";
 import { connect } from "react-redux";
 import { login } from "../actions/login.js";
-import {
-  Container,
-  Form,
-  Button,
-  Input,
-  Text,
-  StyledLink,
-  FacebookButton,
-  GoogleButton,
-  Flex
-} from "../styles/index";
+import { Container, Form, Button, Input } from "../styles/index";
 
 function Login({ login, ...rest }) {
   const { register, handleSubmit, errors, formState } = useForm({
@@ -49,7 +39,7 @@ function Login({ login, ...rest }) {
           </Button>
         </Container>
 
-        <Flex flexDirection="column" alignItems="center">
+        {/* <Flex flexDirection="column" alignItems="center">
           <FacebookButton
             Facebook
             href="https://bestplacesbe.herokuapp.com/auth/facebook
@@ -63,7 +53,7 @@ function Login({ login, ...rest }) {
           >
             Continue with Google
           </GoogleButton>
-        </Flex>
+        </Flex> */}
       </Form>
     </Container>
   );

@@ -1,12 +1,15 @@
 import styled from "styled-components";
 import theme from "../theme";
-import { typography, space, color, border } from "styled-system";
+import {
+  typography,
+  space,
+  color,
+  border,
+  layout,
+  flexbox
+} from "styled-system";
 
 export const Button = styled.button`
-  ${typography};
-  ${space};
-  ${color};
-  ${border}
   transition: 0.275s all ease-in;
   padding: ${theme.space[2]} ${theme.space[3]};
   border: 1px solid ${theme.colors.gray};
@@ -18,6 +21,13 @@ export const Button = styled.button`
     cursor: pointer;
     opacity: 0.8;
   }
+  ${typography};
+  ${space};
+  ${color};
+  ${layout};
+  ${flexbox}
+
+  ${border};
 `;
 
 export const SocialButton = styled.a`
@@ -38,16 +48,16 @@ export const SocialButton = styled.a`
 `;
 
 export const LinkButton = styled.button`
-  ${typography};
-  ${space};
-  ${color};
-  ${border}
   border: 0;
   text-decoration: underline;
 
   &:hover {
     cursor: pointer;
   }
+  ${typography};
+  ${space};
+  ${color};
+  ${border}
 `;
 
 export const FacebookButton = styled(SocialButton)`

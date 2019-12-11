@@ -11,12 +11,14 @@ function DislikeIcon({
   deleteDislikedCity,
   deleteLikedCity,
   city,
+  handleClose,
   ...rest
 }) {
   const handleClick = async () => {
     let response;
-    console.log(rest.actionType);
-    if (rest.actionType === "deleteLike") {
+    if (rest.actionType === "closeModal") {
+      handleClose();
+    } else if (rest.actionType === "deleteLike") {
       response = await deleteLikedCity({ city_id: city.city_id });
     } else if (rest.actionType === "deleteDislike") {
       response = await deleteDislikedCity({ city_id: city.city_id });
@@ -34,7 +36,7 @@ function DislikeIcon({
 
     &:hover {
       cursor: pointer;
-      fill: #e81919;
+      fill: ${() => (rest.actionType === "closeModal" ? "black" : "#e81919")};
       opacity: 0.75;
       transform: scale(1.5);
     }

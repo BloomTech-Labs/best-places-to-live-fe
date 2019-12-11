@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import useForm from "react-hook-form";
 import {
@@ -6,20 +6,20 @@ import {
   Form,
   Input,
   Flex,
-  Text,
   Button,
   LinkButton
 } from "../styles/index";
 import { updateProfile } from "../actions/updateProfile";
 import { logout } from "../actions/logout";
 import Footer from "./Footer";
+import DislikedCities from "./DislikedCities";
 
 function ProfileSettings({ user, history, logout, updateProfile, ...rest }) {
   const { register, handleSubmit, errors, formState } = useForm({
     mode: "onChange"
   });
   const onSubmit = async data => {
-    const response = await updateProfile(data);
+    await updateProfile(data);
   };
 
   const logoutHandler = () => {
@@ -64,7 +64,10 @@ function ProfileSettings({ user, history, logout, updateProfile, ...rest }) {
             type="Password"
             placeholder="Password"
             name="password"
-            ref={register({ required: true })}
+            ref={register({
+              required: true,
+              pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/
+            })}
           />
 
           <Container textAlign="center">
@@ -73,14 +76,15 @@ function ProfileSettings({ user, history, logout, updateProfile, ...rest }) {
             </Button>
           </Container>
         </Form>
-
         {/*  Navlink to password change page */}
-
         <Button onClick={logoutHandler}>Logout </Button>
-        {/* waiting on backend */}
-        <LinkButton>Delete Account</LinkButton>
       </Flex>
-      <Footer />
+      <DislikedCities />
+      {/* waiting on backend */}
+      <Container textAlign="center">
+        <LinkButton>Delete Account</LinkButton>
+        <Footer />
+      </Container>
     </Container>
   );
 }

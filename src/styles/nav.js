@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import { flexbox, layout } from "styled-system";
+import { flexbox, layout, grid } from "styled-system";
 
 export const Nav = styled.nav`
+  padding: 10px;
   ${layout};
   ${flexbox};
-  padding: 10px;
+  ${grid}
 `;

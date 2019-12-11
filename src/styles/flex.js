@@ -6,7 +6,8 @@ import {
   display,
   typography,
   space,
-  background
+  background,
+  border
 } from "styled-system";
 
 export const Flex = styled.div`
@@ -18,4 +19,5 @@ export const Flex = styled.div`
   ${space};
   ${background};
   ${color};
+  ${border};
 `;

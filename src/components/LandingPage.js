@@ -1,64 +1,105 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "./Footer";
 import SearchBar from "./SearchBar";
-import {
-  Container,
-  StyledLink,
-  Flex,
-  Text,
-  Hero,
-  Box,
-  Button
-} from "../styles/index";
+import { Container, Text, Hero, Button, StyledLink } from "../styles/index";
 import heroImg from "../img/hero.jpg";
 import TopCities from "./TopCities";
 import { factors, randomFactor } from "../utils/factors";
+import Categories from "./Categories";
+import Modal from "./Modal";
+import AddFilters from "./AddFilters";
 
 const LandingPage = props => {
   const chosenFactor = randomFactor(factors);
 
+  const [show, setShow] = useState(false);
+
+  const showModal = () => {
+    setShow(true);
+  };
+
+  const hideModal = () => {
+    setShow(false);
+  };
+
   return (
     <>
       <Container as="main">
+        <Modal show={show} handleClose={hideModal}>
+          <AddFilters handleClose={hideModal} {...props} />
+        </Modal>
+
+        <Container
+          m={"0 auto"}
+          display="flex"
+          flexDirection="column"
+          maxWidth="290px"
+        >
+          <SearchBar page="landing" {...props} />
+
+          <Button
+            display={show ? "none" : ""}
+            onClick={showModal}
+            borderRadius="45rem"
+            borderColor="blue"
+            alignSelf="flex-start"
+            width="40%"
+            marginBottom=".5rem"
+          >
+            Add Filters
+          </Button>
+        </Container>
         <Hero
           display="flex"
-          justifyContent="center"
-          alignItems="center"
-          flexDirection="column"
           background={` 
           linear-gradient(
             rgba(0, 0, 0, 0.30), 
             rgba(0, 0, 0, 0.30)
           ),
-          
           url(${heroImg})`}
           backgroundSize="cover"
           backgroundPosition="center"
-          padding="130px 100px 100px"
+          height="25vw"
+          minHeight="220px"
         >
-          <Box>
-            <Text textAlign="center" as="h2" fontSize={"2.5rem"} color="white">
-              Live in the Best Place
+          <Container marginLeft="10%">
+            <Text textAlign="left" as="h2" fontSize={[4, 6]} color="white">
+              Discover Your Next Hometown
             </Text>
-          </Box>
-          <SearchBar page="landing" {...props} />
-        </Hero>
-        <Container textAlign="center">
-          <Text as="h2">
-            <StyledLink color="black" to="/explore">
-              <Button> Explore!</Button>
+            <StyledLink
+              display="inline-block"
+              padding="0.6rem 1.2rem"
+              border-radius="4px"
+              fontSize="0.8rem"
+              color="white"
+              backgroundColor="rgba(0,0,0,0.3)"
+              fontWeight="bold"
+              to="/sign-up"
+            >
+              Get Started
             </StyledLink>
+          </Container>
+        </Hero>
+        <Container
+          maxWidth="1200px"
+          margin={"0 auto"}
+          textAlign="center"
+          p={`0 15px`}
+        >
+          <Text as="h2" textAlign="left">
+            Categories:
           </Text>
+          <Categories {...props} />
         </Container>
-        <Container textAlign="center">
-          <Text as="h2" textAlign="center">
-            Popular Cities
+        <Container textAlign="center" p={`0 15px`} height="auto">
+          <Text as="h2" textAlign="left">
+            Popular Cities:
           </Text>
           <TopCities factor="score_total" {...props} />
         </Container>
-        <Container textAlign="center">
-          <Text as="h2" textAlign="center">
-            Best Cities for {chosenFactor.displayName}
+        <Container textAlign="center" p={`0 15px`}>
+          <Text as="h2" textAlign="left">
+            Best Cities for {chosenFactor.displayName}:
           </Text>
           <TopCities factor={chosenFactor.factor} {...props} />
         </Container>
