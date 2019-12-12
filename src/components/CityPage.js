@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { useFetch } from "../hooks/useFetch";
 import { baseURL } from "../utils/axiosWithAuth";
-import { Container, Text, Hero } from "../styles/index";
+import { Container, Text, Hero, Image } from "../styles/index";
 import LoadingComponent from "./LoadingComponent";
 import Footer from "./Footer";
 import LikeIcon from "./LikeIcon";
@@ -65,8 +65,8 @@ const CityPage = ({ match, likes }) => {
       <Container as="main" maxWidth="600px" margin="0 auto">
         <Container textAlign="center">
           <Text as="h1">{cityName}</Text>
-          <LikeIcon iconColor city={city} liked={isLiked(cityID, likes)} />
           <Text as="h2">{stateName}</Text>
+          <LikeIcon iconColor city={city} liked={isLiked(cityID, likes)} />
           <Hero
             display="flex"
             justifyContent="center"
@@ -93,7 +93,13 @@ const CityPage = ({ match, likes }) => {
 
           <Container padding="2rem 2rem">
             {!imgUrl && <LoadingComponent />}
-            <img alt="data-viz" id="blob" src={imgUrl} />
+            <Image
+              maxWidth="550px"
+              width="100%"
+              alt="data-viz"
+              id="blob"
+              src={imgUrl}
+            />
           </Container>
         </Container>
         <Footer />
