@@ -21,6 +21,8 @@ const CityPage = ({ match, likes }) => {
     body: JSON.stringify({ ids: [cityID] })
   });
 
+  console.log(response);
+
   useEffect(() => {
     const dataViz = () => {
       axios({

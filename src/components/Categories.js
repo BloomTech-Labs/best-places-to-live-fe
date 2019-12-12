@@ -22,8 +22,6 @@ const Categories = ({
     }
   };
 
-  console.log(landingFactors);
-
   return (
     <Grid fourColumns>
       {landingFactors.map((factor, index) => (
