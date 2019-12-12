@@ -27,7 +27,7 @@ const Modal = ({ show, children, handleClose }) => {
     min-height: 100vh;
     transform: translate(-50%, -50%);
 
-    @media (min-width: ${theme.breakpoints.sm}) {
+    @media (min-width: 460px) {
       width: 80%;
       height: auto;
       height: 710px;
