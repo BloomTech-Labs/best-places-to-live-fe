@@ -25,8 +25,7 @@ export const Button = styled.button`
   ${space};
   ${color};
   ${layout};
-  ${flexbox}
-
+  ${flexbox};
   ${border};
 `;
 

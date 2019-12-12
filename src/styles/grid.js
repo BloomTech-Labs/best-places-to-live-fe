@@ -36,4 +36,14 @@ export const Grid = styled.div`
   @media (min-width: ${theme.breakpoints.lg}) {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  ${props =>
+    props.twoColumns &&
+    css`
+      grid-template-columns: repeat(2, 1fr);
+
+      @media (min-width: ${theme.breakpoints.lg}) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    `}
 `;
