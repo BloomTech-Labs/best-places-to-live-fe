@@ -85,10 +85,18 @@ const CityPage = ({ match, likes }) => {
           />
           <Container
             backgroundColor={theme.colors.silver}
-            padding="1rem .75rem"
+            padding="1.2rem 1.5rem"
             margin="3rem 4rem"
           >
-            <Text as="p">{summary}</Text>
+            <Text
+              as="p"
+              lineHeight="1.5"
+              fontSize="1rem"
+              m={0}
+              textAlign="left"
+            >
+              {summary}
+            </Text>
           </Container>
 
           <Container padding="2rem 2rem">

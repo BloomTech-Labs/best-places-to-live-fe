@@ -207,7 +207,18 @@ export const factors = [
   }
 ];
 
-export const factorNames = factors.map(factor => factor.factor);
+/* For Landing Page Factors */
+export const landingFactors = factors.filter((f, i) => i < 7);
+//factor displayName iconPath
+landingFactors.push({
+  factor: "More",
+  displayName: "More",
+  iconPath: `M29.7,25.1c-2.7,0-4.9,2.2-4.9,4.9s2.2,4.9,4.9,4.9s4.9-2.2,4.9-4.9S32.4,25.1,29.7,25.1z M9.6,25.1c-2.7,0-4.9,2.2-4.9,4.9
+s2.2,4.9,4.9,4.9s4.9-2.2,4.9-4.9S12.4,25.1,9.6,25.1z M49.8,25.1c-2.7,0-4.9,2.2-4.9,4.9s2.2,4.9,4.9,4.9s4.9-2.2,4.9-4.9
+S52.5,25.1,49.8,25.1z`
+});
+
+/* For Add Filter - Modal */
 
 const categories = {
   Affordability: [12, 3, 2, 13],

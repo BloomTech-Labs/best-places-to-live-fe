@@ -1,5 +1,5 @@
 import React from "react";
-import { factors } from "../utils/factors";
+import { landingFactors } from "../utils/factors";
 import Icon from "./Icon";
 import theme from "../theme";
 import { Text, Flex, Grid } from "../styles/index";
@@ -7,9 +7,13 @@ import { fetchLocationsByFactors } from "../actions/locationsByFactors";
 import { connect } from "react-redux";
 //More Button
 
-const Categories = ({ fetchLocationsByFactors, isFetching, ...rest }) => {
+const Categories = ({
+  fetchLocationsByFactors,
+  showModal,
+  isFetching,
+  ...rest
+}) => {
   const sendToSearchPage = async category => {
-    // event.preventDefault();
     const response = await fetchLocationsByFactors([category.factor]);
 
     if (response === "Successful") {
@@ -18,21 +22,23 @@ const Categories = ({ fetchLocationsByFactors, isFetching, ...rest }) => {
     }
   };
 
+  console.log(landingFactors);
+
   return (
     <Grid fourColumns>
-      {factors.map((category, index) => (
+      {landingFactors.map((factor, index) => (
         <Flex
-          onClick={() => sendToSearchPage(category)}
+          onClick={
+            factor.factor === "More"
+              ? showModal
+              : () => sendToSearchPage(factor)
+          }
           flexWrap="wrap"
           alignItems="center"
           flexDirection="column"
           key={index}
         >
-          <Icon
-            icon={category.iconPath}
-            size={50}
-            color={theme.colors.baliHai}
-          />
+          <Icon icon={factor.iconPath} size={50} color={theme.colors.baliHai} />
           <Text
             textAlign="center"
             as="h4"
@@ -41,7 +47,7 @@ const Categories = ({ fetchLocationsByFactors, isFetching, ...rest }) => {
             fontSize={theme.fontSizes[1]}
             color={theme.colors.portGore}
           >
-            {category.displayName}
+            {factor.displayName}
           </Text>
         </Flex>
       ))}
