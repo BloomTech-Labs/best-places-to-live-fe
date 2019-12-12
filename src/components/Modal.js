@@ -30,7 +30,9 @@ const Modal = ({ show, children, handleClose }) => {
     @media (min-width: ${theme.breakpoints.sm}) {
       width: 80%;
       height: auto;
-      min-height: 50%;
+      height: 710px;
+      max-height: 100%;
+      min-height: 0;
     }
   `;
 
