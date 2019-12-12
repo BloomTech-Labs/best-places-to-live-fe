@@ -22,13 +22,17 @@ const Modal = ({ show, children, handleClose }) => {
     position: fixed;
     background-color: white;
     width: 100%;
-    height: auto;
     top: 50%;
     left: 50%;
+    min-height: 100vh;
     transform: translate(-50%, -50%);
 
-    @media (min-width: ${theme.breakpoints.sm}) {
+    @media (min-width: 460px) {
       width: 80%;
+      height: auto;
+      height: 710px;
+      max-height: 100%;
+      min-height: 0;
     }
   `;
 

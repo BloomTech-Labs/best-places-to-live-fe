@@ -7,18 +7,20 @@ import {
   space,
   background
 } from "styled-system";
+import { variant } from "styled-system";
 
 import theme from "../theme";
 
 export const Grid = styled.div`
   display: grid;
+  grid-template-columns: 1fr;
   ${layout};
   ${grid};
   ${display};
   ${typography};
   ${space};
   ${background};
-  grid-template-columns: 1fr;
+  
 
   ${props =>
     props.fourColumns &&
@@ -26,7 +28,7 @@ export const Grid = styled.div`
       grid-template-columns: repeat(4, 1fr);
     `}
 
-
+  
   @media (min-width: ${theme.breakpoints.sm}) {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -34,4 +36,14 @@ export const Grid = styled.div`
   @media (min-width: ${theme.breakpoints.lg}) {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  ${props =>
+    props.twoColumns &&
+    css`
+      grid-template-columns: repeat(2, 1fr);
+
+      @media (min-width: ${theme.breakpoints.lg}) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    `}
 `;
