@@ -81,7 +81,6 @@ function ProfileSettings({ user, history, logout, updateProfile, ...rest }) {
       <DislikedCities />
       {/* waiting on backend */}
       <Container textAlign="center">
-        <LinkButton>Delete Account</LinkButton>
         <Footer />
       </Container>
     </Container>
