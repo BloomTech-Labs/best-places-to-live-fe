@@ -33,6 +33,12 @@ const CategoryForm = ({
     selectedFactors.forEach(factor => setValue(factor, true));
   }, []);
 
+  // console.log(
+  //   Object.keys(categoriesWithFactors).map(category =>
+  //     categoriesWithFactors[category].map((factor, index) => factor.displayName)
+  //   )
+  // );
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Flex

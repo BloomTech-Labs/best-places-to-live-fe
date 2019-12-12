@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { useFetch } from "../hooks/useFetch";
 import { baseURL } from "../utils/axiosWithAuth";
-import { Container, Text, Hero } from "../styles/index";
+import { Container, Text, Hero, Image } from "../styles/index";
 import LoadingComponent from "./LoadingComponent";
 import Footer from "./Footer";
 import LikeIcon from "./LikeIcon";
@@ -12,6 +12,7 @@ import axios from "axios";
 
 const CityPage = ({ match, likes }) => {
   const cityID = match.params.id;
+  const [imgUrl, setImgUrl] = useState("");
   const response = useFetch(`${baseURL}city`, {
     method: "POST",
     headers: {
@@ -19,8 +20,6 @@ const CityPage = ({ match, likes }) => {
     },
     body: JSON.stringify({ ids: [cityID] })
   });
-
-  // // //   let imageJunk;
 
   useEffect(() => {
     const dataViz = () => {
@@ -31,26 +30,12 @@ const CityPage = ({ match, likes }) => {
         responseType: "blob"
       })
         .then(res => {
-          console.log(res);
-          let imageNode = document.getElementById("blob");
-          let imgUrl = URL.createObjectURL(res.data);
-          console.log(imgUrl);
-          imageNode.src = imgUrl;
+          setImgUrl(URL.createObjectURL(res.data));
         })
         .catch(err => console.log(err));
     };
     dataViz();
   }, [cityID]);
-
-  // const dataViz = useFetch(`https://best-places-api.herokuapp.com/visual`, {
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json"
-  //   },
-  //   body: JSON.stringify({ input1: dataFactors, input2: cityID })
-  // });
-
-  // console.log(dataViz);
 
   if (!response.response || response.isLoading) {
     return (
@@ -80,8 +65,8 @@ const CityPage = ({ match, likes }) => {
       <Container as="main" maxWidth="600px" margin="0 auto">
         <Container textAlign="center">
           <Text as="h1">{cityName}</Text>
-          <LikeIcon iconColor city={city} liked={isLiked(cityID, likes)} />
           <Text as="h2">{stateName}</Text>
+          <LikeIcon iconColor city={city} liked={isLiked(cityID, likes)} />
           <Hero
             display="flex"
             justifyContent="center"
@@ -100,14 +85,29 @@ const CityPage = ({ match, likes }) => {
           />
           <Container
             backgroundColor={theme.colors.silver}
-            padding="1rem .75rem"
+            padding="1.2rem 1.5rem"
             margin="3rem 4rem"
           >
-            <Text as="p">{summary}</Text>
+            <Text
+              as="p"
+              lineHeight="1.5"
+              fontSize="1rem"
+              m={0}
+              textAlign="left"
+            >
+              {summary}
+            </Text>
           </Container>
 
-          <Container backgroundColor="silver" padding="2rem 2rem">
-            <img alt="data-viz" id="blob" />
+          <Container padding="2rem 2rem">
+            {!imgUrl && <LoadingComponent />}
+            <Image
+              maxWidth="550px"
+              width="100%"
+              alt="data-viz"
+              id="blob"
+              src={imgUrl}
+            />
           </Container>
         </Container>
         <Footer />

@@ -89,7 +89,7 @@ const LandingPage = props => {
           <Text as="h2" textAlign="left">
             Categories:
           </Text>
-          <Categories {...props} />
+          <Categories showModal={showModal} {...props} />
         </Container>
         <Container textAlign="center" p={`0 15px`} height="auto">
           <Text as="h2" textAlign="left">
