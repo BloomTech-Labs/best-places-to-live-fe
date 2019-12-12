@@ -58,14 +58,15 @@ function SignUp({ signup, ...rest }) {
           ref={register({ required: true, pattern: /^\S+@\S+$/i })}
         />
         {errors.password && (
-          <ul>
-            <li>Your password is required</li>
-            <li>at least 8 characters</li>
-            <li>1 uppercase letter</li>
-            <li>1 numeral</li>
-            <li>1 special character</li>
-          </ul>
-        )}
+            <ul>
+              <li>Your password is required</li>
+              <li>at least 8 characters</li>
+              <li>1 uppercase letter</li>
+              <li>1 numeral</li>
+              <li>1 special character</li>
+            </ul>
+          ) &&
+          toast.error("chicken")}
         <Input
           type="Password"
           placeholder="Password"
