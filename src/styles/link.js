@@ -1,5 +1,12 @@
 import styled from "styled-components";
-import { typography, color, layout, border, space } from "styled-system";
+import {
+  typography,
+  color,
+  layout,
+  border,
+  space,
+  background
+} from "styled-system";
 import { Link, NavLink } from "react-router-dom";
 import theme from "../theme";
 

@@ -18,7 +18,6 @@ function SignUp({ signup, ...rest }) {
       password: data.password,
       location: data.location
     };
-    console.log(data);
 
     const response = await signup(data);
 
@@ -38,7 +37,8 @@ function SignUp({ signup, ...rest }) {
             type="text"
             placeholder="First Name"
             name="fname"
-            width="30%"
+            width="calc(42% - 20px)"
+            maxWidth="50%"
             ref={register({ required: true, minLength: 2 })}
           />
           {errors.name &&
@@ -47,7 +47,8 @@ function SignUp({ signup, ...rest }) {
             type="text"
             placeholder="Last Name"
             name="lname"
-            width="30%"
+            width="calc(42% - 20px)"
+            maxWidth="50%"
             ref={register({ required: true, minLength: 2 })}
           />
         </Flex>
