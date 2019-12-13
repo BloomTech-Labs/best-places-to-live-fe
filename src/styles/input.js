@@ -5,10 +5,10 @@ import { layout, typography, space, flexbox } from "styled-system";
 export const Input = styled.input`
   margin-bottom: ${theme.space[4]};
   padding: ${theme.space[2]} ${theme.space[3]};
-  border: 2px solid rgba(0, 0, 0, 0.2);
-  /* box-shadow: 3px 7px 10px rgba(0, 0, 0, 0.45); */
+  border: 1px solid rgba(0, 0, 0, 0.2);
   font-size: ${theme.fontSizes.body};
   line-height: 1.4;
+  border-radius: 6px;
   ${typography};
   ${layout};
   ${space};
