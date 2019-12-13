@@ -15,7 +15,6 @@ export const fetchTopCities = factor => dispatch => {
       input1: [factor]
     })
     .then(res => {
-      console.log(res);
       dispatch({
         type: FETCH_TOP_CITIES_SUCCESS,
         payload: { [factor]: res.data.result }
