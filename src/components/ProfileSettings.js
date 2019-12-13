@@ -7,6 +7,7 @@ import {
   Input,
   Flex,
   Button,
+  ProfileButton,
   LinkButton
 } from "../styles/index";
 import { updateProfile } from "../actions/updateProfile";
@@ -70,9 +71,9 @@ function ProfileSettings({ user, history, logout, updateProfile, ...rest }) {
           />
 
           <Container textAlign="center">
-            <Button type="submit" disabled={!formState.isValid}>
+            <ProfileButton type="submit" disabled={!formState.isValid}>
               Update
-            </Button>
+            </ProfileButton>
           </Container>
         </Form>
         {/*  Navlink to password change page */}

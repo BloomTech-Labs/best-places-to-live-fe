@@ -2,7 +2,7 @@ import React from "react";
 import useForm from "react-hook-form";
 import { connect } from "react-redux";
 import { signup } from "../actions/signup.js";
-import { Container, Form, Button, Input, Flex } from "../styles/index";
+import { Container, Form, ProfileButton, Input, Flex } from "../styles/index";
 import { toast } from "react-toastify";
 import useWindowSize from "../hooks/useWindowSize";
 
@@ -87,9 +87,9 @@ function SignUp({ signup, ...rest }) {
         <Container textAlign="center">
           {/* <SocialButton Google>Continue with Google</SocialButton>
           <SocialButton Facebook>Continue with Facebook</SocialButton> */}
-          <Button type="submit" disabled={!formState.isValid}>
+          <ProfileButton type="submit" disabled={!formState.isValid}>
             Create Account
-          </Button>
+          </ProfileButton>
         </Container>
       </Form>
     </Container>
