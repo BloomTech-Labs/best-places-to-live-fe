@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import theme from "../theme";
 import {
   typography,
@@ -21,6 +21,20 @@ export const Button = styled.button`
     cursor: pointer;
     opacity: 0.8;
   }
+
+  /* For Login and Signup buttons */
+  ${({ disabled }) => {
+    return disabled
+      ? `color: ${theme.colors.scienceBlue};
+        background-color: ${theme.colors.white};
+        border: 1px solid ${theme.colors.scienceBlue};
+        `
+      : `color: ${theme.colors.white};
+        background-color: ${theme.colors.scienceBlue};
+        border: 1px solid ${theme.colors.scienceBlue};
+        `;
+  }}
+
   ${typography};
   ${space};
   ${color};
@@ -29,6 +43,11 @@ export const Button = styled.button`
   ${border};
 `;
 
+// props.disabled &&
+// css`
+//   color: ${theme.colors.scienceBlue};
+//   border: 1px solid ${theme.colors.scienceBlue};
+// `;
 export const SocialButton = styled.a`
   border: 0;
   color: white;

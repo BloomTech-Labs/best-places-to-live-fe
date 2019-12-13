@@ -88,7 +88,7 @@ function SignUp({ signup, ...rest }) {
           {/* <SocialButton Google>Continue with Google</SocialButton>
           <SocialButton Facebook>Continue with Facebook</SocialButton> */}
           <Button type="submit" disabled={!formState.isValid}>
-            Sign Up
+            Create Account
           </Button>
         </Container>
       </Form>
