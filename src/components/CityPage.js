@@ -9,6 +9,7 @@ import LikeIcon from "./LikeIcon";
 import theme from "../theme";
 import { factors } from "../utils/factors";
 import axios from "axios";
+import Attribution from "./Attribution";
 
 const CityPage = ({ match, likes }) => {
   const cityID = match.params.id;
@@ -99,6 +100,7 @@ const CityPage = ({ match, likes }) => {
             >
               {summary}
             </Text>
+            <Attribution />
           </Container>
 
           <Container padding="2rem 2rem">
