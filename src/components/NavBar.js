@@ -23,13 +23,13 @@ const NavBar = ({ isLoggedIn }) => {
           <div>
             <StyledNavLink to="/">Live In The Best Place</StyledNavLink>
           </div>
-          <div>
+          <Flex justifyContent="space-between" width="60px">
             <StyledNavLink to="/profile">Profile</StyledNavLink>
             <StyledNavLink to="/settings">
               {" "}
               <SettingsCog />{" "}
             </StyledNavLink>
-          </div>
+          </Flex>
         </>
       )}
     </Nav>

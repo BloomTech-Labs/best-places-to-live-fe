@@ -2,7 +2,7 @@ import React from "react";
 import useForm from "react-hook-form";
 import { connect } from "react-redux";
 import { login } from "../actions/login.js";
-import { Container, Form, Button, Input } from "../styles/index";
+import { Container, Form, Button, Input, ProfileButton } from "../styles/index";
 
 function Login({ login, ...rest }) {
   const { register, handleSubmit, errors, formState } = useForm({
@@ -34,9 +34,9 @@ function Login({ login, ...rest }) {
           ref={register({ required: true })}
         />
         <Container textAlign="center">
-          <Button type="submit" disabled={!formState.isValid}>
+          <ProfileButton type="submit" disabled={!formState.isValid}>
             Log In
-          </Button>
+          </ProfileButton>
         </Container>
 
         {/* <Flex flexDirection="column" alignItems="center">

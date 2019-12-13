@@ -5,7 +5,7 @@ import thunk from "redux-thunk";
 import reducer from "./reducers";
 import { Provider } from "react-redux";
 
-import { loadState, saveState } from "./localStorage";
+import { loadState, saveState } from "./sessionStorage";
 
 import "./index.css";
 import App from "./App";

@@ -4,7 +4,8 @@ import {
   Button,
   FacebookButton,
   GoogleButton,
-  LinkButton
+  LinkButton,
+  ProfileButton
 } from "./button";
 import { Container } from "./container";
 import { Input, StyledSearchBar } from "./input";
@@ -43,5 +44,6 @@ export {
   Box,
   CheckBoxContainer,
   SettingsCog,
-  StyledSearchBar
+  StyledSearchBar,
+  ProfileButton
 };

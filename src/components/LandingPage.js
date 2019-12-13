@@ -72,8 +72,8 @@ const LandingPage = props => {
               border-radius="4px"
               fontSize="0.8rem"
               color="white"
-              backgroundColor="rgba(0,0,0,0.3)"
               fontWeight="bold"
+              bg="rgba(0,0,0,0.3)"
               to="/sign-up"
             >
               Get Started
