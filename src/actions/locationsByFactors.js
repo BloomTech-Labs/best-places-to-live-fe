@@ -12,7 +12,7 @@ export const fetchLocationsByFactors = data => dispatch => {
   /* 
   {"input1": ["population", "score_safety"]}
 */
-  const token = localStorage.getItem("token");
+  const token = sessionStorage.getItem("token");
   const url = token
     ? "https://bestplacesbe-test.herokuapp.com/city/spec-ds"
     : "https://bestplacesbe-test.herokuapp.com/city/ds";

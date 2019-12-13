@@ -9,7 +9,7 @@ import {
 export const addDislikedCity = data => dispatch => {
   dispatch({ type: ADD_DISLIKED_CITY_INITIALIZE });
 
-  const token = localStorage.getItem("token");
+  const token = sessionStorage.getItem("token");
   if (!token) {
     toast.error("You need to be logged in!");
   } else {

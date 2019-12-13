@@ -1,7 +1,7 @@
 export const loadState = () => {
   try {
     // Look into local storage by key, retrieve a string and try to parse it as JSON
-    const serializedState = localStorage.getItem("state");
+    const serializedState = sessionStorage.getItem("state");
     // key does not exist
     if (serializedState === null) {
       return undefined;
@@ -17,7 +17,7 @@ export const loadState = () => {
 export const saveState = state => {
   try {
     const serializedState = JSON.stringify(state);
-    // set the items to localStorage after stringifying the state object
-    localStorage.setItem("state", serializedState);
+    // set the items to sessionStorage after stringifying the state object
+    sessionStorage.setItem("state", serializedState);
   } catch (err) {}
 };

@@ -9,8 +9,8 @@ export const login = credentials => dispatch => {
     .post(`/users/login`, credentials)
     .then(res => {
       console.log(res);
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("id", res.data._id);
+      sessionStorage.setItem("token", res.data.token);
+      sessionStorage.setItem("id", res.data._id);
       dispatch({
         type: LOGIN_SUCCESS,
         payload: {
