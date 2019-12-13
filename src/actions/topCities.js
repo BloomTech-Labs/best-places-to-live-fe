@@ -9,14 +9,16 @@ import { toast } from "react-toastify";
 export const fetchTopCities = factor => dispatch => {
   dispatch({ type: FETCH_TOP_CITIES_INITIALIZE });
   //data is the factor as a string
+
   return axios
-    .post("https://best-places-api.herokuapp.com/api", {
+    .post("https://bestplacesbe-test.herokuapp.com/city/ds", {
       input1: [factor]
     })
     .then(res => {
+      console.log(res);
       dispatch({
         type: FETCH_TOP_CITIES_SUCCESS,
-        payload: { [factor]: res.data }
+        payload: { [factor]: res.data.result }
       });
     })
     .catch(err => {
