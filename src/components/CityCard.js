@@ -35,7 +35,13 @@ function CityCard({ city, page, likes, index, ...rest }) {
       p={[1, 2]}
     >
       <Flex
-        justifyContent={page !== "profile" ? "space-between" : "flex-start"}
+        justifyContent={
+          page !== "profile"
+            ? page === "settings"
+              ? "flex-end"
+              : "space-between"
+            : "flex-start"
+        }
         display={page === "landing" ? "none" : ""}
         p={[1, 2]}
       >
@@ -49,7 +55,7 @@ function CityCard({ city, page, likes, index, ...rest }) {
             {...rest}
           />
         )}
-        {page === "search" && (
+        {(page === "search" || page === "settings") && (
           <DislikeIcon
             city={{
               city_id: city._id,
