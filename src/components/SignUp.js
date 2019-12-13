@@ -2,13 +2,23 @@ import React from "react";
 import useForm from "react-hook-form";
 import { connect } from "react-redux";
 import { signup } from "../actions/signup.js";
-import { Container, Form, Button, Input } from "../styles/index";
+import { Container, Form, ProfileButton, Input, Flex } from "../styles/index";
+import { toast } from "react-toastify";
+import useWindowSize from "../hooks/useWindowSize";
 
 function SignUp({ signup, ...rest }) {
   const { register, handleSubmit, errors, formState } = useForm({
     mode: "onChange"
   });
   const onSubmit = async data => {
+    const nameConcat = data.fname.concat(" ", data.lname);
+    data = {
+      name: nameConcat,
+      email: data.email,
+      password: data.password,
+      location: data.location
+    };
+
     const response = await signup(data);
 
     if (response === "Successful") {
@@ -18,16 +28,30 @@ function SignUp({ signup, ...rest }) {
   };
 
   return (
-    <Container>
+    <Container padding="0 2rem">
       <Form onSubmit={handleSubmit(onSubmit)}>
-        {errors.name &&
-          "Your name is required and must be at least 2 characters."}
-        <Input
-          type="text"
-          placeholder="Name"
-          name="name"
-          ref={register({ required: true, minLength: 2 })}
-        />
+        <Flex justifyContent="space-between">
+          {errors.name &&
+            "Your first name is required and must be at least 2 characters."}
+          <Input
+            type="text"
+            placeholder="First Name"
+            name="fname"
+            width="calc(42% - 20px)"
+            maxWidth="50%"
+            ref={register({ required: true, minLength: 2 })}
+          />
+          {errors.name &&
+            "Your last name is required and must be at least 2 characters."}
+          <Input
+            type="text"
+            placeholder="Last Name"
+            name="lname"
+            width="calc(42% - 20px)"
+            maxWidth="50%"
+            ref={register({ required: true, minLength: 2 })}
+          />
+        </Flex>
         {errors.email && "Your email is required"}
         <Input
           type="text"
@@ -35,8 +59,15 @@ function SignUp({ signup, ...rest }) {
           name="email"
           ref={register({ required: true, pattern: /^\S+@\S+$/i })}
         />
-        {errors.password &&
-          "Your password is required. Password must have at least 1 lowercase letter, 1 uppercase letter, 1 numeral, 1 special character, and must be at least 8 characters."}
+        {errors.password && (
+          <ul>
+            <li>Your password is required</li>
+            <li>at least 8 characters</li>
+            <li>1 uppercase letter</li>
+            <li>1 numeral</li>
+            <li>1 special character</li>
+          </ul>
+        )}
         <Input
           type="Password"
           placeholder="Password"
@@ -56,9 +87,9 @@ function SignUp({ signup, ...rest }) {
         <Container textAlign="center">
           {/* <SocialButton Google>Continue with Google</SocialButton>
           <SocialButton Facebook>Continue with Facebook</SocialButton> */}
-          <Button type="submit" disabled={!formState.isValid}>
-            Sign Up
-          </Button>
+          <ProfileButton type="submit" disabled={!formState.isValid}>
+            Create Account
+          </ProfileButton>
         </Container>
       </Form>
     </Container>

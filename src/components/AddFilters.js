@@ -14,46 +14,61 @@ const AddFilters = ({ handleClose, ...rest }) => {
   return (
     <>
       <Container
+        position="absolute"
+        top="0"
+        left="0"
         width="100%"
-        borderBottom={`.5px solid ${theme.colors.blackPearl}`}
-        backgroundColor="athensGray"
+        height="100%"
+        overflow="auto"
       >
-        <Nav display="grid" gridTemplateColumns="1fr 4fr 1fr">
-          <Button
-            border="none"
-            marginBottom="0"
-            backgroundColor="athensGray"
-            padding="0"
-            onClick={resetForm}
-          >
-            Clear All
-          </Button>
-          <Text textAlign="center" fontSize="1.25rem">
-            Filters
+        <Container
+          width="100%"
+          borderBottom={`.5px solid ${theme.colors.blackPearl}`}
+          backgroundColor="athensGray"
+        >
+          <Nav display="grid" gridTemplateColumns="1fr 4fr 1fr">
+            <Button
+              border="none"
+              marginBottom="0"
+              backgroundColor="athensGray"
+              padding="0"
+              onClick={resetForm}
+            >
+              Clear All
+            </Button>
+            <Text textAlign="center" fontSize="1.25rem">
+              Filters
+            </Text>
+            <Flex justifyContent="center" alignItems="center">
+              <DislikeIcon
+                actionType="closeModal"
+                handleClose={handleClose}
+                iconColor="black"
+              ></DislikeIcon>
+            </Flex>
+          </Nav>
+        </Container>
+        <Container>
+          <Text textAlign="center" color="choronozon" as="h2" fontSize={5}>
+            Refine Your Search
           </Text>
-          <Flex justifyContent="center" alignItems="center">
-            <DislikeIcon
-              actionType="closeModal"
-              handleClose={handleClose}
-              iconColor="black"
-            ></DislikeIcon>
-          </Flex>
-        </Nav>
+          <Text
+            textAlign="center"
+            color="black"
+            as="h3"
+            fontSize={2}
+            color="choronozon"
+            fontWeight="normal"
+          >
+            Select the variables most important to you:
+          </Text>
+        </Container>
+        <CategoryForm
+          resetForm={resetForm}
+          handleClose={handleClose}
+          {...rest}
+        />
       </Container>
-      <Text textAlign="center" color="choronozon" as="h2" fontSize={5}>
-        Refine Your Search
-      </Text>
-      <Text
-        textAlign="center"
-        color="black"
-        as="h3"
-        fontSize={2}
-        color="choronozon"
-        fontWeight="normal"
-      >
-        Select the variables most important to you:
-      </Text>
-      <CategoryForm resetForm={resetForm} handleClose={handleClose} {...rest} />
     </>
   );
 };

@@ -1,8 +1,8 @@
-# 1️⃣ Best Places to Live
+# Best Places to Live
 
-1️⃣ You can find the deployed project at [Live in The Best Place](https://www.liveinthebestplace.com/).
+You can find the deployed project at [Live in The Best Place](https://www.liveinthebestplace.com/).
 
-## 4️⃣ Contributors
+## Contributors
 
 |                                             [Devin Bielejec](https://github.com/Devin-Bielejec)                                             |                                                [Nazifa Hossain](https://github.com/ampers-and)                                                |                                                [Seth Lachman](https://github.com/stlachman)                                                 |                                                [Chris Pupo](https://github.com/ChrisPupo22)                                                 |
 | :-----------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: |
@@ -27,7 +27,7 @@
 
 Moving is an inevitable part of life that most people will experience. Often, there's buyer's remorse after the fact for one reason or another. With Let's Move Homie, we strive to get you as much information about a potential place to live in a quick, user friendly manner. Whether you want to look up a specific location you have in mind, or just want to scroll across a map and see how certain cities rank compared to others, Let's Move Homie is here to help.
 
-### 4️⃣ Key Features
+### Key Features
 
 - Login/Logout
 - Profile
@@ -35,7 +35,7 @@ Moving is an inevitable part of life that most people will experience. Often, th
 - Top-10 cities (Roughly standardized top 10 cities)
 - Map - City Outlines
 
-## 1️⃣ Tech Stack
+## Tech Stack
 
 ### Front end built using: React, Axios, Redux
 
@@ -54,17 +54,17 @@ MongoDB, Express and NodeJS, REST API
 
 # APIs
 
-# 3️⃣ Environment Variables
+# Environment Variables
 
 In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
 
 🚫These are just examples, replace them with the specifics for your app
 
-# 4️⃣ Testing
+# Testing
 
 🚫Document what you used for testing and why
 
-# 4️⃣ Installation Instructions
+# Installation Instructions
 
 Please run yarn install then the following dependencies:
 

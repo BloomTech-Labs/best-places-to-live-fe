@@ -4,8 +4,8 @@ import { toast } from "react-toastify";
 export const logout = credentials => dispatch => {
   dispatch({ type: LOGOUT });
 
-  localStorage.removeItem("token");
-  localStorage.removeItem("id");
+  sessionStorage.removeItem("token");
+  sessionStorage.removeItem("id");
 
   dispatch({
     type: LOGOUT

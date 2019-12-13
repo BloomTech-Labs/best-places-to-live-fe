@@ -7,6 +7,7 @@ import {
   Input,
   Flex,
   Button,
+  ProfileButton,
   LinkButton
 } from "../styles/index";
 import { updateProfile } from "../actions/updateProfile";
@@ -65,15 +66,14 @@ function ProfileSettings({ user, history, logout, updateProfile, ...rest }) {
             placeholder="Password"
             name="password"
             ref={register({
-              required: true,
-              pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/
+              required: true
             })}
           />
 
           <Container textAlign="center">
-            <Button type="submit" disabled={!formState.isValid}>
+            <ProfileButton type="submit" disabled={!formState.isValid}>
               Update
-            </Button>
+            </ProfileButton>
           </Container>
         </Form>
         {/*  Navlink to password change page */}
@@ -82,7 +82,6 @@ function ProfileSettings({ user, history, logout, updateProfile, ...rest }) {
       <DislikedCities />
       {/* waiting on backend */}
       <Container textAlign="center">
-        <LinkButton>Delete Account</LinkButton>
         <Footer />
       </Container>
     </Container>

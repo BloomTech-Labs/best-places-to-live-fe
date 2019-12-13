@@ -7,8 +7,8 @@ export const signup = userData => dispatch => {
   return axiosWithAuth()
     .post(`/users/register`, userData)
     .then(res => {
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("id", res.data._id);
+      sessionStorage.setItem("token", res.data.token);
+      sessionStorage.setItem("id", res.data._id);
       dispatch({
         type: SIGNUP_SUCCESS,
         payload: {
