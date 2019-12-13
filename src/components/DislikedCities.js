@@ -18,7 +18,7 @@ function DislikedCities({ cities, deleteDislikedCity, ...rest }) {
           {cities.map(city => (
             <CityCard
               actionType={deleteDislike}
-              page="profile"
+              page="settings"
               {...rest}
               key={city._id}
               city={city}
