@@ -1,5 +1,7 @@
 import React from "react";
 import { landingFactors } from "../utils/factors";
+import "styled-components/macro";
+import css from "@styled-system/css";
 import Icon from "./Icon";
 import theme from "../theme";
 import { Text, Flex, Grid } from "../styles/index";
@@ -35,6 +37,11 @@ const Categories = ({
           alignItems="center"
           flexDirection="column"
           key={index}
+          css={css({
+            "&:hover": {
+              cursor: "pointer"
+            }
+          })}
         >
           <Icon icon={factor.iconPath} size={50} color={theme.colors.baliHai} />
           <Text
