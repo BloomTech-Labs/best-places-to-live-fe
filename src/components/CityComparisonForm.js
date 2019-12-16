@@ -1,28 +1,36 @@
 import React from "react";
 import "styled-components/macro";
 import css from "@styled-system/css";
+import { connect } from "react-redux";
 import { Form, Button, Box } from "../styles/index";
 import { useFetch } from "../hooks/useFetch";
 import useForm from "react-hook-form";
 import LoadingComponent from "./LoadingComponent";
+import { addComparedCities } from "../actions/addComparedCities";
 
-const CityComparisonForm = () => {
+const CityComparisonForm = ({ addComparedCities, cityID }) => {
   let cities = useFetch("https://bestplacesbe-test.herokuapp.com/city/all");
 
-  const { register, submit } = useForm();
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = async data => {
+    console.log(data);
+    //pass in an array of ids
+    await addComparedCities([cityID, data.city]);
+  };
 
   if (!cities.isLoading && cities.response) {
     cities = cities.response.cities;
     cities = cities.sort((a, b) => a.name.localeCompare(b.name));
-    console.log(cities);
+
     return (
-      <Form>
+      <Form onSubmit={handleSubmit(onSubmit)}>
         <Box
           fontSize="1.1rem"
           fontFamily="Noto Sans"
           mb={20}
           as="select"
-          name="Cities"
+          name="city"
           ref={register}
           css={css({
             "&:hover": {
@@ -31,10 +39,12 @@ const CityComparisonForm = () => {
           })}
         >
           {cities.map(city => (
-            <option value={city._id}>{city.name}</option>
+            <option key={city._id} value={city._id}>
+              {city.name}
+            </option>
           ))}
         </Box>
-        <Button>Compare</Button>
+        <Button type="submit">Compare</Button>
       </Form>
     );
   } else {
@@ -42,4 +52,4 @@ const CityComparisonForm = () => {
   }
 };
 
-export default CityComparisonForm;
+export default connect(null, { addComparedCities })(CityComparisonForm);

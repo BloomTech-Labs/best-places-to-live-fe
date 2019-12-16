@@ -90,7 +90,7 @@ const CityPage = ({ match, likes }) => {
             padding="130px 100px 100px"
           />
           <Container>
-            <CityComparisonForm />
+            <CityComparisonForm cityID={cityID} />
           </Container>
           <Container
             backgroundColor={theme.colors.silver}
