@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Footer from "./Footer";
 import SearchBar from "./SearchBar";
 import { Container, Text, Hero, Button, StyledLink } from "../styles/index";
-import heroImg from "../img/hero.jpg";
+import heroImg from "../img/heroTest.jpg";
 import TopCities from "./TopCities";
 import { factors, randomFactor } from "../utils/factors";
 import Categories from "./Categories";
