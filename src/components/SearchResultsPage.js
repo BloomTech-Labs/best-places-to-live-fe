@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import CityCard from "./CityCard";
 import Footer from "./Footer";
@@ -27,6 +27,9 @@ function SearchResultsPage({ displayedCities, ...rest }) {
     setShow(false);
   };
 
+  useEffect(() => {
+    console.log(displayedCities);
+  }, [displayedCities]);
   return (
     <>
       <Hero
