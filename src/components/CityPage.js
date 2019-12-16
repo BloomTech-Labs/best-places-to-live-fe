@@ -11,6 +11,7 @@ import { factors } from "../utils/factors";
 import axios from "axios";
 import Icon from "./Icon";
 import Attribution from "./Attribution";
+import CityComparisonForm from "./CityComparisonForm";
 
 const CityPage = ({ match, likes }) => {
   const cityID = match.params.id;
@@ -88,6 +89,9 @@ const CityPage = ({ match, likes }) => {
             backgroundPosition="center"
             padding="130px 100px 100px"
           />
+          <Container>
+            <CityComparisonForm />
+          </Container>
           <Container
             backgroundColor={theme.colors.silver}
             padding="1.2rem 1.5rem"
