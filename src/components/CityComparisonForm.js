@@ -1,5 +1,7 @@
 import React from "react";
-import { Form, Button } from "../styles/index";
+import "styled-components/macro";
+import css from "@styled-system/css";
+import { Form, Button, Box } from "../styles/index";
 import { useFetch } from "../hooks/useFetch";
 import useForm from "react-hook-form";
 import LoadingComponent from "./LoadingComponent";
@@ -15,11 +17,23 @@ const CityComparisonForm = () => {
     console.log(cities);
     return (
       <Form>
-        <select name="Cities" ref={register}>
+        <Box
+          fontSize="1.1rem"
+          fontFamily="Noto Sans"
+          mb={20}
+          as="select"
+          name="Cities"
+          ref={register}
+          css={css({
+            "&:hover": {
+              cursor: "pointer"
+            }
+          })}
+        >
           {cities.map(city => (
             <option value={city._id}>{city.name}</option>
           ))}
-        </select>
+        </Box>
         <Button>Compare</Button>
       </Form>
     );
