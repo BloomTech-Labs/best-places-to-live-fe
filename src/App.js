@@ -17,6 +17,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import CityPage from "./components/CityPage";
 import ProfileSettings from "./components/ProfileSettings";
+import ComparisonPage from "./components/ComparisonPage";
 
 const history = createBrowserHistory();
 
@@ -40,6 +41,7 @@ function App(props) {
         <Route path="/sign-up" component={SignUp} />
         <Route path="/login" component={Login} />
         <Route path="/search" component={SearchResultsPage} />
+        <Route path="/compare" component={ComparisonPage} />
         <PrivateRoute path="/profile" component={ProfilePage} />
         <PrivateRoute path="/settings" component={ProfileSettings} />
       </ThemeProvider>

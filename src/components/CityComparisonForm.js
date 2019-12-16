@@ -8,7 +8,7 @@ import useForm from "react-hook-form";
 import LoadingComponent from "./LoadingComponent";
 import { addComparedCities } from "../actions/addComparedCities";
 
-const CityComparisonForm = ({ addComparedCities, cityID }) => {
+const CityComparisonForm = ({ addComparedCities, cityID, history }) => {
   let cities = useFetch("https://bestplacesbe-test.herokuapp.com/city/all");
 
   const { register, handleSubmit } = useForm();
@@ -16,7 +16,12 @@ const CityComparisonForm = ({ addComparedCities, cityID }) => {
   const onSubmit = async data => {
     console.log(data);
     //pass in an array of ids
-    await addComparedCities([cityID, data.city]);
+    const response = await addComparedCities([cityID, data.city]);
+    console.log(response);
+    //push
+    if (response === "Successful") {
+      history.push("/compare");
+    }
   };
 
   if (!cities.isLoading && cities.response) {
