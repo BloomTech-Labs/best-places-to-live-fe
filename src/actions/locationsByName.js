@@ -18,7 +18,7 @@ export const fetchLocationsByName = data => dispatch => {
         type: FETCH_LOCATIONS_BY_NAME_SUCCESS,
         payload: res.data.cities
       });
-      return "Successful";
+      return true;
     })
     .catch(err => {
       dispatch({
@@ -26,6 +26,6 @@ export const fetchLocationsByName = data => dispatch => {
         payload: { err, message: err.message }
       });
       toast.error(err.message);
-      return "Failure";
+      return false;
     });
 };

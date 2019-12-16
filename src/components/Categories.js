@@ -18,7 +18,7 @@ const Categories = ({
   const sendToSearchPage = async category => {
     const response = await fetchLocationsByFactors([category.factor]);
 
-    if (response === "Successful") {
+    if (response) {
       rest.history.push("/search");
     } else {
     }
