@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import styled from "styled-components";
+import { connect } from "react-redux";
 import Icon from "./Icon";
 import theme from "../theme";
-import { Button, Box } from "../styles/index";
+import { Button } from "../styles/index";
 import { moreIcon } from "../utils/factors";
-import styled from "styled-components";
-
-const MoreOptions = ({ city }) => {
+import { addDislikedCity } from "../actions/addDislikedCity";
+const MoreOptions = ({ city, addDislikedCity }) => {
   const [showMenu, setShowMenu] = useState(false);
 
   const IconButton = styled(Button)`
@@ -29,15 +30,23 @@ const MoreOptions = ({ city }) => {
   `;
 
   const toggleMenu = () => {
-    console.log("clicked");
     setShowMenu(!showMenu);
   };
+
+  const handleClick = async () => {
+    await addDislikedCity(city);
+  };
+
   return (
     <IconButton mb={0} onClick={toggleMenu}>
       <Icon color="white" size={20} icon={moreIcon.iconPath} rotate={90} />
-      <OptionMenu toggle={showMenu}>Delete this City</OptionMenu>
+      <OptionMenu toggle={showMenu} onClick={handleClick}>
+        Delete this City
+      </OptionMenu>
     </IconButton>
   );
 };
 
-export default MoreOptions;
+export default connect(null, {
+  addDislikedCity
+})(MoreOptions);
