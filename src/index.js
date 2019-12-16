@@ -25,7 +25,8 @@ store.subscribe(() => {
     user: store.getState().user,
     selectedFactors: store.getState().selectedFactors,
     displayedCities: store.getState().displayedCities,
-    topCities: store.getState().topCities
+    topCities: store.getState().topCities,
+    comparedCities: store.getState().comparedCities
   });
 });
 
