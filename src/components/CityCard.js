@@ -4,6 +4,7 @@ import useWindowSize from "../hooks/useWindowSize";
 import LikeIcon from "./LikeIcon";
 import DislikeIcon from "./DislikeIcon";
 import { connect } from "react-redux";
+import MoreOptions from "./MoreOptions";
 
 function CityCard({ city, page, likes, index, ...rest }) {
   const size = useWindowSize();
@@ -55,8 +56,17 @@ function CityCard({ city, page, likes, index, ...rest }) {
             {...rest}
           />
         )}
-        {(page === "search" || page === "settings") && (
+        {page === "settings" && (
           <DislikeIcon
+            city={{
+              city_id: city._id,
+              city_name: city.name
+            }}
+            {...rest}
+          />
+        )}
+        {page === "search" && (
+          <MoreOptions
             city={{
               city_id: city._id,
               city_name: city.name

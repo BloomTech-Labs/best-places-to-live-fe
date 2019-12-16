@@ -2,18 +2,21 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { useFetch } from "../hooks/useFetch";
 import { baseURL } from "../utils/axiosWithAuth";
-import { Container, Text, Hero, Image } from "../styles/index";
+import { Container, Text, Hero, Image, Button } from "../styles/index";
 import LoadingComponent from "./LoadingComponent";
 import Footer from "./Footer";
 import LikeIcon from "./LikeIcon";
 import theme from "../theme";
 import { factors } from "../utils/factors";
 import axios from "axios";
+import Icon from "./Icon";
 import Attribution from "./Attribution";
 
 const CityPage = ({ match, likes }) => {
   const cityID = match.params.id;
   const [imgUrl, setImgUrl] = useState("");
+  const [show, setShow] = useState(false);
+
   const response = useFetch(`${baseURL}city`, {
     method: "POST",
     headers: {
@@ -22,8 +25,7 @@ const CityPage = ({ match, likes }) => {
     body: JSON.stringify({ ids: [cityID] })
   });
 
-  console.log(response);
-
+  //Change to BE endpoint
   useEffect(() => {
     const dataViz = () => {
       axios({
