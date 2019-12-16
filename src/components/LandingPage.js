@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import Footer from "./Footer";
 import SearchBar from "./SearchBar";
 import { Container, Text, Hero, Button, StyledLink } from "../styles/index";
-import heroImg from "../img/hero.jpg";
+import heroImg from "../img/heroTest.jpg";
 import TopCities from "./TopCities";
 import { factors, randomFactor } from "../utils/factors";
 import Categories from "./Categories";
 import Modal from "./Modal";
 import AddFilters from "./AddFilters";
+import { LazyImage } from "react-lazy-images";
 
 const LandingPage = props => {
   const chosenFactor = randomFactor(factors);
@@ -49,6 +50,7 @@ const LandingPage = props => {
             Add Filters
           </Button>
         </Container>
+
         <Hero
           display="flex"
           background={` 
@@ -80,6 +82,7 @@ const LandingPage = props => {
             </StyledLink>
           </Container>
         </Hero>
+
         <Container
           maxWidth="1200px"
           margin={"0 auto"}

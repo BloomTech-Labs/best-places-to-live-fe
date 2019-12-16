@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import CityCard from "./CityCard";
 import Footer from "./Footer";
@@ -15,6 +15,7 @@ import heroImg from "../img/seattle.jpg";
 import SearchBar from "./SearchBar";
 import AddFilters from "./AddFilters";
 import Modal from "./Modal";
+import LazyLoad from "react-lazyload";
 
 function SearchResultsPage({ displayedCities, ...rest }) {
   const [show, setShow] = useState(false);
@@ -27,6 +28,7 @@ function SearchResultsPage({ displayedCities, ...rest }) {
     setShow(false);
   };
 
+  useEffect(() => {}, [displayedCities]);
   return (
     <>
       <Hero
@@ -81,7 +83,9 @@ function SearchResultsPage({ displayedCities, ...rest }) {
         </Text>
         <Grid>
           {displayedCities.map(city => (
-            <CityCard {...rest} key={city._id} city={city} page="search" />
+            <LazyLoad resize>
+              <CityCard {...rest} key={city._id} city={city} page="search" />
+            </LazyLoad>
           ))}
         </Grid>
         <Footer />
