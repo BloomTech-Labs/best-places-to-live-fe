@@ -17,7 +17,7 @@ export const addComparedCities = data => dispatch => {
         type: ADD_COMPARED_CITIES_SUCCESS,
         payload: res.data.data
       });
-      return "Successful";
+      return true;
       toast.success("Success - Cities are sent to Comparison!");
     })
     .catch(err => {
@@ -25,7 +25,7 @@ export const addComparedCities = data => dispatch => {
         type: ADD_COMPARED_CITIES_FAIL,
         payload: { err, message: err.message }
       });
-      return "Error";
+      return false;
       toast.error(err.message);
     });
 };

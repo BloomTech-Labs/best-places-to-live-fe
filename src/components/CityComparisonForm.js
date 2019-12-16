@@ -19,7 +19,7 @@ const CityComparisonForm = ({ addComparedCities, cityID, history }) => {
     const response = await addComparedCities([cityID, data.city]);
     console.log(response);
     //push
-    if (response === "Successful") {
+    if (response) {
       history.push("/compare");
     }
   };

@@ -20,7 +20,7 @@ const CategoryForm = ({
     const chosenFactors = Object.keys(data).filter(factor => data[factor]);
     const response = await fetchLocationsByFactors(chosenFactors);
 
-    if (response === "Successful") {
+    if (response) {
       rest.history.push("/search");
     }
 

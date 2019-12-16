@@ -10,7 +10,7 @@ function Login({ login, ...rest }) {
   });
   const onSubmit = async data => {
     const response = await login(data);
-    if (response === "Successful") {
+    if (response) {
       rest.history.push("/profile");
     } else {
     }

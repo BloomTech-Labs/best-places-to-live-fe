@@ -21,7 +21,7 @@ function SignUp({ signup, ...rest }) {
 
     const response = await signup(data);
 
-    if (response === "Successful") {
+    if (response) {
       rest.history.push("/");
     } else {
     }
