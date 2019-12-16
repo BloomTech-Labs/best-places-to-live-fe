@@ -5,7 +5,8 @@ const Icon = props => {
   const styles = {
     svg: {
       display: "inline-block",
-      verticalAlign: "middle"
+      verticalAlign: "middle",
+      transform: `rotate(${props.rotate ? props.rotate : 0}deg)`
     },
     path: {
       fill: props.color

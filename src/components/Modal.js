@@ -15,6 +15,7 @@ const Modal = ({ show, children, handleClose }) => {
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
     display: ${() => (show ? "block" : "none")};
   `;
 
