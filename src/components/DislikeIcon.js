@@ -5,6 +5,7 @@ import { deleteLikedCity } from "../actions/deleteLikedCity";
 import { connect } from "react-redux";
 import { FaTimes } from "react-icons/fa";
 import styled, { css } from "styled-components";
+import { Button } from "../styles";
 
 function DislikeIcon({
   addDislikedCity,
@@ -42,7 +43,22 @@ function DislikeIcon({
     }
   `;
 
-  return <StyledFaTimes onClick={handleClick} />;
+  const IconButton = styled(Button)`
+    background-color: transparent;
+    border: none;
+    position: relative;
+    padding: 0px;
+    margin: 0;
+    &:hover {
+      cursor: pointer;
+    }
+  `;
+
+  return (
+    <IconButton onClick={handleClick}>
+      <StyledFaTimes />{" "}
+    </IconButton>
+  );
 }
 
 export default connect(null, {

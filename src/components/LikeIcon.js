@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import { FiHeart } from "react-icons/fi";
 import { deleteLikedCity } from "../actions/deleteLikedCity";
+import { Button } from "../styles";
 
 function LikeIcon({ addLikedCity, deleteLikedCity, city, liked, ...rest }) {
   const handleClick = async () => {
@@ -32,7 +33,23 @@ function LikeIcon({ addLikedCity, deleteLikedCity, city, liked, ...rest }) {
     }
   `;
 
-  return <StyledRegHeart onClick={handleClick} />;
+  const IconButton = styled(Button)`
+    background-color: transparent;
+    border: none;
+    position: relative;
+    padding: 0px;
+    margin: 0;
+    &:hover {
+      cursor: pointer;
+    }
+  `;
+
+  return (
+    <IconButton onClick={handleClick}>
+      {" "}
+      <StyledRegHeart />{" "}
+    </IconButton>
+  );
 }
 
 /* Future: Good place to put errors, connect to state */
