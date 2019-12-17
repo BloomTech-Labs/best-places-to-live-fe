@@ -95,10 +95,10 @@ const MyResponsiveBar = ({ data, city1, city2 }) => (
 const CityStats = ({ city1, city2 }) => {
   const responseFromBe = {
     score_commute: {
-      bestCityID: "awefawef",
-      bestCityFactorScore: 100,
-      worstCityID: "awefawef",
-      worstCityFactorScore: 33,
+      bestCityID: "5dc9f97b2a65b6af02024d11",
+      bestCityFactorScore: 0.00390625,
+      worstCityID: "5dc9f97b2a65b6af02024ced",
+      worstCityFactorScore: 1.0,
       averageFactorScore: 22
     },
     score_cost_of_living: {
