@@ -3,18 +3,14 @@ import { Flex, Text, Container } from "../styles/index";
 import { ResponsiveBar } from "@nivo/bar";
 
 // make sure parent container have a defined height when using
-// responsive component, otherwise height will be 0 and
-// no chart will be rendered.
-// website examples showcase many properties,
-// you'll often use just a few of them.
 const MyResponsiveBar = ({ data /* see data tab */ }) => (
   <ResponsiveBar
     data={data}
-    keys={["hot dog", "burger", "sandwich", "kebab", "fries", "donut"]}
-    indexBy="country"
+    keys={["city1", "city2", "worst", "best", "average"]}
+    indexBy="factor"
     margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
     padding={0.05}
-    groupMode="grouped"
+    layout="horizontal"
     colors={{ scheme: "nivo" }}
     defs={[
       {
@@ -102,46 +98,45 @@ const MyResponsiveBar = ({ data /* see data tab */ }) => (
   />
 );
 
-const CityStats = ({ city }) => {
+const CityStats = ({ city1, city2 }) => {
   const data = [
     {
-      city: "City1",
-      "hot dog": 62,
-      "hot dogColor": "hsl(286, 70%, 50%)",
-      burger: 85,
-      burgerColor: "hsl(62, 70%, 50%)",
-      sandwich: 196,
-      sandwichColor: "hsl(18, 70%, 50%)",
-      kebab: 5,
-      kebabColor: "hsl(72, 70%, 50%)",
-      fries: 69,
-      friesColor: "hsl(14, 70%, 50%)",
-      donut: 13,
-      donutColor: "hsl(346, 70%, 50%)"
+      factor: "population",
+      city1: 200,
+      city1Color: "hsl(314, 70%, 50%)",
+      city2: 250,
+      city2Color: "hsl(100, 70%, 50%)",
+      average: 150,
+      averageColor: "hsl(31, 70%, 50%)",
+      best: 300,
+      bestColor: "hsl(10, 30%, 50%)",
+      worst: 10,
+      worstColor: "hsl(0, 70%, 50%)"
     },
     {
-      city: "City2",
-      "hot dog": 140,
-      "hot dogColor": "hsl(148, 70%, 50%)",
-      burger: 136,
-      burgerColor: "hsl(314, 70%, 50%)",
-      sandwich: 34,
-      sandwichColor: "hsl(20, 70%, 50%)",
-      kebab: 16,
-      kebabColor: "hsl(213, 70%, 50%)",
-      fries: 60,
-      friesColor: "hsl(142, 70%, 50%)",
-      donut: 73,
-      donutColor: "hsl(316, 70%, 50%)"
+      factor: "commuteTime",
+      city1: 10,
+      city1Color: "hsl(314, 70%, 50%)",
+      city2: 250,
+      city2Color: "hsl(100, 70%, 50%)",
+      average: 150,
+      averageColor: "hsl(31, 70%, 50%)",
+      best: 300,
+      bestColor: "hsl(10, 30%, 50%)",
+      worst: 10,
+      worstColor: "hsl(0, 70%, 50%)"
     }
   ];
   return (
-    <Flex justifyContent="center">
-      <Text as="h2">{city.name}</Text>
-      <Container height="30vw" width="50%">
+    <Container width="100%">
+      <Flex justifyContent="center" width="100%">
+        <Text as="h2">{city1.name}</Text>
+        <Text as="h2">{city2.name}</Text>
+      </Flex>
+      <Container height="40vw" width="100%">
         <MyResponsiveBar data={data} />
       </Container>
-    </Flex>
+    </Container>
   );
 };
 
