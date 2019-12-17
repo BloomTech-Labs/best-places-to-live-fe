@@ -8,7 +8,6 @@ import { factors, randomFactor } from "../utils/factors";
 import Categories from "./Categories";
 import Modal from "./Modal";
 import AddFilters from "./AddFilters";
-import { LazyImage } from "react-lazy-images";
 
 const LandingPage = props => {
   const chosenFactor = randomFactor(factors);
