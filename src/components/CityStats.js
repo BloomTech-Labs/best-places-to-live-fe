@@ -1,6 +1,7 @@
 import React from "react";
 import { Flex, Text, Container } from "../styles/index";
 import { ResponsiveBar } from "@nivo/bar";
+import { factors } from "../utils/factors";
 
 // make sure parent container have a defined height when using
 const MyResponsiveBar = ({ data /* see data tab */ }) => (
@@ -8,8 +9,8 @@ const MyResponsiveBar = ({ data /* see data tab */ }) => (
     data={data}
     keys={["city1", "city2", "worst", "best", "average"]}
     indexBy="factor"
-    margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
-    padding={0.05}
+    margin={{ top: 50, right: 100, bottom: 50, left: 100 }}
+    padding={0.5}
     layout="horizontal"
     colors={{ scheme: "nivo" }}
     defs={[
@@ -35,13 +36,13 @@ const MyResponsiveBar = ({ data /* see data tab */ }) => (
     fill={[
       {
         match: {
-          id: "fries"
+          id: "city1"
         },
         id: "dots"
       },
       {
         match: {
-          id: "sandwich"
+          id: "city2"
         },
         id: "lines"
       }
@@ -49,19 +50,12 @@ const MyResponsiveBar = ({ data /* see data tab */ }) => (
     borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
     axisTop={null}
     axisRight={null}
-    axisBottom={{
-      tickSize: 5,
-      tickPadding: 5,
-      tickRotation: 0,
-      legend: "country",
-      legendPosition: "middle",
-      legendOffset: 32
-    }}
+    axisBottom={null}
     axisLeft={{
       tickSize: 5,
       tickPadding: 5,
       tickRotation: 0,
-      legend: "food",
+      legend: "factors",
       legendPosition: "middle",
       legendOffset: -40
     }}
@@ -99,41 +93,135 @@ const MyResponsiveBar = ({ data /* see data tab */ }) => (
 );
 
 const CityStats = ({ city1, city2 }) => {
-  const data = [
-    {
-      factor: "population",
-      city1: 200,
-      city1Color: "hsl(314, 70%, 50%)",
-      city2: 250,
-      city2Color: "hsl(100, 70%, 50%)",
-      average: 150,
-      averageColor: "hsl(31, 70%, 50%)",
-      best: 300,
-      bestColor: "hsl(10, 30%, 50%)",
-      worst: 10,
-      worstColor: "hsl(0, 70%, 50%)"
-    },
-    {
-      factor: "commuteTime",
-      city1: 10,
-      city1Color: "hsl(314, 70%, 50%)",
-      city2: 250,
-      city2Color: "hsl(100, 70%, 50%)",
-      average: 150,
-      averageColor: "hsl(31, 70%, 50%)",
-      best: 300,
-      bestColor: "hsl(10, 30%, 50%)",
-      worst: 10,
-      worstColor: "hsl(0, 70%, 50%)"
+  const responseFromBe = { 
+      score_commute: {
+        bestCityID: "awefawef",
+        bestCityFactorScore: 100,
+        worstCityID: "awefawef",
+        worstCityFactorScore: 33,
+        averageFactorScore: 22
+      },
+      score_cost_of_living: {
+        bestCityID: "awefawef",
+        bestCityFactorScore: 100,
+        worstCityID: "awefawef",
+        worstCityFactorScore: 33,
+        averageFactorScore: 22
+      },
+      score_economy: {
+        bestCityID: "awefawef",
+        bestCityFactorScore: 100,
+        worstCityID: "awefawef",
+        worstCityFactorScore: 33,
+        averageFactorScore: 22
+      },
+      score_education: {
+        bestCityID: "awefawef",
+        bestCityFactorScore: 100,
+        worstCityID: "awefawef",
+        worstCityFactorScore: 33,
+        averageFactorScore: 22
+      },
+      score_environmental_quality: {
+        bestCityID: "awefawef",
+        bestCityFactorScore: 100,
+        worstCityID: "awefawef",
+        worstCityFactorScore: 33,
+        averageFactorScore: 22
+      },
+      score_healthcare: {
+        bestCityID: "awefawef",
+        bestCityFactorScore: 100,
+        worstCityID: "awefawef",
+        worstCityFactorScore: 33,
+        averageFactorScore: 22
+      },
+      score_housing: {
+        bestCityID: "awefawef",
+        bestCityFactorScore: 100,
+        worstCityID: "awefawef",
+        worstCityFactorScore: 33,
+        averageFactorScore: 22
+      },
+      score_internet_access: {
+        bestCityID: "awefawef",
+        bestCityFactorScore: 100,
+        worstCityID: "awefawef",
+        worstCityFactorScore: 33,
+        averageFactorScore: 22
+      },
+      "score_leisure_&_culture": {
+        bestCityID: "awefawef",
+        bestCityFactorScore: 100,
+        worstCityID: "awefawef",
+        worstCityFactorScore: 33,
+        averageFactorScore: 22
+      },
+      score_outdoors: {
+        bestCityID: "awefawef",
+        bestCityFactorScore: 100,
+        worstCityID: "awefawef",
+        worstCityFactorScore: 33,
+        averageFactorScore: 22
+      },
+      score_safety: {
+        bestCityID: "awefawef",
+        bestCityFactorScore: 100,
+        worstCityID: "awefawef",
+        worstCityFactorScore: 33,
+        averageFactorScore: 22
+      },
+      score_startups: {
+        bestCityID: "awefawef",
+        bestCityFactorScore: 100,
+        worstCityID: "awefawef",
+        worstCityFactorScore: 33,
+        averageFactorScore: 22
+      },
+      score_taxation: {
+        bestCityID: "awefawef",
+        bestCityFactorScore: 100,
+        worstCityID: "awefawef",
+        worstCityFactorScore: 33,
+        averageFactorScore: 22
+      },
+      population: {
+        bestCityID: "awefawef",
+        bestCityFactorScore: 100,
+        worstCityID: "awefawef",
+        worstCityFactorScore: 33,
+        averageFactorScore: 22
+      }
     }
-  ];
+    };
+
+  const data = factors.map(item => {
+    const filteredBE = Object.keys(responseFromBe).filter(
+      factor => factor === item.factor
+    )[0];
+    return {
+      factor: item.displayName,
+      city1: city1[item.factor],
+      city1Color: "hsl(314, 70%, 50%)",
+      city2: city2[item.factor],
+      city2Color: "hsl(100, 70%, 50%)",
+      average: filteredBE["averageFactorScore"],
+      averageColor: "hsl(31, 70%, 50%)",
+      best: filteredBE["bestCityFactorScore"],
+      bestColor: "hsl(31, 70%, 50%)",
+      worst: filteredBE["worstCityFactorScore"],
+      worstColor: "hsl(31, 70%, 50%)"
+    };
+  });
+  
   return (
     <Container width="100%">
       <Flex justifyContent="center" width="100%">
-        <Text as="h2">{city1.name}</Text>
-        <Text as="h2">{city2.name}</Text>
+        <Text as="h2">
+          {city1.name} vs {city2.name}
+        </Text>
       </Flex>
-      <Container height="40vw" width="100%">
+      <Container height="40vw" width="100%" m={"0 auto"} maxWidth={1200}>
         <MyResponsiveBar data={data} />
       </Container>
     </Container>
