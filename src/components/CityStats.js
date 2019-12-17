@@ -4,10 +4,10 @@ import { ResponsiveBar } from "@nivo/bar";
 import { factors } from "../utils/factors";
 
 // make sure parent container have a defined height when using
-const MyResponsiveBar = ({ data /* see data tab */ }) => (
+const MyResponsiveBar = ({ data, city1, city2 }) => (
   <ResponsiveBar
     data={data}
-    keys={["city1", "city2", "worst", "best", "average"]}
+    keys={[`${city1}`, `${city2}`, "worst", "best", "average"]}
     indexBy="factor"
     margin={{ top: 50, right: 100, bottom: 50, left: 100 }}
     padding={0.5}
@@ -36,13 +36,13 @@ const MyResponsiveBar = ({ data /* see data tab */ }) => (
     fill={[
       {
         match: {
-          id: "city1"
+          id: `${city1}`
         },
         id: "dots"
       },
       {
         match: {
-          id: "city2"
+          id: `${city2}`
         },
         id: "lines"
       }
@@ -200,17 +200,9 @@ const CityStats = ({ city1, city2 }) => {
         item.factor === "ranked_population" ? "population" : item.factor
       ];
 
-    return {
+    let obj = {
       factor: item.displayName,
-      city1:
-        city1[
-          item.factor === "ranked_population" ? "score_economy" : item.factor
-        ] * 10,
       city1Color: "hsl(314, 70%, 50%)",
-      city2:
-        city2[
-          item.factor === "ranked_population" ? "score_economy" : item.factor
-        ] * 10,
       city2Color: "hsl(100, 70%, 50%)",
       average: filteredBE["averageFactorScore"],
       averageColor: "hsl(31, 70%, 50%)",
@@ -219,6 +211,17 @@ const CityStats = ({ city1, city2 }) => {
       worst: filteredBE["worstCityFactorScore"],
       worstColor: "hsl(31, 70%, 50%)"
     };
+
+    obj[city1.name] =
+      city1[
+        item.factor === "ranked_population" ? "score_economy" : item.factor
+      ];
+    obj[city2.name] =
+      city2[
+        item.factor === "ranked_population" ? "score_economy" : item.factor
+      ];
+
+    return obj;
   });
 
   console.log(data);
@@ -230,8 +233,11 @@ const CityStats = ({ city1, city2 }) => {
           {city1.name} vs {city2.name}
         </Text>
       </Flex>
+      <Flex justifyContent="center" width="100%">
+        <Text as="h3">Factors</Text>
+      </Flex>
       <Container height="40vw" width="100%" m={"0 auto"} maxWidth={1200}>
-        <MyResponsiveBar data={data} />
+        <MyResponsiveBar data={data} city1={city1.name} city2={city2.name} />
       </Container>
     </Container>
   );
