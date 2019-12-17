@@ -93,117 +93,124 @@ const MyResponsiveBar = ({ data /* see data tab */ }) => (
 );
 
 const CityStats = ({ city1, city2 }) => {
-  const responseFromBe = { 
-      score_commute: {
-        bestCityID: "awefawef",
-        bestCityFactorScore: 100,
-        worstCityID: "awefawef",
-        worstCityFactorScore: 33,
-        averageFactorScore: 22
-      },
-      score_cost_of_living: {
-        bestCityID: "awefawef",
-        bestCityFactorScore: 100,
-        worstCityID: "awefawef",
-        worstCityFactorScore: 33,
-        averageFactorScore: 22
-      },
-      score_economy: {
-        bestCityID: "awefawef",
-        bestCityFactorScore: 100,
-        worstCityID: "awefawef",
-        worstCityFactorScore: 33,
-        averageFactorScore: 22
-      },
-      score_education: {
-        bestCityID: "awefawef",
-        bestCityFactorScore: 100,
-        worstCityID: "awefawef",
-        worstCityFactorScore: 33,
-        averageFactorScore: 22
-      },
-      score_environmental_quality: {
-        bestCityID: "awefawef",
-        bestCityFactorScore: 100,
-        worstCityID: "awefawef",
-        worstCityFactorScore: 33,
-        averageFactorScore: 22
-      },
-      score_healthcare: {
-        bestCityID: "awefawef",
-        bestCityFactorScore: 100,
-        worstCityID: "awefawef",
-        worstCityFactorScore: 33,
-        averageFactorScore: 22
-      },
-      score_housing: {
-        bestCityID: "awefawef",
-        bestCityFactorScore: 100,
-        worstCityID: "awefawef",
-        worstCityFactorScore: 33,
-        averageFactorScore: 22
-      },
-      score_internet_access: {
-        bestCityID: "awefawef",
-        bestCityFactorScore: 100,
-        worstCityID: "awefawef",
-        worstCityFactorScore: 33,
-        averageFactorScore: 22
-      },
-      "score_leisure_&_culture": {
-        bestCityID: "awefawef",
-        bestCityFactorScore: 100,
-        worstCityID: "awefawef",
-        worstCityFactorScore: 33,
-        averageFactorScore: 22
-      },
-      score_outdoors: {
-        bestCityID: "awefawef",
-        bestCityFactorScore: 100,
-        worstCityID: "awefawef",
-        worstCityFactorScore: 33,
-        averageFactorScore: 22
-      },
-      score_safety: {
-        bestCityID: "awefawef",
-        bestCityFactorScore: 100,
-        worstCityID: "awefawef",
-        worstCityFactorScore: 33,
-        averageFactorScore: 22
-      },
-      score_startups: {
-        bestCityID: "awefawef",
-        bestCityFactorScore: 100,
-        worstCityID: "awefawef",
-        worstCityFactorScore: 33,
-        averageFactorScore: 22
-      },
-      score_taxation: {
-        bestCityID: "awefawef",
-        bestCityFactorScore: 100,
-        worstCityID: "awefawef",
-        worstCityFactorScore: 33,
-        averageFactorScore: 22
-      },
-      population: {
-        bestCityID: "awefawef",
-        bestCityFactorScore: 100,
-        worstCityID: "awefawef",
-        worstCityFactorScore: 33,
-        averageFactorScore: 22
-      }
+  const responseFromBe = {
+    score_commute: {
+      bestCityID: "awefawef",
+      bestCityFactorScore: 100,
+      worstCityID: "awefawef",
+      worstCityFactorScore: 33,
+      averageFactorScore: 22
+    },
+    score_cost_of_living: {
+      bestCityID: "awefawef",
+      bestCityFactorScore: 100,
+      worstCityID: "awefawef",
+      worstCityFactorScore: 33,
+      averageFactorScore: 22
+    },
+    score_economy: {
+      bestCityID: "awefawef",
+      bestCityFactorScore: 100,
+      worstCityID: "awefawef",
+      worstCityFactorScore: 33,
+      averageFactorScore: 22
+    },
+    score_education: {
+      bestCityID: "awefawef",
+      bestCityFactorScore: 100,
+      worstCityID: "awefawef",
+      worstCityFactorScore: 33,
+      averageFactorScore: 22
+    },
+    score_environmental_quality: {
+      bestCityID: "awefawef",
+      bestCityFactorScore: 100,
+      worstCityID: "awefawef",
+      worstCityFactorScore: 33,
+      averageFactorScore: 22
+    },
+    score_healthcare: {
+      bestCityID: "awefawef",
+      bestCityFactorScore: 100,
+      worstCityID: "awefawef",
+      worstCityFactorScore: 33,
+      averageFactorScore: 22
+    },
+    score_housing: {
+      bestCityID: "awefawef",
+      bestCityFactorScore: 100,
+      worstCityID: "awefawef",
+      worstCityFactorScore: 33,
+      averageFactorScore: 22
+    },
+    score_internet_access: {
+      bestCityID: "awefawef",
+      bestCityFactorScore: 100,
+      worstCityID: "awefawef",
+      worstCityFactorScore: 33,
+      averageFactorScore: 22
+    },
+    "score_leisure_&_culture": {
+      bestCityID: "awefawef",
+      bestCityFactorScore: 100,
+      worstCityID: "awefawef",
+      worstCityFactorScore: 33,
+      averageFactorScore: 22
+    },
+    score_outdoors: {
+      bestCityID: "awefawef",
+      bestCityFactorScore: 100,
+      worstCityID: "awefawef",
+      worstCityFactorScore: 33,
+      averageFactorScore: 22
+    },
+    score_safety: {
+      bestCityID: "awefawef",
+      bestCityFactorScore: 100,
+      worstCityID: "awefawef",
+      worstCityFactorScore: 33,
+      averageFactorScore: 22
+    },
+    score_startups: {
+      bestCityID: "awefawef",
+      bestCityFactorScore: 100,
+      worstCityID: "awefawef",
+      worstCityFactorScore: 33,
+      averageFactorScore: 22
+    },
+    score_taxation: {
+      bestCityID: "awefawef",
+      bestCityFactorScore: 100,
+      worstCityID: "awefawef",
+      worstCityFactorScore: 33,
+      averageFactorScore: 22
+    },
+    population: {
+      bestCityID: "awefawef",
+      bestCityFactorScore: 100,
+      worstCityID: "awefawef",
+      worstCityFactorScore: 33,
+      averageFactorScore: 22
     }
-    };
+  };
 
   const data = factors.map(item => {
-    const filteredBE = Object.keys(responseFromBe).filter(
-      factor => factor === item.factor
-    )[0];
+    const filteredBE =
+      responseFromBe[
+        item.factor === "ranked_population" ? "population" : item.factor
+      ];
+
     return {
       factor: item.displayName,
-      city1: city1[item.factor],
+      city1:
+        city1[
+          item.factor === "ranked_population" ? "score_economy" : item.factor
+        ] * 10,
       city1Color: "hsl(314, 70%, 50%)",
-      city2: city2[item.factor],
+      city2:
+        city2[
+          item.factor === "ranked_population" ? "score_economy" : item.factor
+        ] * 10,
       city2Color: "hsl(100, 70%, 50%)",
       average: filteredBE["averageFactorScore"],
       averageColor: "hsl(31, 70%, 50%)",
@@ -213,7 +220,9 @@ const CityStats = ({ city1, city2 }) => {
       worstColor: "hsl(31, 70%, 50%)"
     };
   });
-  
+
+  console.log(data);
+
   return (
     <Container width="100%">
       <Flex justifyContent="center" width="100%">
