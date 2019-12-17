@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import Footer from "./Footer";
 import SearchBar from "./SearchBar";
 import { Container, Text, Hero, Button, StyledLink } from "../styles/index";
-import heroImg from "../img/heroTest.jpg";
+import heroImg from "../img/hero.jpg";
 import TopCities from "./TopCities";
 import { factors, randomFactor } from "../utils/factors";
 import Categories from "./Categories";
 import Modal from "./Modal";
 import AddFilters from "./AddFilters";
-import { LazyImage } from "react-lazy-images";
 
 const LandingPage = props => {
   const chosenFactor = randomFactor(factors);

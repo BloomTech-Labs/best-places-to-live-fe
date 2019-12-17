@@ -1,15 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 import CityStats from "./CityStats";
-import { Grid } from "../styles/index";
+import { Flex } from "../styles/index";
 
 const ComparisonPage = ({ comparedCities }) => {
   const [city1, city2] = comparedCities;
   return (
-    <Grid twoColumns>
-      <CityStats city={city1} />
-      <CityStats city={city2} />
-    </Grid>
+    <Flex justifyContent="center">
+      <CityStats city1={city1} city2={city2} />
+    </Flex>
   );
 };
 

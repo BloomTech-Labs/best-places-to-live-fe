@@ -1395,6 +1395,21 @@
     react-motion "^0.5.2"
     recompose "^0.30.0"
 
+"@nivo/bullet@^0.60.0":
+  version "0.60.0"
+  resolved "https://registry.yarnpkg.com/@nivo/bullet/-/bullet-0.60.0.tgz#f436303b662b2a506c588e9893c6f7a0a2b21440"
+  integrity sha512-ABAhyWL9HRffV6fpCoeN9xWEV0ivkFrh30a6Avd/UPDYLzeIZiXCr7iMI2d4rcbbLN55MZ6pLP8K+Olg+lEyyA==
+  dependencies:
+    "@nivo/axes" "0.60.0"
+    "@nivo/colors" "0.60.0"
+    "@nivo/core" "0.60.0"
+    "@nivo/legends" "0.60.0"
+    "@nivo/tooltip" "0.60.0"
+    d3-scale "^3.0.0"
+    lodash "^4.17.11"
+    react-motion "^0.5.2"
+    recompose "^0.30.0"
+
 "@nivo/colors@0.60.0":
   version "0.60.0"
   resolved "https://registry.yarnpkg.com/@nivo/colors/-/colors-0.60.0.tgz#a0fb4fa2751f0838f747b70359fe8480b162dad2"
