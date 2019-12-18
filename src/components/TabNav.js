@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { IoIosSearch, IoMdPeople } from "react-icons/io";
 import { FiHeart } from "react-icons/fi";
+import { AiOutlineForm } from "react-icons/ai";
 import { StyledNavLink, Flex, Text } from "../styles/index.js";
 const TabNav = ({ isLoggedIn }) => {
   if (!isLoggedIn) {
@@ -20,25 +21,41 @@ const TabNav = ({ isLoggedIn }) => {
         borderTop="1px solid gray"
       >
         <Flex flexDirection="column" alignItems="center">
-          <StyledNavLink to="/login">
+          <StyledNavLink to="/login" color={"#9A99A2"}>
             {" "}
-            <IoMdPeople />
+            <IoMdPeople size={"2em"} color={"#9A99A2"} />
           </StyledNavLink>
 
           <Text as="h4" m={0}>
             {" "}
-            <StyledNavLink to="/login">Login</StyledNavLink>
+            <StyledNavLink to="/login" color={"#9A99A2"}>
+              Login
+            </StyledNavLink>
           </Text>
         </Flex>
         <Flex flexDirection="column" alignItems="center">
-          <StyledNavLink to="/search">
+          <StyledNavLink to="/search" color={"#9A99A2"}>
             {" "}
-            <IoIosSearch />
+            <IoIosSearch size={"2em"} color={"#9A99A2"} />
           </StyledNavLink>
 
           <Text as="h4" m={0}>
             {" "}
-            <StyledNavLink to="/search">Search</StyledNavLink>
+            <StyledNavLink to="/search" color={"#9A99A2"}>
+              Search
+            </StyledNavLink>
+          </Text>
+        </Flex>
+        <Flex flexDirection="column" alignItems="center">
+          <StyledNavLink to="/sign-up" color={"#9A99A2"}>
+            {" "}
+            <AiOutlineForm size={"2em"} color={"#9A99A2"} />
+          </StyledNavLink>
+          <Text as="h4" m={0}>
+            {" "}
+            <StyledNavLink to="/sign-up" color={"#9A99A2"}>
+              Sign Up
+            </StyledNavLink>
           </Text>
         </Flex>
       </Flex>
@@ -61,30 +78,36 @@ const TabNav = ({ isLoggedIn }) => {
         <Flex flexDirection="column" alignItems="center">
           <StyledNavLink to="/search">
             {" "}
-            <IoIosSearch />
+            <IoIosSearch size={"2em"} color={"#9A99A2"} />
           </StyledNavLink>
 
           <Text as="h4" m={0}>
             {" "}
-            <StyledNavLink to="/search">Search</StyledNavLink>
+            <StyledNavLink to="/search" color={"#9A99A2"}>
+              Search
+            </StyledNavLink>
           </Text>
         </Flex>
         <Flex flexDirection="column" alignItems="center">
           <StyledNavLink to="/profile">
             {" "}
-            <FiHeart />
+            <FiHeart size={"2em"} color={"#9A99A2"} />
           </StyledNavLink>
           <Text as="h4" m={0}>
-            <StyledNavLink to="/profile">Saved</StyledNavLink>
+            <StyledNavLink to="/profile" color={"#9A99A2"}>
+              Saved
+            </StyledNavLink>
           </Text>
         </Flex>
         <Flex flexDirection="column" alignItems="center">
           <StyledNavLink to="/settings">
             {" "}
-            <IoMdPeople />{" "}
+            <IoMdPeople size={"2em"} color={"#9A99A2"} />{" "}
           </StyledNavLink>
           <Text as="h4" m={0}>
-            <StyledNavLink to="/settings">Profile </StyledNavLink>
+            <StyledNavLink to="/settings" color={"#9A99A2"}>
+              Profile{" "}
+            </StyledNavLink>
           </Text>
         </Flex>
       </Flex>

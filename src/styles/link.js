@@ -21,11 +21,10 @@ export const StyledLink = styled(Link)`
 
 export const StyledNavLink = styled(NavLink)`
   ${typography};
-  ${color};
   font-size: ${theme.fontSizes.body};
   text-decoration: none;
   color: black;
-
+  ${color};
   &:hover {
     cursor: pointer;
   }

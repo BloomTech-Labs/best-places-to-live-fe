@@ -17,7 +17,7 @@ function Login({ login, ...rest }) {
   };
 
   return (
-    <Container as="main" p="0 20px">
+    <Container as="main" p="0 20px" height="100vh">
       <Text as="h2" fontSize={5} textAlign="center">
         Login
       </Text>

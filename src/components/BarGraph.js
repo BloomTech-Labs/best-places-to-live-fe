@@ -61,19 +61,7 @@ const BarGraph = ({ data, city1, city2, history }) => {
           spacing: 10
         }
       ]}
-      fill={[
-        {
-          match: {
-            id: `${city1.name}`
-          }
-        },
-        {
-          match: {
-            id: `${city2.name}`
-          },
-          id: "circles"
-        }
-      ]}
+      fill={[]}
       borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
       axisTop={null}
       axisRight={null}
