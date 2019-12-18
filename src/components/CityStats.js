@@ -61,6 +61,7 @@ const MyResponsiveBar = ({ data, city1, city2 }) => {
         legendPosition: "middle",
         legendOffset: -40
       }}
+      enableLabel={false}
       labelSkipWidth={12}
       labelSkipHeight={12}
       labelTextColor={{ from: "color", modifiers: [["darker", 1.6]] }}
