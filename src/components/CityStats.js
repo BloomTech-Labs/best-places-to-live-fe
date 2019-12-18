@@ -83,12 +83,14 @@ const MyResponsiveBar = ({ data, city1, city2 }) => {
             {
               on: "hover",
               style: {
-                itemOpacity: 1
+                itemOpacity: 0.5
               }
             }
           ]
         }
       ]}
+      tooltip={() => "chicken"}
+      onClick={(node, e) => console.log(node, e)}
       animate={true}
       motionStiffness={90}
       motionDamping={15}
@@ -211,8 +213,10 @@ const CityStats = ({ city1, city2 }) => {
       average: filteredBE["averageFactorScore"],
       averageColor: "hsl(31, 70%, 50%)",
       best: filteredBE["bestCityFactorScore"],
+      bestCityID: filteredBE["bestCityID"],
       bestColor: "hsl(31, 70%, 50%)",
       worst: filteredBE["worstCityFactorScore"],
+      worstCityID: filteredBE["bestCityID"],
       worstColor: "hsl(31, 70%, 50%)"
     };
 
