@@ -33,6 +33,7 @@ const BarGraph = ({ data, city1, city2, history }) => {
       indexBy="factor"
       margin={{ top: 50, right: 100, bottom: 50, left: 100 }}
       padding={0.5}
+      groupMode="grouped"
       layout="horizontal"
       colors={{ scheme: "nivo" }}
       defs={[

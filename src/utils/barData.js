@@ -102,8 +102,13 @@ export const responseFromBe = {
 };
 
 export function getData(city1, city2) {
+  //Removing population from factors
+  const population = factors.pop();
+
   return factors.map(item => {
-    const filteredBE =
+    //Getting factor object
+    //Using population instead of ranked_population due to differing BE and DS
+    const factorStats =
       responseFromBe[
         item.factor === "ranked_population" ? "score_economy" : item.factor
       ];
@@ -112,16 +117,18 @@ export function getData(city1, city2) {
       factor: item.displayName,
       city1Color: "hsl(314, 70%, 50%)",
       city2Color: "hsl(100, 70%, 50%)",
-      average: filteredBE["averageFactorScore"],
+      average: factorStats["averageFactorScore"],
       averageColor: "hsl(31, 70%, 50%)",
-      best: filteredBE["bestCityFactorScore"],
-      bestCityID: filteredBE["bestCityID"],
+      best: factorStats["bestCityFactorScore"],
+      bestCityID: factorStats["bestCityID"],
       bestColor: "hsl(31, 70%, 50%)",
-      worst: filteredBE["worstCityFactorScore"],
-      worstCityID: filteredBE["worstCityID"],
+      worst: factorStats["worstCityFactorScore"],
+      worstCityID: factorStats["worstCityID"],
       worstColor: "hsl(31, 70%, 50%)"
     };
 
+    //Adding new key to object based on city name
+    //Getting the value at the factor name from the city object
     obj[city1.name] =
       city1[
         item.factor === "ranked_population" ? "score_economy" : item.factor
