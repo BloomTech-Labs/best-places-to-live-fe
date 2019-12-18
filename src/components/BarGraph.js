@@ -28,8 +28,12 @@ const BarGraph = ({ data, city1, city2, history }) => {
 
   return (
     <ResponsiveBar
-      data={data}
-      keys={["worst", "average", "best", `${city1.name}`, `${city2.name}`]}
+      data={data.map(item => {
+        let obj = { ...item.scores };
+        obj["factor"] = item.factor;
+        return obj;
+      })}
+      keys={["worst", "average", "best", "city1", "city2"]}
       indexBy="factor"
       margin={{ top: 50, right: 100, bottom: 50, left: 100 }}
       padding={0.5}
@@ -112,18 +116,35 @@ const BarGraph = ({ data, city1, city2, history }) => {
       animate={true}
       motionStiffness={90}
       motionDamping={15}
-      tooltip={({ id, value, color }) => (
-        <strong style={{ color }}>
-          {id}: {value}
-        </strong>
-      )}
-      theme={{
-        tooltip: {
-          container: {
-            background: "#333"
-          }
-        }
-      }}
+      //   tooltip={(node, e) => {
+      //     //
+      //     let cityID;
+      //     if (node.id === "best") {
+      //       cityID = node.data.bestCityID;
+      //     } else if (node.id === "worst") {
+      //       cityID = node.data.worstCityID;
+      //     } else if (node.id === "average") {
+      //       cityID = "";
+      //     } else if (node.id === city1.name) {
+      //       //we have city1 !
+      //       cityID = city1._id;
+      //     } else {
+      //       cityID = city2._id;
+      //     }
+
+      //     return (
+      //       <strong style={{ color }}>
+      //         {}: {value}
+      //       </strong>
+      //     );
+      //   }}
+      //   theme={{
+      //     tooltip: {
+      //       container: {
+      //         background: "#333"
+      //       }
+      //     }
+      //   }}
     />
   );
 };
