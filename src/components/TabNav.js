@@ -8,7 +8,7 @@ const TabNav = ({ isLoggedIn }) => {
     return (
       <Flex
         as="nav"
-        position="fixed"
+        position="sticky"
         width="100%"
         bottom="0"
         height="75px"
@@ -47,7 +47,7 @@ const TabNav = ({ isLoggedIn }) => {
     return (
       <Flex
         as="nav"
-        position="fixed"
+        position="sticky"
         width="100%"
         bottom="0"
         height="75px"

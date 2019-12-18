@@ -126,9 +126,11 @@ const BarGraph = ({ data, city1, city2, history }) => {
         //node.id is best, worst, average, <city1Name>, <city2Name>
         const cityName = dataFiltered.names[node.id];
         const cityScore = dataFiltered.scores[node.id];
+
         return (
           <strong>
-            {cityName}: {cityScore}{" "}
+            {cityName && `${cityName}:`}
+            {cityScore}{" "}
           </strong>
         );
       }}

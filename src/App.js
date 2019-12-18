@@ -20,6 +20,7 @@ import ProfileSettings from "./components/ProfileSettings";
 import ComparisonPage from "./components/ComparisonPage";
 import useWindowSize from "./hooks/useWindowSize";
 import TabNav from "./components/TabNav";
+import ScrollToTop from "./components/ScrollToTop";
 
 //For google Analytics
 const history = createBrowserHistory();
@@ -38,14 +39,14 @@ function App(props) {
   //For NavBar responsiveness
   const size = useWindowSize();
   console.log(size);
-
   return (
     <Router history={history}>
       {/* Styled Systems - Theme */}
+      <ScrollToTop />
       <ThemeProvider theme={theme}>
         {/* Global Style - Global Style Sheet - Adds to head of index.html */}
         <GlobalStyle />
-        {size.width <= 400 ? <TabNav /> : <NavBar />}
+        {size.width > 450 ? <NavBar /> : null}
         {/* Toast Container - Handling Errors and Successes with alert notifications on screen*/}
         <ToastContainer position="bottom-right" autoClose={2000} />
         <Route exact path="/" component={LandingPage} />
@@ -56,6 +57,7 @@ function App(props) {
         <Route path="/compare" component={ComparisonPage} />
         <PrivateRoute path="/profile" component={ProfilePage} />
         <PrivateRoute path="/settings" component={ProfileSettings} />
+        {size.width < 450 ? <TabNav /> : null}
       </ThemeProvider>
     </Router>
   );

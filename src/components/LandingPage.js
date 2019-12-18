@@ -22,6 +22,8 @@ const LandingPage = props => {
     setShow(false);
   };
 
+  console.log(window.pageYOffset);
+
   return (
     <>
       <Container as="main">
