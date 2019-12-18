@@ -1,3 +1,5 @@
+/* Styled Systems - Similar to mixins and variables for LESS - allows for unversality and dnyamic properties */
+
 const breakpoints = ["40em", "52em", "64em", "80em"];
 
 // aliases

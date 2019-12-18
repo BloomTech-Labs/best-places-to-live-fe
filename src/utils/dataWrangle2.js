@@ -1,5 +1,7 @@
 const axios = require("axios");
 
+/* Get all cities from BE and save their respective scores with the best, worst, and average scores from each factor */
+
 const factors = [
   {
     rank: 1,
