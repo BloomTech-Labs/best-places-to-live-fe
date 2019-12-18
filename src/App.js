@@ -18,6 +18,8 @@ import "react-toastify/dist/ReactToastify.css";
 import CityPage from "./components/CityPage";
 import ProfileSettings from "./components/ProfileSettings";
 import ComparisonPage from "./components/ComparisonPage";
+import useWindowSize from "./hooks/useWindowSize";
+import TabNav from "./components/TabNav";
 
 //For google Analytics
 const history = createBrowserHistory();
@@ -33,13 +35,17 @@ function App(props) {
     initializeAnalytics();
   }, []);
 
+  //For NavBar responsiveness
+  const size = useWindowSize();
+  console.log(size);
+
   return (
     <Router history={history}>
       {/* Styled Systems - Theme */}
       <ThemeProvider theme={theme}>
         {/* Global Style - Global Style Sheet - Adds to head of index.html */}
         <GlobalStyle />
-        <NavBar />
+        {size.width <= 400 ? <TabNav /> : <NavBar />}
         {/* Toast Container - Handling Errors and Successes with alert notifications on screen*/}
         <ToastContainer position="bottom-right" autoClose={2000} />
         <Route exact path="/" component={LandingPage} />

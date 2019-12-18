@@ -25,4 +25,8 @@ export const StyledNavLink = styled(NavLink)`
   font-size: ${theme.fontSizes.body};
   text-decoration: none;
   color: black;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;

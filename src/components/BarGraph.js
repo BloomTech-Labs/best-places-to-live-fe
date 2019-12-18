@@ -3,37 +3,38 @@ import { ResponsiveBar } from "@nivo/bar";
 
 // make sure parent container have a defined height when using
 const BarGraph = ({ data, city1, city2, history }) => {
-  console.log(data);
-  const handleClick = (node, e) => {
-    console.log(node);
-    //average bar could push user to a city with a score closest to the average
-    console.log(node.id, city1);
-    console.log(node.id === city1.name);
-    let cityID;
-    if (node.id === "best") {
-      cityID = node.data.bestCityID;
-    } else if (node.id === "worst") {
-      cityID = node.data.worstCityID;
-    } else if (node.id === "average") {
-      cityID = "";
-    } else if (node.id === city1.name) {
-      //we have city1 !
-      cityID = city1._id;
-    } else {
-      cityID = city2._id;
-    }
+  //We want the keys for the bar graph to be worst, best, average, <city1.name>, <city2.name>
+  //This changes takes the information from data, city1, and city2 and transforms it into a new object
+  /* Data sent to bar graph is different from data that is used to retrieve ids */
+  const dataForBarGraph = data.map(item => {
+    let obj = {
+      [city1.name]: item.scores.city1,
+      [city2.name]: item.scores.city2,
+      ...item.scores
+    };
+    obj["factor"] = item.factor;
+    return obj;
+  });
 
-    history.push(`/city/${cityID}`);
+  const handleClick = node => {
+    //node.indexValue is the factor
+    const dataFiltered = data
+      .filter(item => item.factor === node.indexValue)
+      .pop();
+
+    //node.id is best, worst, average, <city1Name>, <city2Name>
+    const cityID = dataFiltered.ids[node.id];
+
+    //There is not city associated with average
+    if (node.id !== "average") {
+      history.push(`/city/${cityID}`);
+    }
   };
 
   return (
     <ResponsiveBar
-      data={data.map(item => {
-        let obj = { ...item.scores };
-        obj["factor"] = item.factor;
-        return obj;
-      })}
-      keys={["worst", "average", "best", "city1", "city2"]}
+      data={dataForBarGraph}
+      keys={["worst", "average", "best", `${city1.name}`, `${city2.name}`]}
       indexBy="factor"
       margin={{ top: 50, right: 100, bottom: 50, left: 100 }}
       padding={0.5}
@@ -112,39 +113,32 @@ const BarGraph = ({ data, city1, city2, history }) => {
           ]
         }
       ]}
-      onClick={(node, e) => handleClick(node, e)}
+      onClick={node => handleClick(node)}
       animate={true}
       motionStiffness={90}
       motionDamping={15}
-      //   tooltip={(node, e) => {
-      //     //
-      //     let cityID;
-      //     if (node.id === "best") {
-      //       cityID = node.data.bestCityID;
-      //     } else if (node.id === "worst") {
-      //       cityID = node.data.worstCityID;
-      //     } else if (node.id === "average") {
-      //       cityID = "";
-      //     } else if (node.id === city1.name) {
-      //       //we have city1 !
-      //       cityID = city1._id;
-      //     } else {
-      //       cityID = city2._id;
-      //     }
+      tooltip={node => {
+        //node.indexValue is the factor
+        const dataFiltered = data
+          .filter(item => item.factor === node.indexValue)
+          .pop();
 
-      //     return (
-      //       <strong style={{ color }}>
-      //         {}: {value}
-      //       </strong>
-      //     );
-      //   }}
-      //   theme={{
-      //     tooltip: {
-      //       container: {
-      //         background: "#333"
-      //       }
-      //     }
-      //   }}
+        //node.id is best, worst, average, <city1Name>, <city2Name>
+        const cityName = dataFiltered.names[node.id];
+        const cityScore = dataFiltered.scores[node.id];
+        return (
+          <strong>
+            {cityName}: {cityScore}{" "}
+          </strong>
+        );
+      }}
+      theme={{
+        tooltip: {
+          container: {
+            background: "white"
+          }
+        }
+      }}
     />
   );
 };

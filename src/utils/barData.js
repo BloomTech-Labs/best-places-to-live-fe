@@ -144,26 +144,26 @@ export function getData(city1, city2) {
     let obj = {
       factor: item.displayName,
       names: {
-        city1: city1.name,
-        city2: city2.name,
+        [city1.name]: city1.name,
+        [city2.name]: city2.name,
         worst: factorStats["worstName"],
         best: factorStats["bestName"]
       },
       ids: {
         best: factorStats["bestCityID"],
         worst: factorStats["worstCityID"],
-        city1: city1._id,
-        city2: city2._id
+        [city1.name]: city1._id,
+        [city2.name]: city2._id
       },
       scores: {
         average: factorStats["averageFactorScore"],
         best: factorStats["bestCityFactorScore"],
         worst: factorStats["worstCityFactorScore"],
-        city1:
+        [city1.name]:
           city1[
             item.factor === "ranked_population" ? "score_economy" : item.factor
           ],
-        city2:
+        [city2.name]:
           city2[
             item.factor === "ranked_population" ? "score_economy" : item.factor
           ]
