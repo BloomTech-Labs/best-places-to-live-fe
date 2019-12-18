@@ -29,13 +29,13 @@ const BarGraph = ({ data, city1, city2, history }) => {
   return (
     <ResponsiveBar
       data={data}
-      keys={[`${city1.name}`, `${city2.name}`, "worst", "best", "average"]}
+      keys={["worst", "average", "best", `${city1.name}`, `${city2.name}`]}
       indexBy="factor"
       margin={{ top: 50, right: 100, bottom: 50, left: 100 }}
       padding={0.5}
-      groupMode="grouped"
+      //   groupMode="grouped"
       layout="horizontal"
-      colors={{ scheme: "nivo" }}
+      colors={{ scheme: "spectral" }}
       defs={[
         {
           id: "dots",
@@ -60,14 +60,13 @@ const BarGraph = ({ data, city1, city2, history }) => {
         {
           match: {
             id: `${city1.name}`
-          },
-          id: "dots"
+          }
         },
         {
           match: {
             id: `${city2.name}`
           },
-          id: "lines"
+          id: "circles"
         }
       ]}
       borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
@@ -103,7 +102,7 @@ const BarGraph = ({ data, city1, city2, history }) => {
             {
               on: "hover",
               style: {
-                itemOpacity: 0.5
+                itemOpacity: 1
               }
             }
           ]
@@ -113,6 +112,18 @@ const BarGraph = ({ data, city1, city2, history }) => {
       animate={true}
       motionStiffness={90}
       motionDamping={15}
+      tooltip={({ id, value, color }) => (
+        <strong style={{ color }}>
+          {id}: {value}
+        </strong>
+      )}
+      theme={{
+        tooltip: {
+          container: {
+            background: "#333"
+          }
+        }
+      }}
     />
   );
 };

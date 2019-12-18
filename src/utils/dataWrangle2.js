@@ -221,7 +221,6 @@ const cityObjs = axios
       .post("https://bestplacesbe-test.herokuapp.com/city", { ids: ids })
       .then(res => {
         const allCities = res.data.data;
-        console.log(allCities);
         //add min, max, avg, minID, maxID to graphDataObj
         for (let i = 0; i < factors.length; i++) {
           //F is the name of the factor, but not display name
@@ -239,6 +238,7 @@ const cityObjs = axios
           );
           //Using the index to find the appropriate indexed object in allCities
           graphDataObj[f].worstCityID = allCities[worstCityIndex]._id;
+          graphDataObj[f].worstName = allCities[worstCityIndex].name;
 
           //Repeat same process with best City
           graphDataObj[f].bestCityFactorScore = Math.max(...factorScores);
@@ -248,6 +248,7 @@ const cityObjs = axios
           );
           //Using the index to find the appropriate indexed object in allCities
           graphDataObj[f].bestCityID = allCities[bestCityIndex]._id;
+          graphDataObj[f].bestName = allCities[bestCityIndex].name;
           //Finding average factor score
           graphDataObj[f].averageFactorScore =
             factorScores.reduce((arr, cur) => arr + cur, 0) /
