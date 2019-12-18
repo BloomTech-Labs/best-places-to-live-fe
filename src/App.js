@@ -19,8 +19,11 @@ import CityPage from "./components/CityPage";
 import ProfileSettings from "./components/ProfileSettings";
 import ComparisonPage from "./components/ComparisonPage";
 
+//For google Analytics
 const history = createBrowserHistory();
 
+//Connecting Google Analytics
+//Specifically to find pages users are visiting
 function App(props) {
   useEffect(() => {
     history.listen(location => {
@@ -32,9 +35,12 @@ function App(props) {
 
   return (
     <Router history={history}>
+      {/* Styled Systems - Theme */}
       <ThemeProvider theme={theme}>
+        {/* Global Style - Global Style Sheet - Adds to head of index.html */}
         <GlobalStyle />
         <NavBar />
+        {/* Toast Container - Handling Errors and Successes with alert notifications on screen*/}
         <ToastContainer position="bottom-right" autoClose={2000} />
         <Route exact path="/" component={LandingPage} />
         <Route path="/city/:id" component={CityPage} />
