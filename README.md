@@ -54,6 +54,11 @@ MongoDB, Express and NodeJS, REST API
 
 # APIs
 
+# Styles
+
+We used Styled Systems to create a custom design system.
+[Styled Systems Readme](../src/styles/README.md)
+
 # Environment Variables
 
 In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:

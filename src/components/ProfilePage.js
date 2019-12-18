@@ -10,6 +10,9 @@ function ProfilePage({ user, history, ...rest }) {
   const name = user.name.split(" ");
   const firstName = user.name[0];
   const lastName = name[name.length - 1];
+
+  console.log(window.pageYOffset);
+
   return (
     <Container>
       <Flex

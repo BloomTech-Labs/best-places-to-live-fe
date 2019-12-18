@@ -1,6 +1,8 @@
 const axios = require("axios");
 const fs = require("fs");
 
+/* Getting correct image urls' from teleport API data to send to our BE - Sorry about the many lines */
+
 let teleportData = [
   {
     href: "https://api.teleport.org/api/urban_areas/slug:aarhus/",

@@ -15,12 +15,16 @@ const addDislikedCityReducer = (state = initialState, action) => {
         error: ""
       };
     case ADD_DISLIKED_CITY_SUCCESS:
+      const dislikeIDs = action.payload.map(city => city._id);
       return {
         ...state,
         user: {
           ...state.user,
           dislikes: action.payload
         },
+        displayedCities: state.displayedCities.filter(
+          city => !dislikeIDs.includes(city._id)
+        ),
         isFetching: false,
         error: ""
       };

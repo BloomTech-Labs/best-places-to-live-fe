@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+//Could be used for autocomplete
+//Limits the rate at which a function can fire
 export default function useDebounce(value, delay) {
   const [debouncedValue, setDebouncedValue] = useState(value);
 

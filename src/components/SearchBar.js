@@ -12,7 +12,7 @@ function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
       searchTerm: data
     });
     //If no error, push user to new page else
-    if (response === "Successful" && page === "landing") {
+    if (response && page === "landing") {
       rest.history.push("/search");
     } else {
     }

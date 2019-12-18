@@ -22,6 +22,8 @@ const LandingPage = props => {
     setShow(false);
   };
 
+  console.log(window.pageYOffset);
+
   return (
     <>
       <Container as="main">
@@ -49,6 +51,7 @@ const LandingPage = props => {
             Add Filters
           </Button>
         </Container>
+
         <Hero
           display="flex"
           background={` 
@@ -80,6 +83,7 @@ const LandingPage = props => {
             </StyledLink>
           </Container>
         </Hero>
+
         <Container
           maxWidth="1200px"
           margin={"0 auto"}

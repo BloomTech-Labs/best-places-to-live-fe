@@ -19,7 +19,7 @@ export const updateProfile = userData => dispatch => {
         }
       });
       toast.success("Profile successfully updated!");
-      return "Successful";
+      return true;
     })
     .catch(err => {
       dispatch({
@@ -27,6 +27,6 @@ export const updateProfile = userData => dispatch => {
         payload: { err, message: err.message }
       });
       toast.error(err.message);
-      return "Failure";
+      return false;
     });
 };

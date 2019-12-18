@@ -11,7 +11,7 @@ export const fetchTopCities = factor => dispatch => {
   //data is the factor as a string
 
   return axios
-    .post("https://bestplacesbe-test.herokuapp.com/city/ds", {
+    .post("https://bestplacesbe-test.herokuapp.com/city/ds?limit=10", {
       input1: [factor]
     })
     .then(res => {

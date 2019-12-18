@@ -1,11 +1,25 @@
 import React from "react";
+import styled from "styled-components";
 // const { PropTypes } = React;
+import { Button } from "../styles";
+
+const IconButton = styled(Button)`
+  background-color: transparent;
+  border: none;
+  position: relative;
+  padding: 0px;
+  margin: 0;
+  &:hover {
+    cursor: pointer;
+  }
+`;
 
 const Icon = props => {
   const styles = {
     svg: {
       display: "inline-block",
-      verticalAlign: "middle"
+      verticalAlign: "middle",
+      transform: `rotate(${props.rotate ? props.rotate : 0}deg)`
     },
     path: {
       fill: props.color
@@ -13,14 +27,16 @@ const Icon = props => {
   };
 
   return (
-    <svg
-      style={styles.svg}
-      width={`${props.size}px`}
-      height={`${props.size}px`}
-      viewBox="0 0 60 60"
-    >
-      <path style={styles.path} d={props.icon} />
-    </svg>
+    <IconButton>
+      <svg
+        style={styles.svg}
+        width={`${props.size}px`}
+        height={`${props.size}px`}
+        viewBox="0 0 60 60"
+      >
+        <path style={styles.path} d={props.icon} />
+      </svg>
+    </IconButton>
   );
 };
 

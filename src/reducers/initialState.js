@@ -6,6 +6,7 @@ const initialState = {
   },
   selectedFactors: [],
   displayedCities: [],
+  comparedCities: [],
   topCities: {},
   isFetching: false,
   error: ""

@@ -29,7 +29,7 @@ export const fetchLocationsByFactors = data => dispatch => {
           selectedFactors: data
         }
       });
-      return "Successful";
+      return true;
     })
     .catch(err => {
       dispatch({
@@ -37,6 +37,6 @@ export const fetchLocationsByFactors = data => dispatch => {
         payload: { err, message: err.message }
       });
       toast.error(err.message);
-      return "Failure";
+      return false;
     });
 };

@@ -23,7 +23,7 @@ export const login = credentials => dispatch => {
           factors: res.data.factors
         }
       });
-      return "Successful";
+      return true;
     })
     .catch(err => {
       dispatch({
@@ -31,6 +31,6 @@ export const login = credentials => dispatch => {
         payload: { err, message: err.message }
       });
       toast.error(err.message);
-      return "Failure";
+      return false;
     });
 };
