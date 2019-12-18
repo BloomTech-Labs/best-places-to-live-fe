@@ -43,11 +43,14 @@ const CityComparisonForm = ({ addComparedCities, cityID, history }) => {
             }
           })}
         >
-          {cities.map(city => (
-            <option key={city._id} value={city._id}>
-              {city.name}
-            </option>
-          ))}
+          {cities.map(
+            city =>
+              cityID !== city._id && (
+                <option key={city._id} value={city._id}>
+                  {city.name}
+                </option>
+              )
+          )}
         </Box>
         <Button type="submit">Compare</Button>
       </Form>

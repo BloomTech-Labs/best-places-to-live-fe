@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+//Keeps track of windowsize with changes
 export default function useWindowSize() {
   const isClient = typeof window === "object";
 
