@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { useFetch } from "../hooks/useFetch";
 import { baseURL } from "../utils/axiosWithAuth";
-import { Container, Text, Hero, Image, Button } from "../styles/index";
+import { Container, Text, Hero, Image, Button, Grid } from "../styles/index";
 import LoadingComponent from "./LoadingComponent";
 import Footer from "./Footer";
 import LikeIcon from "./LikeIcon";
@@ -13,6 +13,7 @@ import Icon from "./Icon";
 import Attribution from "./Attribution";
 import CityComparisonForm from "./CityComparisonForm";
 import CityCard from "./CityCard";
+import LazyLoad from "react-lazyload";
 
 const CityPage = ({ match, likes, history }) => {
   const cityID = match.params.id;
@@ -59,7 +60,16 @@ const CityPage = ({ match, likes, history }) => {
         <Container textAlign="center">
           <Text as="h1">{city.short_name}</Text>
           <Text as="h2">{city.state}</Text>
-          <CityCard city={city} page="search" />
+          <LazyLoad resize>
+            <CityCard
+              city={{
+                _id: city._id,
+                name: city.short_name,
+                secure_url: city.secure_url
+              }}
+              page="city"
+            />
+          </LazyLoad>
           <Container>
             <CityComparisonForm cityID={city._id} history={history} />
           </Container>

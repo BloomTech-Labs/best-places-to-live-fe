@@ -22,7 +22,7 @@ function CityCard({ city, page, likes, index, ...rest }) {
     <Card
       as="article"
       borderRadius={15}
-      m={page === "landing" && index === 0 ? ".5rem .5rem .5rem 0" : ".5rem"}
+      m={".5rem"}
       flex={flexSizeProperty}
       background={` 
           linear-gradient(
@@ -43,10 +43,9 @@ function CityCard({ city, page, likes, index, ...rest }) {
               : "space-between"
             : "flex-start"
         }
-        display={page === "landing" ? "none" : ""}
         p={[1, 2]}
       >
-        {(page === "profile" || page === "search") && (
+        {(page === "profile" || page === "search" || page === "city") && (
           <LikeIcon
             city={{
               city_id: city._id,
@@ -65,7 +64,7 @@ function CityCard({ city, page, likes, index, ...rest }) {
             {...rest}
           />
         )}
-        {page === "search" && (
+        {(page === "search" || page === "city") && (
           <MoreOptions
             city={{
               city_id: city._id,
@@ -77,11 +76,11 @@ function CityCard({ city, page, likes, index, ...rest }) {
       </Flex>
       <StyledLink
         display="inline-block"
-        height="100%"
+        height={page !== "city" ? "100%" : "300px"}
         width="100%"
         to={`/city/${city._id}`}
       >
-        <Container p={[1, 2]} display={page === "landing" ? "none" : ""}>
+        <Container p={[1, 2]}>
           <Text as="h1" color="white" textAlign="center" fontSize={4}>
             {city.short_name}
           </Text>
