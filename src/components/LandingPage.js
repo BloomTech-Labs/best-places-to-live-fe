@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Footer from "./Footer";
-import SearchBar from "./SearchBar";
 import { Container, Text, Hero, Button, StyledLink } from "../styles/index";
 import heroImg from "../img/hero.jpg";
 import TopCities from "./TopCities";
@@ -18,39 +16,15 @@ const LandingPage = props => {
     setShow(true);
   };
 
-  const hideModal = () => {
-    setShow(false);
-  };
-
-  console.log(window.pageYOffset);
-
   return (
     <>
       <Container as="main">
-        <Modal show={show} handleClose={hideModal}>
-          <AddFilters handleClose={hideModal} {...props} />
-        </Modal>
-
         <Container
           m={"0 auto"}
           display="flex"
           flexDirection="column"
           maxWidth="290px"
-        >
-          <SearchBar page="landing" {...props} />
-
-          <Button
-            display={show ? "none" : ""}
-            onClick={showModal}
-            borderRadius="45rem"
-            borderColor="blue"
-            alignSelf="flex-start"
-            width="40%"
-            marginBottom=".5rem"
-          >
-            Add Filters
-          </Button>
-        </Container>
+        ></Container>
 
         <Hero
           display="flex"
@@ -108,7 +82,6 @@ const LandingPage = props => {
           <TopCities factor={chosenFactor.factor} {...props} />
         </Container>
       </Container>
-      <Footer />
     </>
   );
 };

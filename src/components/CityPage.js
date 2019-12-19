@@ -2,16 +2,15 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { useFetch } from "../hooks/useFetch";
 import { baseURL } from "../utils/axiosWithAuth";
-import { Container, Text, Hero, Image, Button } from "../styles/index";
+import { Container, Text, Image } from "../styles/index";
 import LoadingComponent from "./LoadingComponent";
-import Footer from "./Footer";
-import LikeIcon from "./LikeIcon";
 import theme from "../theme";
 import { factors } from "../utils/factors";
 import axios from "axios";
-import Icon from "./Icon";
 import Attribution from "./Attribution";
 import CityComparisonForm from "./CityComparisonForm";
+import CityCard from "./CityCard";
+import LazyLoad from "react-lazyload";
 
 const CityPage = ({ match, likes, history }) => {
   const cityID = match.params.id;
@@ -47,50 +46,29 @@ const CityPage = ({ match, likes, history }) => {
     return (
       <Container as="main">
         <LoadingComponent />
-        <Footer />
+        ""
       </Container>
     );
   } else {
-    const cityInfo = response.response.data[0];
-    const cityName = cityInfo.short_name;
-    const stateName = cityInfo.state;
-    const cityID = cityInfo._id;
-    const photo = cityInfo.secure_url;
-    const summary = cityInfo.Summary;
-
-    //For Backend
-    const city = {
-      city_name: cityInfo.name,
-      city_id: cityID
-    };
-
-    const isLiked = (currentCityID, likedCities) =>
-      likedCities.find(({ _id }) => _id === currentCityID);
+    const city = response.response.data[0];
 
     return (
       <Container as="main" maxWidth="600px" margin="0 auto">
         <Container textAlign="center">
-          <Text as="h1">{cityName}</Text>
-          <Text as="h2">{stateName}</Text>
-          <LikeIcon iconColor city={city} liked={isLiked(cityID, likes)} />
-          <Hero
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            flexDirection="column"
-            background={` 
-          linear-gradient(
-            rgba(0, 0, 0, 0.30), 
-            rgba(0, 0, 0, 0.30)
-          ),
-          
-          url(${photo})`}
-            backgroundSize="cover"
-            backgroundPosition="center"
-            padding="130px 100px 100px"
-          />
+          <Text as="h1">{city.short_name}</Text>
+          <Text as="h2">{city.state}</Text>
+          <LazyLoad resize>
+            <CityCard
+              city={{
+                _id: city._id,
+                name: city.short_name,
+                secure_url: city.secure_url
+              }}
+              page="city"
+            />
+          </LazyLoad>
           <Container>
-            <CityComparisonForm cityID={cityID} history={history} />
+            <CityComparisonForm cityID={city._id} history={history} />
           </Container>
           <Container
             backgroundColor={theme.colors.silver}
@@ -104,7 +82,7 @@ const CityPage = ({ match, likes, history }) => {
               m={0}
               textAlign="left"
             >
-              {summary}
+              {city.Summary}
             </Text>
             <Attribution />
           </Container>
@@ -120,7 +98,6 @@ const CityPage = ({ match, likes, history }) => {
             />
           </Container>
         </Container>
-        <Footer />
       </Container>
     );
   }

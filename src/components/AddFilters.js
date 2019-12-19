@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import { Button, Text, Container, Flex, Nav } from "../styles/index";
 import DislikeIcon from "./DislikeIcon";
 import theme from "../theme";
@@ -79,4 +80,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, null)(AddFilters);
+export default withRouter(connect(mapStateToProps, null)(AddFilters));

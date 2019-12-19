@@ -21,6 +21,7 @@ import { Box } from "./box";
 import { CheckBoxContainer } from "./checkBoxContainer";
 import { SettingsCog } from "./iconAnimation";
 import GlobalStyle from "./global";
+import { Avatar } from "./avatar";
 
 export {
   Form,
@@ -45,5 +46,6 @@ export {
   CheckBoxContainer,
   SettingsCog,
   StyledSearchBar,
-  ProfileButton
+  ProfileButton,
+  Avatar
 };
