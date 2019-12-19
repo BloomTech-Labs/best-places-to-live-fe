@@ -98,7 +98,7 @@ const CityPage = ({ match, likes, history }) => {
               src={imgUrl}
             />
           </Container> */}
-          <Container height="1000px" width="1000px">
+          <Container height="100%" width="100%">
             <PolarAreaChart city={city} />
           </Container>
         </Container>

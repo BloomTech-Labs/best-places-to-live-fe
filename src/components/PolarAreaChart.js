@@ -33,6 +33,8 @@ const PolarAreaChart = ({ city }) => {
         labels: factors.map(factor => factor.displayName)
       }}
       onElementsClick={e => console.log(e)}
+      width="600"
+      height="600"
     />
   );
 };
