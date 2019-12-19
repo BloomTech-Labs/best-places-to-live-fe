@@ -1,17 +1,26 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import SearchBar from "./SearchBar";
 import { Nav, StyledNavLink, Flex, SettingsCog } from "../styles/index";
 
-const NavBar = ({ isLoggedIn }) => {
+const NavBar = ({ isLoggedIn, ...rest }) => {
   return (
-    <Nav display="flex" justifyContent="space-around" flexWrap="wrap">
+    <Nav
+      borderBottom="1px solid gray"
+      display="flex"
+      justifyContent="space-between"
+      flexWrap="wrap"
+    >
       {!isLoggedIn && (
         <>
-          <div>
-            <StyledNavLink to="/">Live In The Best Place</StyledNavLink>
-          </div>
-
-          <Flex justifyContent="space-between" width="20vw" minWidth="120px">
+          <Flex flex="1">
+            <StyledNavLink to="/">
+              <b>Live in the</b> <br /> <b>Best Place</b>
+            </StyledNavLink>
+          </Flex>
+          <SearchBar {...rest} />
+          <Flex justifyContent="space-between" minWidth="120px">
             <StyledNavLink to="/login">Log In</StyledNavLink>
             <StyledNavLink to="/sign-up">Sign Up</StyledNavLink>
           </Flex>
@@ -20,10 +29,13 @@ const NavBar = ({ isLoggedIn }) => {
 
       {isLoggedIn && (
         <>
-          <div>
-            <StyledNavLink to="/">Live In The Best Place</StyledNavLink>
-          </div>
-          <Flex justifyContent="space-between" width="60px">
+          <Flex flex="1">
+            <StyledNavLink to="/">
+              <b>Live in the</b> <br /> <b>Best Place</b>
+            </StyledNavLink>
+          </Flex>
+          <SearchBar {...rest} />
+          <Flex justifyContent="space-between" minWidth="120px">
             <StyledNavLink to="/profile">Profile</StyledNavLink>
             <StyledNavLink to="/settings">
               {" "}
@@ -42,4 +54,4 @@ const mapStatetoProps = state => {
   };
 };
 
-export default connect(mapStatetoProps)(NavBar);
+export default withRouter(connect(mapStatetoProps)(NavBar));
