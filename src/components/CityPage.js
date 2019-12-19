@@ -12,6 +12,7 @@ import axios from "axios";
 import Icon from "./Icon";
 import Attribution from "./Attribution";
 import CityComparisonForm from "./CityComparisonForm";
+import CityCard from "./CityCard";
 
 const CityPage = ({ match, likes, history }) => {
   const cityID = match.params.id;
@@ -51,46 +52,16 @@ const CityPage = ({ match, likes, history }) => {
       </Container>
     );
   } else {
-    const cityInfo = response.response.data[0];
-    const cityName = cityInfo.short_name;
-    const stateName = cityInfo.state;
-    const cityID = cityInfo._id;
-    const photo = cityInfo.secure_url;
-    const summary = cityInfo.Summary;
-
-    //For Backend
-    const city = {
-      city_name: cityInfo.name,
-      city_id: cityID
-    };
-
-    const isLiked = (currentCityID, likedCities) =>
-      likedCities.find(({ _id }) => _id === currentCityID);
+    const city = response.response.data[0];
 
     return (
       <Container as="main" maxWidth="600px" margin="0 auto">
         <Container textAlign="center">
-          <Text as="h1">{cityName}</Text>
-          <Text as="h2">{stateName}</Text>
-          <LikeIcon iconColor city={city} liked={isLiked(cityID, likes)} />
-          <Hero
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            flexDirection="column"
-            background={` 
-          linear-gradient(
-            rgba(0, 0, 0, 0.30), 
-            rgba(0, 0, 0, 0.30)
-          ),
-          
-          url(${photo})`}
-            backgroundSize="cover"
-            backgroundPosition="center"
-            padding="130px 100px 100px"
-          />
+          <Text as="h1">{city.short_name}</Text>
+          <Text as="h2">{city.state}</Text>
+          <CityCard city={city} page="search" />
           <Container>
-            <CityComparisonForm cityID={cityID} history={history} />
+            <CityComparisonForm cityID={city._id} history={history} />
           </Container>
           <Container
             backgroundColor={theme.colors.silver}
@@ -104,7 +75,7 @@ const CityPage = ({ match, likes, history }) => {
               m={0}
               textAlign="left"
             >
-              {summary}
+              {city.Summary}
             </Text>
             <Attribution />
           </Container>
