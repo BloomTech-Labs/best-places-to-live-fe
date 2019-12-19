@@ -82,7 +82,7 @@ const LandingPage = props => {
           <TopCities factor={chosenFactor.factor} {...props} />
         </Container>
       </Container>
-      ""
+    </>
   );
 };
 //

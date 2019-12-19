@@ -54,12 +54,6 @@ const MoreOptions = ({ city, addDislikedCity }) => {
         top: "0%",
         transform: "translateX(-50%)"
       }}
-      ]}
-      dropDownStyles={{
-        left: "-100%",
-        top: "0%",
-        transform: "translateX(-50%)"
-      }}
     />
   );
 };

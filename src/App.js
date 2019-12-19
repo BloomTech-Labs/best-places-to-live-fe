@@ -78,7 +78,6 @@ function App(props) {
         <PrivateRoute path="/settings" component={ProfileSettings} />
         {size.width < 450 ? <TabNav /> : null}
         <Footer />
-        <Footer />
       </ThemeProvider>
     </Router>
   );

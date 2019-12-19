@@ -98,7 +98,6 @@ const CityPage = ({ match, likes, history }) => {
             />
           </Container>
         </Container>
-        ""
       </Container>
     );
   }
