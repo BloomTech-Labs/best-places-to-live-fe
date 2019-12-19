@@ -21,11 +21,20 @@ const PolarAreaChart = ({ city }) => {
                 ]
             ),
             backgroundColor: [
-              "#FF6384",
-              "#4BC0C0",
-              "#FFCE56",
-              "#E7E9ED",
-              "#36A2EB"
+              "#1a1aff",
+              "#6666ff",
+              "#b3b3ff",
+              "#ff0000",
+              "#800000",
+              "#ffcccc",
+              "#ffff00",
+              "#999900",
+              "#654321",
+              "#096a82",
+              "#25a2c1",
+              "#00cc00",
+              "#009900",
+              "#006600"
             ],
             label: "My dataset" // for legend
           }
