@@ -11,6 +11,7 @@ import Attribution from "./Attribution";
 import CityComparisonForm from "./CityComparisonForm";
 import CityCard from "./CityCard";
 import LazyLoad from "react-lazyload";
+import PolarAreaChart from "./PolarAreaChart";
 
 const CityPage = ({ match, likes, history }) => {
   const cityID = match.params.id;
@@ -51,7 +52,7 @@ const CityPage = ({ match, likes, history }) => {
     );
   } else {
     const city = response.response.data[0];
-
+    console.log(city);
     return (
       <Container as="main" maxWidth="600px" margin="0 auto">
         <Container textAlign="center">
@@ -87,7 +88,7 @@ const CityPage = ({ match, likes, history }) => {
             <Attribution />
           </Container>
 
-          <Container padding="2rem 2rem">
+          {/* <Container padding="2rem 2rem">
             {!imgUrl && <LoadingComponent />}
             <Image
               maxWidth="550px"
@@ -96,6 +97,10 @@ const CityPage = ({ match, likes, history }) => {
               id="blob"
               src={imgUrl}
             />
+          </Container> */}
+          <Container height="100%" width="100%">
+            <Text as="h3">City Scores by Factor</Text>
+            <PolarAreaChart city={city} />
           </Container>
         </Container>
       </Container>
