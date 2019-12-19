@@ -11,7 +11,6 @@ import Attribution from "./Attribution";
 import CityComparisonForm from "./CityComparisonForm";
 import CityCard from "./CityCard";
 import LazyLoad from "react-lazyload";
-
 const CityPage = ({ match, likes, history }) => {
   const cityID = match.params.id;
   const [imgUrl, setImgUrl] = useState("");
@@ -51,7 +50,7 @@ const CityPage = ({ match, likes, history }) => {
     );
   } else {
     const city = response.response.data[0];
-
+    console.log(city);
     return (
       <Container as="main" maxWidth="600px" margin="0 auto">
         <Container textAlign="center">
