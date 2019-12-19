@@ -3,14 +3,14 @@ import {
   FETCH_TOP_CITIES_SUCCESS,
   FETCH_TOP_CITIES_FAIL
 } from "./index";
-import axios from "axios";
 import { toast } from "react-toastify";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 export const fetchTopCities = factor => dispatch => {
   dispatch({ type: FETCH_TOP_CITIES_INITIALIZE });
   //data is the factor as a string
 
-  return axios
+  return axiosWithAuth()
     .post("https://bestplacesbe-test.herokuapp.com/city/ds?limit=10", {
       input1: [factor]
     })
