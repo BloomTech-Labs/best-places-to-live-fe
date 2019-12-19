@@ -58,7 +58,6 @@ const NavBar = ({ isLoggedIn, user, ...rest }) => {
           <Flex
             justifyContent="space-between"
             minWidth="120px"
-            width="20%"
             alignItems="center"
           >
             <StyledNavLink to="/login">Log In</StyledNavLink>
