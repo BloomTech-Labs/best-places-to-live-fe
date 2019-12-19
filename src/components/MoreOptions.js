@@ -6,8 +6,16 @@ import theme from "../theme";
 import { Button } from "../styles/index";
 import { moreIcon } from "../utils/factors";
 import { addDislikedCity } from "../actions/addDislikedCity";
+import DropDown from "./Dropdown";
+
 const MoreOptions = ({ city, addDislikedCity }) => {
   const [showMenu, setShowMenu] = useState(false);
+
+  const handleClickOutside = () => {
+    console.log("out");
+    setShowMenu(false);
+  };
+  document.addEventListener("mousedown", handleClickOutside);
 
   const IconButton = styled(Button)`
     background-color: transparent;
@@ -20,30 +28,33 @@ const MoreOptions = ({ city, addDislikedCity }) => {
   `;
 
   const OptionMenu = styled.div`
-    display: ${({ toggle }) => (toggle ? "block" : "none")};
-    position: absolute;
-    padding: 1.2rem 2rem;
-    top: 20px;
-    right: -8px;
-    width: 110px;
     background-color: ${theme.colors.athensGray};
+    font-size: 1rem;
+    &:hover {
+      cursor: pointer;
+    }
   `;
-
-  const toggleMenu = () => {
-    setShowMenu(!showMenu);
-  };
 
   const handleClick = async () => {
     await addDislikedCity(city);
   };
 
   return (
-    <IconButton mb={0} onClick={toggleMenu}>
-      <Icon color="white" size={20} icon={moreIcon.iconPath} rotate={90} />
-      <OptionMenu toggle={showMenu} onClick={handleClick}>
-        Delete this City
-      </OptionMenu>
-    </IconButton>
+    <DropDown
+      value={
+        <IconButton mb={0}>
+          <Icon color="white" size={20} icon={moreIcon.iconPath} rotate={90} />
+        </IconButton>
+      }
+      options={[
+        <OptionMenu onClick={handleClick}>Delete this city</OptionMenu>
+      ]}
+      dropDownStyles={{
+        left: "-100%",
+        top: "0%",
+        transform: "translateX(-50%)"
+      }}
+    />
   );
 };
 
