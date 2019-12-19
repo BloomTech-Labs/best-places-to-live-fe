@@ -36,7 +36,7 @@ function SearchBar({
   };
 
   return (
-    <Flex flex="2">
+    <Flex width="50%">
       <Container
         border="1px solid lightgrey"
         borderTopLeftRadius="10px"
