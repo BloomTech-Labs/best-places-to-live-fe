@@ -12,7 +12,6 @@ import {
   Button
 } from "../styles/index";
 import heroImg from "../img/seattle.jpg";
-import SearchBar from "./SearchBar";
 import AddFilters from "./AddFilters";
 import Modal from "./Modal";
 import LazyLoad from "react-lazyload";

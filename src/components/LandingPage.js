@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Footer from "./Footer";
-import SearchBar from "./SearchBar";
 import { Container, Text, Hero, Button, StyledLink } from "../styles/index";
 import heroImg from "../img/hero.jpg";
 import TopCities from "./TopCities";
