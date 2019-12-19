@@ -12,7 +12,6 @@ import {
 } from "../styles/index";
 import { updateProfile } from "../actions/updateProfile";
 import { logout } from "../actions/logout";
-import Footer from "./Footer";
 import DislikedCities from "./DislikedCities";
 
 function ProfileSettings({ user, history, logout, updateProfile, ...rest }) {
@@ -81,9 +80,7 @@ function ProfileSettings({ user, history, logout, updateProfile, ...rest }) {
       </Flex>
       <DislikedCities />
       {/* waiting on backend */}
-      <Container textAlign="center">
-        <Footer />
-      </Container>
+      <Container textAlign="center">""</Container>
     </Container>
   );
 }

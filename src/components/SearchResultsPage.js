@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import CityCard from "./CityCard";
-import Footer from "./Footer";
 import {
   Container,
   Flex,
@@ -52,7 +51,7 @@ function SearchResultsPage({ displayedCities, ...rest }) {
             </LazyLoad>
           ))}
         </Grid>
-        <Footer />
+        ""
       </Container>
     </>
   );

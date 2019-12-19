@@ -4,7 +4,6 @@ import { useFetch } from "../hooks/useFetch";
 import { baseURL } from "../utils/axiosWithAuth";
 import { Container, Text, Hero, Image, Button, Grid } from "../styles/index";
 import LoadingComponent from "./LoadingComponent";
-import Footer from "./Footer";
 import LikeIcon from "./LikeIcon";
 import theme from "../theme";
 import { factors } from "../utils/factors";
@@ -49,7 +48,7 @@ const CityPage = ({ match, likes, history }) => {
     return (
       <Container as="main">
         <LoadingComponent />
-        <Footer />
+        ""
       </Container>
     );
   } else {
@@ -101,7 +100,7 @@ const CityPage = ({ match, likes, history }) => {
             />
           </Container>
         </Container>
-        <Footer />
+        ""
       </Container>
     );
   }

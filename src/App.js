@@ -23,7 +23,7 @@ import TabNav from "./components/TabNav";
 import Modal from "./components/Modal";
 import AddFilters from "./components/AddFilters";
 import ScrollToTop from "./components/ScrollToTop";
-
+import Footer from "./components/Footer";
 //For google Analytics
 const history = createBrowserHistory();
 
@@ -77,6 +77,7 @@ function App(props) {
         <PrivateRoute path="/profile" component={ProfilePage} />
         <PrivateRoute path="/settings" component={ProfileSettings} />
         {size.width < 450 ? <TabNav /> : null}
+        <Footer />
       </ThemeProvider>
     </Router>
   );

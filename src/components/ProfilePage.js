@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { MdPerson, MdLocationOn } from "react-icons/md";
 import { Container, Flex, Text, Button, Box, Avatar } from "../styles/index";
 import theme from "../theme";
-import Footer from "./Footer";
 import LikedCities from "./LikedCities";
 
 function ProfilePage({ user, history, ...rest }) {
@@ -41,7 +40,7 @@ function ProfilePage({ user, history, ...rest }) {
         </Text>
       </Flex>
       <LikedCities />
-      <Footer />
+      ""
     </Container>
   );
 }
