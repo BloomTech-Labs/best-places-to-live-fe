@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexbox, layout, grid, border } from "styled-system";
+import { flexbox, layout, grid, border, space } from "styled-system";
 
 export const Nav = styled.nav`
   padding: 10px;
@@ -7,4 +7,5 @@ export const Nav = styled.nav`
   ${flexbox};
   ${grid};
   ${border}
+  ${space};
 `;

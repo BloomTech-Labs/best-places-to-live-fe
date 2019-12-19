@@ -11,6 +11,8 @@ import Attribution from "./Attribution";
 import CityComparisonForm from "./CityComparisonForm";
 import CityCard from "./CityCard";
 import LazyLoad from "react-lazyload";
+import PolarAreaChart from "./PolarAreaChart";
+
 const CityPage = ({ match, likes, history }) => {
   const cityID = match.params.id;
   const [imgUrl, setImgUrl] = useState("");
@@ -86,7 +88,7 @@ const CityPage = ({ match, likes, history }) => {
             <Attribution />
           </Container>
 
-          <Container padding="2rem 2rem">
+          {/* <Container padding="2rem 2rem">
             {!imgUrl && <LoadingComponent />}
             <Image
               maxWidth="550px"
@@ -95,6 +97,9 @@ const CityPage = ({ match, likes, history }) => {
               id="blob"
               src={imgUrl}
             />
+          </Container> */}
+          <Container height="1000px" width="1000px">
+            <PolarAreaChart city={city} />
           </Container>
         </Container>
       </Container>
