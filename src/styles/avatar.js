@@ -7,6 +7,7 @@ export const Avatar = styled.span`
   border-radius: 50%;
   font-size: 1rem;
   padding: 10px;
+  display: inline-block;
   ${layout};
   ${space};
   ${display};

@@ -83,7 +83,6 @@ const LandingPage = props => {
         </Container>
       </Container>
       ""
-    </>
   );
 };
 //

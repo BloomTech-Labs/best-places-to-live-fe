@@ -63,7 +63,13 @@ const Dropdown = ({
 
   return (
     <DropDownContainer ref={node} className="dropdown">
-      <Button bg="transparent" border="0" mb="0" onClick={e => setOpen(!open)}>
+      <Button
+        bg="transparent"
+        border="0"
+        p={0}
+        mb="0"
+        onClick={e => setOpen(!open)}
+      >
         {value || placeholder}
       </Button>
       {open && (

@@ -45,6 +45,7 @@ const NavBar = ({ isLoggedIn, user, ...rest }) => {
       display="flex"
       justifyContent="space-between"
       flexWrap="wrap"
+      alignItems="center"
     >
       {!isLoggedIn && (
         <>
@@ -82,7 +83,7 @@ const NavBar = ({ isLoggedIn, user, ...rest }) => {
           >
             <DropDown
               value={
-                <Avatar width="2.5rem" height="2.5rem">
+                <Avatar width="2.5rem" height="2.5rem" p="10px">
                   {firstName[0] + lastName[0]}
                 </Avatar>
               }
