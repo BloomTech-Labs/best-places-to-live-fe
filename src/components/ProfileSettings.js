@@ -79,8 +79,6 @@ function ProfileSettings({ user, history, logout, updateProfile, ...rest }) {
         <Button onClick={logoutHandler}>Logout </Button>
       </Flex>
       <DislikedCities />
-      {/* waiting on backend */}
-      <Container textAlign="center">""</Container>
     </Container>
   );
 }
