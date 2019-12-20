@@ -5,7 +5,8 @@ import {
   layout,
   border,
   space,
-  background
+  background,
+  display
 } from "styled-system";
 import { Link, NavLink } from "react-router-dom";
 import theme from "../theme";
@@ -16,6 +17,7 @@ export const StyledLink = styled(Link)`
   ${layout};
   ${border};
   ${space};
+  ${display};
   text-decoration: none;
 `;
 
@@ -25,6 +27,7 @@ export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   color: black;
   ${color};
+  ${display};
   &:hover {
     cursor: pointer;
   }

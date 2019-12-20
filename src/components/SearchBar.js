@@ -36,7 +36,7 @@ function SearchBar({
   };
 
   return (
-    <Flex width="50%" justifyContent="center">
+    <Flex width={["100%", "50%"]} justifyContent={["none", "center"]}>
       <Container
         borderTopLeftRadius="5px"
         borderBottomLeftRadius="5px"
@@ -68,7 +68,7 @@ function SearchBar({
         borderColor="blue"
         alignSelf="flex-start"
         width="100%"
-        maxWidth="150px"
+        maxWidth={["105px", "150px"]}
         marginLeft="20px"
         marginBottom="0px"
         backgroundColor="#3171E4"
