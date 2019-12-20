@@ -40,7 +40,6 @@ function ProfilePage({ user, history, ...rest }) {
         </Text>
       </Flex>
       <LikedCities />
-      ""
     </Container>
   );
 }

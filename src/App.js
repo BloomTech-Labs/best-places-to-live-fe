@@ -61,7 +61,7 @@ function App(props) {
         <Modal show={show} handleClose={hideModal}>
           <AddFilters handleClose={hideModal} {...props} />
         </Modal>
-        {size.width > 450 ? <NavBar showModal={showModal} show={show} /> : null}
+        <NavBar showModal={showModal} show={show} />
         {/* Toast Container - Handling Errors and Successes with alert notifications on screen*/}
         <ToastContainer position="bottom-right" autoClose={2000} />
         <Route
@@ -76,8 +76,8 @@ function App(props) {
         <Route path="/compare" component={ComparisonPage} />
         <PrivateRoute path="/profile" component={ProfilePage} />
         <PrivateRoute path="/settings" component={ProfileSettings} />
-        {size.width < 450 ? <TabNav /> : null}
         <Footer />
+        {size.width < 550 ? <TabNav /> : null}
       </ThemeProvider>
     </Router>
   );

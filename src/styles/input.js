@@ -16,9 +16,9 @@ export const Input = styled.input`
 
 export const StyledSearchBar = styled.input`
   padding: ${theme.space[2]} ${theme.space[3]};
-  border: 1px solid lightgrey;
+  border: 0;
   border-left: 0;
-  border-radius: 10px;
+  border-radius: 5px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   font-size: ${theme.fontSizes.body};
@@ -26,11 +26,20 @@ export const StyledSearchBar = styled.input`
   fontSize: {2};
   width: 100%;
   max-width: 215px;
+  opacity: 0.48;
   flex: 1;
+  background-color: #E6E4EA;
+  color: #1f1f1f;
+  font-weight: 600;
   ${typography};
   ${layout};
   ${space};
   ${flexbox}
+
+  &::placeholder {
+    color: #9A99A2;
+  }
+
   @media (min-width: ${theme.breakpoints.sm}) {
     max-width:375px;
   }

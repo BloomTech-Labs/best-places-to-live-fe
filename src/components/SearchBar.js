@@ -36,15 +36,15 @@ function SearchBar({
   };
 
   return (
-    <Flex width="50%" justifyContent="center">
+    <Flex width={["100%", "50%"]} justifyContent={["none", "center"]}>
       <Container
-        border="1px solid lightgrey"
-        borderTopLeftRadius="10px"
-        borderBottomLeftRadius="10px"
+        borderTopLeftRadius="5px"
+        borderBottomLeftRadius="5px"
         display="inline-block"
         padding=".5em .75em"
-        borderRight="0"
-        backgroundColor="#fff"
+        border="0"
+        backgroundColor="#E6E4EA"
+        opacity="0.48"
       >
         <IoIosSearch
           display="inline"
@@ -55,7 +55,7 @@ function SearchBar({
       </Container>
       <StyledSearchBar
         type="text"
-        placeholder="Search for cities or states"
+        placeholder="Search for a city or state"
         name="location"
         value={location}
         onChange={e => handleChange(e)}
@@ -68,7 +68,7 @@ function SearchBar({
         borderColor="blue"
         alignSelf="flex-start"
         width="100%"
-        maxWidth="150px"
+        maxWidth={["105px", "150px"]}
         marginLeft="20px"
         marginBottom="0px"
         backgroundColor="#3171E4"
