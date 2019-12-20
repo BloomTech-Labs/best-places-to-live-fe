@@ -54,7 +54,7 @@ const CityPage = ({ match, likes, history }) => {
     const city = response.response.data[0];
     console.log(city);
     return (
-      <Container as="main" maxWidth="600px" margin="0 auto">
+      <Container as="main" p="0 20px" maxWidth="600px" margin="0 auto">
         <Container textAlign="center">
           <Text as="h1">{city.short_name}</Text>
           <Text as="h2">{city.state}</Text>
