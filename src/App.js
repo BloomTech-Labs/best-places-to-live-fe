@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Router, Route } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import { ThemeProvider } from "styled-components";
@@ -20,8 +20,10 @@ import ProfileSettings from "./components/ProfileSettings";
 import ComparisonPage from "./components/ComparisonPage";
 import useWindowSize from "./hooks/useWindowSize";
 import TabNav from "./components/TabNav";
+import Modal from "./components/Modal";
+import AddFilters from "./components/AddFilters";
 import ScrollToTop from "./components/ScrollToTop";
-
+import Footer from "./components/Footer";
 //For google Analytics
 const history = createBrowserHistory();
 
@@ -36,6 +38,16 @@ function App(props) {
     initializeAnalytics();
   }, []);
 
+  const [show, setShow] = useState(false);
+
+  const showModal = () => {
+    setShow(true);
+  };
+
+  const hideModal = () => {
+    setShow(false);
+  };
+
   //For NavBar responsiveness
   const size = useWindowSize();
   console.log(size);
@@ -46,10 +58,17 @@ function App(props) {
       <ThemeProvider theme={theme}>
         {/* Global Style - Global Style Sheet - Adds to head of index.html */}
         <GlobalStyle />
-        {size.width > 450 ? <NavBar /> : null}
+        <Modal show={show} handleClose={hideModal}>
+          <AddFilters handleClose={hideModal} {...props} />
+        </Modal>
+        {size.width > 450 ? <NavBar showModal={showModal} show={show} /> : null}
         {/* Toast Container - Handling Errors and Successes with alert notifications on screen*/}
         <ToastContainer position="bottom-right" autoClose={2000} />
-        <Route exact path="/" component={LandingPage} />
+        <Route
+          exact
+          path="/"
+          render={props => <LandingPage {...props} showModal={showModal} />}
+        />
         <Route path="/city/:id" component={CityPage} />
         <Route path="/sign-up" component={SignUp} />
         <Route path="/login" component={Login} />
@@ -58,6 +77,7 @@ function App(props) {
         <PrivateRoute path="/profile" component={ProfilePage} />
         <PrivateRoute path="/settings" component={ProfileSettings} />
         {size.width < 450 ? <TabNav /> : null}
+        <Footer />
       </ThemeProvider>
     </Router>
   );

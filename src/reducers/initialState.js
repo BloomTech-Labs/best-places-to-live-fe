@@ -2,7 +2,10 @@ const initialState = {
   user: {
     isLoggedIn: false,
     likes: [],
-    dislikes: []
+    dislikes: [],
+    name: "",
+    email: "",
+    location: ""
   },
   selectedFactors: [],
   displayedCities: [],

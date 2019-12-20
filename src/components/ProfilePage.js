@@ -1,9 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { MdPerson, MdLocationOn } from "react-icons/md";
-import { Container, Flex, Text, Button, Box } from "../styles/index";
+import { Container, Flex, Text, Button, Box, Avatar } from "../styles/index";
 import theme from "../theme";
-import Footer from "./Footer";
 import LikedCities from "./LikedCities";
 
 function ProfilePage({ user, history, ...rest }) {
@@ -22,9 +21,11 @@ function ProfilePage({ user, history, ...rest }) {
         justifyContent="center"
         mb={5}
       >
-        <Text as="h2" fontSize={4} mb={4}>
-          {firstName[0] + lastName[0]}
-        </Text>
+        <Avatar m={4} p={3} width="5rem" height="5rem">
+          <Text as="h2" fontSize="2.5rem" m={0}>
+            {firstName[0] + lastName[0]}
+          </Text>
+        </Avatar>
         <Text m="0.3rem 0" as="h3" fontSize={2}>
           <Box as="span" verticalAlign="middle" mr={1}>
             <MdPerson fill={`${theme.colors.baliHai}`} />
@@ -39,7 +40,7 @@ function ProfilePage({ user, history, ...rest }) {
         </Text>
       </Flex>
       <LikedCities />
-      <Footer />
+      ""
     </Container>
   );
 }

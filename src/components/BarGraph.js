@@ -7,14 +7,20 @@ const BarGraph = ({ data, city1, city2, history }) => {
   //This changes takes the information from data, city1, and city2 and transforms it into a new object
   /* Data sent to bar graph is different from data that is used to retrieve ids */
   const dataForBarGraph = data.map(item => {
+    let testObj = {};
+    Object.keys(item.scores).forEach(keyName => {
+      testObj[keyName] = item.scores[keyName] + 0.05;
+    });
     let obj = {
       [city1.name]: item.scores.city1,
       [city2.name]: item.scores.city2,
-      ...item.scores
+      ...testObj
     };
     obj["factor"] = item.factor;
     return obj;
   });
+
+  console.log(dataForBarGraph);
 
   const handleClick = node => {
     //node.indexValue is the factor
@@ -38,7 +44,7 @@ const BarGraph = ({ data, city1, city2, history }) => {
       indexBy="factor"
       margin={{ top: 50, right: 100, bottom: 50, left: 100 }}
       padding={0.5}
-      //   groupMode="grouped"
+      groupMode="grouped"
       layout="horizontal"
       colors={{ scheme: "spectral" }}
       defs={[

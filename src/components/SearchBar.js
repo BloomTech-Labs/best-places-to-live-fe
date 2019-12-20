@@ -1,18 +1,25 @@
 import React, { useState } from "react";
 import { fetchLocationsByName } from "../actions/locationsByName";
 import { connect } from "react-redux";
-import { Container, StyledSearchBar, Flex } from "../styles/index";
+import { Container, StyledSearchBar, Flex, Button } from "../styles/index";
 import { IoIosSearch } from "react-icons/io";
 
-function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
+function SearchBar({
+  fetchLocationsByName,
+  isFetching,
+  error,
+  page,
+  showModal,
+  show,
+  ...rest
+}) {
   const [location, setLocation] = useState("");
-
   const fetchLocation = async data => {
     const response = await fetchLocationsByName({
       searchTerm: data
     });
     //If no error, push user to new page else
-    if (response && page === "landing") {
+    if (response && page !== "landing") {
       rest.history.push("/search");
     } else {
     }
@@ -29,7 +36,7 @@ function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
   };
 
   return (
-    <Flex marginBottom="20px">
+    <Flex width="50%" justifyContent="center">
       <Container
         border="1px solid lightgrey"
         borderTopLeftRadius="10px"
@@ -54,6 +61,21 @@ function SearchBar({ fetchLocationsByName, isFetching, error, page, ...rest }) {
         onChange={e => handleChange(e)}
         onKeyDown={e => handleInput(e)}
       />
+      <Button
+        display={show ? "none" : ""}
+        onClick={showModal}
+        borderRadius="45rem"
+        borderColor="blue"
+        alignSelf="flex-start"
+        width="100%"
+        maxWidth="150px"
+        marginLeft="20px"
+        marginBottom="0px"
+        backgroundColor="#3171E4"
+        color="white"
+      >
+        Add Filters
+      </Button>
     </Flex>
   );
 }
