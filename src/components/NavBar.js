@@ -50,7 +50,7 @@ const NavBar = ({ isLoggedIn, user, ...rest }) => {
     >
       {!isLoggedIn && (
         <>
-          <Flex>
+          <Flex display={["none", "flex"]}>
             <StyledNavLink to="/">
               <b>Live in the</b> <br /> <b>Best Place</b>
             </StyledNavLink>
@@ -60,6 +60,7 @@ const NavBar = ({ isLoggedIn, user, ...rest }) => {
             justifyContent="space-between"
             minWidth="120px"
             alignItems="center"
+            display={["none", "flex"]}
           >
             <StyledNavLink to="/login">Log In</StyledNavLink>
             <StyledNavLink to="/sign-up">Sign Up</StyledNavLink>
@@ -69,7 +70,7 @@ const NavBar = ({ isLoggedIn, user, ...rest }) => {
 
       {isLoggedIn && (
         <>
-          <Flex>
+          <Flex display={["none", "flex"]}>
             <StyledNavLink to="/">
               <b>Live in the</b> <br /> <b>Best Place</b>
             </StyledNavLink>
@@ -80,6 +81,7 @@ const NavBar = ({ isLoggedIn, user, ...rest }) => {
             width="120px"
             maxWidth="100%"
             position="relative"
+            display={["none", "flex"]}
           >
             <DropDown
               value={
