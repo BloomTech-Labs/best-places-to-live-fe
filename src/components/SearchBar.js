@@ -38,13 +38,13 @@ function SearchBar({
   return (
     <Flex width="50%" justifyContent="center">
       <Container
-        border="1px solid lightgrey"
-        borderTopLeftRadius="10px"
-        borderBottomLeftRadius="10px"
+        borderTopLeftRadius="5px"
+        borderBottomLeftRadius="5px"
         display="inline-block"
         padding=".5em .75em"
-        borderRight="0"
-        backgroundColor="#fff"
+        border="0"
+        backgroundColor="#E6E4EA"
+        opacity="0.48"
       >
         <IoIosSearch
           display="inline"
