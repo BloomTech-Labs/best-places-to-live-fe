@@ -12,20 +12,20 @@ const PolarAreaChart = ({ city }) => {
           {
             data: factors.map(factor => Math.round(city[factor.factor] * 100)),
             backgroundColor: [
-              "#66CD00",
-              "#458B00",
-              "#78AB46",
-              "#C0D9AF",
-              "#7BBF6A",
-              "#20BF9F",
-              "#48D1CC",
-              "#5F9F9F",
-              "#8FD8D8",
-              "#0EBFE9",
-              "#50A6C2",
-              "#42C0FB",
-              "#3664AB",
-              "#1874CD"
+              "#eaf6db",
+              "#dcecc9",
+              "#b3ddcc",
+              "#8acdce",
+              "#62bed2",
+              "#46aace",
+              "#3d91be",
+              "#3577ae",
+              "#2d5e9e",
+              "#24448e",
+              "#1c2b7f",
+              "#162065",
+              "#11174b",
+              "black"
             ],
             label: "My dataset" // for legend
           }
