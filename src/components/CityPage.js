@@ -18,6 +18,7 @@ const CityPage = ({ match, likes, history }) => {
   const [imgUrl, setImgUrl] = useState("");
   const [show, setShow] = useState(false);
 
+  //BE request
   const response = useFetch(`${baseURL}city`, {
     method: "POST",
     headers: {
@@ -26,24 +27,42 @@ const CityPage = ({ match, likes, history }) => {
     body: JSON.stringify({ ids: [cityID] })
   });
 
-  //Change to BE endpoint
-  useEffect(() => {
-    const dataViz = () => {
-      axios({
-        method: "post",
-        url: "https://best-places-api.herokuapp.com/visual",
-        data: { input1: factors.map(factor => factor.factor), input2: cityID },
-        responseType: "blob"
+  //DS request for city normalized scores
+  const dsResponse = useFetch(
+    `https://best-places-api.herokuapp.com/normalized`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        id: cityID,
+        factors: [
+          "score_commute",
+          "score_cost_of_living",
+          "score_economy",
+          "score_education",
+          "score_environmental_quality",
+          "score_healthcare",
+          "score_housing",
+          "score_internet_access",
+          "score_leisure_&_culture",
+          "score_outdoors",
+          "score_safety",
+          "score_startups",
+          "score_taxation",
+          "ranked_population"
+        ]
       })
-        .then(res => {
-          setImgUrl(URL.createObjectURL(res.data));
-        })
-        .catch(err => console.log(err));
-    };
-    dataViz();
-  }, [cityID]);
+    }
+  );
 
-  if (!response.response || response.isLoading) {
+  if (
+    !response.response ||
+    response.isLoading ||
+    !dsResponse.response ||
+    dsResponse.isLoading
+  ) {
     return (
       <Container as="main">
         <LoadingComponent />
@@ -51,10 +70,12 @@ const CityPage = ({ match, likes, history }) => {
       </Container>
     );
   } else {
-    const city = response.response.data[0];
-    console.log(city);
+    console.log(dsResponse.response[0]);
+    const dsCity = dsResponse.response[0];
+    let city = response.response.data[0];
+    city = { ...city, ...dsCity };
     return (
-      <Container as="main" maxWidth="600px" margin="0 auto">
+      <Container as="main" p="0 20px" maxWidth="600px" margin="0 auto">
         <Container textAlign="center">
           <Text as="h1">{city.short_name}</Text>
           <Text as="h2">{city.state}</Text>
