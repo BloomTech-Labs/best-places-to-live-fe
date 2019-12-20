@@ -16,7 +16,6 @@ export const fetchLocationsByFactors = data => dispatch => {
   const url = token
     ? "https://bestplacesbe-test.herokuapp.com/city/spec-ds"
     : "https://bestplacesbe-test.herokuapp.com/city/ds";
-
   console.log(url);
   return axiosWithAuth()
     .post(url, { input1: data })

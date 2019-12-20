@@ -29,7 +29,8 @@ export const StyledSearchBar = styled.input`
   opacity: 0.48;
   flex: 1;
   background-color: #E6E4EA;
-  color: ${theme.colors.blackPearl};
+  color: #1f1f1f;
+  font-weight: 600;
   ${typography};
   ${layout};
   ${space};
@@ -38,6 +39,7 @@ export const StyledSearchBar = styled.input`
   &::placeholder {
     color: #9A99A2;
   }
+
   @media (min-width: ${theme.breakpoints.sm}) {
     max-width:375px;
   }

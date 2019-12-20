@@ -108,19 +108,8 @@ const CityPage = ({ match, likes, history }) => {
             </Text>
             <Attribution />
           </Container>
-
-          {/* <Container padding="2rem 2rem">
-            {!imgUrl && <LoadingComponent />}
-            <Image
-              maxWidth="550px"
-              width="100%"
-              alt="data-viz"
-              id="blob"
-              src={imgUrl}
-            />
-          </Container> */}
           <Container height="100%" width="100%">
-            <Text as="h3">City Scores by Factor</Text>
+            <Text as="h1">City Factor Percentiles</Text>
             <PolarAreaChart city={city} />
           </Container>
         </Container>

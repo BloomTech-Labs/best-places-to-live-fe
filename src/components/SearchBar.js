@@ -55,7 +55,7 @@ function SearchBar({
       </Container>
       <StyledSearchBar
         type="text"
-        placeholder="Search for cities or states"
+        placeholder="Search for a city or state"
         name="location"
         value={location}
         onChange={e => handleChange(e)}
