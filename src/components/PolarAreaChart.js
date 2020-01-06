@@ -5,19 +5,13 @@ import { factors } from "../utils/factors";
 const PolarAreaChart = ({ city }) => {
   //labels are factor display names
   //data is the array of ranked scores
+  console.log("city in polar area chart", city);
   return (
     <Polar
       data={{
         datasets: [
           {
-            data: factors.map(
-              factor =>
-                city[
-                  factor.factor === "ranked_population"
-                    ? "population-size"
-                    : factor.factor
-                ]
-            ),
+            data: factors.map(factor => city[factor.factor]),
             backgroundColor: [
               "#66CD00",
               "#458B00",
