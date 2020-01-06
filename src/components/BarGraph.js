@@ -1,5 +1,6 @@
 import React from "react";
 import { ResponsiveBar } from "@nivo/bar";
+import ToolTip from "./ToolTip";
 
 // make sure parent container have a defined height when using
 const BarGraph = ({ data, city1, city2, history }) => {
@@ -122,10 +123,7 @@ const BarGraph = ({ data, city1, city2, history }) => {
         const cityScore = dataFiltered.scores[node.id];
 
         return (
-          <strong>
-            {cityName && `${cityName}:`}
-            {cityScore}{" "}
-          </strong>
+          <ToolTip label={node.id} cityName={cityName} score={cityScore} />
         );
       }}
       theme={{
