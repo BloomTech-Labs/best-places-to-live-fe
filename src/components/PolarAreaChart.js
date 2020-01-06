@@ -5,12 +5,15 @@ import { factors } from "../utils/factors";
 const PolarAreaChart = ({ city }) => {
   //labels are factor display names
   //data is the array of ranked scores
+  console.log("city in polar area chart", city);
   return (
     <Polar
       data={{
         datasets: [
           {
-            data: factors.map(factor => Math.round(city[factor.factor] * 100)),
+            data: factors.map(
+              factor => Math.round(city[factor.factor] * 100) / 10
+            ),
             backgroundColor: [
               "#eaf6db",
               "#dcecc9",

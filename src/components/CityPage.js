@@ -109,7 +109,8 @@ const CityPage = ({ match, likes, history }) => {
             <Attribution />
           </Container>
           <Container height="100%" width="100%">
-            <Text as="h1">City Factor Percentiles</Text>
+            <Text as="h2">City Scores by Factor</Text>
+
             <PolarAreaChart city={city} />
           </Container>
         </Container>

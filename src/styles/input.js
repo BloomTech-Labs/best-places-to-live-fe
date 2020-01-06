@@ -26,11 +26,9 @@ export const StyledSearchBar = styled.input`
   fontSize: {2};
   width: 100%;
   max-width: 215px;
-  opacity: 0.48;
   flex: 1;
-  background-color: #E6E4EA;
-  color: #1f1f1f;
-  font-weight: 600;
+  background-color: rgba(230, 228, 234, 0.48);
+  color: black;
   ${typography};
   ${layout};
   ${space};

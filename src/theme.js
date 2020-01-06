@@ -21,7 +21,7 @@ const colors = {
   choronozon: "#232326",
   scienceBlue: "#024BCA",
   athensGray: "#F7F7FA",
-  blackPearl: "rgba(4, 3, 22, 0.2)"
+  blackPearl: "rgba(4, 3, 22, 0.7)"
 };
 
 const space = [
