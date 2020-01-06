@@ -80,7 +80,6 @@ function ProfileSettings({ user, history, logout, updateProfile, ...rest }) {
       </Flex>
       <DislikedCities />
       {/* waiting on backend */}
-      <Container textAlign="center">""</Container>
     </Container>
   );
 }

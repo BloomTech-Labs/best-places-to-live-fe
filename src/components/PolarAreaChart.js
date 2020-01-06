@@ -11,7 +11,9 @@ const PolarAreaChart = ({ city }) => {
       data={{
         datasets: [
           {
-            data: factors.map(factor => city[factor.factor]),
+            data: factors.map(
+              factor => Math.round(city[factor.factor] * 100) / 10
+            ),
             backgroundColor: [
               "#66CD00",
               "#458B00",
