@@ -46,9 +46,8 @@ const MoreOptions = ({ city, addDislikedCity }) => {
           <Icon color="white" size={20} icon={moreIcon.iconPath} rotate={90} />
         </IconButton>
       }
-      options={[
-        <OptionMenu onClick={handleClick}>Delete this city</OptionMenu>
-      ]}
+      options={[<OptionMenu>Delete this city</OptionMenu>]}
+      onChange={handleClick}
       dropDownStyles={{
         left: "-100%",
         top: "0%",

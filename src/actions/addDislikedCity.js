@@ -16,6 +16,7 @@ export const addDislikedCity = data => dispatch => {
     return axiosWithAuth()
       .post("/users/dislikes", data)
       .then(res => {
+        console.log("addDislikeCity", res.data);
         dispatch({
           type: ADD_DISLIKED_CITY_SUCCESS,
           payload: res.data.dislikes

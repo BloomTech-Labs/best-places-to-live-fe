@@ -95,7 +95,7 @@ const CityPage = ({ match, likes, history }) => {
           <Container
             backgroundColor={theme.colors.silver}
             padding="1.2rem 1.5rem"
-            margin="3rem 4rem"
+            margin="3rem 0"
           >
             <Text
               as="p"
@@ -108,19 +108,9 @@ const CityPage = ({ match, likes, history }) => {
             </Text>
             <Attribution />
           </Container>
-
-          {/* <Container padding="2rem 2rem">
-            {!imgUrl && <LoadingComponent />}
-            <Image
-              maxWidth="550px"
-              width="100%"
-              alt="data-viz"
-              id="blob"
-              src={imgUrl}
-            />
-          </Container> */}
           <Container height="100%" width="100%">
             <Text as="h2">City Scores by Factor</Text>
+
             <PolarAreaChart city={city} />
           </Container>
         </Container>
