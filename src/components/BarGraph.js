@@ -1,7 +1,7 @@
 import React from "react";
 import { ResponsiveBar } from "@nivo/bar";
 import ToolTip from "./ToolTip";
-import { Flex, Text } from "../styles/index";
+import { Flex, Text, Container } from "../styles/index";
 
 // make sure parent container have a defined height when using
 const BarGraph = ({ data, city1, city2, history }) => {
@@ -43,12 +43,7 @@ const BarGraph = ({ data, city1, city2, history }) => {
     <>
       {dataForBarGraph.map(barData => {
         return (
-          <Flex
-            height="30vw"
-            flexDirection="column"
-            justifyContent="center"
-            alignItems="center"
-          >
+          <Container height="20vw" key={barData.factor}>
             <Text as="h2">{barData.factor}</Text>
             <ResponsiveBar
               data={[barData]}
@@ -60,8 +55,8 @@ const BarGraph = ({ data, city1, city2, history }) => {
                 `${city2.name}`
               ]}
               indexBy="factor"
-              margin={{ top: 0, right: 100, bottom: 0, left: 100 }}
-              padding={0.5}
+              margin={{ top: 0, right: 100, bottom: 50, left: 100 }}
+              padding={0.25}
               groupMode="grouped"
               layout="horizontal"
               colors={{ scheme: "spectral" }}
@@ -152,13 +147,17 @@ const BarGraph = ({ data, city1, city2, history }) => {
               onMouseEnter={(_data, event) => {
                 event.target.style.transition = "0.2s all ease-in";
                 event.target.style.opacity = ".8";
+                if (_data.id != "average") {
+                  event.target.style.cursor = "pointer";
+                }
               }}
               onMouseLeave={(_data, event) => {
                 event.target.style.transition = "0.2s all ease-out";
                 event.target.style.opacity = "1";
+                event.target.style.cursor = "default";
               }}
             />
-          </Flex>
+          </Container>
         );
       })}
     </>
