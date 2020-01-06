@@ -11,10 +11,7 @@ const CityStats = ({ city1, city2, history }) => {
           {city1.name} vs {city2.name}
         </Text>
       </Flex>
-      <Flex position="fixed" zIndex="400" justifyContent="center" width="100%">
-        <Text as="h3">Factors</Text>
-      </Flex>
-      <Container height="200vw" width="100%" m={"0 auto"} maxWidth={1200}>
+      <Container height="100%" width="100%" m={"0 auto"} maxWidth={1200}>
         <BarGraph
           data={getData(city1, city2)}
           city1={city1}

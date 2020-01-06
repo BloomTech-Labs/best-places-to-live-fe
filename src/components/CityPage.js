@@ -120,7 +120,7 @@ const CityPage = ({ match, likes, history }) => {
             />
           </Container> */}
           <Container height="100%" width="100%">
-            <Text as="h3">City Scores by Factor</Text>
+            <Text as="h2">City Scores by Factor</Text>
             <PolarAreaChart city={city} />
           </Container>
         </Container>
