@@ -102,7 +102,8 @@ const BarGraph = ({ data, city1, city2, history }) => {
             {
               on: "hover",
               style: {
-                itemOpacity: 1
+                itemOpacity: 0.1,
+                color: "red"
               }
             }
           ]
@@ -132,6 +133,14 @@ const BarGraph = ({ data, city1, city2, history }) => {
             background: "white"
           }
         }
+      }}
+      onMouseEnter={(_data, event) => {
+        event.target.style.transition = "0.2s all ease-in";
+        event.target.style.opacity = ".8";
+      }}
+      onMouseLeave={(_data, event) => {
+        event.target.style.transition = "0.2s all ease-out";
+        event.target.style.opacity = "1";
       }}
     />
   );
