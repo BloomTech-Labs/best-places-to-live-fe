@@ -85,7 +85,7 @@ const NavBar = ({ isLoggedIn, user, ...rest }) => {
           >
             <DropDown
               value={
-                <Avatar width="2.5rem" height="2.5rem" p="10px">
+                <Avatar width="2.5rem" height="2.5rem">
                   {firstName[0] + lastName[0]}
                 </Avatar>
               }

@@ -6,8 +6,9 @@ export const Avatar = styled.span`
   box-sizing: border-box;
   border-radius: 50%;
   font-size: 1rem;
-  padding: 10px;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   ${layout};
   ${space};
   ${display};
