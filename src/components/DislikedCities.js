@@ -10,7 +10,7 @@ function DislikedCities({ cities, deleteDislikedCity, ...rest }) {
   return (
     <>
       <Container p={`0 15px`}>
-        <Text as="h2" textAlign="center">
+        <Text as="h2" fontSize={3} textAlign="center">
           {" "}
           Disliked Cities
         </Text>

@@ -10,10 +10,8 @@ function ProfilePage({ user, history, ...rest }) {
   const firstName = user.name[0];
   const lastName = name[name.length - 1];
 
-  console.log(window.pageYOffset);
-
   return (
-    <Container>
+    <Container minHeight="100vh">
       <Flex
         flexDirection="column"
         alignItems="center"
@@ -21,8 +19,8 @@ function ProfilePage({ user, history, ...rest }) {
         justifyContent="center"
         mb={5}
       >
-        <Avatar m={4} p={3} width="5rem" height="5rem">
-          <Text as="h2" fontSize="2.5rem" m={0}>
+        <Avatar m={4} p={3} width="6rem" height="6rem">
+          <Text as="h2" fontSize="2.5rem" m={0} width="fit-content">
             {firstName[0] + lastName[0]}
           </Text>
         </Avatar>
