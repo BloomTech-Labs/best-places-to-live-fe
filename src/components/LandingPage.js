@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Container, Text, Hero, Button, StyledLink } from "../styles/index";
+import {
+  Container,
+  Text,
+  Hero,
+  Button,
+  Flex,
+  StyledLink
+} from "../styles/index";
 import heroImg from "../img/hero.jpg";
 import TopCities from "./TopCities";
 import { factors, randomFactor } from "../utils/factors";
@@ -39,8 +46,13 @@ const LandingPage = props => {
           height="25vw"
           minHeight="220px"
         >
-          <Container marginLeft="10%">
-            <Text textAlign="left" as="h2" fontSize={[4, 6]} color="white">
+          <Flex
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            margin="0 auto"
+          >
+            <Text textAlign="center" as="h2" fontSize={[4, 6]} color="white">
               Discover Your Next Hometown
             </Text>
             <StyledLink
@@ -55,7 +67,7 @@ const LandingPage = props => {
             >
               Get Started
             </StyledLink>
-          </Container>
+          </Flex>
         </Hero>
 
         <Container

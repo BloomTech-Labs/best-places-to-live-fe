@@ -103,6 +103,7 @@ export const FactorButton = styled.button`
   `
       : `
   color: #232326;
+  background-color: grey;
   `;
   }}
 `;
