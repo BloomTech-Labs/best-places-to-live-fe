@@ -74,15 +74,16 @@ const LandingPage = props => {
           maxWidth="1200px"
           margin={"0 auto"}
           textAlign="center"
-          p={`0 15px`}
+          my={"40px"}
+          p={`0px 15px`}
         >
-          <Text as="h2" textAlign="left">
+          <Text as="h2" textAlign="center" fontWeight="600">
             Categories
           </Text>
           <Categories showModal={showModal} {...props} />
         </Container>
         <Container textAlign="center" p={`0 15px`} height="auto">
-          <Text as="h2" textAlign="left">
+          <Text as="h2" textAlign="left" fontWeight="600">
             Popular Cities
           </Text>
           <TopCities factor="score_total" {...props} />
