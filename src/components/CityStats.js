@@ -21,7 +21,8 @@ const CityStats = ({ city1, city2, history }) => {
           {city1.name} vs {city2.name}
         </Text>
       </Flex>
-      <Container>
+
+      <Flex justifyContent="center">
         {/* BE does not have ranked_population in their dataset */}
         <FactorSelect
           factors={factors.filter(
@@ -29,7 +30,8 @@ const CityStats = ({ city1, city2, history }) => {
           )}
           handleSelect={handleSelect}
         />
-      </Container>
+      </Flex>
+
       <Container height="100%" width="100%" m={"0 auto"} maxWidth={1200}>
         <BarGraph
           data={getData(city1, city2).filter(
