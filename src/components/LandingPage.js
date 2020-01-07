@@ -58,11 +58,11 @@ const LandingPage = props => {
             <StyledLink
               display="inline-block"
               padding="0.6rem 1.2rem"
-              border-radius="4px"
+              borderRadius="4px"
               fontSize="0.8rem"
-              color="white"
+              color="blue"
               fontWeight="bold"
-              bg="rgba(0,0,0,0.3)"
+              bg="rgba(255,255,255,1)"
               to="/sign-up"
             >
               Get Started
@@ -77,19 +77,19 @@ const LandingPage = props => {
           p={`0 15px`}
         >
           <Text as="h2" textAlign="left">
-            Categories:
+            Categories
           </Text>
           <Categories showModal={showModal} {...props} />
         </Container>
         <Container textAlign="center" p={`0 15px`} height="auto">
           <Text as="h2" textAlign="left">
-            Popular Cities:
+            Popular Cities
           </Text>
           <TopCities factor="score_total" {...props} />
         </Container>
         <Container textAlign="center" p={`0 15px`}>
-          <Text as="h2" textAlign="left">
-            Best Cities for {chosenFactor.displayName}:
+          <Text as="h2" textAlign="left" fontWeight="600">
+            Best Cities for {chosenFactor.displayName}
           </Text>
           <TopCities factor={chosenFactor.factor} {...props} />
         </Container>
