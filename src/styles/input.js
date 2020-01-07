@@ -37,6 +37,7 @@ export const StyledSearchBar = styled.input`
   &::placeholder {
     color: #9A99A2;
   }
+
   @media (min-width: ${theme.breakpoints.sm}) {
     max-width:375px;
   }
