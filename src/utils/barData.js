@@ -130,9 +130,6 @@ export const responseFromBe = {
 };
 
 export function getData(city1, city2) {
-  //Removing population from factors
-  const population = factors.pop();
-
   return factors.map(item => {
     //Getting factor object
     //Using population instead of ranked_population due to differing BE and DS

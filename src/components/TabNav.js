@@ -6,8 +6,6 @@ import { FiHeart } from "react-icons/fi";
 import { AiOutlineForm } from "react-icons/ai";
 import { StyledNavLink, Flex, Text } from "../styles/index.js";
 const TabNav = ({ isLoggedIn, ...rest }) => {
-  console.log(rest);
-
   const currentPath = route => {
     return route.location.pathname;
   };
