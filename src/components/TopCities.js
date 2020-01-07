@@ -5,6 +5,7 @@ import { fetchTopCities } from "../actions/topCities";
 import useWindowSize from "../hooks/useWindowSize";
 import theme from "../theme";
 import LazyLoad from "react-lazyload";
+import LoadingComponent from "./LoadingComponent";
 
 function TopCities({
   topCities,
@@ -67,7 +68,7 @@ function TopCities({
       </Flex>
     );
   } else {
-    return <p>Is Loading</p>;
+    return <LoadingComponent />;
   }
 }
 

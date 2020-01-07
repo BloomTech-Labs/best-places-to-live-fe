@@ -1,8 +1,10 @@
 import React from "react";
 import { ResponsiveBar } from "@nivo/bar";
+import ToolTip from "./ToolTip";
+import { Flex, Text, Container } from "../styles/index";
 
 // make sure parent container have a defined height when using
-const BarGraph = ({ data, city1, city2, history }) => {
+const BarGraph = ({ data, city1, city2, mobile, history }) => {
   //We want the keys for the bar graph to be worst, best, average, <city1.name>, <city2.name>
   //This changes takes the information from data, city1, and city2 and transforms it into a new object
   /* Data sent to bar graph is different from data that is used to retrieve ids */
@@ -19,8 +21,6 @@ const BarGraph = ({ data, city1, city2, history }) => {
     obj["factor"] = item.factor;
     return obj;
   });
-
-  console.log(dataForBarGraph);
 
   const handleClick = node => {
     //node.indexValue is the factor
@@ -42,10 +42,9 @@ const BarGraph = ({ data, city1, city2, history }) => {
       data={dataForBarGraph}
       keys={["worst", "average", "best", `${city1.name}`, `${city2.name}`]}
       indexBy="factor"
-      margin={{ top: 50, right: 100, bottom: 50, left: 100 }}
-      padding={0.5}
+      margin={{ top: 50, right: 200, bottom: 50, left: 60 }}
+      padding={0.3}
       groupMode="grouped"
-      layout="horizontal"
       colors={{ scheme: "spectral" }}
       defs={[
         {
@@ -72,13 +71,8 @@ const BarGraph = ({ data, city1, city2, history }) => {
       axisTop={null}
       axisRight={null}
       axisBottom={null}
-      axisLeft={{
-        tickSize: 5,
-        tickPadding: 5,
-        tickRotation: 0,
-        legendPosition: "middle",
-        legendOffset: -40
-      }}
+      axisLeft={null}
+      //Enable label for mobile?
       enableLabel={false}
       labelSkipWidth={12}
       labelSkipHeight={12}
@@ -89,10 +83,10 @@ const BarGraph = ({ data, city1, city2, history }) => {
           anchor: "bottom-right",
           direction: "column",
           justify: false,
-          translateX: 120,
+          translateX: 30,
           translateY: 0,
           itemsSpacing: 2,
-          itemWidth: 100,
+          itemWidth: 50,
           itemHeight: 20,
           itemDirection: "left-to-right",
           itemOpacity: 0.85,
@@ -112,6 +106,7 @@ const BarGraph = ({ data, city1, city2, history }) => {
       motionStiffness={90}
       motionDamping={15}
       tooltip={node => {
+        console.log(node);
         //node.indexValue is the factor
         const dataFiltered = data
           .filter(item => item.factor === node.indexValue)
@@ -122,10 +117,7 @@ const BarGraph = ({ data, city1, city2, history }) => {
         const cityScore = dataFiltered.scores[node.id];
 
         return (
-          <strong>
-            {cityName && `${cityName}:`}
-            {cityScore}{" "}
-          </strong>
+          <ToolTip label={node.id} cityName={cityName} score={cityScore} />
         );
       }}
       theme={{
@@ -133,7 +125,24 @@ const BarGraph = ({ data, city1, city2, history }) => {
           container: {
             background: "white"
           }
+        },
+        legends: {
+          text: {
+            fontSize: 14
+          }
         }
+      }}
+      onMouseEnter={(_data, event) => {
+        event.target.style.transition = "0.2s all ease-in";
+        event.target.style.opacity = ".8";
+        if (_data.id != "average") {
+          event.target.style.cursor = "pointer";
+        }
+      }}
+      onMouseLeave={(_data, event) => {
+        event.target.style.transition = "0.2s all ease-out";
+        event.target.style.opacity = "1";
+        event.target.style.cursor = "default";
       }}
     />
   );

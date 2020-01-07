@@ -249,11 +249,12 @@ Object.keys(categories).forEach(category => {
 });
 
 /* 
+https://medium.com/@david.gilbertson/icons-as-react-components-de3e33cb8792
 React Icon Names for Each Factor
 "Commute Time"               IoIosClock
 "Cost of Living"             FaMoneyBill
 "Economy"                    GiCoins
-"Education"                 IoMdSchoolhttps://medium.com/@david.gilbertson/icons-as-react-components-de3e33cb8792
+"Education"                 IoMdSchool
 "Environmental Quality"     FaLeaf
 "Healthcare"                FaRegHospital
 "Housing"                  FaHome

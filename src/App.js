@@ -50,7 +50,6 @@ function App(props) {
 
   //For NavBar responsiveness
   const size = useWindowSize();
-  console.log(size);
   return (
     <Router history={history}>
       {/* Styled Systems - Theme */}
