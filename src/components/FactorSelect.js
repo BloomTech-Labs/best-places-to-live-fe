@@ -1,27 +1,25 @@
 import React from "react";
 import "styled-components/macro";
 import css from "@styled-system/css";
-import { Form, Box } from "../styles/index";
+import { Form, Flex, FactorButton } from "../styles/index";
 import LoadingComponent from "./LoadingComponent";
 
-const FactorSelect = ({ handleSelect, factors }) => {
+const FactorSelect = ({ handleSelect, factors, factorSelected }) => {
   //factors is array of objects, such as [{factor: "ranked_population", displayName: "Population"}]
 
-  const handleChange = event => {
+  const handleClick = event => {
     handleSelect(event.target.value);
   };
 
   if (factors) {
-    console.log(factors);
     return (
       <>
-        <Box
-          fontSize="1.1rem"
-          fontFamily="Noto Sans"
+        <Flex
+          maxWidth="790px"
+          margin="0 auto"
+          flexWrap="wrap"
+          justifyContent="center"
           mb={20}
-          onChange={handleChange}
-          onBlur={handleChange}
-          as="select"
           name="city"
           css={css({
             "&:hover": {
@@ -30,11 +28,16 @@ const FactorSelect = ({ handleSelect, factors }) => {
           })}
         >
           {factors.map(factor => (
-            <option key={factor.factor} value={factor.displayName}>
+            <FactorButton
+              onClick={handleClick}
+              value={factor.displayName}
+              key={factor.factor}
+              active={factor.displayName === factorSelected ? true : null}
+            >
               {factor.displayName}
-            </option>
+            </FactorButton>
           ))}
-        </Box>
+        </Flex>
       </>
     );
   } else {

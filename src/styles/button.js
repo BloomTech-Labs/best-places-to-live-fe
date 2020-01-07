@@ -83,3 +83,26 @@ export const FacebookButton = styled(SocialButton)`
 export const GoogleButton = styled(SocialButton)`
   background-color: #dd4b39;
 `;
+
+export const FactorButton = styled.button`
+  margin: 4px;
+  border-radius: 3rem;
+  padding: 10px;
+  float: left;
+  text-align: center;
+  font-size: 1rem;
+  border: 0;
+  &:hover {
+    cursor: pointer;
+  }
+  ${({ active }) => {
+    return active
+      ? `
+  background-color: #024bca;
+  color: white;
+  `
+      : `
+  color: #232326;
+  `;
+  }}
+`;

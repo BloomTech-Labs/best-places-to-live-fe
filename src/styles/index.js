@@ -5,7 +5,8 @@ import {
   FacebookButton,
   GoogleButton,
   LinkButton,
-  ProfileButton
+  ProfileButton,
+  FactorButton
 } from "./button";
 import { Container } from "./container";
 import { Input, StyledSearchBar } from "./input";
@@ -47,5 +48,6 @@ export {
   SettingsCog,
   StyledSearchBar,
   ProfileButton,
-  Avatar
+  Avatar,
+  FactorButton
 };
