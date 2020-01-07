@@ -95,6 +95,10 @@ export const FactorButton = styled.button`
   &:hover {
     cursor: pointer;
   }
+  &:focus {
+    outline: thin dotted;
+  }
+
   ${({ active }) => {
     return active
       ? `
@@ -103,6 +107,7 @@ export const FactorButton = styled.button`
   `
       : `
   color: #232326;
+  background-color: #e6e4ea;
   `;
   }}
 `;
