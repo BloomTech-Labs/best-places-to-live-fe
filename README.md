@@ -1,6 +1,6 @@
 # Best Places to Live
 
-You can find the deployed project at [Live in The Best Place](https://www.liveinthebestplace.com/).
+You can find the deployed project at [Live in The Best Place](http://liveinthebestplace.netlify.com/).
 
 ## Contributors
 
